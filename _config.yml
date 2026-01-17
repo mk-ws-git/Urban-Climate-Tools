@@ -1,0 +1,71 @@
+# Jekyll configuration for Urban Climate Tools
+# Add this to the Urban-Climate-Tools repository root
+
+title: Urban Climate Adaptation Tools
+description: Free, open-source tools for building climate-resilient cities
+url: "https://mk-ws-git.github.io/Urban-Climate-Tools"
+baseurl: "/Urban-Climate-Tools"
+
+# Theme
+theme: jekyll-theme-minimal
+remote_theme: pages-themes/minimal@v0.2.0
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Collections
+collections:
+  tools:
+    output: true
+    permalink: /tools/:title/
+    label: Tools
+  case_studies:
+    output: true
+    permalink: /case-studies/:title/
+    label: Case Studies
+
+# Default frontmatter
+defaults:
+  - scope:
+      path: "_tools"
+    values:
+      layout: tool
+  - scope:
+      path: "_case_studies"
+    values:
+      layout: case-study
+
+# Defaults
+defaults:
+  - scope:
+      path: "_tools"
+      type: tools
+    values:
+      layout: tool
+  - scope:
+      path: "_case_studies"
+      type: case_studies
+    values:
+      layout: case-study
+
+# Site configuration
+highlighter: rouge
+markdown: kramdown
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - node_modules
+  - vendor
+
+# SEO
+twitter_username: "@climatetools"
+github_username: "mk-ws-git"
+social:
+  name: Urban Climate Tools
+  links:
+    - https://github.com/mk-ws-git/Urban-Climate-Tools
+    - https://twitter.com/climatetools

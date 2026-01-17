@@ -1,0 +1,82 @@
+<aside class="tool-sidebar">
+    <div class="sidebar-section">
+        <h4>Quick Info</h4>
+        <dl>
+            <dt>Developer</dt>
+            <dd>{{ page.developer }}</dd>
+            
+            <dt>Website</dt>
+            <dd><a href="{{ page.website }}" target="_blank">Visit →</a></dd>
+            
+            <dt>Access</dt>
+            <dd>{{ page.access_model }}</dd>
+            
+            {% if page.cost %}
+            <dt>Cost</dt>
+            <dd>{{ page.cost }}</dd>
+            {% endif %}
+            
+            <dt>Coverage</dt>
+            <dd>{{ page.geographic_coverage }}</dd>
+            
+            <dt>Skill Level</dt>
+            <dd>{{ page.skill_level }}</dd>
+            
+            <dt>Platform</dt>
+            <dd>{{ page.platform }}</dd>
+            
+            <dt>Last Updated</dt>
+            <dd>{{ page.last_updated }}</dd>
+        </dl>
+    </div>
+    
+    <div class="sidebar-section">
+        <h4>Categories</h4>
+        <ul class="category-list">
+            {% for category in page.categories %}
+                <li><a href="{{ '/categories/' | relative_url }}#{{ category | downcase }}">{{ category }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+    
+    <div class="sidebar-section">
+        <h4>Documentation</h4>
+        <ul>
+            {% if page.documentation %}
+                <li><a href="{{ page.documentation }}" target="_blank">User Guide →</a></li>
+            {% endif %}
+            {% if page.tutorials %}
+                <li><a href="{{ page.tutorials }}" target="_blank">Tutorials →</a></li>
+            {% endif %}
+            {% if page.api_docs %}
+                <li><a href="{{ page.api_docs }}" target="_blank">API Docs →</a></li>
+            {% endif %}
+        </ul>
+    </div>
+    
+    <div class="sidebar-section">
+        <h4>Support & Community</h4>
+        <ul>
+            {% if page.support_email %}
+                <li><a href="mailto:{{ page.support_email }}">Email Support</a></li>
+            {% endif %}
+            {% if page.community_forum %}
+                <li><a href="{{ page.community_forum }}" target="_blank">Community Forum →</a></li>
+            {% endif %}
+            {% if page.github_repo %}
+                <li><a href="{{ page.github_repo }}" target="_blank">GitHub Repo →</a></li>
+            {% endif %}
+        </ul>
+    </div>
+    
+    {% if page.integrations %}
+    <div class="sidebar-section">
+        <h4>Works With</h4>
+        <ul class="integrations-list">
+            {% for integration in page.integrations %}
+                <li>{{ integration }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+</aside>

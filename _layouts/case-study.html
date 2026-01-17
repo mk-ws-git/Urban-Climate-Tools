@@ -1,0 +1,237 @@
+---
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include head.html %}
+</head>
+<body>
+    {% include nav.html %}
+    
+    <main class="case-study-detail">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="{{ site.baseurl }}/">Home</a>
+                <span>/</span>
+                <a href="{{ site.baseurl }}/case-studies/">Case Studies</a>
+                <span>/</span>
+                <span>{{ page.title }}</span>
+            </div>
+            
+            <div class="case-study-header">
+                {% if page.image_url %}
+                <div class="hero-image">
+                    <img src="{{ page.image_url }}" alt="{{ page.title }}" />
+                </div>
+                {% endif %}
+                
+                <div class="header-content">
+                    <h1>{{ page.title }}</h1>
+                    <p class="case-study-meta">
+                        <strong>{{ page.city }}{% if page.state %}, {{ page.state }}{% endif %}</strong> • {{ page.year }}
+                    </p>
+                    <p class="lead">{{ page.description }}</p>
+                </div>
+            </div>
+            
+            <div class="case-study-body">
+                <aside class="case-study-sidebar">
+                    <div class="sidebar-section">
+                        <h4>Quick Facts</h4>
+                        <dl>
+                            <dt>City</dt>
+                            <dd>{{ page.city }}{% if page.state %}, {{ page.state }}{% endif %}, {{ page.country }}</dd>
+                            
+                            <dt>Population</dt>
+                            <dd>{{ page.population | default: "N/A" }}</dd>
+                            
+                            <dt>Sector</dt>
+                            <dd>{{ page.sector }}</dd>
+                            
+                            <dt>Year</dt>
+                            <dd>{{ page.year }}</dd>
+                        </dl>
+                    </div>
+                    
+                    {% if page.climate_challenges %}
+                    <div class="sidebar-section">
+                        <h4>Climate Challenges</h4>
+                        <ul>
+                            {% for challenge in page.climate_challenges %}
+                            <li>{{ challenge }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    {% endif %}
+                    
+                    {% if page.tools_used %}
+                    <div class="sidebar-section">
+                        <h4>Tools Used</h4>
+                        <ul>
+                            {% for tool_id in page.tools_used %}
+                                {% assign tool = site.data.tools | where: "id", tool_id | first %}
+                                {% if tool %}
+                                <li><a href="{{ site.baseurl }}/tools/{{ tool.id }}/">{{ tool.name }}</a></li>
+                                {% endif %}
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    {% endif %}
+                    
+                    {% if page.outcomes %}
+                    <div class="sidebar-section">
+                        <h4>Key Outcomes</h4>
+                        <ul>
+                            {% for outcome in page.outcomes %}
+                            <li>{{ outcome }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    {% endif %}
+                </aside>
+                
+                <article class="case-study-content">
+                    {{ content }}
+                    
+                    {% if page.tools_used %}
+                    <section class="related-tools">
+                        <h3>Tools Used in This Project</h3>
+                        <div class="tool-grid-horizontal">
+                            {% for tool_id in page.tools_used %}
+                                {% assign tool = site.data.tools | where: "id", tool_id | first %}
+                                {% if tool %}
+                                <div class="tool-card-compact">
+                                    <h4><a href="{{ site.baseurl }}/tools/{{ tool.id }}/">{{ tool.name }}</a></h4>
+                                    <p class="developer">{{ tool.developer }}</p>
+                                    <p class="description">{{ tool.description | truncatewords: 12 }}</p>
+                                    <a href="{{ site.baseurl }}/tools/{{ tool.id }}/" class="btn btn-small">Learn More</a>
+                                </div>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    </section>
+                    {% endif %}
+                </article>
+            </div>
+        </div>
+    </main>
+    
+    {% include footer.html %}
+    
+    <style>
+        .case-study-detail {
+            padding: var(--spacing-2xl) 0;
+        }
+        
+        .breadcrumb {
+            display: flex;
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-2xl);
+            font-size: 14px;
+        }
+        
+        .breadcrumb a {
+            color: var(--primary-blue);
+        }
+        
+        .case-study-header {
+            margin-bottom: var(--spacing-2xl);
+        }
+        
+        .hero-image {
+            width: 100%;
+            height: 400px;
+            margin-bottom: var(--spacing-xl);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            background: var(--light-gray);
+        }
+        
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .header-content h1 {
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .case-study-meta {
+            color: #666;
+            font-size: 16px;
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .case-study-body {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: var(--spacing-2xl);
+        }
+        
+        .case-study-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-lg);
+        }
+        
+        .case-study-content {
+            grid-column: 2;
+        }
+        
+        .case-study-content h2 {
+            margin-top: var(--spacing-2xl);
+        }
+        
+        .case-study-content h2:first-child {
+            margin-top: 0;
+        }
+        
+        .case-study-content p {
+            line-height: 1.8;
+        }
+        
+        .tool-grid-horizontal {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: var(--spacing-lg);
+        }
+        
+        .tool-card-compact {
+            padding: var(--spacing-lg);
+            background: var(--light-gray);
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border-gray);
+        }
+        
+        .tool-card-compact h4 {
+            margin-top: 0;
+        }
+        
+        .tool-card-compact a.btn {
+            width: 100%;
+        }
+        
+        @media (max-width: 1024px) {
+            .case-study-body {
+                grid-template-columns: 1fr;
+            }
+            
+            .case-study-content {
+                grid-column: 1;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-image {
+                height: 250px;
+            }
+            
+            .tool-grid-horizontal {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</body>
+</html>

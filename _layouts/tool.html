@@ -1,0 +1,111 @@
+---
+layout: default
+---
+
+<div class="tool-detail">
+    <div class="tool-header">
+        <div class="tool-icon">
+            <img src="{{ page.icon | relative_url }}" alt="{{ page.title }}" class="icon-lg">
+        </div>
+        
+        <div class="tool-header-info">
+            <h1>{{ page.title }}</h1>
+            <p class="developer">{{ page.developer }}</p>
+            
+            <div class="badges">
+                {% for category in page.categories %}
+                    <span class="badge badge-{{ category | downcase }}">{{ category }}</span>
+                {% endfor %}
+                <span class="badge badge-{{ page.access_model | downcase }}">{{ page.access_model }}</span>
+                <span class="badge badge-skill">{{ page.skill_level }}</span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="tool-body">
+        <div class="tool-main">
+            <section class="tool-section">
+                <h2>About</h2>
+                <p>{{ page.description }}</p>
+            </section>
+            
+            {% if page.website %}
+            <section class="tool-section">
+                <h3>Website & Access</h3>
+                <p><a href="{{ page.website }}" target="_blank" class="btn btn-primary">Visit {{ page.title }} →</a></p>
+                <p><strong>Access Model:</strong> {{ page.access_model }}</p>
+                {% if page.cost %}
+                    <p><strong>Cost:</strong> {{ page.cost }}</p>
+                {% endif %}
+                <p><strong>Geographic Coverage:</strong> {{ page.geographic_coverage }}</p>
+                <p><strong>Last Updated:</strong> {{ page.last_updated }}</p>
+            </section>
+            {% endif %}
+            
+            {% if page.features %}
+            <section class="tool-section">
+                <h3>Key Features</h3>
+                <ul class="features-list">
+                    {% for feature in page.features %}
+                        <li>{{ feature }}</li>
+                    {% endfor %}
+                </ul>
+            </section>
+            {% endif %}
+            
+            {% if page.data_requirements %}
+            <section class="tool-section">
+                <h3>Data & Requirements</h3>
+                <ul>
+                    {% for req in page.data_requirements %}
+                        <li>{{ req }}</li>
+                    {% endfor %}
+                </ul>
+            </section>
+            {% endif %}
+            
+            {% if page.outputs %}
+            <section class="tool-section">
+                <h3>Outputs & Deliverables</h3>
+                <ul>
+                    {% for output in page.outputs %}
+                        <li>{{ output }}</li>
+                    {% endfor %}
+                </ul>
+            </section>
+            {% endif %}
+            
+            {% if page.use_cases %}
+            <section class="tool-section">
+                <h3>Recommended Use Cases</h3>
+                <ul>
+                    {% for use_case in page.use_cases %}
+                        <li>{{ use_case }}</li>
+                    {% endfor %}
+                </ul>
+            </section>
+            {% endif %}
+            
+            {{ content }}
+        </div>
+        
+        <aside class="tool-sidebar">
+            {% include tool-sidebar.html %}
+        </aside>
+    </div>
+    
+    {% if site.collections.tools.docs.size > 1 %}
+    <section class="related-tools">
+        <h3>Related Tools</h3>
+        <div class="tool-grid-horizontal">
+            {% for tool in site.tools %}
+                {% if tool.categories | intersect: page.categories %}
+                    {% if tool.title != page.title %}
+                        {% include tool-card.html tool=tool %}
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+        </div>
+    </section>
+    {% endif %}
+</div>

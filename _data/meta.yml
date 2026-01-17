@@ -1,0 +1,90 @@
+# Site metadata
+site_title: Urban Climate Tools
+site_description: Open-source solutions for building climate-resilient cities
+site_url: https://mk-ws-git.github.io/Urban-Climate-Tools
+
+# Statistics
+tool_count: 12
+case_study_count: 8
+cities_reached: 100
+global_coverage: Global
+
+# Organization info
+organization: Urban Climate Adaptation Network
+organization_url: https://example.com
+github_url: https://github.com/mk-ws-git/Urban-Climate-Tools
+github_user: mk-ws-git
+
+# Contact
+contact_email: info@urbanclimate.tools
+support_email: support@urbanclimate.tools
+
+# Social media
+twitter: '@UrbanClimateTool'
+linkedin: https://linkedin.com
+facebook: https://facebook.com
+
+# API
+api_base_url: /api/v1
+api_docs: /api/docs
+
+# Featured content
+featured_tools:
+  - climate-central
+  - i-tree
+  - noaa-slr
+
+featured_case_studies:
+  - norfolk-coastal-resilience
+  - minneapolis-green-equity
+  - phoenix-urban-heat
+
+# Categories
+categories:
+  - id: heat
+    name: Heat Management
+    description: Urban heat island mitigation and extreme heat adaptation
+    icon: thermometer
+    color: FF6B6B
+
+  - id: flood
+    name: Flood Risk
+    description: Stormwater management and flooding solutions
+    icon: water
+    color: 4ECDC4
+
+  - id: coastal
+    name: Coastal Resilience
+    description: Sea level rise adaptation and coastal protection
+    icon: waves
+    color: 44A6C6
+
+  - id: green
+    name: Green Infrastructure
+    description: Nature-based solutions and urban greening
+    icon: leaf
+    color: 66BB6A
+
+  - id: planning
+    name: Urban Planning
+    description: Resilience planning and land use tools
+    icon: map
+    color: AB47BC
+
+  - id: data
+    name: Data & Analytics
+    description: Climate data platforms and analysis tools
+    icon: chart
+    color: 42A5F5
+
+  - id: energy
+    name: Energy Efficiency
+    description: Energy modeling and efficiency tracking
+    icon: lightning
+    color: FFA726
+
+  - id: other
+    name: Other Tools
+    description: Additional resources and utilities
+    icon: grid
+    color: 90A4AE

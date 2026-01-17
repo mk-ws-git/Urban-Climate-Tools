@@ -1,0 +1,186 @@
+# Urban Climate Case Studies Database
+
+- id: norfolk-coastal-resilience
+  title: Norfolk, Virginia - Coastal Resilience & Adaptation
+  city: Norfolk
+  state: Virginia
+  country: United States
+  year: 2023
+  sector: Urban Planning & Coastal Protection
+  description: How Norfolk is adapting to sea level rise through comprehensive resilience planning and nature-based solutions
+  population: 235000
+  climate_challenges:
+    - sea level rise
+    - flooding
+    - storm surge
+  tools_used:
+    - noaa-slr
+    - climate-central
+    - arcgis-urban
+  outcomes:
+    - "20% reduction in flood-vulnerable infrastructure"
+    - "$2.1B resilience investment plan approved"
+    - "Community engagement: 10,000+ residents involved"
+  image_url: /assets/images/norfolk.jpg
+  featured: true
+
+- id: minneapolis-green-equity
+  title: Minneapolis, Minnesota - Green Infrastructure & Equity
+  city: Minneapolis
+  state: Minnesota
+  country: United States
+  year: 2022
+  sector: Green Infrastructure & Environmental Justice
+  description: Integrating green infrastructure with community equity in underserved neighborhoods
+  population: 425000
+  climate_challenges:
+    - urban heat
+    - stormwater flooding
+    - environmental justice
+  tools_used:
+    - green-infrastructure-coalition
+    - stormwater-calculator
+    - i-tree
+  outcomes:
+    - "150+ green infrastructure projects completed"
+    - "Urban heat reduced by 2-3°C in pilot areas"
+    - "$45M in green jobs created"
+  image_url: /assets/images/minneapolis.jpg
+  featured: true
+
+- id: phoenix-urban-heat
+  title: Phoenix, Arizona - Urban Heat Island Mitigation
+  city: Phoenix
+  state: Arizona
+  country: United States
+  year: 2023
+  sector: Heat Resilience & Energy Efficiency
+  description: Largest US city tackling extreme heat through cool roofs, urban forestry, and public health measures
+  population: 1600000
+  climate_challenges:
+    - extreme heat
+    - energy demand
+    - public health
+  tools_used:
+    - cool-roofs-calculator
+    - city-energy-dashboard
+    - i-tree
+  outcomes:
+    - "2,000+ buildings retrofitted with cool roofs"
+    - "4M new trees planted"
+    - "Peak electricity demand reduced by 8%"
+  image_url: /assets/images/phoenix.jpg
+  featured: true
+
+- id: rotterdam-water-resilience
+  title: Rotterdam, Netherlands - Water Resilience & Climate Adaptation
+  city: Rotterdam
+  state: South Holland
+  country: Netherlands
+  year: 2022
+  sector: Water Management & Urban Design
+  description: Europe's leader in climate adaptation through innovative water management and circular economy approaches
+  population: 640000
+  climate_challenges:
+    - flooding
+    - water scarcity
+    - climate adaptation
+  tools_used:
+    - green-infrastructure-coalition
+    - stormwater-calculator
+  outcomes:
+    - "Water-adaptive public spaces created"
+    - "Building resilience across 89 districts"
+    - "International climate adaptation model"
+  image_url: /assets/images/rotterdam.jpg
+  featured: false
+
+- id: paris-urban-forestry
+  title: Paris, France - Urban Forestry & Green Spaces
+  city: Paris
+  state: Île-de-France
+  country: France
+  year: 2023
+  sector: Urban Forestry & Biodiversity
+  description: Planting 170,000 trees to combat urban heat, improve air quality, and enhance biodiversity
+  population: 2161000
+  climate_challenges:
+    - urban heat
+    - air pollution
+    - biodiversity loss
+  tools_used:
+    - i-tree
+    - forest-carbon-calculator
+  outcomes:
+    - "170,000 trees planted across city"
+    - "Urban forest canopy increased to 14%"
+    - "Carbon sequestration: 1.2M tons CO2/year"
+  image_url: /assets/images/paris.jpg
+  featured: false
+
+- id: singapore-sustainability
+  title: Singapore - Sustainable City & Climate Resilience
+  city: Singapore
+  country: Singapore
+  year: 2023
+  sector: Sustainability & Urban Design
+  description: Island nation building comprehensive climate adaptation through green buildings and water management
+  population: 5850000
+  climate_challenges:
+    - sea level rise
+    - heat
+    - water security
+  tools_used:
+    - leed-rating-system
+    - climate-central
+    - arcgis-urban
+  outcomes:
+    - "80% buildings BCA Green Mark rated"
+    - "11% of land area dedicated to green"
+    - "Vertical greening in 3,400+ buildings"
+  image_url: /assets/images/singapore.jpg
+  featured: false
+
+- id: bogota-climate-action
+  title: Bogotá, Colombia - Climate Action & Social Inclusion
+  city: Bogotá
+  country: Colombia
+  year: 2022
+  sector: Urban Planning & Climate Justice
+  description: Latin American city integrating climate adaptation with poverty reduction and social equity
+  population: 7181000
+  climate_challenges:
+    - water scarcity
+    - air pollution
+    - climate vulnerability
+  tools_used:
+    - climate-resilience-toolkit
+    - green-infrastructure-coalition
+  outcomes:
+    - "50km of green corridors created"
+    - "Public transit expansion: 150 new routes"
+    - "Community capacity: 20,000 trained"
+  image_url: /assets/images/bogota.jpg
+  featured: false
+
+- id: copenhagen-cycling-climate
+  title: Copenhagen, Denmark - Cycling & Carbon Neutral Strategy
+  city: Copenhagen
+  country: Denmark
+  year: 2023
+  sector: Transportation & Carbon Neutrality
+  description: World leader in sustainable transport and carbon neutrality through cycling infrastructure and renewable energy
+  population: 1356000
+  climate_challenges:
+    - carbon emissions
+    - transportation
+    - energy
+  tools_used:
+    - city-energy-dashboard
+    - climate-resilience-toolkit
+  outcomes:
+    - "45% trips by bike"
+    - "Carbon neutral by 2025"
+    - "District heating from waste heat"
+  image_url: /assets/images/copenhagen.jpg
+  featured: false
