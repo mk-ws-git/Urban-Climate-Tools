@@ -14,7 +14,7 @@
 - 12+ curated climate adaptation tools
 - Real-time search across name, category, developer
 - Multi-dimensional filtering:
-  - **Category**: Heat management, flood risk, coastal resilience, green infrastructure, planning, data, energy
+  - **Category**: Heat management, flood risk, coastal resilience, green infrastructure, planning, data, energy, water management
   - **Cost**: Free, Freemium, Paid
   - **Skill Level**: Beginner, Intermediate, Advanced
   - **Geographic Coverage**: Local, City, National, Global
@@ -147,7 +147,7 @@ Each case study features:
 ```
 Search: Real-time across all tool fields
 Filters:
-  • Category (8 options)
+  • Category (9 options)
   • Cost tier (3 options)
   • Skill level (3 options)
   • Coverage area (4 options)
@@ -298,7 +298,7 @@ GitHub Actions can auto-build when you push to main:
 - **Total Case Studies**: 8
 - **Featured Tools**: 6
 - **Featured Case Studies**: 3
-- **Categories**: 8
+- **Categories**: 9
 - **Lines of Code**: 5000+
 - **Data Entries**: 20+
 - **Stylesheets**: 4
