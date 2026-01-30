@@ -212,7 +212,7 @@ Violations may result in temporary or permanent ban from the project. Report iss
 
 ## 📞 Getting Help
 
-- **Questions**: Use [GitHub Discussions](https://github.com/mk-ws-git/Urban-Climate-Tools/discussions) (when enabled) or open an issue
+- **Questions**: Open an issue or contact us via email
 - **Bugs**: Report via [GitHub Issues](https://github.com/mk-ws-git/Urban-Climate-Tools/issues)
 - **Email**: info@urbanclimate.tools
 
