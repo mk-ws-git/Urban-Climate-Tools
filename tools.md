@@ -68,6 +68,10 @@ title: All Tools
                                 <input type="checkbox" data-filter="category" value="energy">
                                 <span>Energy Efficiency</span>
                             </label>
+                            <label>
+                                <input type="checkbox" data-filter="category" value="water">
+                                <span>Water Management</span>
+                            </label>
                         </div>
                     </div>
                     
