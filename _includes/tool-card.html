@@ -1,7 +1,10 @@
 <div class="tool-card" data-cost="{{ tool.access_model }}" data-skill="{{ tool.skill_level }}" data-coverage="{{ tool.geographic_coverage }}">
     <div class="card-header">
         <div class="card-icon">
-            <img src="{{ tool.icon | relative_url }}" alt="{{ tool.title }}" class="icon-md">
+            <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M12 6v6l4 2"/>
+            </svg>
         </div>
         <div class="card-badges">
             {% for category in tool.categories %}
@@ -11,7 +14,7 @@
     </div>
     
     <div class="card-body">
-        <h3><a href="{{ tool.url | relative_url }}">{{ tool.title }}</a></h3>
+        <h3><a href="{{ tool.url }}" target="_blank" rel="noopener">{{ tool.title }}</a></h3>
         <p class="developer">{{ tool.developer }}</p>
         <p class="description">{{ tool.description | truncatewords: 20 }}</p>
         
@@ -32,6 +35,6 @@
     </div>
     
     <div class="card-footer">
-        <a href="{{ tool.url | relative_url }}" class="btn btn-sm btn-primary">View Details →</a>
+        <a href="{{ tool.url }}" target="_blank" rel="noopener" class="btn btn-sm btn-primary">Visit Tool →</a>
     </div>
 </div>
