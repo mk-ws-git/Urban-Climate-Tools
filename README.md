@@ -14,7 +14,7 @@
 - 12+ curated climate adaptation tools
 - Real-time search across name, category, developer
 - Multi-dimensional filtering:
-  - **Category**: Heat management, flood risk, coastal resilience, green infrastructure, planning, data, energy, water management
+  - **Category**: Heat management, flood risk, coastal resilience, green infrastructure, planning, data, energy, water management, other
   - **Cost**: Free, Freemium, Paid
   - **Skill Level**: Beginner, Intermediate, Advanced
   - **Geographic Coverage**: Local, City, National, Global
