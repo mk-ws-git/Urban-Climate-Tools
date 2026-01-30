@@ -31,7 +31,7 @@ layout: default
         </div>
         
         <div class="tools-count">
-            <span id="toolCount"></span> tools found
+            <span id="toolCount"></span> <span id="toolLabel">tools</span> found
         </div>
         
         <div class="tools-table-container">
@@ -47,14 +47,8 @@ layout: default
                     </tr>
                 </thead>
                 <tbody id="toolsTableBody">
-                    {% assign filtered_tools = "" | split: "" %}
                     {% for tool in site.data.tools %}
                         {% if tool.categories contains page.category %}
-                            {% assign filtered_tools = filtered_tools | push: tool %}
-                        {% endif %}
-                    {% endfor %}
-                    
-                    {% for tool in filtered_tools %}
                     <tr class="tool-row" 
                         data-cost="{{ tool.cost | downcase }}" 
                         data-skill="{{ tool.skillLevel | downcase }}">
@@ -70,10 +64,16 @@ layout: default
                             <span class="badge badge-skill-{{ tool.skillLevel | downcase }}">{{ tool.skillLevel }}</span>
                         </td>
                         <td class="tool-actions">
-                            <a href="{{ tool.url }}" target="_blank" class="btn btn-primary btn-small">Visit →</a>
+                            <a href="{{ tool.url }}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-small">Visit →</a>
                         </td>
                     </tr>
+                        {% endif %}
                     {% endfor %}
+                    <tr id="emptyState" class="empty-state hidden">
+                        <td colspan="6" style="text-align: center; padding: var(--spacing-xl); color: #666;">
+                            No tools match your selected filters. Try adjusting your criteria or <a href="#" id="clearFiltersLink" style="color: var(--primary-blue);">clear all filters</a>.
+                        </td>
+                    </tr>
                 </tbody>
             </table>
         </div>
@@ -258,6 +258,10 @@ layout: default
         display: none;
     }
     
+    .empty-state.hidden {
+        display: none;
+    }
+    
     @media (max-width: 768px) {
         .tools-table {
             font-size: 13px;
@@ -284,15 +288,28 @@ layout: default
         const costFilters = document.querySelectorAll('.filter-cost');
         const skillFilters = document.querySelectorAll('.filter-skill');
         const clearButton = document.getElementById('clearFilters');
+        const clearFiltersLink = document.getElementById('clearFiltersLink');
         const toolRows = document.querySelectorAll('.tool-row');
         const toolCount = document.getElementById('toolCount');
+        const toolLabel = document.getElementById('toolLabel');
+        const emptyState = document.getElementById('emptyState');
         
         function updateToolCount() {
             const visibleRows = document.querySelectorAll('.tool-row:not(.hidden)');
-            toolCount.textContent = visibleRows.length;
+            const count = visibleRows.length;
+            toolCount.textContent = count;
+            toolLabel.textContent = count === 1 ? 'tool' : 'tools';
+            
+            // Show/hide empty state
+            if (count === 0) {
+                emptyState.classList.remove('hidden');
+            } else {
+                emptyState.classList.add('hidden');
+            }
         }
         
         function filterTools() {
+            // Get selected filters
             const selectedCosts = Array.from(costFilters)
                 .filter(cb => cb.checked)
                 .map(cb => cb.value);
@@ -300,13 +317,17 @@ layout: default
                 .filter(cb => cb.checked)
                 .map(cb => cb.value);
             
+            // Filter logic: show row if it matches all active filter groups
             toolRows.forEach(row => {
                 const cost = row.dataset.cost;
                 const skill = row.dataset.skill;
                 
+                // Cost filter: show if no cost filters selected OR cost matches any selected
                 const costMatch = selectedCosts.length === 0 || selectedCosts.includes(cost);
+                // Skill filter: show if no skill filters selected OR skill matches any selected
                 const skillMatch = selectedSkills.length === 0 || selectedSkills.includes(skill);
                 
+                // Show row only if it matches both filter groups (AND logic between groups)
                 if (costMatch && skillMatch) {
                     row.classList.remove('hidden');
                 } else {
@@ -317,14 +338,22 @@ layout: default
             updateToolCount();
         }
         
-        costFilters.forEach(filter => filter.addEventListener('change', filterTools));
-        skillFilters.forEach(filter => filter.addEventListener('change', filterTools));
-        
-        clearButton.addEventListener('click', function() {
+        function clearAllFilters() {
             costFilters.forEach(cb => cb.checked = false);
             skillFilters.forEach(cb => cb.checked = false);
             filterTools();
-        });
+        }
+        
+        // Event listeners
+        costFilters.forEach(filter => filter.addEventListener('change', filterTools));
+        skillFilters.forEach(filter => filter.addEventListener('change', filterTools));
+        clearButton.addEventListener('click', clearAllFilters);
+        if (clearFiltersLink) {
+            clearFiltersLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                clearAllFilters();
+            });
+        }
         
         // Initialize count
         updateToolCount();
