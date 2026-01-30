@@ -24,6 +24,7 @@
     --spacing-lg: 24px;
     --spacing-xl: 32px;
     --spacing-2xl: 48px;
+    --spacing-3xl: 64px;
 }
 
 * {
@@ -45,6 +46,12 @@ body {
 }
 
 /* Layout */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-xl);
+}
+
 main.content {
     max-width: 1200px;
     margin: 0 auto;
@@ -85,7 +92,8 @@ main.content {
     color: white;
 }
 
-.btn-sm {
+.btn-sm,
+.btn-small {
     padding: 8px 16px;
     font-size: 13px;
 }
