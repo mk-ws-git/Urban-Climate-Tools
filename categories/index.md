@@ -94,6 +94,18 @@ title: Browse by Category
                 <p>Energy modeling and efficiency tracking</p>
             </a>
             
+            <a href="{{ site.baseurl }}/categories/water/" class="category-card">
+                <div class="category-icon">
+                    <svg viewBox="0 0 100 100">
+                        <circle cx="50" cy="50" r="30" fill="#0051BA" opacity="0.3"/>
+                        <path d="M 35 50 Q 42 35 50 40 T 65 50" stroke="#0051BA" stroke-width="2" fill="none"/>
+                        <path d="M 30 60 Q 40 45 50 52 T 70 60" stroke="#0051BA" stroke-width="2" fill="none"/>
+                    </svg>
+                </div>
+                <h3>Water Management</h3>
+                <p>Water resource management and conservation</p>
+            </a>
+            
             <a href="{{ site.baseurl }}/categories/other/" class="category-card">
                 <div class="category-icon">
                     <svg viewBox="0 0 100 100">
