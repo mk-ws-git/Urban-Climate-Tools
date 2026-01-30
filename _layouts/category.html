@@ -3,38 +3,330 @@ layout: default
 ---
 
 <div class="category-page">
-    <h1>{{ page.category }} Tools</h1>
-    
-    <div class="category-intro">
-        <p>{{ page.description }}</p>
-    </div>
-    
-    <div class="filters">
-        <h3>Filter Tools</h3>
-        <div class="filter-group">
-            <label><input type="checkbox" class="filter-cost" value="free"> Free</label>
-            <label><input type="checkbox" class="filter-cost" value="freemium"> Freemium</label>
-            <label><input type="checkbox" class="filter-cost" value="paid"> Paid</label>
+    <div class="container">
+        <h1>{{ page.title }}</h1>
+        
+        <div class="category-intro">
+            {{ content }}
         </div>
         
-        <div class="filter-group">
-            <label><input type="checkbox" class="filter-skill" value="beginner"> Beginner</label>
-            <label><input type="checkbox" class="filter-skill" value="intermediate"> Intermediate</label>
-            <label><input type="checkbox" class="filter-skill" value="advanced"> Advanced</label>
+        <div class="filters-section">
+            <h3>Filter Tools</h3>
+            <div class="filter-groups">
+                <div class="filter-group">
+                    <label class="filter-label">Cost:</label>
+                    <label><input type="checkbox" class="filter-cost" value="free"> Free</label>
+                    <label><input type="checkbox" class="filter-cost" value="freemium"> Freemium</label>
+                    <label><input type="checkbox" class="filter-cost" value="paid"> Paid</label>
+                </div>
+                
+                <div class="filter-group">
+                    <label class="filter-label">Skill Level:</label>
+                    <label><input type="checkbox" class="filter-skill" value="beginner"> Beginner</label>
+                    <label><input type="checkbox" class="filter-skill" value="intermediate"> Intermediate</label>
+                    <label><input type="checkbox" class="filter-skill" value="advanced"> Advanced</label>
+                </div>
+            </div>
+            <button id="clearFilters" class="btn btn-secondary btn-small">Clear Filters</button>
         </div>
         
-        <div class="filter-group">
-            <label><input type="checkbox" class="filter-coverage" value="global"> Global</label>
-            <label><input type="checkbox" class="filter-coverage" value="us"> US</label>
-            <label><input type="checkbox" class="filter-coverage" value="regional"> Regional</label>
+        <div class="tools-count">
+            <span id="toolCount"></span> tools found
         </div>
-    </div>
-    
-    <div class="tool-grid">
-        {% for tool in site.tools %}
-            {% if tool.categories contains page.category %}
-                {% include tool-card.html tool=tool %}
-            {% endif %}
-        {% endfor %}
+        
+        <div class="tools-table-container">
+            <table class="tools-table">
+                <thead>
+                    <tr>
+                        <th>Tool Name</th>
+                        <th>Developer</th>
+                        <th>Description</th>
+                        <th>Cost</th>
+                        <th>Skill Level</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="toolsTableBody">
+                    {% assign filtered_tools = "" | split: "" %}
+                    {% for tool in site.data.tools %}
+                        {% if tool.categories contains page.category %}
+                            {% assign filtered_tools = filtered_tools | push: tool %}
+                        {% endif %}
+                    {% endfor %}
+                    
+                    {% for tool in filtered_tools %}
+                    <tr class="tool-row" 
+                        data-cost="{{ tool.cost | downcase }}" 
+                        data-skill="{{ tool.skillLevel | downcase }}">
+                        <td class="tool-name">
+                            <strong>{{ tool.name }}</strong>
+                        </td>
+                        <td class="tool-developer">{{ tool.developer }}</td>
+                        <td class="tool-description">{{ tool.description | truncatewords: 20 }}</td>
+                        <td class="tool-cost">
+                            <span class="badge badge-cost-{{ tool.cost | downcase }}">{{ tool.cost }}</span>
+                        </td>
+                        <td class="tool-skill">
+                            <span class="badge badge-skill-{{ tool.skillLevel | downcase }}">{{ tool.skillLevel }}</span>
+                        </td>
+                        <td class="tool-actions">
+                            <a href="{{ tool.url }}" target="_blank" class="btn btn-primary btn-small">Visit →</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
+
+<style>
+    .category-page {
+        padding: var(--spacing-2xl) 0;
+    }
+    
+    .category-page h1 {
+        margin-bottom: var(--spacing-lg);
+        color: var(--primary-blue);
+    }
+    
+    .category-intro {
+        margin-bottom: var(--spacing-2xl);
+        padding: var(--spacing-lg);
+        background: var(--light-gray);
+        border-radius: var(--radius-md);
+        border-left: 4px solid var(--primary-blue);
+    }
+    
+    .filters-section {
+        margin-bottom: var(--spacing-xl);
+        padding: var(--spacing-lg);
+        background: white;
+        border: 1px solid var(--border-gray);
+        border-radius: var(--radius-md);
+    }
+    
+    .filters-section h3 {
+        margin-top: 0;
+        margin-bottom: var(--spacing-md);
+        font-size: 16px;
+    }
+    
+    .filter-groups {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--spacing-xl);
+        margin-bottom: var(--spacing-md);
+    }
+    
+    .filter-group {
+        display: flex;
+        align-items: center;
+        gap: var(--spacing-md);
+        flex-wrap: wrap;
+    }
+    
+    .filter-label {
+        font-weight: 600;
+        margin-right: var(--spacing-sm);
+    }
+    
+    .filter-group label {
+        display: flex;
+        align-items: center;
+        gap: var(--spacing-sm);
+        cursor: pointer;
+        font-size: 14px;
+    }
+    
+    .filter-group input[type="checkbox"] {
+        cursor: pointer;
+    }
+    
+    .tools-count {
+        margin-bottom: var(--spacing-md);
+        font-weight: 600;
+        color: var(--primary-blue);
+    }
+    
+    .tools-table-container {
+        overflow-x: auto;
+        border: 1px solid var(--border-gray);
+        border-radius: var(--radius-md);
+        background: white;
+    }
+    
+    .tools-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 14px;
+    }
+    
+    .tools-table thead {
+        background: var(--light-gray);
+        border-bottom: 2px solid var(--border-gray);
+    }
+    
+    .tools-table th {
+        padding: var(--spacing-md);
+        text-align: left;
+        font-weight: 600;
+        color: var(--primary-blue);
+        white-space: nowrap;
+    }
+    
+    .tools-table td {
+        padding: var(--spacing-md);
+        border-bottom: 1px solid var(--border-gray);
+        vertical-align: top;
+    }
+    
+    .tools-table tbody tr:last-child td {
+        border-bottom: none;
+    }
+    
+    .tools-table tbody tr:hover {
+        background: var(--light-gray);
+    }
+    
+    .tool-name {
+        min-width: 150px;
+    }
+    
+    .tool-name strong {
+        color: var(--primary-blue);
+    }
+    
+    .tool-developer {
+        min-width: 120px;
+        color: #666;
+    }
+    
+    .tool-description {
+        min-width: 250px;
+        max-width: 400px;
+        line-height: 1.4;
+    }
+    
+    .tool-cost, .tool-skill {
+        white-space: nowrap;
+    }
+    
+    .badge {
+        display: inline-block;
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-size: 12px;
+        font-weight: 500;
+    }
+    
+    .badge-cost-free {
+        background: #d4edda;
+        color: #155724;
+    }
+    
+    .badge-cost-freemium {
+        background: #fff3cd;
+        color: #856404;
+    }
+    
+    .badge-cost-paid {
+        background: #f8d7da;
+        color: #721c24;
+    }
+    
+    .badge-skill-beginner {
+        background: #d1ecf1;
+        color: #0c5460;
+    }
+    
+    .badge-skill-intermediate {
+        background: #fff3cd;
+        color: #856404;
+    }
+    
+    .badge-skill-advanced {
+        background: #f8d7da;
+        color: #721c24;
+    }
+    
+    .tool-actions {
+        white-space: nowrap;
+    }
+    
+    .tool-row.hidden {
+        display: none;
+    }
+    
+    @media (max-width: 768px) {
+        .tools-table {
+            font-size: 13px;
+        }
+        
+        .tools-table th,
+        .tools-table td {
+            padding: var(--spacing-sm);
+        }
+        
+        .tool-description {
+            max-width: 200px;
+        }
+        
+        .filter-groups {
+            flex-direction: column;
+            gap: var(--spacing-md);
+        }
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const costFilters = document.querySelectorAll('.filter-cost');
+        const skillFilters = document.querySelectorAll('.filter-skill');
+        const clearButton = document.getElementById('clearFilters');
+        const toolRows = document.querySelectorAll('.tool-row');
+        const toolCount = document.getElementById('toolCount');
+        
+        function updateToolCount() {
+            const visibleRows = document.querySelectorAll('.tool-row:not(.hidden)');
+            toolCount.textContent = visibleRows.length;
+        }
+        
+        function filterTools() {
+            const selectedCosts = Array.from(costFilters)
+                .filter(cb => cb.checked)
+                .map(cb => cb.value);
+            const selectedSkills = Array.from(skillFilters)
+                .filter(cb => cb.checked)
+                .map(cb => cb.value);
+            
+            toolRows.forEach(row => {
+                const cost = row.dataset.cost;
+                const skill = row.dataset.skill;
+                
+                const costMatch = selectedCosts.length === 0 || selectedCosts.includes(cost);
+                const skillMatch = selectedSkills.length === 0 || selectedSkills.includes(skill);
+                
+                if (costMatch && skillMatch) {
+                    row.classList.remove('hidden');
+                } else {
+                    row.classList.add('hidden');
+                }
+            });
+            
+            updateToolCount();
+        }
+        
+        costFilters.forEach(filter => filter.addEventListener('change', filterTools));
+        skillFilters.forEach(filter => filter.addEventListener('change', filterTools));
+        
+        clearButton.addEventListener('click', function() {
+            costFilters.forEach(cb => cb.checked = false);
+            skillFilters.forEach(cb => cb.checked = false);
+            filterTools();
+        });
+        
+        // Initialize count
+        updateToolCount();
+    });
+</script>
