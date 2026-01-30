@@ -52,6 +52,7 @@
   categories:
     - coastal
     - data
+    - water
   cost: Free
   skillLevel: Beginner
   coverage:
@@ -73,6 +74,7 @@
   categories:
     - green
     - planning
+    - water
   cost: Free
   skillLevel: Beginner
   coverage:
