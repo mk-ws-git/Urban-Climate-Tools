@@ -13,6 +13,8 @@ layout: default
     <div class="category-tools-section">
         <h2>Available Tools</h2>
         
+        {% assign category_tools = site.data.tools | where_exp: "tool", "tool.categories contains page.category" %}
+        
         <div class="tools-table-wrapper">
             <table class="tools-table">
                 <thead>
@@ -27,7 +29,6 @@ layout: default
                     </tr>
                 </thead>
                 <tbody>
-                    {% assign category_tools = site.data.tools | where_exp: "tool", "tool.categories contains page.category" %}
                     {% if category_tools.size > 0 %}
                         {% for tool in category_tools %}
                         <tr class="tool-row" 
