@@ -1,6 +1,7 @@
 ---
 layout: default
 title: All Tools
+permalink: /tools/
 ---
 
 <div class="tools-page">
