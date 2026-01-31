@@ -2,6 +2,7 @@
 layout: category
 title: Green Infrastructure Tools
 category: green
+permalink: /categories/green/
 description: Tools for planning, designing, and implementing nature-based solutions and green infrastructure projects.
 ---
 

@@ -2,6 +2,7 @@
 layout: category
 title: Other Climate Tools
 category: other
+permalink: /categories/other/
 description: Additional resources and specialized tools for urban climate adaptation and resilience.
 ---
 

@@ -44,13 +44,16 @@ git clone https://github.com/mk-ws-git/Urban-Climate-Tools.git
 cd Urban-Climate-Tools
 
 # Install dependencies
+bundle config set --local path 'vendor/bundle'
 bundle install
 
-# Serve locally
+# Build and serve locally
 bundle exec jekyll serve
 
-# Open http://localhost:4000
+# Open http://localhost:4000/Urban-Climate-Tools/
 ```
+
+**Note:** The site uses a baseurl `/Urban-Climate-Tools` for GitHub Pages. All links will include this prefix when testing locally.
 
 ### View Online
 Visit: **https://mk-ws-git.github.io/Urban-Climate-Tools/**
@@ -321,6 +324,18 @@ MIT License - All content openly available for reuse with attribution.
 
 ---
 
+## 🔧 Recent Updates
+
+### January 2026 - Fixed 404 Errors for Category Pages
+- ✅ Added permalink configuration to all category pages
+- ✅ Category pages now display filtered tools from `_data/tools.yml`
+- ✅ All category URLs work with trailing slashes (e.g., `/categories/green/`)
+- ✅ Updated Gemfile with all required dependencies
+- ✅ Enhanced category.html layout with tool card display
+- ✅ Local testing confirmed all pages return HTTP 200
+
+---
+
 ## 🎯 Future Roadmap
 
 - [ ] Add 10+ more tools
@@ -344,5 +359,5 @@ MIT License - All content openly available for reuse with attribution.
 ---
 
 **Built with ❤️ for climate resilience**  
-*Last Updated: January 17, 2026*  
+*Last Updated: January 31, 2026*  
 *Status: 🟢 Live & Maintained*
