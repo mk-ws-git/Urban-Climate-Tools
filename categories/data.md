@@ -2,6 +2,7 @@
 layout: category
 title: Data & Analytics Tools
 category: data
+permalink: /categories/data/
 description: Climate data platforms, visualization tools, and analytics for understanding climate risks and impacts.
 ---
 

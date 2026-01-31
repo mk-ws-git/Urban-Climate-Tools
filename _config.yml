@@ -6,9 +6,9 @@ description: Free, open-source tools for building climate-resilient cities
 url: "https://mk-ws-git.github.io/Urban-Climate-Tools"
 baseurl: "/Urban-Climate-Tools"
 
-# Theme
-theme: jekyll-theme-minimal
-remote_theme: pages-themes/minimal@v0.2.0
+# Theme - commented out since we use custom layouts
+# theme: jekyll-theme-minimal
+# remote_theme: pages-themes/minimal@v0.2.0
 
 # Plugins
 plugins:
