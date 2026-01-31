@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Studies</title>
+    <meta name="description" content="Free, open-source tools for building climate-resilient cities">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="/Urban-Climate-Tools/assets/css/style.css">
+    <link rel="stylesheet" href="/Urban-Climate-Tools/assets/css/nav.css">
+    <link rel="stylesheet" href="/Urban-Climate-Tools/assets/css/cards.css">
+    <link rel="stylesheet" href="/Urban-Climate-Tools/assets/css/typography.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/Urban-Climate-Tools/assets/images/favicon.svg">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Case Studies">
+    <meta property="og:description" content="Free, open-source tools for building climate-resilient cities">
+    <meta property="og:url" content="https://mk-ws-git.github.io/Urban-Climate-Tools/Urban-Climate-Tools/case-studies.html">
+    <meta property="og:image" content="https://mk-ws-git.github.io/Urban-Climate-Tools/Urban-Climate-Tools/assets/images/og-image.png">
+</head>
+<body>
+    <nav class="top-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="/Urban-Climate-Tools/">
+                    <img src="/Urban-Climate-Tools/assets/images/logo.svg" alt="Logo" class="logo-img">
+                    <span class="logo-text">Urban Climate Tools</span>
+                </a>
+            </div>
+            
+            <ul class="nav-links">
+                <li><a href="/Urban-Climate-Tools/">Home</a></li>
+                <li><a href="/Urban-Climate-Tools/tools/">Tools</a></li>
+                <li><a href="/Urban-Climate-Tools/categories/">Categories</a></li>
+                <li><a href="/Urban-Climate-Tools/case-studies/">Case Studies</a></li>
+                <li><a href="/Urban-Climate-Tools/about/">About</a></li>
+                <li><a href="https://github.com/mk-ws-git/Urban-Climate-Tools" target="_blank" class="btn-secondary">GitHub</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="content">
+        <div class="case-studies-page">
+    <div class="container">
+        <h1>Urban Climate Case Studies</h1>
+        <p class="lead">Learn from cities around the world implementing climate adaptation and resilience solutions.</p>
+        
+        <div class="case-studies-header">
+            <div class="search-container">
+                <svg class="search-icon" viewBox="0 0 20 20" width="20" height="20">
+                    <circle cx="8" cy="8" r="6" fill="none" stroke="currentColor" stroke-width="1.5" />
+                    <line x1="12.5" y1="12.5" x2="17.5" y2="17.5" stroke="currentColor" stroke-width="1.5" />
+                </svg>
+                <input type="text" class="case-study-search" placeholder="Search by city, country, or challenge..." autofocus="" />
+            </div>
+            <button class="filter-toggle" data-toggle="filters">
+                <svg viewBox="0 0 20 20" width="16" height="16">
+                    <line x1="2" y1="4" x2="18" y2="4" stroke="currentColor" stroke-width="1.5" />
+                    <line x1="4" y1="10" x2="16" y2="10" stroke="currentColor" stroke-width="1.5" />
+                    <line x1="7" y1="16" x2="13" y2="16" stroke="currentColor" stroke-width="1.5" />
+                </svg>
+                Filters
+            </button>
+            <div class="results-info">
+                Results: <strong data-results-count="">8</strong>
+            </div>
+        </div>
+        
+        <div class="case-studies-container">
+            <aside class="filter-panel">
+                <div class="filter-header">
+                    <h3>Filters</h3>
+                    <button data-action="reset-filters" class="btn-reset">Reset</button>
+                </div>
+                
+                <form class="filter-form">
+                    <div class="filter-group">
+                        <h4>Climate Challenge</h4>
+                        <div class="filter-options">
+                            <label>
+                                <input type="checkbox" data-filter="challenge" value="urban heat" />
+                                <span>Urban Heat</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" data-filter="challenge" value="flooding" />
+                                <span>Flooding</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" data-filter="challenge" value="sea level rise" />
+                                <span>Sea Level Rise</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" data-filter="challenge" value="water scarcity" />
+                                <span>Water Scarcity</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" data-filter="challenge" value="air pollution" />
+                                <span>Air Pollution</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <h4>Sector</h4>
+                        <div class="filter-options">
+                            <label>
+                                <input type="checkbox" data-filter="sector" value="Green Infrastructure" />
+                                <span>Green Infrastructure</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" data-filter="sector" value="Urban Planning" />
+                                <span>Urban Planning</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" data-filter="sector" value="Transportation" />
+                                <span>Transportation</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" data-filter="sector" value="Water Management" />
+                                <span>Water Management</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" data-filter="sector" value="Energy" />
+                                <span>Energy</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <h4>Region</h4>
+                        <div class="filter-options">
+                            <label>
+                                <input type="checkbox" data-filter="region" value="North America" />
+                                <span>North America</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" data-filter="region" value="South America" />
+                                <span>South America</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" data-filter="region" value="Europe" />
+                                <span>Europe</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" data-filter="region" value="Asia" />
+                                <span>Asia</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" data-filter="region" value="Africa" />
+                                <span>Africa</span>
+                            </label>
+                        </div>
+                    </div>
+                </form>
+            </aside>
+            
+            <main class="case-studies-grid">
+                
+                <div class="case-study-card" data-case-study="" data-title="Norfolk, Virginia - Coastal Resilience &amp; Adaptation" data-city="Norfolk" data-country="United States" data-sector="Urban Planning &amp; Coastal Protection" data-challenges="sea level rise,flooding,storm surge" data-region="North America">
+                    
+                    
+                    <div class="study-image">
+                        <img src="/assets/images/norfolk.jpg" alt="Norfolk, Virginia - Coastal Resilience &amp; Adaptation" />
+                        
+                        <span class="badge-featured">Featured</span>
+                        
+                    </div>
+                    
+                    
+                    <div class="study-content">
+                        <h3><a href="/Urban-Climate-Tools/case-studies/norfolk-coastal-resilience/">Norfolk, Virginia - Coastal Resilience &amp; Adaptation</a></h3>
+                        <p class="location">Norfolk, Virginia, United States • 2023</p>
+                        <p class="description">How Norfolk is adapting to sea level rise through comprehensive resilience planning and nature-based solutions</p>
+                        
+                        <div class="study-meta">
+                            <div class="meta-item">
+                                <span class="label">Sector:</span>
+                                <span class="value">Urban Planning &amp; Coastal Protection</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="label">Population:</span>
+                                <span class="value">235000</span>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="challenges">
+                            
+                            <span class="challenge-badge">sea level rise</span>
+                            
+                            <span class="challenge-badge">flooding</span>
+                            
+                            <span class="challenge-badge">storm surge</span>
+                            
+                        </div>
+                        
+                        
+                        <a href="/Urban-Climate-Tools/case-studies/norfolk-coastal-resilience/" class="btn btn-primary btn-small">Read Case Study</a>
+                    </div>
+                </div>
+                
+                <div class="case-study-card" data-case-study="" data-title="Minneapolis, Minnesota - Green Infrastructure &amp; Equity" data-city="Minneapolis" data-country="United States" data-sector="Green Infrastructure &amp; Environmental Justice" data-challenges="urban heat,stormwater flooding,environmental justice" data-region="North America">
+                    
+                    
+                    <div class="study-image">
+                        <img src="/assets/images/minneapolis.jpg" alt="Minneapolis, Minnesota - Green Infrastructure &amp; Equity" />
+                        
+                        <span class="badge-featured">Featured</span>
+                        
+                    </div>
+                    
+                    
+                    <div class="study-content">
+                        <h3><a href="/Urban-Climate-Tools/case-studies/minneapolis-green-equity/">Minneapolis, Minnesota - Green Infrastructure &amp; Equity</a></h3>
+                        <p class="location">Minneapolis, Minnesota, United States • 2022</p>
+                        <p class="description">Integrating green infrastructure with community equity in underserved neighborhoods</p>
+                        
+                        <div class="study-meta">
+                            <div class="meta-item">
+                                <span class="label">Sector:</span>
+                                <span class="value">Green Infrastructure &amp; Environmental Justice</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="label">Population:</span>
+                                <span class="value">425000</span>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="challenges">
+                            
+                            <span class="challenge-badge">urban heat</span>
+                            
+                            <span class="challenge-badge">stormwater flooding</span>
+                            
+                            <span class="challenge-badge">environmental justice</span>
+                            
+                        </div>
+                        
+                        
+                        <a href="/Urban-Climate-Tools/case-studies/minneapolis-green-equity/" class="btn btn-primary btn-small">Read Case Study</a>
+                    </div>
+                </div>
+                
+                <div class="case-study-card" data-case-study="" data-title="Phoenix, Arizona - Urban Heat Island Mitigation" data-city="Phoenix" data-country="United States" data-sector="Heat Resilience &amp; Energy Efficiency" data-challenges="extreme heat,energy demand,public health" data-region="North America">
+                    
+                    
+                    <div class="study-image">
+                        <img src="/assets/images/phoenix.jpg" alt="Phoenix, Arizona - Urban Heat Island Mitigation" />
+                        
+                        <span class="badge-featured">Featured</span>
+                        
+                    </div>
+                    
+                    
+                    <div class="study-content">
+                        <h3><a href="/Urban-Climate-Tools/case-studies/phoenix-urban-heat/">Phoenix, Arizona - Urban Heat Island Mitigation</a></h3>
+                        <p class="location">Phoenix, Arizona, United States • 2023</p>
+                        <p class="description">Largest US city tackling extreme heat through cool roofs, urban forestry, and public health measures</p>
+                        
+                        <div class="study-meta">
+                            <div class="meta-item">
+                                <span class="label">Sector:</span>
+                                <span class="value">Heat Resilience &amp; Energy Efficiency</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="label">Population:</span>
+                                <span class="value">1600000</span>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="challenges">
+                            
+                            <span class="challenge-badge">extreme heat</span>
+                            
+                            <span class="challenge-badge">energy demand</span>
+                            
+                            <span class="challenge-badge">public health</span>
+                            
+                        </div>
+                        
+                        
+                        <a href="/Urban-Climate-Tools/case-studies/phoenix-urban-heat/" class="btn btn-primary btn-small">Read Case Study</a>
+                    </div>
+                </div>
+                
+                <div class="case-study-card" data-case-study="" data-title="Rotterdam, Netherlands - Water Resilience &amp; Climate Adaptation" data-city="Rotterdam" data-country="Netherlands" data-sector="Water Management &amp; Urban Design" data-challenges="flooding,water scarcity,climate adaptation" data-region="Europe">
+                    
+                    
+                    <div class="study-image">
+                        <img src="/assets/images/rotterdam.jpg" alt="Rotterdam, Netherlands - Water Resilience &amp; Climate Adaptation" />
+                        
+                    </div>
+                    
+                    
+                    <div class="study-content">
+                        <h3><a href="/Urban-Climate-Tools/case-studies/rotterdam-water-resilience/">Rotterdam, Netherlands - Water Resilience &amp; Climate Adaptation</a></h3>
+                        <p class="location">Rotterdam, South Holland, Netherlands • 2022</p>
+                        <p class="description">Europe's leader in climate adaptation through innovative water management and circular economy approaches</p>
+                        
+                        <div class="study-meta">
+                            <div class="meta-item">
+                                <span class="label">Sector:</span>
+                                <span class="value">Water Management &amp; Urban Design</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="label">Population:</span>
+                                <span class="value">640000</span>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="challenges">
+                            
+                            <span class="challenge-badge">flooding</span>
+                            
+                            <span class="challenge-badge">water scarcity</span>
+                            
+                            <span class="challenge-badge">climate adaptation</span>
+                            
+                        </div>
+                        
+                        
+                        <a href="/Urban-Climate-Tools/case-studies/rotterdam-water-resilience/" class="btn btn-primary btn-small">Read Case Study</a>
+                    </div>
+                </div>
+                
+                <div class="case-study-card" data-case-study="" data-title="Paris, France - Urban Forestry &amp; Green Spaces" data-city="Paris" data-country="France" data-sector="Urban Forestry &amp; Biodiversity" data-challenges="urban heat,air pollution,biodiversity loss" data-region="Europe">
+                    
+                    
+                    <div class="study-image">
+                        <img src="/assets/images/paris.jpg" alt="Paris, France - Urban Forestry &amp; Green Spaces" />
+                        
+                    </div>
+                    
+                    
+                    <div class="study-content">
+                        <h3><a href="/Urban-Climate-Tools/case-studies/paris-urban-forestry/">Paris, France - Urban Forestry &amp; Green Spaces</a></h3>
+                        <p class="location">Paris, Île-de-France, France • 2023</p>
+                        <p class="description">Planting 170,000 trees to combat urban heat, improve air quality, and enhance biodiversity</p>
+                        
+                        <div class="study-meta">
+                            <div class="meta-item">
+                                <span class="label">Sector:</span>
+                                <span class="value">Urban Forestry &amp; Biodiversity</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="label">Population:</span>
+                                <span class="value">2161000</span>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="challenges">
+                            
+                            <span class="challenge-badge">urban heat</span>
+                            
+                            <span class="challenge-badge">air pollution</span>
+                            
+                            <span class="challenge-badge">biodiversity loss</span>
+                            
+                        </div>
+                        
+                        
+                        <a href="/Urban-Climate-Tools/case-studies/paris-urban-forestry/" class="btn btn-primary btn-small">Read Case Study</a>
+                    </div>
+                </div>
+                
+                <div class="case-study-card" data-case-study="" data-title="Singapore - Sustainable City &amp; Climate Resilience" data-city="Singapore" data-country="Singapore" data-sector="Sustainability &amp; Urban Design" data-challenges="sea level rise,heat,water security" data-region="Asia">
+                    
+                    
+                    <div class="study-image">
+                        <img src="/assets/images/singapore.jpg" alt="Singapore - Sustainable City &amp; Climate Resilience" />
+                        
+                    </div>
+                    
+                    
+                    <div class="study-content">
+                        <h3><a href="/Urban-Climate-Tools/case-studies/singapore-sustainability/">Singapore - Sustainable City &amp; Climate Resilience</a></h3>
+                        <p class="location">Singapore, Singapore • 2023</p>
+                        <p class="description">Island nation building comprehensive climate adaptation through green buildings and water management</p>
+                        
+                        <div class="study-meta">
+                            <div class="meta-item">
+                                <span class="label">Sector:</span>
+                                <span class="value">Sustainability &amp; Urban Design</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="label">Population:</span>
+                                <span class="value">5850000</span>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="challenges">
+                            
+                            <span class="challenge-badge">sea level rise</span>
+                            
+                            <span class="challenge-badge">heat</span>
+                            
+                            <span class="challenge-badge">water security</span>
+                            
+                        </div>
+                        
+                        
+                        <a href="/Urban-Climate-Tools/case-studies/singapore-sustainability/" class="btn btn-primary btn-small">Read Case Study</a>
+                    </div>
+                </div>
+                
+                <div class="case-study-card" data-case-study="" data-title="Bogotá, Colombia - Climate Action &amp; Social Inclusion" data-city="Bogotá" data-country="Colombia" data-sector="Urban Planning &amp; Climate Justice" data-challenges="water scarcity,air pollution,climate vulnerability" data-region="South America">
+                    
+                    
+                    <div class="study-image">
+                        <img src="/assets/images/bogota.jpg" alt="Bogotá, Colombia - Climate Action &amp; Social Inclusion" />
+                        
+                    </div>
+                    
+                    
+                    <div class="study-content">
+                        <h3><a href="/Urban-Climate-Tools/case-studies/bogota-climate-action/">Bogotá, Colombia - Climate Action &amp; Social Inclusion</a></h3>
+                        <p class="location">Bogotá, Colombia • 2022</p>
+                        <p class="description">Latin American city integrating climate adaptation with poverty reduction and social equity</p>
+                        
+                        <div class="study-meta">
+                            <div class="meta-item">
+                                <span class="label">Sector:</span>
+                                <span class="value">Urban Planning &amp; Climate Justice</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="label">Population:</span>
+                                <span class="value">7181000</span>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="challenges">
+                            
+                            <span class="challenge-badge">water scarcity</span>
+                            
+                            <span class="challenge-badge">air pollution</span>
+                            
+                            <span class="challenge-badge">climate vulnerability</span>
+                            
+                        </div>
+                        
+                        
+                        <a href="/Urban-Climate-Tools/case-studies/bogota-climate-action/" class="btn btn-primary btn-small">Read Case Study</a>
+                    </div>
+                </div>
+                
+                <div class="case-study-card" data-case-study="" data-title="Copenhagen, Denmark - Cycling &amp; Carbon Neutral Strategy" data-city="Copenhagen" data-country="Denmark" data-sector="Transportation &amp; Carbon Neutrality" data-challenges="carbon emissions,transportation,energy" data-region="Europe">
+                    
+                    
+                    <div class="study-image">
+                        <img src="/assets/images/copenhagen.jpg" alt="Copenhagen, Denmark - Cycling &amp; Carbon Neutral Strategy" />
+                        
+                    </div>
+                    
+                    
+                    <div class="study-content">
+                        <h3><a href="/Urban-Climate-Tools/case-studies/copenhagen-cycling-climate/">Copenhagen, Denmark - Cycling &amp; Carbon Neutral Strategy</a></h3>
+                        <p class="location">Copenhagen, Denmark • 2023</p>
+                        <p class="description">World leader in sustainable transport and carbon neutrality through cycling infrastructure and renewable energy</p>
+                        
+                        <div class="study-meta">
+                            <div class="meta-item">
+                                <span class="label">Sector:</span>
+                                <span class="value">Transportation &amp; Carbon Neutrality</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="label">Population:</span>
+                                <span class="value">1356000</span>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="challenges">
+                            
+                            <span class="challenge-badge">carbon emissions</span>
+                            
+                            <span class="challenge-badge">transportation</span>
+                            
+                            <span class="challenge-badge">energy</span>
+                            
+                        </div>
+                        
+                        
+                        <a href="/Urban-Climate-Tools/case-studies/copenhagen-cycling-climate/" class="btn btn-primary btn-small">Read Case Study</a>
+                    </div>
+                </div>
+                
+            </main>
+        </div>
+    </div>
+</div>
+
+<style>
+    .case-studies-page {
+        padding: var(--spacing-2xl) 0;
+    }
+    
+    .case-studies-page h1 {
+        margin-bottom: var(--spacing-md);
+    }
+    
+    .case-studies-header {
+        display: flex;
+        gap: var(--spacing-lg);
+        margin: var(--spacing-2xl) 0;
+        align-items: center;
+    }
+    
+    .search-container {
+        flex: 1;
+        position: relative;
+    }
+    
+    .search-icon {
+        position: absolute;
+        left: var(--spacing-md);
+        top: 50%;
+        transform: translateY(-50%);
+        color: #999;
+    }
+    
+    .case-study-search {
+        width: 100%;
+        padding: var(--spacing-md) var(--spacing-md) var(--spacing-md) 40px;
+        font-size: 14px;
+        border: 1px solid var(--border-gray);
+        border-radius: var(--radius-md);
+        outline: none;
+    }
+    
+    .case-study-search:focus {
+        border-color: var(--primary-blue);
+    }
+    
+    .filter-toggle {
+        background: var(--light-gray);
+        border: 1px solid var(--border-gray);
+        padding: var(--spacing-md) var(--spacing-lg);
+        border-radius: var(--radius-md);
+        cursor: pointer;
+        display: none;
+        align-items: center;
+        gap: var(--spacing-sm);
+        font-weight: 500;
+        color: var(--primary-blue);
+    }
+    
+    .results-info {
+        font-size: 14px;
+        color: #666;
+        white-space: nowrap;
+    }
+    
+    .case-studies-container {
+        display: grid;
+        grid-template-columns: 250px 1fr;
+        gap: var(--spacing-2xl);
+    }
+    
+    .filter-panel {
+        background: var(--light-gray);
+        padding: var(--spacing-lg);
+        border-radius: var(--radius-md);
+        height: fit-content;
+        position: sticky;
+        top: 80px;
+    }
+    
+    .filter-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: var(--spacing-lg);
+    }
+    
+    .filter-header h3 {
+        margin: 0;
+        font-size: 16px;
+    }
+    
+    .btn-reset {
+        background: none;
+        border: none;
+        color: var(--primary-blue);
+        font-size: 12px;
+        cursor: pointer;
+        text-decoration: underline;
+    }
+    
+    .filter-group {
+        margin-bottom: var(--spacing-lg);
+        padding-bottom: var(--spacing-lg);
+        border-bottom: 1px solid var(--border-gray);
+    }
+    
+    .filter-group:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+    
+    .filter-group h4 {
+        font-size: 12px;
+        text-transform: uppercase;
+        color: var(--primary-blue);
+        margin-bottom: var(--spacing-md);
+        font-weight: 600;
+    }
+    
+    .filter-options {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+    
+    .filter-options label {
+        display: flex;
+        align-items: center;
+        gap: var(--spacing-sm);
+        cursor: pointer;
+        font-size: 13px;
+    }
+    
+    .filter-options input {
+        width: 16px;
+        height: 16px;
+        cursor: pointer;
+    }
+    
+    .case-studies-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+    
+    .case-study-card {
+        display: grid;
+        grid-template-columns: 280px 1fr;
+        gap: var(--spacing-lg);
+        background: white;
+        border: 1px solid var(--border-gray);
+        border-radius: var(--radius-md);
+        overflow: hidden;
+        transition: all 0.3s ease;
+    }
+    
+    .case-study-card:hover {
+        border-color: var(--primary-blue);
+        box-shadow: var(--shadow-lg);
+    }
+    
+    .study-image {
+        height: 200px;
+        background: var(--light-gray);
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .study-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    .badge-featured {
+        position: absolute;
+        top: var(--spacing-md);
+        right: var(--spacing-md);
+        background: var(--primary-blue);
+        color: white;
+        padding: 4px 12px;
+        border-radius: 12px;
+        font-size: 12px;
+        font-weight: 600;
+    }
+    
+    .study-content {
+        padding: var(--spacing-lg);
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .study-content h3 {
+        margin-top: 0;
+        margin-bottom: var(--spacing-sm);
+    }
+    
+    .study-content h3 a {
+        color: var(--primary-blue);
+    }
+    
+    .study-content h3 a:hover {
+        text-decoration: underline;
+    }
+    
+    .location {
+        font-size: 13px;
+        color: #666;
+        margin-bottom: var(--spacing-md);
+    }
+    
+    .description {
+        margin-bottom: var(--spacing-md);
+    }
+    
+    .study-meta {
+        display: flex;
+        gap: var(--spacing-lg);
+        margin-bottom: var(--spacing-md);
+    }
+    
+    .meta-item {
+        font-size: 13px;
+    }
+    
+    .meta-item .label {
+        font-weight: 600;
+        color: var(--primary-blue);
+    }
+    
+    .challenges {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--spacing-sm);
+        margin-bottom: var(--spacing-md);
+    }
+    
+    .challenge-badge {
+        display: inline-block;
+        background: var(--secondary-blue);
+        color: var(--primary-blue);
+        padding: 4px 10px;
+        border-radius: 4px;
+        font-size: 12px;
+        font-weight: 500;
+    }
+    
+    @media (max-width: 1024px) {
+        .case-studies-container {
+            grid-template-columns: 1fr;
+        }
+        
+        .filter-panel {
+            position: relative;
+            top: 0;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .case-studies-header {
+            flex-wrap: wrap;
+        }
+        
+        .filter-toggle {
+            display: flex;
+        }
+        
+        .filter-panel {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: white;
+            z-index: 1000;
+            border: 1px solid var(--border-gray);
+        }
+        
+        .filter-panel.active {
+            display: block;
+        }
+        
+        .case-study-card {
+            grid-template-columns: 1fr;
+        }
+        
+        .study-image {
+            height: 200px;
+        }
+    }
+</style>
+
+<script src="/Urban-Climate-Tools/assets/js/case-study-filters.js"></script>
+
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Urban Climate Tools</h4>
+                <p>A curated, open-source repository of climate adaptation tools for cities.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="/Urban-Climate-Tools/tools/">Browse Tools</a></li>
+                    <li><a href="/Urban-Climate-Tools/categories/">By Category</a></li>
+                    <li><a href="/Urban-Climate-Tools/about/">About This Project</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Community</h4>
+                <ul>
+                    <li><a href="https://github.com/mk-ws-git/Urban-Climate-Tools/issues">Report Issues</a></li>
+                    <li><a href="https://github.com/mk-ws-git/Urban-Climate-Tools/discussions">Discussions</a></li>
+                    <li><a href="https://github.com/mk-ws-git/Urban-Climate-Tools#contributing">Contribute</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="/Urban-Climate-Tools/license/">License (MIT)</a></li>
+                    <li><a href="/Urban-Climate-Tools/code-of-conduct/">Code of Conduct</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 Urban Climate Tools. Last updated: January 31, 2026</p>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="/Urban-Climate-Tools/assets/js/main.js"></script>
+</body>
+</html>
