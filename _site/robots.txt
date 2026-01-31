@@ -1,1 +1,1 @@
-Sitemap: http://0.0.0.0:4000/Urban-Climate-Tools/sitemap.xml
+Sitemap: https://mk-ws-git.github.io/Urban-Climate-Tools/Urban-Climate-Tools/sitemap.xml

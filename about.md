@@ -1,6 +1,7 @@
 ---
 layout: default
 title: About Urban Climate Tools
+permalink: /about/
 ---
 
 <div class="about-page">
