@@ -3,38 +3,304 @@ layout: default
 ---
 
 <div class="category-page">
-    <h1>{{ page.category }} Tools</h1>
+    <h1>{{ page.title }}</h1>
     
     <div class="category-intro">
         <p>{{ page.description }}</p>
+        {{ content }}
     </div>
     
-    <div class="filters">
-        <h3>Filter Tools</h3>
-        <div class="filter-group">
-            <label><input type="checkbox" class="filter-cost" value="free"> Free</label>
-            <label><input type="checkbox" class="filter-cost" value="freemium"> Freemium</label>
-            <label><input type="checkbox" class="filter-cost" value="paid"> Paid</label>
+    <div class="category-tools-section">
+        <h2>Available Tools</h2>
+        
+        {% assign category_tools = site.data.tools | where_exp: "tool", "tool.categories contains page.category" %}
+        
+        <div class="tools-table-wrapper">
+            <table class="tools-table">
+                <thead>
+                    <tr>
+                        <th>Tool Name</th>
+                        <th>Developer</th>
+                        <th>Description</th>
+                        <th>Cost</th>
+                        <th>Skill Level</th>
+                        <th>Coverage</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% if category_tools.size > 0 %}
+                        {% for tool in category_tools %}
+                        <tr class="tool-row" 
+                            data-cost="{{ tool.cost | downcase }}"
+                            data-skill="{{ tool.skillLevel | downcase }}"
+                            data-coverage="{{ tool.coverage | join: ',' }}">
+                            <td data-label="Tool Name" class="tool-name">
+                                <strong>{{ tool.name }}</strong>
+                            </td>
+                            <td data-label="Developer" class="tool-developer">
+                                {{ tool.developer }}
+                            </td>
+                            <td data-label="Description" class="tool-description">
+                                {{ tool.description }}
+                            </td>
+                            <td data-label="Cost" class="tool-cost">
+                                <span class="badge badge-{{ tool.cost | downcase }}">{{ tool.cost }}</span>
+                            </td>
+                            <td data-label="Skill Level" class="tool-skill">
+                                {{ tool.skillLevel }}
+                            </td>
+                            <td data-label="Coverage" class="tool-coverage">
+                                {{ tool.coverage | join: ", " }}
+                            </td>
+                            <td data-label="Actions" class="tool-actions">
+                                <a href="{{ tool.url }}" target="_blank" rel="noopener" class="btn-link">View Tool →</a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    {% else %}
+                        <tr>
+                            <td colspan="7" class="no-tools">
+                                No tools found for this category.
+                            </td>
+                        </tr>
+                    {% endif %}
+                </tbody>
+            </table>
         </div>
         
-        <div class="filter-group">
-            <label><input type="checkbox" class="filter-skill" value="beginner"> Beginner</label>
-            <label><input type="checkbox" class="filter-skill" value="intermediate"> Intermediate</label>
-            <label><input type="checkbox" class="filter-skill" value="advanced"> Advanced</label>
+        <div class="tools-count">
+            Showing <strong>{{ category_tools.size }}</strong> tool(s) in this category
         </div>
-        
-        <div class="filter-group">
-            <label><input type="checkbox" class="filter-coverage" value="global"> Global</label>
-            <label><input type="checkbox" class="filter-coverage" value="us"> US</label>
-            <label><input type="checkbox" class="filter-coverage" value="regional"> Regional</label>
-        </div>
-    </div>
-    
-    <div class="tool-grid">
-        {% for tool in site.tools %}
-            {% if tool.categories contains page.category %}
-                {% include tool-card.html tool=tool %}
-            {% endif %}
-        {% endfor %}
     </div>
 </div>
+
+<style>
+.category-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+.category-page h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+}
+
+.category-intro {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    border-radius: 4px;
+}
+
+.category-intro p {
+    margin: 0;
+    line-height: 1.6;
+    color: #555;
+}
+
+.category-tools-section {
+    margin-top: 2rem;
+}
+
+.category-tools-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: #34495e;
+}
+
+.tools-table-wrapper {
+    overflow-x: auto;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 1rem;
+}
+
+.tools-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 800px;
+}
+
+.tools-table thead {
+    background: #3498db;
+    color: white;
+}
+
+.tools-table th {
+    padding: 1rem;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.tools-table tbody tr {
+    border-bottom: 1px solid #e9ecef;
+    transition: background-color 0.2s ease;
+}
+
+.tools-table tbody tr:hover {
+    background-color: #f8f9fa;
+}
+
+.tools-table tbody tr:last-child {
+    border-bottom: none;
+}
+
+.tools-table td {
+    padding: 1rem;
+    vertical-align: top;
+}
+
+.tool-name strong {
+    color: #2c3e50;
+    font-size: 1rem;
+}
+
+.tool-developer {
+    color: #7f8c8d;
+    font-size: 0.9rem;
+}
+
+.tool-description {
+    color: #555;
+    line-height: 1.5;
+    font-size: 0.9rem;
+}
+
+.tool-cost .badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.badge-free {
+    background: #27ae60;
+    color: white;
+}
+
+.badge-freemium {
+    background: #f39c12;
+    color: white;
+}
+
+.badge-paid {
+    background: #e74c3c;
+    color: white;
+}
+
+.tool-skill {
+    color: #555;
+    font-size: 0.9rem;
+}
+
+.tool-coverage {
+    color: #555;
+    font-size: 0.85rem;
+}
+
+.tool-actions .btn-link {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.tool-actions .btn-link:hover {
+    color: #2980b9;
+    text-decoration: underline;
+}
+
+.no-tools {
+    text-align: center;
+    padding: 2rem !important;
+    color: #95a5a6;
+    font-style: italic;
+}
+
+.tools-count {
+    text-align: right;
+    color: #7f8c8d;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
+.tools-count strong {
+    color: #2c3e50;
+}
+
+/* Responsive table for mobile devices */
+@media screen and (max-width: 768px) {
+    .tools-table {
+        min-width: 100%;
+    }
+    
+    .tools-table thead {
+        display: none;
+    }
+    
+    .tools-table tbody tr {
+        display: block;
+        margin-bottom: 1.5rem;
+        border: 1px solid #e9ecef;
+        border-radius: 8px;
+        padding: 1rem;
+    }
+    
+    .tools-table tbody tr:hover {
+        background-color: white;
+    }
+    
+    .tools-table td {
+        display: block;
+        padding: 0.5rem 0;
+        border: none;
+        text-align: left;
+    }
+    
+    .tools-table td:before {
+        content: attr(data-label);
+        font-weight: 600;
+        display: block;
+        margin-bottom: 0.25rem;
+        color: #3498db;
+        font-size: 0.85rem;
+        text-transform: uppercase;
+    }
+    
+    .tool-name strong {
+        font-size: 1.1rem;
+    }
+    
+    .tool-actions {
+        margin-top: 1rem;
+        padding-top: 1rem;
+        border-top: 1px solid #e9ecef;
+    }
+    
+    .tools-count {
+        text-align: center;
+    }
+}
+
+/* Tablet adjustments */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .tools-table {
+        font-size: 0.9rem;
+    }
+    
+    .tools-table th,
+    .tools-table td {
+        padding: 0.75rem;
+    }
+}
+</style>
