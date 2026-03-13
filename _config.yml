@@ -5,7 +5,6 @@ title: Urban Climate Adaptation Tools
 description: Free, open-source tools for building climate-resilient cities
 url: "https://mk-ws-git.github.io/Urban-Climate-Tools"
 baseurl: "/Urban-Climate-Tools"
-google_analytics: G-XXXXXXXXXX
 
 # Theme
 theme: jekyll-theme-minimal
