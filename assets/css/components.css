@@ -121,19 +121,22 @@ img, svg { display: block; max-width: 100%; }
   background: var(--color-bg-primary);
 }
 
-/* ── HERO BANNER (full-width image) ── */
-.hero--banner {
-  position: relative;
-  /* height tracks SVG aspect ratio (560/1440) at any viewport width */
-  min-height: max(240px, calc(100vw * 560 / 1440));
-  background-color: #1D9E75; /* exact match to SVG background — fills strips above/below */
-  background-size: 100% auto;
-  background-position: center center;
-  background-repeat: no-repeat;
-  display: flex;
-  align-items: center;
-  padding: var(--space-6) 0 0; /* teal strip above; none below */
-  margin-bottom: 0;
+/* ── HERO VIDEO ── */
+.hero--video {
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  line-height: 0;
+  background: #1D9E75;
+}
+
+.hero__video {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
 }
 
 .hero__overlay {
