@@ -7,6 +7,14 @@ title: Urban Climate Tools
     <video class="hero__video" autoplay muted loop playsinline>
         <source src="{{ site.baseurl }}/assets/images/Urban%20Climate%20Tools%20Home%20Banner.mp4" type="video/mp4">
     </video>
+    <div class="hero__glass">
+        <h1 class="hero__glass-title">Urban <em>Climate</em> Tools</h1>
+        <p class="hero__glass-subtitle">Open-source solutions for building climate-resilient cities</p>
+        <div class="hero__glass-actions">
+            <a href="{{ '/tools/' | relative_url }}" class="btn btn--glass">Browse Tools</a>
+            <a href="{{ '/about/' | relative_url }}" class="btn btn--glass">Learn More</a>
+        </div>
+    </div>
 </section>
 
 <section class="stats">
