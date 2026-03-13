@@ -143,3 +143,7 @@ title: Urban Climate Tools
         </div>
     </div>
 </section>
+
+<div class="footer-banner">
+    <img src="{{ site.baseurl }}/assets/images/Urban%20Climate%20Tools%20Home%20Banner.svg" alt="" class="footer-banner__img">
+</div>

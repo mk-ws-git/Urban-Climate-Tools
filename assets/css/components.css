@@ -115,10 +115,17 @@ img, svg { display: block; max-width: 100%; }
 }
 
 
-/* ── HERO ── */
-.hero {
-  padding: var(--space-16) 0 var(--space-12);
-  background: var(--color-bg-primary);
+/* ── FOOTER BANNER ── */
+.footer-banner {
+  background: #1D9E75;
+  padding: var(--space-16) 0;
+  line-height: 0;
+}
+
+.footer-banner__img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 /* ── HERO VIDEO ── */
@@ -721,8 +728,13 @@ img, svg { display: block; max-width: 100%; }
 
 
 /* ── STATS ── */
+@keyframes statsFadeIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
 .stats {
-  padding: var(--space-12) 0;
+  padding: var(--space-16) 0;
   background: var(--color-surface);
   border-top: 0.5px solid var(--color-border);
 }
@@ -738,7 +750,14 @@ img, svg { display: block; max-width: 100%; }
 
 .stats__item {
   text-align: center;
+  opacity: 0;
+  animation: statsFadeIn 0.8s ease forwards;
 }
+
+.stats__item:nth-child(1) { animation-delay: 1.2s; }
+.stats__item:nth-child(2) { animation-delay: 1.5s; }
+.stats__item:nth-child(3) { animation-delay: 1.8s; }
+.stats__item:nth-child(4) { animation-delay: 2.1s; }
 
 .stats__number {
   font-size: var(--text-3xl);
@@ -759,7 +778,7 @@ img, svg { display: block; max-width: 100%; }
 
 /* ── CATEGORIES ── */
 .categories {
-  padding: var(--space-12) 0;
+  padding: var(--space-20) 0;
   background: var(--color-bg-primary);
 }
 
@@ -827,7 +846,7 @@ img, svg { display: block; max-width: 100%; }
 
 /* ── CASE STUDIES ── */
 .case-studies {
-  padding: var(--space-12) 0;
+  padding: var(--space-20) 0;
   background: var(--color-surface-2);
 }
 
