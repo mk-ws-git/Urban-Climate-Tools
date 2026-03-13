@@ -3,7 +3,7 @@ layout: default
 title: All Tools
 ---
 
-<section class="section">
+<section class="tools-page">
     <div class="container">
         <div class="section__header">
             <h1 class="section__title">Urban Climate Tools</h1>
@@ -52,95 +52,95 @@ title: All Tools
                                 <input type="checkbox" data-filter="category" value="flood">
                                 <span class="filter-option__label">Flood Risk</span>
                             </label>
-                            <label>
+                            <label class="filter-option">
                                 <input type="checkbox" data-filter="category" value="coastal">
-                                <span>Coastal Resilience</span>
+                                <span class="filter-option__label">Coastal Resilience</span>
                             </label>
-                            <label>
+                            <label class="filter-option">
                                 <input type="checkbox" data-filter="category" value="green">
-                                <span>Green Infrastructure</span>
+                                <span class="filter-option__label">Green Infrastructure</span>
                             </label>
-                            <label>
+                            <label class="filter-option">
                                 <input type="checkbox" data-filter="category" value="planning">
-                                <span>Urban Planning</span>
+                                <span class="filter-option__label">Urban Planning</span>
                             </label>
-                            <label>
+                            <label class="filter-option">
                                 <input type="checkbox" data-filter="category" value="data">
-                                <span>Data & Analytics</span>
+                                <span class="filter-option__label">Data & Analytics</span>
                             </label>
-                            <label>
+                            <label class="filter-option">
                                 <input type="checkbox" data-filter="category" value="energy">
-                                <span>Energy Efficiency</span>
+                                <span class="filter-option__label">Energy Efficiency</span>
                             </label>
                         </div>
                     </div>
-                    
+
                     <div class="filter-group">
-                        <h4>Cost</h4>
+                        <h4 class="filter-group__title">Cost</h4>
                         <div class="filter-options">
-                            <label>
+                            <label class="filter-option">
                                 <input type="checkbox" data-filter="cost" value="Free">
-                                <span>Free</span>
+                                <span class="filter-option__label">Free</span>
                             </label>
-                            <label>
+                            <label class="filter-option">
                                 <input type="checkbox" data-filter="cost" value="Freemium">
-                                <span>Freemium</span>
+                                <span class="filter-option__label">Freemium</span>
                             </label>
-                            <label>
+                            <label class="filter-option">
                                 <input type="checkbox" data-filter="cost" value="Paid">
-                                <span>Paid</span>
+                                <span class="filter-option__label">Paid</span>
                             </label>
                         </div>
                     </div>
-                    
+
                     <div class="filter-group">
-                        <h4>Skill Level</h4>
+                        <h4 class="filter-group__title">Skill Level</h4>
                         <div class="filter-options">
-                            <label>
+                            <label class="filter-option">
                                 <input type="checkbox" data-filter="skillLevel" value="Beginner">
-                                <span>Beginner</span>
+                                <span class="filter-option__label">Beginner</span>
                             </label>
-                            <label>
+                            <label class="filter-option">
                                 <input type="checkbox" data-filter="skillLevel" value="Intermediate">
-                                <span>Intermediate</span>
+                                <span class="filter-option__label">Intermediate</span>
                             </label>
-                            <label>
+                            <label class="filter-option">
                                 <input type="checkbox" data-filter="skillLevel" value="Advanced">
-                                <span>Advanced</span>
+                                <span class="filter-option__label">Advanced</span>
                             </label>
                         </div>
                     </div>
-                    
+
                     <div class="filter-group">
-                        <h4>Geographic Coverage</h4>
+                        <h4 class="filter-group__title">Geographic Coverage</h4>
                         <div class="filter-options">
-                            <label>
+                            <label class="filter-option">
                                 <input type="checkbox" data-filter="coverage" value="local">
-                                <span>Local/Neighborhood</span>
+                                <span class="filter-option__label">Local/Neighborhood</span>
                             </label>
-                            <label>
+                            <label class="filter-option">
                                 <input type="checkbox" data-filter="coverage" value="city">
-                                <span>City/Regional</span>
+                                <span class="filter-option__label">City/Regional</span>
                             </label>
-                            <label>
+                            <label class="filter-option">
                                 <input type="checkbox" data-filter="coverage" value="national">
-                                <span>National</span>
+                                <span class="filter-option__label">National</span>
                             </label>
-                            <label>
+                            <label class="filter-option">
                                 <input type="checkbox" data-filter="coverage" value="global">
-                                <span>Global</span>
+                                <span class="filter-option__label">Global</span>
                             </label>
                         </div>
                     </div>
                 </form>
             </aside>
-            
+
             <main class="tools-grid">
                 {% for tool in site.data.tools %}
-                <div class="tool-card" data-tool 
-                     data-tool-id="{{ tool.id }}" 
-                     data-name="{{ tool.name }}" 
-                     data-developer="{{ tool.developer }}" 
+                <div class="tool-card" data-tool
+                     data-tool-id="{{ tool.id }}"
+                     data-name="{{ tool.name }}"
+                     data-developer="{{ tool.developer }}"
                      data-description="{{ tool.description }}"
                      data-category="{{ tool.categories | join: ',' }}"
                      data-cost="{{ tool.cost }}"
@@ -153,192 +153,4 @@ title: All Tools
             </main>
         </div>
     </div>
-</div>
-
-<style>
-    .tools-page {
-        padding: var(--spacing-2xl) 0;
-    }
-    
-    .tools-page h1 {
-        margin-bottom: var(--spacing-md);
-    }
-    
-    .tools-header {
-        display: flex;
-        gap: var(--spacing-lg);
-        margin: var(--spacing-2xl) 0;
-        align-items: center;
-    }
-    
-    .search-container {
-        flex: 1;
-        position: relative;
-    }
-    
-    .search-icon {
-        position: absolute;
-        left: var(--spacing-md);
-        top: 50%;
-        transform: translateY(-50%);
-        color: #999;
-    }
-    
-    .tool-search {
-        width: 100%;
-        padding: var(--spacing-md) var(--spacing-md) var(--spacing-md) 40px;
-        font-size: 14px;
-        border: 1px solid var(--border-gray);
-        border-radius: var(--radius-md);
-        outline: none;
-        transition: border-color 0.3s ease;
-    }
-    
-    .tool-search:focus {
-        border-color: var(--primary-blue);
-    }
-    
-    .filter-toggle {
-        background: var(--light-gray);
-        border: 1px solid var(--border-gray);
-        padding: var(--spacing-md) var(--spacing-lg);
-        border-radius: var(--radius-md);
-        cursor: pointer;
-        display: none;
-        align-items: center;
-        gap: var(--spacing-sm);
-        font-weight: 500;
-        color: var(--primary-blue);
-    }
-    
-    .results-info {
-        font-size: 14px;
-        color: #666;
-        white-space: nowrap;
-    }
-    
-    .tools-container {
-        display: grid;
-        grid-template-columns: 250px 1fr;
-        gap: var(--spacing-2xl);
-    }
-    
-    .filter-panel {
-        background: var(--light-gray);
-        padding: var(--spacing-lg);
-        border-radius: var(--radius-md);
-        height: fit-content;
-        position: sticky;
-        top: 80px;
-    }
-    
-    .filter-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: var(--spacing-lg);
-    }
-    
-    .filter-header h3 {
-        margin: 0;
-        font-size: 16px;
-    }
-    
-    .btn-reset {
-        background: none;
-        border: none;
-        color: var(--primary-blue);
-        font-size: 12px;
-        cursor: pointer;
-        text-decoration: underline;
-    }
-    
-    .filter-group {
-        margin-bottom: var(--spacing-lg);
-        padding-bottom: var(--spacing-lg);
-        border-bottom: 1px solid var(--border-gray);
-    }
-    
-    .filter-group:last-child {
-        border-bottom: none;
-        margin-bottom: 0;
-        padding-bottom: 0;
-    }
-    
-    .filter-group h4 {
-        font-size: 12px;
-        text-transform: uppercase;
-        color: var(--primary-blue);
-        margin-bottom: var(--spacing-md);
-        font-weight: 600;
-    }
-    
-    .filter-options {
-        display: flex;
-        flex-direction: column;
-        gap: var(--spacing-sm);
-    }
-    
-    .filter-options label {
-        display: flex;
-        align-items: center;
-        gap: var(--spacing-sm);
-        cursor: pointer;
-        font-size: 13px;
-    }
-    
-    .filter-options input {
-        width: 16px;
-        height: 16px;
-        cursor: pointer;
-    }
-    
-    .tools-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-        gap: var(--spacing-lg);
-    }
-    
-    @media (max-width: 1024px) {
-        .tools-container {
-            grid-template-columns: 1fr;
-        }
-        
-        .filter-panel {
-            position: relative;
-            top: 0;
-        }
-    }
-    
-    @media (max-width: 768px) {
-        .tools-header {
-            flex-wrap: wrap;
-        }
-        
-        .filter-toggle {
-            display: flex;
-        }
-        
-        .filter-panel {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            right: 0;
-            background: white;
-            z-index: 1000;
-            border: 1px solid var(--border-gray);
-            border-radius: 0;
-        }
-        
-        .filter-panel.active {
-            display: block;
-        }
-        
-        .tools-grid {
-            grid-template-columns: 1fr;
-        }
-    }
-</style>
-
-<script src="{{ site.baseurl }}/assets/js/filters.js"></script>
+</section>
