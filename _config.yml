@@ -4,39 +4,36 @@
 title: Urban Climate Adaptation Tools
 description: Free, open-source tools for building climate-resilient cities
 url: "https://mk-ws-git.github.io/Urban-Climate-Tools"
-baseurl: "/Urban-Climate-Tools"
+baseurl: ""
 
-# Theme
-theme: jekyll-theme-minimal
+# Theme - GitHub Pages uses remote_theme
 remote_theme: pages-themes/minimal@v0.2.0
 
-# Plugins
+# Plugins supported by GitHub Pages
 plugins:
   - jekyll-feed
-  - jekyll-seo-tag
   - jekyll-sitemap
+  - jekyll-seo-tag
 
-# Collections
-collections:
-  tools:
-    output: true
-    permalink: /tool/:title/
-    label: Tools
-  case_studies:
-    output: true
-    permalink: /case-study/:title/
-    label: Case Studies
+# Collections - temporarily disabled for GitHub Pages compatibility
+# collections:
+#   tools:
+#     output: true
+#     permalink: /tool/:title/
+#   case_studies:
+#     output: true
+#     permalink: /case-study/:title/
 
-# Default frontmatter
-defaults:
-  - scope:
-      path: "_tools"
-    values:
-      layout: tool
-  - scope:
-      path: "_case_studies"
-    values:
-      layout: case-study
+# Default frontmatter - temporarily disabled
+# defaults:
+#   - scope:
+#     path: "_tools"
+#   values:
+#     layout: tool
+# - scope:
+#     path: "_case_studies"
+#   values:
+#     layout: case-study
 
 # Defaults
 defaults:
