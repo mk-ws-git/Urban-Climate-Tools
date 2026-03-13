@@ -9,7 +9,7 @@ title: Urban Climate Tools
         <p class="hero-subtitle">Open-source solutions for building climate-resilient cities</p>
         <div class="hero-actions">
             <a href="#tools" class="btn btn-primary btn-lg">Browse Tools</a>
-            <a href="{{ site.baseurl }}/about/" class="btn btn-secondary btn-lg">Learn More</a>
+            <a href="{{ site.baseurl }}/about.html" class="btn btn-secondary btn-lg">Learn More</a>
         </div>
     </div>
     <div class="hero-image">
