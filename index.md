@@ -4,13 +4,12 @@ title: Urban Climate Tools
 ---
 
 <section class="hero hero--banner" style="background-image: url('{{ site.baseurl }}/assets/images/Urban%20Climate%20Tools%20Home%20Banner.svg')">
-    <div class="hero__overlay"></div>
     <div class="hero__container hero__container--centered">
         <div class="hero__content hero__content--centered">
             <h1 class="hero__title hero__title--light">Urban <em>Climate</em> Tools</h1>
             <p class="hero__subtitle hero__subtitle--light">Open-source solutions for building climate-resilient cities</p>
             <div class="hero__actions">
-                <a href="{{ '/tools/' | relative_url }}" class="btn btn--primary">Browse Tools</a>
+                <a href="{{ '/tools/' | relative_url }}" class="btn btn--outline">Browse Tools</a>
                 <a href="{{ '/about/' | relative_url }}" class="btn btn--outline">Learn More</a>
             </div>
         </div>

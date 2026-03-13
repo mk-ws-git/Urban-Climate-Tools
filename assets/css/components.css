@@ -124,24 +124,16 @@ img, svg { display: block; max-width: 100%; }
 /* ── HERO BANNER (full-width image) ── */
 .hero--banner {
   position: relative;
-  /* scale height to match SVG proportions (560/1440) at any viewport width */
-  min-height: max(320px, calc(100vw * 560 / 1440));
+  /* height tracks SVG aspect ratio (560/1440) at any viewport width */
+  min-height: max(240px, calc(100vw * 560 / 1440));
+  background-color: #1D9E75; /* exact match to SVG background — fills strips above/below */
   background-size: 100% auto;
-  background-position: top center;
+  background-position: center center;
   background-repeat: no-repeat;
   display: flex;
   align-items: center;
-  padding: var(--space-8) 0;
-}
-
-/* Button overrides inside the banner for contrast against teal background */
-.hero--banner .btn--primary {
-  background: #fff;
-  color: var(--color-teal-800);
-}
-.hero--banner .btn--primary:hover {
-  background: var(--color-teal-50);
-  color: var(--color-teal-800);
+  padding: var(--space-6) 0 0; /* teal strip above; none below */
+  margin-bottom: 0;
 }
 
 .hero__overlay {
