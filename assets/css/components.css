@@ -121,6 +121,35 @@ img, svg { display: block; max-width: 100%; }
   background: var(--color-bg-primary);
 }
 
+/* ── HERO BANNER (full-width image) ── */
+.hero--banner {
+  position: relative;
+  /* scale height to match SVG proportions (560/1440) at any viewport width */
+  min-height: max(320px, calc(100vw * 560 / 1440));
+  background-size: 100% auto;
+  background-position: top center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  padding: var(--space-8) 0;
+}
+
+/* Button overrides inside the banner for contrast against teal background */
+.hero--banner .btn--primary {
+  background: #fff;
+  color: var(--color-teal-800);
+}
+.hero--banner .btn--primary:hover {
+  background: var(--color-teal-50);
+  color: var(--color-teal-800);
+}
+
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(0,20,50,0.65) 0%, rgba(0,60,80,0.45) 100%);
+}
+
 .hero__container {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -131,10 +160,24 @@ img, svg { display: block; max-width: 100%; }
   padding: 0 var(--space-6);
 }
 
+.hero__container--centered {
+  grid-template-columns: 1fr;
+  justify-items: center;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+
 .hero__content {
   display: flex;
   flex-direction: column;
   gap: var(--space-6);
+}
+
+.hero__content--centered {
+  align-items: center;
+  max-width: 700px;
 }
 
 .hero__title {
@@ -146,9 +189,17 @@ img, svg { display: block; max-width: 100%; }
   margin: 0;
 }
 
+.hero__title--light {
+  color: #fff;
+}
+
 .hero__title em {
   font-style: normal;
   color: var(--color-teal-400);
+}
+
+.hero__title--light em {
+  color: var(--color-teal-300);
 }
 
 .hero__subtitle {
@@ -157,6 +208,11 @@ img, svg { display: block; max-width: 100%; }
   line-height: var(--leading-normal);
   margin: 0;
   max-width: 480px;
+}
+
+.hero__subtitle--light {
+  color: rgba(255,255,255,0.85);
+  max-width: 560px;
 }
 
 .hero__actions {
@@ -176,6 +232,18 @@ img, svg { display: block; max-width: 100%; }
   width: 100%;
   max-width: 400px;
   height: auto;
+}
+
+.btn--outline {
+  background: transparent;
+  color: #fff;
+  border: 1.5px solid rgba(255,255,255,0.7);
+  padding: 9px 20px;
+  border-radius: var(--radius-pill);
+}
+.btn--outline:hover {
+  background: rgba(255,255,255,0.15);
+  color: #fff;
 }
 
 
