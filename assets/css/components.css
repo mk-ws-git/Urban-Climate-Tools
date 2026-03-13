@@ -157,10 +157,10 @@ img, svg { display: block; max-width: 100%; }
   text-align: center;
   padding: var(--space-10) var(--space-12);
   border-radius: var(--radius-xl);
-  background: rgba(255, 255, 255, 0.18);
-  backdrop-filter: blur(24px) saturate(200%);
-  -webkit-backdrop-filter: blur(24px) saturate(200%);
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.32);
+  backdrop-filter: blur(28px) saturate(200%);
+  -webkit-backdrop-filter: blur(28px) saturate(200%);
+  border: 1px solid rgba(255, 255, 255, 0.40);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18), inset 0 1px 0 rgba(255,255,255,0.3);
   display: flex;
   flex-direction: column;
@@ -182,7 +182,7 @@ img, svg { display: block; max-width: 100%; }
 
 .hero__glass-title em {
   font-style: normal;
-  color: #9FE1CB;
+  color: #5DCAA5;
 }
 
 .hero__glass-subtitle {
@@ -930,12 +930,12 @@ img, svg { display: block; max-width: 100%; }
 .case-study-card__link {
   font-size: var(--text-sm);
   font-weight: var(--weight-medium);
-  color: var(--color-teal-600);
+  color: var(--color-teal-200);
   text-decoration: none;
 }
 
 .case-study-card__link:hover {
-  color: var(--color-teal-400);
+  color: var(--color-teal-100);
   text-decoration: none;
 }
 
