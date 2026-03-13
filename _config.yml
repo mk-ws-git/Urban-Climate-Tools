@@ -54,12 +54,18 @@ defaults:
 # Site configuration
 highlighter: rouge
 markdown: kramdown
+sass:
+  style: compressed
 exclude:
   - Gemfile
   - Gemfile.lock
   - README.md
   - node_modules
   - vendor
+
+# Build settings
+incremental: true
+safe: true
 
 # SEO
 twitter_username: "@climatetools"

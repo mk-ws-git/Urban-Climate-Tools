@@ -4,40 +4,44 @@ title: Urban Climate Tools
 ---
 
 <section class="hero">
-    <div class="hero-content">
-        <h1 class="hero-title">Urban Climate Adaptation Tools</h1>
-        <p class="hero-subtitle">Open-source solutions for building climate-resilient cities</p>
-        <div class="hero-actions">
-            <a href="#tools" class="btn btn-primary btn-lg">Browse Tools</a>
-            <a href="{{ site.baseurl }}/about.html" class="btn btn-secondary btn-lg">Learn More</a>
+    <div class="hero__container">
+        <div class="hero__content">
+            <h1 class="hero__title">Urban Climate Adaptation Tools</h1>
+            <p class="hero__subtitle">Open-source solutions for building climate-resilient cities</p>
+            <div class="hero__actions">
+                <a href="#tools" class="btn btn--primary btn--lg">Browse Tools</a>
+                <a href="{{ '/about/' | relative_url }}" class="btn btn--secondary btn--lg">Learn More</a>
+            </div>
         </div>
-    </div>
-    <div class="hero-image">
-        <svg viewBox="0 0 400 300" class="hero-svg">
-            <circle cx="200" cy="150" r="120" fill="#E8F0FF" opacity="0.3"/>
-            <circle cx="150" cy="100" r="40" fill="#00D4FF" opacity="0.4"/>
-            <circle cx="280" cy="180" r="50" fill="#0051BA" opacity="0.3"/>
-            <path d="M 100 250 Q 150 200 200 220 T 300 240" stroke="#0051BA" stroke-width="2" fill="none" opacity="0.5"/>
-        </svg>
+        <div class="hero__media">
+            <svg viewBox="0 0 400 300" class="hero__illustration">
+                <circle cx="200" cy="150" r="120" fill="var(--color-teal-100)" opacity="0.3"/>
+                <circle cx="150" cy="100" r="40" fill="var(--color-teal-300)" opacity="0.4"/>
+                <circle cx="280" cy="180" r="50" fill="var(--color-teal-500)" opacity="0.3"/>
+                <path d="M 100 250 Q 150 200 200 220 T 300 240" stroke="var(--color-teal-600)" stroke-width="2" fill="none" opacity="0.5"/>
+            </svg>
+        </div>
     </div>
 </section>
 
 <section class="stats">
-    <div class="stat-item">
-        <div class="stat-number">{{ site.data.meta.tool_count | default: "25+" }}</div>
-        <div class="stat-label">Tools</div>
-    </div>
-    <div class="stat-item">
-        <div class="stat-number">{{ site.data.meta.case_study_count | default: "8+" }}</div>
-        <div class="stat-label">Case Studies</div>
-    </div>
-    <div class="stat-item">
-        <div class="stat-number">{{ site.data.meta.cities_reached | default: "100+" }}</div>
-        <div class="stat-label">Cities Reached</div>
-    </div>
-    <div class="stat-item">
-        <div class="stat-number">{{ site.data.meta.global_coverage | default: "Global" }}</div>
-        <div class="stat-label">Coverage</div>
+    <div class="stats__container">
+        <div class="stats__item">
+            <div class="stats__number">{{ site.data.meta.tool_count | default: "25+" }}</div>
+            <div class="stats__label">Tools</div>
+        </div>
+        <div class="stats__item">
+            <div class="stats__number">{{ site.data.meta.case_study_count | default: "8+" }}</div>
+            <div class="stats__label">Case Studies</div>
+        </div>
+        <div class="stats__item">
+            <div class="stats__number">{{ site.data.meta.cities_reached | default: "100+" }}</div>
+            <div class="stats__label">Cities Reached</div>
+        </div>
+        <div class="stats__item">
+            <div class="stats__number">{{ site.data.meta.global_coverage | default: "Global" }}</div>
+            <div class="stats__label">Coverage</div>
+        </div>
     </div>
 </section>
 

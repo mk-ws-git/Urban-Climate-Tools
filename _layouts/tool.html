@@ -12,12 +12,15 @@ layout: default
             <h1>{{ page.title }}</h1>
             <p class="developer">{{ page.developer }}</p>
             
-            <div class="badges">
+            <div class="tool__tags">
                 {% for category in page.categories %}
-                    <span class="badge badge-{{ category | downcase }}">{{ category }}</span>
+                    <span class="tag tag--category">{{ category }}</span>
                 {% endfor %}
-                <span class="badge badge-{{ page.access_model | downcase }}">{{ page.access_model }}</span>
-                <span class="badge badge-skill">{{ page.skill_level }}</span>
+                <span class="tag tag--access">{{ page.access_model }}</span>
+                <span class="tag tag--skill">{{ page.skill_level }}</span>
+                {% for tag in page.tags %}
+                    <span class="tag tag--feature">{{ tag }}</span>
+                {% endfor %}
             </div>
         </div>
     </div>

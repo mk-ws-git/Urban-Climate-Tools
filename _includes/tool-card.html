@@ -3,9 +3,9 @@
         <div class="card-icon">
             <img src="{{ tool.icon | relative_url }}" alt="{{ tool.title }}" class="icon-md">
         </div>
-        <div class="card-badges">
+        <div class="tool-card__tags">
             {% for category in tool.categories %}
-                <span class="badge badge-{{ category | downcase }}">{{ category }}</span>
+                <span class="tag tag--category">{{ category }}</span>
             {% endfor %}
         </div>
     </div>
