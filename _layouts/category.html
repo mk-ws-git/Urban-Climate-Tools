@@ -1,0 +1,40 @@
+---
+layout: default
+---
+
+<div class="category-page">
+    <h1>{{ page.category }} Tools</h1>
+    
+    <div class="category-intro">
+        <p>{{ page.description }}</p>
+    </div>
+    
+    <div class="filters">
+        <h3>Filter Tools</h3>
+        <div class="filter-group">
+            <label><input type="checkbox" class="filter-cost" value="free"> Free</label>
+            <label><input type="checkbox" class="filter-cost" value="freemium"> Freemium</label>
+            <label><input type="checkbox" class="filter-cost" value="paid"> Paid</label>
+        </div>
+        
+        <div class="filter-group">
+            <label><input type="checkbox" class="filter-skill" value="beginner"> Beginner</label>
+            <label><input type="checkbox" class="filter-skill" value="intermediate"> Intermediate</label>
+            <label><input type="checkbox" class="filter-skill" value="advanced"> Advanced</label>
+        </div>
+        
+        <div class="filter-group">
+            <label><input type="checkbox" class="filter-coverage" value="global"> Global</label>
+            <label><input type="checkbox" class="filter-coverage" value="us"> US</label>
+            <label><input type="checkbox" class="filter-coverage" value="regional"> Regional</label>
+        </div>
+    </div>
+    
+    <div class="tool-grid">
+        {% for tool in site.tools %}
+            {% if tool.categories contains page.category %}
+                {% include tool-card.html tool=tool %}
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>

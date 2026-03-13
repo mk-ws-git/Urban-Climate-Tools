@@ -1,0 +1,35 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<title>{% if page.title %}{{ page.title }} - {% endif %}Urban Climate Tools</title>
+<meta name="description" content="{{ page.description | default: site.description | strip_html | truncatewords: 30 }}">
+<meta name="keywords" content="climate adaptation, urban resilience, climate tools, cities, sustainability">
+
+<!-- Open Graph -->
+<meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+<meta property="og:description" content="{{ page.description | default: site.description | strip_html | truncatewords: 30 }}">
+<meta property="og:url" content="{{ site.url }}{{ page.url }}">
+<meta property="og:type" content="website">
+<meta property="og:image" content="{{ site.url }}/assets/images/og-image.png">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+<meta name="twitter:description" content="{{ page.description | default: site.description | strip_html | truncatewords: 30 }}">
+
+<!-- Stylesheets -->
+<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css">
+<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/nav.css">
+<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/typography.css">
+<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/cards.css">
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="{{ site.baseurl }}/assets/images/favicon.svg">
+<link rel="icon" type="image/png" href="{{ site.baseurl }}/assets/images/favicon.png">
+
+<!-- Canonical -->
+<link rel="canonical" href="{{ site.url }}{{ page.url }}">
+
+<!-- Analytics (optional) -->
+<!-- Google Analytics or similar would go here -->

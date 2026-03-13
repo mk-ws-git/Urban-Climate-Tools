@@ -1,0 +1,37 @@
+<div class="tool-card" data-cost="{{ tool.access_model }}" data-skill="{{ tool.skill_level }}" data-coverage="{{ tool.geographic_coverage }}">
+    <div class="card-header">
+        <div class="card-icon">
+            <img src="{{ tool.icon | relative_url }}" alt="{{ tool.title }}" class="icon-md">
+        </div>
+        <div class="card-badges">
+            {% for category in tool.categories %}
+                <span class="badge badge-{{ category | downcase }}">{{ category }}</span>
+            {% endfor %}
+        </div>
+    </div>
+    
+    <div class="card-body">
+        <h3><a href="{{ tool.url | relative_url }}">{{ tool.title }}</a></h3>
+        <p class="developer">{{ tool.developer }}</p>
+        <p class="description">{{ tool.description | truncatewords: 20 }}</p>
+        
+        <div class="card-meta">
+            <span class="meta-item">
+                <span class="label">Cost:</span>
+                <span class="value">{{ tool.access_model }}</span>
+            </span>
+            <span class="meta-item">
+                <span class="label">Coverage:</span>
+                <span class="value">{{ tool.geographic_coverage }}</span>
+            </span>
+            <span class="meta-item">
+                <span class="label">Skill:</span>
+                <span class="value">{{ tool.skill_level }}</span>
+            </span>
+        </div>
+    </div>
+    
+    <div class="card-footer">
+        <a href="{{ tool.url | relative_url }}" class="btn btn-sm btn-primary">View Details →</a>
+    </div>
+</div>

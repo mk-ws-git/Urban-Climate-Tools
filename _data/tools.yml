@@ -1,0 +1,247 @@
+# Urban Climate Tools Database
+# This YAML file serves as the data source for the tools catalog
+
+- id: climate-central
+  name: Climate Central
+  developer: Climate Central
+  description: Comprehensive climate risk assessment and visualization tool for local communities
+  categories:
+    - data
+    - planning
+  cost: Free
+  skillLevel: Beginner
+  coverage:
+    - city
+    - national
+    - global
+  url: https://www.climatecentral.org
+  github: https://github.com/climatecentral
+  tags:
+    - climate risk
+    - visualization
+    - sea level rise
+    - extreme weather
+  icon: climate-central
+
+- id: i-tree
+  name: i-Tree Tools
+  developer: USDA Forest Service
+  description: Suite of tools to quantify forest ecosystem services and environmental benefits
+  categories:
+    - green
+    - data
+  cost: Free
+  skillLevel: Intermediate
+  coverage:
+    - local
+    - city
+    - national
+  url: https://www.itreetools.org
+  github: https://github.com/USDA-Forest-Service
+  tags:
+    - trees
+    - carbon
+    - ecosystem services
+    - urban forest
+  icon: i-tree
+
+- id: noaa-slr
+  name: NOAA Sea Level Rise Viewer
+  developer: National Oceanic and Atmospheric Administration
+  description: Interactive viewer showing potential impacts of sea level rise on coastal communities
+  categories:
+    - coastal
+    - data
+  cost: Free
+  skillLevel: Beginner
+  coverage:
+    - national
+    - global
+  url: https://www.vdata.noaa.gov/slr
+  github: https://github.com/NOAA-ORR-ERD
+  tags:
+    - sea level rise
+    - coastal vulnerability
+    - flooding
+    - visualization
+  icon: noaa
+
+- id: green-infrastructure-coalition
+  name: Green Infrastructure Coalition
+  developer: Green Infrastructure Coalition
+  description: Tools and resources for implementing green infrastructure in urban areas
+  categories:
+    - green
+    - planning
+  cost: Free
+  skillLevel: Beginner
+  coverage:
+    - local
+    - city
+  url: https://www.greeninfrastructurecoalition.org
+  tags:
+    - green infrastructure
+    - stormwater
+    - urban planning
+    - permeable pavement
+  icon: green-infra
+
+- id: city-energy-dashboard
+  name: City Energy Project Dashboard
+  developer: NRDC
+  description: Track and benchmark municipal energy consumption and carbon emissions
+  categories:
+    - energy
+    - data
+  cost: Free
+  skillLevel: Beginner
+  coverage:
+    - city
+    - national
+  url: https://www.nrdc.org/citiesprogram
+  tags:
+    - energy tracking
+    - emissions
+    - benchmarking
+    - municipal data
+  icon: energy
+
+- id: arcgis-urban
+  name: ArcGIS Urban
+  developer: Esri
+  description: Web-based urban planning platform with GIS integration
+  categories:
+    - planning
+    - data
+  cost: Paid
+  skillLevel: Advanced
+  coverage:
+    - local
+    - city
+  url: https://www.esri.com/en-us/arcgis/products/arcgis-urban
+  tags:
+    - urban planning
+    - GIS
+    - spatial analysis
+    - 3D visualization
+  icon: esri
+
+- id: cool-roofs-calculator
+  name: Cool Roofs Calculator
+  developer: Lawrence Berkeley National Laboratory
+  description: Calculate cool roof benefits for energy savings and urban heat reduction
+  categories:
+    - heat
+    - energy
+  cost: Free
+  skillLevel: Beginner
+  coverage:
+    - local
+    - city
+    - national
+  url: https://coolroofs.lbl.gov
+  tags:
+    - urban heat
+    - cool roofs
+    - energy savings
+    - albedo
+  icon: heat
+
+- id: leed-rating-system
+  name: LEED Rating System
+  developer: U.S. Green Building Council
+  description: Building certification program for sustainable and resilient design
+  categories:
+    - planning
+    - energy
+  cost: Paid
+  skillLevel: Advanced
+  coverage:
+    - global
+  url: https://new.usgbc.org/leed
+  tags:
+    - green building
+    - certification
+    - sustainability
+    - building design
+  icon: leed
+
+- id: forest-carbon-calculator
+  name: Forest Carbon Calculator
+  developer: The Nature Conservancy
+  description: Estimate carbon sequestration and storage in forest projects
+  categories:
+    - green
+    - data
+  cost: Free
+  skillLevel: Intermediate
+  coverage:
+    - local
+    - national
+    - global
+  url: https://www.nature.org
+  tags:
+    - forest carbon
+    - carbon offset
+    - ecosystem services
+    - climate mitigation
+  icon: nature
+
+- id: climate-resilience-toolkit
+  name: Climate Resilience Toolkit
+  developer: Georgetown Climate Center
+  description: Resources and planning tools for building community climate resilience
+  categories:
+    - planning
+  cost: Free
+  skillLevel: Beginner
+  coverage:
+    - city
+    - national
+  url: https://climateresiliencetoolkit.org
+  tags:
+    - resilience planning
+    - adaptation
+    - community engagement
+    - policy
+  icon: resilience
+
+- id: land-use-simulation
+  name: Land Use Simulation Tool
+  developer: University Research Team
+  description: Model future land use scenarios and their environmental impacts
+  categories:
+    - planning
+    - data
+  cost: Free
+  skillLevel: Advanced
+  coverage:
+    - local
+    - regional
+  url: https://example.com/lust
+  tags:
+    - land use modeling
+    - scenario planning
+    - spatial analysis
+  icon: planning
+
+- id: stormwater-calculator
+  name: Stormwater Calculator
+  developer: EPA
+  description: Estimate stormwater runoff reduction from green infrastructure practices
+  categories:
+    - flood
+    - green
+  cost: Free
+  skillLevel: Intermediate
+  coverage:
+    - local
+    - city
+    - national
+  url: https://www.epa.gov/water-research/stormwater-calculator
+  tags:
+    - stormwater management
+    - green infrastructure
+    - flood risk
+    - water quality
+  icon: flood

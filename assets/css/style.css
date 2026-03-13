@@ -1,0 +1,180 @@
+/* Urban Climate Tools - Main Stylesheet */
+
+:root {
+    --primary-blue: #0051BA;
+    --secondary-blue: #F0F4FF;
+    --cyan-accent: #00D4FF;
+    --dark-gray: #1A1A1A;
+    --light-gray: #F5F5F5;
+    --border-gray: #E0E0E0;
+    --green-success: #00B341;
+    --orange-warning: #FF6B35;
+    
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    
+    --shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
+    --shadow-lg: 0 8px 24px rgba(0,0,0,0.12);
+    
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+    --spacing-2xl: 48px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    color: var(--dark-gray);
+    background: white;
+    line-height: 1.6;
+}
+
+/* Layout */
+main.content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--spacing-xl);
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.btn-primary {
+    background: var(--primary-blue);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #003d8a;
+    box-shadow: var(--shadow-md);
+}
+
+.btn-secondary {
+    background: var(--secondary-blue);
+    color: var(--primary-blue);
+    border: 1px solid var(--primary-blue);
+}
+
+.btn-secondary:hover {
+    background: var(--primary-blue);
+    color: white;
+}
+
+.btn-sm {
+    padding: 8px 16px;
+    font-size: 13px;
+}
+
+/* Badges */
+.badge {
+    display: inline-block;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--radius-sm);
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.badge-heat {
+    background: #FFE5CC;
+    color: #CC5500;
+}
+
+.badge-flood {
+    background: #CCE5FF;
+    color: #0055CC;
+}
+
+.badge-coastal {
+    background: #CCF0FF;
+    color: #0088CC;
+}
+
+.badge-greeninfra {
+    background: #E5F5CC;
+    color: #55AA00;
+}
+
+.badge-planning {
+    background: #F0E5FF;
+    color: #8800CC;
+}
+
+.badge-dataplat {
+    background: #FFE5F0;
+    color: #CC0055;
+}
+
+.badge-energy {
+    background: #FFE5CC;
+    color: #CC4400;
+}
+
+.badge-free {
+    background: #E5F5CC;
+    color: var(--green-success);
+}
+
+.badge-freemium {
+    background: #FFF0CC;
+    color: #CC8800;
+}
+
+.badge-paid {
+    background: #FFE5E5;
+    color: #CC0000;
+}
+
+.badge-skill {
+    background: var(--secondary-blue);
+    color: var(--primary-blue);
+}
+
+/* Links */
+a {
+    color: var(--primary-blue);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    main.content {
+        padding: var(--spacing-lg);
+    }
+    
+    .btn {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+}
