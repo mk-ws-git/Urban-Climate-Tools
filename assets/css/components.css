@@ -262,8 +262,8 @@ img, svg { display: block; max-width: 100%; }
 }
 
 .hero__glass-title {
-  font-size: clamp(var(--text-2xl), 3.5vw, 48px);
-  font-weight: var(--weight-medium);
+  font-size: clamp(var(--text-3xl), 5vw, 64px);
+  font-weight: 700;
   line-height: var(--leading-tight);
   letter-spacing: var(--tracking-tight);
   color: #fff;
@@ -272,11 +272,12 @@ img, svg { display: block; max-width: 100%; }
 
 .hero__glass-title em {
   font-style: normal;
-  color: var(--color-teal-900);
+  color: var(--color-teal-400);
 }
 
 .hero__glass-subtitle {
-  font-size: var(--text-base);
+  font-family: var(--font-mono);
+  font-size: var(--text-lg);
   color: rgba(255, 255, 255, 0.88);
   line-height: var(--leading-normal);
   margin: 0;
@@ -294,7 +295,7 @@ img, svg { display: block; max-width: 100%; }
   background: rgba(255, 255, 255, 0.18);
   color: #fff;
   border: 1px solid rgba(255, 255, 255, 0.4);
-  padding: 10px 24px;
+  padding: 12px 24px;
   border-radius: var(--radius-pill);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
