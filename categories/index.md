@@ -1,9 +1,7 @@
 ---
 layout: default
-title: Browse by Category
 ---
 
-<section class="section">
     <div class="container">
         <div class="section__header">
             <h1 class="section__title">Browse Tools by Category</h1>
@@ -12,21 +10,11 @@ title: Browse by Category
 
         <div class="category-grid">
             <a href="{{ '/categories/heat/' | relative_url }}" class="category-card">
-                <div class="category-card__icon">
-                    <svg viewBox="0 0 100 100">
-                        <rect x="30" y="20" width="40" height="60" fill="none" stroke="var(--color-teal-400)" stroke-width="2"/>
-                        <line x1="40" y1="30" x2="40" y2="75" stroke="var(--color-teal-400)" stroke-width="1.5" opacity="0.5"/>
-                        <line x1="50" y1="25" x2="50" y2="75" stroke="var(--color-teal-400)" stroke-width="2"/>
-                        <line x1="60" y1="30" x2="60" y2="75" stroke="var(--color-teal-400)" stroke-width="1.5" opacity="0.5"/>
-                    </svg>
-                </div>
-                <h3 class="category-card__title">Heat Management</h3>
-                <p class="category-card__description">Urban heat island mitigation and heat wave planning</p>
-            </a>
-
-            <a href="{{ '/categories/flood/' | relative_url }}" class="category-card">
-                <div class="category-card__icon">
-                    <svg viewBox="0 0 100 100">
+<meta http-equiv="refresh" content="0; url={{ site.baseurl }}/tools.html" />
+<div class="redirect-message">
+    <h1>Redirecting to Tools...</h1>
+    <p>If you are not redirected, <a href="{{ site.baseurl }}/tools.html">click here to view all tools</a>.</p>
+</div>
                         <path d="M 20 70 Q 30 50 40 60 T 60 55 T 80 70" fill="var(--color-teal-400)" opacity="0.4"/>
                         <path d="M 15 80 Q 25 60 35 75 T 55 70 T 85 80" fill="var(--color-teal-400)" opacity="0.6"/>
                     </svg>
