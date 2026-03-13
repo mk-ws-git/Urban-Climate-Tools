@@ -72,6 +72,10 @@ img, svg { display: block; max-width: 100%; }
   text-decoration: none;
 }
 
+.nav__brand-link:hover {
+  text-decoration: none;
+}
+
 .nav__logo {
   width: 32px;
   height: 32px;
@@ -79,7 +83,7 @@ img, svg { display: block; max-width: 100%; }
 }
 
 .nav__title {
-  font-size: var(--text-base);
+  font-size: var(--text-xl);
   font-weight: var(--weight-medium);
   color: var(--color-text-primary);
   letter-spacing: var(--tracking-tight);
