@@ -257,8 +257,8 @@ img, svg { display: block; max-width: 100%; }
   align-items: center;
   gap: var(--space-5);
   min-width: 360px;
-  max-width: 600px;
-  width: 42%;
+  max-width: 780px;
+  width: clamp(360px, 60%, 780px);
 }
 
 .hero__glass-title {
@@ -272,7 +272,7 @@ img, svg { display: block; max-width: 100%; }
 
 .hero__glass-title em {
   font-style: normal;
-  color: var(--color-teal-400);
+  color: #fff;
 }
 
 .hero__glass-subtitle {
