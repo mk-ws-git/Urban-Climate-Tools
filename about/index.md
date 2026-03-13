@@ -37,6 +37,8 @@ title: About
                 </svg>
                 <h3 class="about-card__title">Real-World Case Studies</h3>
                 <p class="about-card__body">In-depth examples of cities implementing climate tools — what worked, what didn't, and what outcomes were achieved.</p>
+            </div>
+        </div>
 
         <div class="about-section">
             <h2 class="about-section__heading">Our Mission</h2>
