@@ -3,23 +3,16 @@ layout: default
 title: Urban Climate Tools
 ---
 
-<section class="hero">
-    <div class="hero__container">
-        <div class="hero__content">
-            <h1 class="hero__title">Urban <em>Climate</em> Tools</h1>
-            <p class="hero__subtitle">Open-source solutions for building climate-resilient cities</p>
+<section class="hero hero--banner" style="background-image: url('{{ site.baseurl }}/assets/images/Urban%20Climate%20Tools%20Home%20Banner.svg')">
+    <div class="hero__overlay"></div>
+    <div class="hero__container hero__container--centered">
+        <div class="hero__content hero__content--centered">
+            <h1 class="hero__title hero__title--light">Urban <em>Climate</em> Tools</h1>
+            <p class="hero__subtitle hero__subtitle--light">Open-source solutions for building climate-resilient cities</p>
             <div class="hero__actions">
-                <a href="#tools" class="btn btn--primary">Browse Tools</a>
-                <a href="{{ '/about/' | relative_url }}" class="btn btn--secondary">Learn More</a>
+                <a href="{{ '/tools/' | relative_url }}" class="btn btn--primary">Browse Tools</a>
+                <a href="{{ '/about/' | relative_url }}" class="btn btn--outline">Learn More</a>
             </div>
-        </div>
-        <div class="hero__media">
-            <svg viewBox="0 0 400 300" class="hero__illustration">
-                <circle cx="200" cy="150" r="120" fill="var(--color-teal-100)" opacity="0.3"/>
-                <circle cx="150" cy="100" r="40" fill="var(--color-teal-300)" opacity="0.4"/>
-                <circle cx="280" cy="180" r="50" fill="var(--color-teal-500)" opacity="0.3"/>
-                <path d="M 100 250 Q 150 200 200 220 T 300 240" stroke="var(--color-teal-600)" stroke-width="2" fill="none" opacity="0.5"/>
-            </svg>
         </div>
     </div>
 </section>
