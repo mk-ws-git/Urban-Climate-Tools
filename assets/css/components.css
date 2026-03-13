@@ -502,14 +502,33 @@ img, svg { display: block; max-width: 100%; }
   padding: var(--space-12) 0 var(--space-8);
 }
 
-.footer__grid {
+.footer__container {
+  max-width: var(--container-xl);
+  margin: 0 auto;
+  padding: 0 var(--space-6);
   display: grid;
   grid-template-columns: 2fr 1fr 1fr 1fr;
   gap: var(--space-8);
   margin-bottom: var(--space-8);
 }
 
-.footer__brand-desc {
+.footer__section {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer__brand {
+  margin-bottom: var(--space-4);
+}
+
+.footer__title {
+  font-size: var(--text-lg);
+  font-weight: var(--weight-medium);
+  color: var(--color-teal-50);
+  margin-bottom: var(--space-2);
+}
+
+.footer__description {
   font-size: var(--text-sm);
   color: var(--color-teal-200);
   line-height: var(--leading-loose);
@@ -525,7 +544,12 @@ img, svg { display: block; max-width: 100%; }
   margin-bottom: var(--space-4);
 }
 
-.footer__links { list-style: none; display: flex; flex-direction: column; gap: var(--space-2); }
+.footer__links { 
+  list-style: none; 
+  display: flex; 
+  flex-direction: column; 
+  gap: var(--space-2); 
+}
 
 .footer__link {
   font-size: var(--text-sm);
@@ -536,16 +560,25 @@ img, svg { display: block; max-width: 100%; }
 .footer__link:hover { color: var(--color-teal-50); }
 
 .footer__bottom {
+  max-width: var(--container-xl);
+  margin: 0 auto;
+  padding: var(--space-6) var(--space-6) 0;
+  border-top: 0.5px solid var(--color-teal-800);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: var(--space-6);
-  border-top: 0.5px solid var(--color-teal-800);
 }
 
-.footer__copy {
+.footer__copyright {
   font-size: var(--text-xs);
   color: var(--color-teal-300);
+}
+
+.footer__logo {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  margin-bottom: var(--space-3);
 }
 
 
@@ -750,7 +783,7 @@ img, svg { display: block; max-width: 100%; }
   .hero__actions { flex-direction: column; align-items: stretch; }
   .hero__stats { justify-content: center; }
   .cta-banner { flex-direction: column; text-align: center; }
-  .footer__grid { grid-template-columns: 1fr; gap: var(--space-6); }
+  .footer__container { grid-template-columns: 1fr; gap: var(--space-6); }
 }
 
 @media (max-width: 480px) {
