@@ -52,7 +52,7 @@ img, svg { display: block; max-width: 100%; }
 
 .section__description {
   font-size: var(--text-lg);
-  color: var(--color-text-secondary);
+  color: var(--color-text-primary);
   line-height: var(--leading-normal);
   max-width: 680px;
   margin: 0;
@@ -65,7 +65,7 @@ img, svg { display: block; max-width: 100%; }
 
 .about-lead {
   font-size: var(--text-xl);
-  color: var(--color-text-secondary);
+  color: var(--color-text-primary);
   line-height: var(--leading-loose);
   max-width: 760px;
   margin: 0 0 var(--space-12);
@@ -1108,7 +1108,7 @@ img, svg { display: block; max-width: 100%; }
 
 .case-studies__subtitle {
   font-size: var(--text-lg);
-  color: var(--color-text-secondary);
+  color: var(--color-text-primary);
   max-width: 600px;
   margin: 0 auto;
 }
