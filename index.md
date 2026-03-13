@@ -133,7 +133,7 @@ title: Urban Climate Tools
                     <h3><a href="{{ case_study.url | relative_url }}">{{ case_study.title }}</a></h3>
                     <p class="case-study-card__location">{{ case_study.city }}, {{ case_study.country }}</p>
                     <p class="case-study-card__description">{{ case_study.description | truncatewords: 20 }}</p>
-                    <a href="{{ case_study.url | relative_url }}" class="btn btn--secondary">Read Case Study →</a>
+                    <a href="{{ case_study.url | relative_url }}" class="case-study-card__link">Read Case Study →</a>
                 </div>
             </div>
             {% endfor %}

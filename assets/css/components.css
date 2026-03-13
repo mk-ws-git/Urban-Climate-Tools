@@ -821,6 +821,7 @@ img, svg { display: block; max-width: 100%; }
   border-color: var(--color-teal-200);
   box-shadow: var(--shadow-sm);
   transform: translateY(-2px);
+  text-decoration: none;
 }
 
 .category-card__icon {
@@ -923,7 +924,19 @@ img, svg { display: block; max-width: 100%; }
   font-size: var(--text-sm);
   color: var(--color-text-secondary);
   line-height: var(--leading-normal);
-  margin-bottom: var(--space-4);
+  margin-bottom: var(--space-3);
+}
+
+.case-study-card__link {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  color: var(--color-teal-600);
+  text-decoration: none;
+}
+
+.case-study-card__link:hover {
+  color: var(--color-teal-400);
+  text-decoration: none;
 }
 
 .case-studies__footer {
