@@ -73,13 +73,13 @@ img, svg { display: block; max-width: 100%; }
 }
 
 .nav__logo {
-  width: 24px;
-  height: 24px;
+  width: 32px;
+  height: 32px;
   flex-shrink: 0;
 }
 
 .nav__title {
-  font-size: var(--text-sm);
+  font-size: var(--text-base);
   font-weight: var(--weight-medium);
   color: var(--color-text-primary);
   letter-spacing: var(--tracking-tight);
@@ -700,9 +700,9 @@ img, svg { display: block; max-width: 100%; }
 }
 
 .categories__title {
-  font-size: var(--text-2xl);
+  font-size: var(--text-3xl);
   font-weight: var(--weight-medium);
-  color: var(--color-text-primary);
+  color: var(--color-teal-800);
   margin-bottom: var(--space-4);
 }
 
