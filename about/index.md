@@ -1,300 +1,94 @@
 ---
 layout: default
-title: About Urban Climate Tools
+title: About
 ---
 
-<section class="section">
+<section class="about-page">
     <div class="container">
+
         <div class="section__header">
             <h1 class="section__title">About Urban Climate Tools</h1>
         </div>
 
-        <div class="content">
-            <section class="content__section">
-                <p class="content__lead">Urban Climate Tools is a comprehensive, open-source database of solutions for building climate-resilient cities. We connect municipal leaders, planners, and communities with evidence-based tools for adaptation and mitigation.</p>
-            </section>
+        <p class="about-lead">Urban Climate Tools is an open-source platform connecting city leaders, planners, researchers, and communities with the tools they need to build climate-resilient cities. We curate evidence-based solutions across heat, flooding, coastal risk, green infrastructure, and more — freely accessible to anyone working toward a more sustainable urban future.</p>
 
-            <section class="content__section">
-                <h2 class="content__heading">Our Mission</h2>
-                <p>To make climate adaptation accessible and actionable by curating and showcasing the world's best tools for building resilient urban communities.</p>
-                <p>We believe that cities need practical, proven solutions to address the growing impacts of climate change. By bringing together tools for heat adaptation, flood resilience, coastal protection, green infrastructure, and more, we help cities make informed decisions about their climate future.</p>
-            </section>
+        <div class="about-grid">
+            <div class="about-card">
+                <svg class="about-card__icon" viewBox="0 0 36 36" fill="none">
+                    <rect x="4" y="8" width="28" height="20" rx="3" stroke="currentColor" stroke-width="1.5"/>
+                    <line x1="4" y1="14" x2="32" y2="14" stroke="currentColor" stroke-width="1.5"/>
+                    <line x1="11" y1="21" x2="25" y2="21" stroke="currentColor" stroke-width="1.5"/>
+                </svg>
+                <h3 class="about-card__title">Curated Tool Catalog</h3>
+                <p class="about-card__body">Hand-selected tools from leading organisations, filterable by cost, skill level, category, and geographic scope.</p>
+            </div>
+            <div class="about-card">
+                <svg class="about-card__icon" viewBox="0 0 36 36" fill="none">
+                    <circle cx="16" cy="16" r="10" stroke="currentColor" stroke-width="1.5"/>
+                    <line x1="23.5" y1="23.5" x2="31" y2="31" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+                <h3 class="about-card__title">Searchable Database</h3>
+                <p class="about-card__body">Find the right tool for your city with full-text search and advanced filters across the entire catalog.</p>
+            </div>
+            <div class="about-card">
+                <svg class="about-card__icon" viewBox="0 0 36 36" fill="none">
+                    <path d="M6 28 L14 18 L20 23 L28 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="28" cy="10" r="2" fill="currentColor"/>
+                </svg>
+                <h3 class="about-card__title">Real-World Case Studies</h3>
+                <p class="about-card__body">In-depth examples of cities implementing climate tools — what worked, what didn't, and what outcomes were achieved.</p>
 
-            <section class="content__section">
-                <h2 class="content__heading">What We Offer</h2>
-                <div class="feature-grid">
-                    <div class="feature-card">
-                        <h3 class="feature-card__title">Curated Catalog</h3>
-                        <p class="feature-card__description">Hand-selected tools from leading organizations, filtered by cost, skill level, and geographic scope.</p>
+        <div class="about-section">
+            <h2 class="about-section__heading">Our Mission</h2>
+            <p class="about-section__body">Climate change poses an existential challenge to cities worldwide. Rising temperatures, more frequent flooding, coastal erosion, and worsening air quality are reshaping urban life. Yet the tools to confront these challenges already exist.</p>
+            <p class="about-section__body">Our mission is to make climate adaptation accessible and actionable by connecting people with the world's best open-source and evidence-based tools. We believe that the right tool, in the right hands, at the right moment can meaningfully change outcomes for communities and ecosystems alike.</p>
+        </div>
+
+        <div class="about-section">
+            <h2 class="about-section__heading">How to Use This Site</h2>
+            <div class="about-steps">
+                <div class="about-step">
+                    <div class="about-step__num">1</div>
+                    <div>
+                        <p class="about-step__title">Browse or Search</p>
+                        <p class="about-step__body">Use the search bar or filter by category, cost, skill level, or geographic coverage to find tools relevant to your context.</p>
                     </div>
-                    <div class="feature-card">
-                        <h3 class="feature-card__title">Searchable Database</h3>
-                        <p class="feature-card__description">Find the right tool for your city with advanced filtering and full-text search across our catalog.</p>
+                </div>
+                <div class="about-step">
+                    <div class="about-step__num">2</div>
+                    <div>
+                        <p class="about-step__title">Read Tool Pages</p>
+                        <p class="about-step__body">Each tool page includes a description, key features, use cases, pricing information, and links to documentation.</p>
                     </div>
-                <div class="offering-card">
-                    <h3>Case Studies</h3>
-                    <p>Learn from real-world implementations in cities around the world adapting to climate impacts.</p>
                 </div>
-                <div class="offering-card">
-                    <h3>Open Source</h3>
-                    <p>All content is freely available and contributions are welcome from the global community.</p>
+                <div class="about-step">
+                    <div class="about-step__num">3</div>
+                    <div>
+                        <p class="about-step__title">Explore Case Studies</p>
+                        <p class="about-step__body">See how cities around the world have implemented these tools, and learn from their experience.</p>
+                    </div>
                 </div>
-            </div>
-        </section>
-        
-        <section class="about-section">
-            <h2>Categories</h2>
-            <div class="categories-list">
-                <div class="category-item">
-                    <h4>Heat Management</h4>
-                    <p>Urban heat island mitigation, cool roofs, green spaces, and heat warning systems.</p>
-                </div>
-                <div class="category-item">
-                    <h4>Flood Risk</h4>
-                    <p>Stormwater management, permeable surfaces, green infrastructure for flood resilience.</p>
-                </div>
-                <div class="category-item">
-                    <h4>Coastal Resilience</h4>
-                    <p>Sea level rise adaptation, coastal protection, and community planning tools.</p>
-                </div>
-                <div class="category-item">
-                    <h4>Green Infrastructure</h4>
-                    <p>Nature-based solutions, urban forestry, biodiversity, and ecosystem services.</p>
-                </div>
-                <div class="category-item">
-                    <h4>Urban Planning</h4>
-                    <p>Resilience planning, land use tools, and sustainable development frameworks.</p>
-                </div>
-                <div class="category-item">
-                    <h4>Data & Analytics</h4>
-                    <p>Climate data platforms, modeling tools, and visualization dashboards.</p>
-                </div>
-                <div class="category-item">
-                    <h4>Energy Efficiency</h4>
-                    <p>Energy modeling, consumption tracking, and emissions monitoring.</p>
-                </div>
-                <div class="category-item">
-                    <h4>Other Tools</h4>
-                    <p>Additional resources and utilities for climate adaptation and sustainability.</p>
+                <div class="about-step">
+                    <div class="about-step__num">4</div>
+                    <div>
+                        <p class="about-step__title">Share and Contribute</p>
+                        <p class="about-step__body">Know a tool that belongs here? Suggest it on GitHub or get in touch directly.</p>
+                    </div>
                 </div>
             </div>
-        </section>
-        
-        <section class="about-section">
-            <h2>How to Use This Site</h2>
-            <ol class="steps-list">
-                <li>
-                    <h4>Browse or Search</h4>
-                    <p>Use our search bar or filter by category, cost, skill level, and geographic coverage.</p>
-                </li>
-                <li>
-                    <h4>Read Descriptions</h4>
-                    <p>Each tool page includes detailed descriptions, features, and use cases.</p>
-                </li>
-                <li>
-                    <h4>Check Resources</h4>
-                    <p>Find links to documentation, GitHub repositories, and support information.</p>
-                </li>
-                <li>
-                    <h4>Learn from Case Studies</h4>
-                    <p>Explore real-world implementations in cities addressing climate challenges.</p>
-                </li>
-                <li>
-                    <h4>Share and Contribute</h4>
-                    <p>Share tools with your network and contribute new tools or case studies.</p>
-                </li>
-            </ol>
-        </section>
-        
-        <section class="about-section">
-            <h2>Contributing</h2>
-            <p>We welcome contributions from the community! You can:</p>
-            <ul>
-                <li>Suggest new tools to add to the database</li>
-                <li>Share case studies from your city or organization</li>
-                <li>Improve documentation and descriptions</li>
-                <li>Report issues or broken links</li>
-                <li>Contribute code improvements to the site</li>
-            </ul>
-            <p><a href="https://github.com/mk-ws-git/Urban-Climate-Tools" class="btn btn-primary">Contribute on GitHub</a></p>
-        </section>
-        
-        <section class="about-section">
-            <h2>About the Project</h2>
-            <p>Urban Climate Tools is an open-source project created by the Urban Climate Adaptation Network. We maintain and curate this database in collaboration with:</p>
-            <ul>
-                <li>Municipal leaders and urban planners</li>
-                <li>Climate science researchers</li>
-                <li>Environmental organizations</li>
-                <li>Technology developers</li>
-                <li>Community organizations</li>
-            </ul>
-        </section>
-        
-        <section class="about-section faq">
-            <h2>Frequently Asked Questions</h2>
-            
-            <div class="faq-item">
-                <h4>How often is the database updated?</h4>
-                <p>We update the database regularly as new tools are developed and existing tools evolve. Major updates occur quarterly with continuous community contributions.</p>
-            </div>
-            
-            <div class="faq-item">
-                <h4>Can I suggest a tool?</h4>
-                <p>Absolutely! Please submit a GitHub issue or pull request with information about the tool you'd like to add.</p>
-            </div>
-            
-            <div class="faq-item">
-                <h4>Are all tools free?</h4>
-                <p>No, we include tools across the pricing spectrum. Filter by "Free" or "Freemium" to see low-cost options. We believe in showcasing the full range of available solutions.</p>
-            </div>
-            
-            <div class="faq-item">
-                <h4>What if I find a broken link or outdated information?</h4>
-                <p>Please report it via GitHub Issues so we can update it. We appreciate community help in keeping the database current.</p>
-            </div>
-            
-            <div class="faq-item">
-                <h4>Can I use this data for my project?</h4>
-                <p>Yes! All content is available under an open license. Please attribute Urban Climate Tools and link back to the original source.</p>
-            </div>
-            
-            <div class="faq-item">
-                <h4>How can my organization get involved?</h4>
-                <p>We welcome partnerships and collaborations. Contact us at info@urbanclimate.tools to discuss opportunities.</p>
-            </div>
-        </section>
-        
-        <section class="about-section contact">
-            <h2>Get in Touch</h2>
-            <p>Have questions or feedback? We'd love to hear from you!</p>
-            <div class="contact-info">
-                <div class="contact-item">
-                    <strong>Email:</strong><br>
-                    <a href="mailto:info@urbanclimate.tools">info@urbanclimate.tools</a>
-                </div>
-                <div class="contact-item">
-                    <strong>GitHub:</strong><br>
-                    <a href="https://github.com/mk-ws-git/Urban-Climate-Tools">Urban Climate Tools Repository</a>
-                </div>
-                <div class="contact-item">
-                    <strong>Issues & Feedback:</strong><br>
-                    <a href="https://github.com/mk-ws-git/Urban-Climate-Tools/issues">GitHub Issues</a>
-                </div>
-            </div>
-        </section>
+        </div>
+
+        <div class="about-section">
+            <h2 class="about-section__heading">Contributing</h2>
+            <p class="about-section__body">Urban Climate Tools is open-source and community-driven. There are many ways to get involved: suggest a new tool, share a case study, improve existing descriptions, report broken links, or contribute code. Every contribution helps make this resource more useful for everyone working on the climate challenge.</p>
+            <a href="https://github.com/mk-ws-git/Urban-Climate-Tools" class="about-cta">View on GitHub</a>
+        </div>
+
+        <div class="about-section">
+            <h2 class="about-section__heading">Get in Touch</h2>
+            <p class="about-section__body">Have a question, spotted something out of date, or want to collaborate? We'd love to hear from you.</p>
+            <a href="mailto:urbanclimatetools@gmail.com" class="about-cta">urbanclimatetools@gmail.com</a>
+        </div>
+
     </div>
-</div>
-
-<style>
-    .about-page {
-        padding: var(--spacing-2xl) 0;
-    }
-    
-    .about-page h1 {
-        margin-bottom: var(--spacing-xl);
-    }
-    
-    .about-intro {
-        background: var(--secondary-blue);
-        padding: var(--spacing-2xl);
-        border-radius: var(--radius-md);
-        margin-bottom: var(--spacing-3xl);
-    }
-    
-    .about-section {
-        margin-bottom: var(--spacing-3xl);
-    }
-    
-    .about-section h2 {
-        margin-bottom: var(--spacing-lg);
-    }
-    
-    .about-section p {
-        margin-bottom: var(--spacing-md);
-    }
-    
-    .offerings-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: var(--spacing-lg);
-        margin: var(--spacing-lg) 0;
-    }
-    
-    .offering-card {
-        padding: var(--spacing-lg);
-        background: var(--light-gray);
-        border-radius: var(--radius-md);
-        border-left: 4px solid var(--primary-blue);
-    }
-    
-    .offering-card h3 {
-        margin-top: 0;
-        color: var(--primary-blue);
-    }
-    
-    .categories-list {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: var(--spacing-lg);
-    }
-    
-    .category-item {
-        padding: var(--spacing-lg);
-        background: var(--light-gray);
-        border-radius: var(--radius-md);
-    }
-    
-    .category-item h4 {
-        margin-top: 0;
-        color: var(--primary-blue);
-    }
-    
-    .steps-list {
-        padding-left: var(--spacing-xl);
-    }
-    
-    .steps-list li {
-        margin-bottom: var(--spacing-lg);
-    }
-    
-    .steps-list h4 {
-        margin-bottom: var(--spacing-sm);
-    }
-    
-    .faq-item {
-        padding: var(--spacing-lg) 0;
-        border-bottom: 1px solid var(--border-gray);
-    }
-    
-    .faq-item h4 {
-        color: var(--primary-blue);
-        margin-bottom: var(--spacing-sm);
-    }
-    
-    .contact-info {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: var(--spacing-lg);
-        margin-top: var(--spacing-lg);
-    }
-    
-    .contact-item {
-        padding: var(--spacing-lg);
-        background: var(--light-gray);
-        border-radius: var(--radius-md);
-    }
-    
-    .contact-item a {
-        display: block;
-        margin-top: var(--spacing-sm);
-    }
-    
-    @media (max-width: 768px) {
-        .offerings-grid,
-        .categories-list,
-        .contact-info {
-            grid-template-columns: 1fr;
-        }
-    }
-</style>
+</section>
