@@ -3,20 +3,24 @@ layout: default
 title: All Tools
 ---
 
-<div class="tools-page">
+<section class="section">
     <div class="container">
-        <h1>Urban Climate Tools</h1>
-        <p class="lead">Browse our comprehensive collection of open-source tools for building climate-resilient cities.</p>
-        
-        <div class="tools-header">
-            <div class="search-container">
-                <svg class="search-icon" viewBox="0 0 20 20" width="20" height="20">
-                    <circle cx="8" cy="8" r="6" fill="none" stroke="currentColor" stroke-width="1.5"/>
-                    <line x1="12.5" y1="12.5" x2="17.5" y2="17.5" stroke="currentColor" stroke-width="1.5"/>
-                </svg>
-                <input type="text" class="tool-search" placeholder="Search by name, category, or developer..." autofocus>
+        <div class="section__header">
+            <h1 class="section__title">Urban Climate Tools</h1>
+            <p class="section__description">Browse our comprehensive collection of open-source tools for building climate-resilient cities.</p>
+        </div>
+
+        <div class="tools__header">
+            <div class="search">
+                <div class="search__container">
+                    <svg class="search__icon" viewBox="0 0 20 20" width="20" height="20">
+                        <circle cx="8" cy="8" r="6" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                        <line x1="12.5" y1="12.5" x2="17.5" y2="17.5" stroke="currentColor" stroke-width="1.5"/>
+                    </svg>
+                    <input type="text" class="search__input" placeholder="Search by name, category, or developer..." autofocus>
+                </div>
             </div>
-            <button class="filter-toggle" data-toggle="filters">
+            <button class="btn btn--secondary filter-toggle" data-toggle="filters">
                 <svg viewBox="0 0 20 20" width="16" height="16">
                     <line x1="2" y1="4" x2="18" y2="4" stroke="currentColor" stroke-width="1.5"/>
                     <line x1="4" y1="10" x2="16" y2="10" stroke="currentColor" stroke-width="1.5"/>
@@ -24,29 +28,29 @@ title: All Tools
                 </svg>
                 Filters
             </button>
-            <div class="results-info">
+            <div class="tools__results">
                 Results: <strong data-results-count>{{ site.data.tools | size }}</strong>
             </div>
         </div>
-        
-        <div class="tools-container">
+
+        <div class="tools__container">
             <aside class="filter-panel">
-                <div class="filter-header">
-                    <h3>Filters</h3>
-                    <button data-action="reset-filters" class="btn-reset">Reset</button>
+                <div class="filter-panel__header">
+                    <h3 class="filter-panel__title">Filters</h3>
+                    <button data-action="reset-filters" class="btn btn--ghost">Reset</button>
                 </div>
-                
+
                 <form class="filter-form">
                     <div class="filter-group">
-                        <h4>Category</h4>
+                        <h4 class="filter-group__title">Category</h4>
                         <div class="filter-options">
-                            <label>
+                            <label class="filter-option">
                                 <input type="checkbox" data-filter="category" value="heat">
-                                <span>Heat Management</span>
+                                <span class="filter-option__label">Heat Management</span>
                             </label>
-                            <label>
+                            <label class="filter-option">
                                 <input type="checkbox" data-filter="category" value="flood">
-                                <span>Flood Risk</span>
+                                <span class="filter-option__label">Flood Risk</span>
                             </label>
                             <label>
                                 <input type="checkbox" data-filter="category" value="coastal">

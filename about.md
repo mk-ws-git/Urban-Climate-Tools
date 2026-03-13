@@ -3,31 +3,34 @@ layout: default
 title: About Urban Climate Tools
 ---
 
-<div class="about-page">
+<section class="section">
     <div class="container">
-        <h1>About Urban Climate Tools</h1>
-        
-        <section class="about-intro">
-            <p class="lead">Urban Climate Tools is a comprehensive, open-source database of solutions for building climate-resilient cities. We connect municipal leaders, planners, and communities with evidence-based tools for adaptation and mitigation.</p>
-        </section>
-        
-        <section class="about-section">
-            <h2>Our Mission</h2>
-            <p>To make climate adaptation accessible and actionable by curating and showcasing the world's best tools for building resilient urban communities.</p>
-            <p>We believe that cities need practical, proven solutions to address the growing impacts of climate change. By bringing together tools for heat adaptation, flood resilience, coastal protection, green infrastructure, and more, we help cities make informed decisions about their climate future.</p>
-        </section>
-        
-        <section class="about-section">
-            <h2>What We Offer</h2>
-            <div class="offerings-grid">
-                <div class="offering-card">
-                    <h3>Curated Catalog</h3>
-                    <p>Hand-selected tools from leading organizations, filtered by cost, skill level, and geographic scope.</p>
-                </div>
-                <div class="offering-card">
-                    <h3>Searchable Database</h3>
-                    <p>Find the right tool for your city with advanced filtering and full-text search across our catalog.</p>
-                </div>
+        <div class="section__header">
+            <h1 class="section__title">About Urban Climate Tools</h1>
+        </div>
+
+        <div class="content">
+            <section class="content__section">
+                <p class="content__lead">Urban Climate Tools is a comprehensive, open-source database of solutions for building climate-resilient cities. We connect municipal leaders, planners, and communities with evidence-based tools for adaptation and mitigation.</p>
+            </section>
+
+            <section class="content__section">
+                <h2 class="content__heading">Our Mission</h2>
+                <p>To make climate adaptation accessible and actionable by curating and showcasing the world's best tools for building resilient urban communities.</p>
+                <p>We believe that cities need practical, proven solutions to address the growing impacts of climate change. By bringing together tools for heat adaptation, flood resilience, coastal protection, green infrastructure, and more, we help cities make informed decisions about their climate future.</p>
+            </section>
+
+            <section class="content__section">
+                <h2 class="content__heading">What We Offer</h2>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h3 class="feature-card__title">Curated Catalog</h3>
+                        <p class="feature-card__description">Hand-selected tools from leading organizations, filtered by cost, skill level, and geographic scope.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3 class="feature-card__title">Searchable Database</h3>
+                        <p class="feature-card__description">Find the right tool for your city with advanced filtering and full-text search across our catalog.</p>
+                    </div>
                 <div class="offering-card">
                     <h3>Case Studies</h3>
                     <p>Learn from real-world implementations in cities around the world adapting to climate impacts.</p>

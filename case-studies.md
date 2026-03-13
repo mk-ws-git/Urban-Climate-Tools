@@ -3,20 +3,24 @@ layout: default
 title: Case Studies
 ---
 
-<div class="case-studies-page">
+<section class="section">
     <div class="container">
-        <h1>Urban Climate Case Studies</h1>
-        <p class="lead">Learn from cities around the world implementing climate adaptation and resilience solutions.</p>
-        
-        <div class="case-studies-header">
-            <div class="search-container">
-                <svg class="search-icon" viewBox="0 0 20 20" width="20" height="20">
-                    <circle cx="8" cy="8" r="6" fill="none" stroke="currentColor" stroke-width="1.5"/>
-                    <line x1="12.5" y1="12.5" x2="17.5" y2="17.5" stroke="currentColor" stroke-width="1.5"/>
-                </svg>
-                <input type="text" class="case-study-search" placeholder="Search by city, country, or challenge..." autofocus>
+        <div class="section__header">
+            <h1 class="section__title">Urban Climate Case Studies</h1>
+            <p class="section__description">Learn from cities around the world implementing climate adaptation and resilience solutions.</p>
+        </div>
+
+        <div class="case-studies__header">
+            <div class="search">
+                <div class="search__container">
+                    <svg class="search__icon" viewBox="0 0 20 20" width="20" height="20">
+                        <circle cx="8" cy="8" r="6" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                        <line x1="12.5" y1="12.5" x2="17.5" y2="17.5" stroke="currentColor" stroke-width="1.5"/>
+                    </svg>
+                    <input type="text" class="search__input" placeholder="Search by city, country, or challenge..." autofocus>
+                </div>
             </div>
-            <button class="filter-toggle" data-toggle="filters">
+            <button class="btn btn--secondary filter-toggle" data-toggle="filters">
                 <svg viewBox="0 0 20 20" width="16" height="16">
                     <line x1="2" y1="4" x2="18" y2="4" stroke="currentColor" stroke-width="1.5"/>
                     <line x1="4" y1="10" x2="16" y2="10" stroke="currentColor" stroke-width="1.5"/>
@@ -24,7 +28,7 @@ title: Case Studies
                 </svg>
                 Filters
             </button>
-            <div class="results-info">
+            <div class="case-studies__results">
                 Results: <strong data-results-count>{{ site.data.case_studies | size }}</strong>
             </div>
         </div>

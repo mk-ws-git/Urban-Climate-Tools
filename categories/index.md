@@ -3,51 +3,53 @@ layout: default
 title: Browse by Category
 ---
 
-<div class="categories-index">
+<section class="section">
     <div class="container">
-        <h1>Browse Tools by Category</h1>
-        <p class="lead">Explore our climate adaptation tools organized by focus area.</p>
-        
+        <div class="section__header">
+            <h1 class="section__title">Browse Tools by Category</h1>
+            <p class="section__description">Explore our climate adaptation tools organized by focus area.</p>
+        </div>
+
         <div class="category-grid">
-            <a href="{{ site.baseurl }}/categories/heat.html" class="category-card">
-                <div class="category-icon">
+            <a href="{{ '/categories/heat/' | relative_url }}" class="category-card">
+                <div class="category-card__icon">
                     <svg viewBox="0 0 100 100">
-                        <rect x="30" y="20" width="40" height="60" fill="none" stroke="#0051BA" stroke-width="2"/>
-                        <line x1="40" y1="30" x2="40" y2="75" stroke="#0051BA" stroke-width="1.5" opacity="0.5"/>
-                        <line x1="50" y1="25" x2="50" y2="75" stroke="#0051BA" stroke-width="2"/>
-                        <line x1="60" y1="30" x2="60" y2="75" stroke="#0051BA" stroke-width="1.5" opacity="0.5"/>
+                        <rect x="30" y="20" width="40" height="60" fill="none" stroke="var(--color-teal-400)" stroke-width="2"/>
+                        <line x1="40" y1="30" x2="40" y2="75" stroke="var(--color-teal-400)" stroke-width="1.5" opacity="0.5"/>
+                        <line x1="50" y1="25" x2="50" y2="75" stroke="var(--color-teal-400)" stroke-width="2"/>
+                        <line x1="60" y1="30" x2="60" y2="75" stroke="var(--color-teal-400)" stroke-width="1.5" opacity="0.5"/>
                     </svg>
                 </div>
-                <h3>Heat Management</h3>
-                <p>Urban heat island mitigation and heat wave planning</p>
+                <h3 class="category-card__title">Heat Management</h3>
+                <p class="category-card__description">Urban heat island mitigation and heat wave planning</p>
             </a>
-            
-            <a href="{{ site.baseurl }}/categories/flood.html" class="category-card">
-                <div class="category-icon">
+
+            <a href="{{ '/categories/flood/' | relative_url }}" class="category-card">
+                <div class="category-card__icon">
                     <svg viewBox="0 0 100 100">
-                        <path d="M 20 70 Q 30 50 40 60 T 60 55 T 80 70" fill="#0051BA" opacity="0.4"/>
-                        <path d="M 15 80 Q 25 60 35 75 T 55 70 T 85 80" fill="#0051BA" opacity="0.6"/>
+                        <path d="M 20 70 Q 30 50 40 60 T 60 55 T 80 70" fill="var(--color-teal-400)" opacity="0.4"/>
+                        <path d="M 15 80 Q 25 60 35 75 T 55 70 T 85 80" fill="var(--color-teal-400)" opacity="0.6"/>
                     </svg>
                 </div>
-                <h3>Flood Risk</h3>
-                <p>Stormwater management and flooding solutions</p>
+                <h3 class="category-card__title">Flood Risk</h3>
+                <p class="category-card__description">Stormwater management and flooding solutions</p>
             </a>
-            
-            <a href="{{ site.baseurl }}/categories/coastal.html" class="category-card">
-                <div class="category-icon">
+
+            <a href="{{ '/categories/coastal/' | relative_url }}" class="category-card">
+                <div class="category-card__icon">
                     <svg viewBox="0 0 100 100">
-                        <path d="M 10 60 Q 30 40 50 55 T 90 50" stroke="#0051BA" stroke-width="2" fill="none"/>
-                        <path d="M 15 70 Q 35 55 55 70 T 95 65" stroke="#0051BA" stroke-width="1.5" fill="none" opacity="0.7"/>
+                        <path d="M 10 60 Q 30 40 50 55 T 90 50" stroke="var(--color-teal-400)" stroke-width="2" fill="none"/>
+                        <path d="M 15 70 Q 35 55 55 70 T 95 65" stroke="var(--color-teal-400)" stroke-width="1.5" fill="none" opacity="0.7"/>
                     </svg>
                 </div>
-                <h3>Coastal Resilience</h3>
-                <p>Sea level rise and coastal hazard adaptation</p>
+                <h3 class="category-card__title">Coastal Resilience</h3>
+                <p class="category-card__description">Sea level rise and coastal hazard adaptation</p>
             </a>
-            
-            <a href="{{ site.baseurl }}/categories/green.html" class="category-card">
-                <div class="category-icon">
+
+            <a href="{{ '/categories/green/' | relative_url }}" class="category-card">
+                <div class="category-card__icon">
                     <svg viewBox="0 0 100 100">
-                        <path d="M 50 80 L 50 40" stroke="#0051BA" stroke-width="2"/>
+                        <path d="M 50 80 L 50 40" stroke="var(--color-teal-400)" stroke-width="2"/>
                         <ellipse cx="50" cy="30" rx="15" ry="20" fill="#0051BA" opacity="0.6"/>
                         <ellipse cx="35" cy="40" rx="12" ry="18" fill="#0051BA" opacity="0.4"/>
                         <ellipse cx="65" cy="40" rx="12" ry="18" fill="#0051BA" opacity="0.4"/>
