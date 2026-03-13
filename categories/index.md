@@ -9,7 +9,7 @@ title: Browse by Category
         <p class="lead">Explore our climate adaptation tools organized by focus area.</p>
         
         <div class="category-grid">
-            <a href="{{ site.baseurl }}/categories/heat/" class="category-card">
+            <a href="{{ site.baseurl }}/categories/heat.html" class="category-card">
                 <div class="category-icon">
                     <svg viewBox="0 0 100 100">
                         <rect x="30" y="20" width="40" height="60" fill="none" stroke="#0051BA" stroke-width="2"/>
@@ -22,7 +22,7 @@ title: Browse by Category
                 <p>Urban heat island mitigation and heat wave planning</p>
             </a>
             
-            <a href="{{ site.baseurl }}/categories/flood/" class="category-card">
+            <a href="{{ site.baseurl }}/categories/flood.html" class="category-card">
                 <div class="category-icon">
                     <svg viewBox="0 0 100 100">
                         <path d="M 20 70 Q 30 50 40 60 T 60 55 T 80 70" fill="#0051BA" opacity="0.4"/>
@@ -33,7 +33,7 @@ title: Browse by Category
                 <p>Stormwater management and flooding solutions</p>
             </a>
             
-            <a href="{{ site.baseurl }}/categories/coastal/" class="category-card">
+            <a href="{{ site.baseurl }}/categories/coastal.html" class="category-card">
                 <div class="category-icon">
                     <svg viewBox="0 0 100 100">
                         <path d="M 10 60 Q 30 40 50 55 T 90 50" stroke="#0051BA" stroke-width="2" fill="none"/>
@@ -44,7 +44,7 @@ title: Browse by Category
                 <p>Sea level rise and coastal hazard adaptation</p>
             </a>
             
-            <a href="{{ site.baseurl }}/categories/green/" class="category-card">
+            <a href="{{ site.baseurl }}/categories/green.html" class="category-card">
                 <div class="category-icon">
                     <svg viewBox="0 0 100 100">
                         <path d="M 50 80 L 50 40" stroke="#0051BA" stroke-width="2"/>
@@ -57,7 +57,7 @@ title: Browse by Category
                 <p>Nature-based solutions and green infrastructure</p>
             </a>
             
-            <a href="{{ site.baseurl }}/categories/planning/" class="category-card">
+            <a href="{{ site.baseurl }}/categories/planning.html" class="category-card">
                 <div class="category-icon">
                     <svg viewBox="0 0 100 100">
                         <rect x="20" y="25" width="25" height="25" stroke="#0051BA" stroke-width="2" fill="none"/>
@@ -70,7 +70,7 @@ title: Browse by Category
                 <p>Resilience planning and policy tools</p>
             </a>
             
-            <a href="{{ site.baseurl }}/categories/data/" class="category-card">
+            <a href="{{ site.baseurl }}/categories/data.html" class="category-card">
                 <div class="category-icon">
                     <svg viewBox="0 0 100 100">
                         <rect x="15" y="70" width="15" height="15" fill="#0051BA"/>
@@ -83,7 +83,7 @@ title: Browse by Category
                 <p>Climate data platforms and visualization</p>
             </a>
             
-            <a href="{{ site.baseurl }}/categories/energy/" class="category-card">
+            <a href="{{ site.baseurl }}/categories/energy.html" class="category-card">
                 <div class="category-icon">
                     <svg viewBox="0 0 100 100">
                         <path d="M 50 15 L 35 50 L 50 45 L 65 80 L 50 50 Z" fill="#0051BA" opacity="0.6"/>
@@ -94,7 +94,7 @@ title: Browse by Category
                 <p>Energy modeling and efficiency tracking</p>
             </a>
             
-            <a href="{{ site.baseurl }}/categories/other/" class="category-card">
+            <a href="{{ site.baseurl }}/categories/other.html" class="category-card">
                 <div class="category-icon">
                     <svg viewBox="0 0 100 100">
                         <circle cx="50" cy="50" r="35" stroke="#0051BA" stroke-width="2" fill="none"/>
