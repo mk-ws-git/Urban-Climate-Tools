@@ -31,5 +31,12 @@
 <!-- Canonical -->
 <link rel="canonical" href="{{ site.url }}{{ page.url }}">
 
-<!-- Analytics (optional) -->
-<!-- Google Analytics or similar would go here -->
+<!-- Google Analytics -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', '{{ site.google_analytics }}');
+</script>
