@@ -197,14 +197,25 @@ img, svg { display: block; max-width: 100%; }
 /* ── FOOTER BANNER ── */
 .footer-banner {
   background: #1D9E75;
-  padding: var(--space-16) 0;
+  padding: var(--space-12) 0 0;
   line-height: 0;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.4) 30%, rgba(0,0,0,0.85) 65%, black 100%);
+  mask-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.4) 30%, rgba(0,0,0,0.85) 65%, black 100%);
 }
 
 .footer-banner__img {
   display: block;
   width: 100%;
   height: auto;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 1.4s cubic-bezier(0.22, 1, 0.36, 1), transform 1.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.footer-banner--revealed .footer-banner__img {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* ── HERO VIDEO ── */

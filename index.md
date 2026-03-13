@@ -144,6 +144,23 @@ title: Urban Climate Tools
     </div>
 </section>
 
-<div class="footer-banner">
-    <img src="{{ site.baseurl }}/assets/images/Urban%20Climate%20Tools%20Home%20Banner.svg" alt="" class="footer-banner__img">
+<div class="footer-banner" id="footer-banner">
+    <img src="{{ site.baseurl }}/assets/images/City%20Nature%20Banner%20Transparent.png" alt="" class="footer-banner__img">
 </div>
+
+<script>
+(function() {
+  var banner = document.getElementById('footer-banner');
+  if (!banner) return;
+  var observed = false;
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting && !observed) {
+        observed = true;
+        banner.classList.add('footer-banner--revealed');
+      }
+    });
+  }, { threshold: 0.05 });
+  observer.observe(banner);
+})();
+</script>
