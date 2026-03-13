@@ -102,7 +102,13 @@ layout: default
         <h3>Related Tools</h3>
         <div class="tool-grid-horizontal">
             {% for tool in site.tools %}
-                {% if tool.categories | intersect: page.categories %}
+                {% assign common = false %}
+                {% for cat in tool.categories %}
+                    {% if page.categories contains cat %}
+                        {% assign common = true %}
+                    {% endif %}
+                {% endfor %}
+                {% if common %}
                     {% if tool.title != page.title %}
                         {% include tool-card.html tool=tool %}
                     {% endif %}

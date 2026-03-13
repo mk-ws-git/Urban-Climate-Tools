@@ -200,6 +200,26 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+// Mobile filter toggle (match tools page behavior)
+document.addEventListener('DOMContentLoaded', () => {
+    const filterToggle = document.querySelector('[data-toggle="filters"]');
+    const filterPanel = document.querySelector('.filter-panel');
+
+    if (filterToggle && filterPanel) {
+        filterToggle.addEventListener('click', () => {
+            filterPanel.classList.toggle('active');
+            filterToggle.classList.toggle('active');
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.filter-panel') && !e.target.closest('[data-toggle="filters"]')) {
+                filterPanel.classList.remove('active');
+                filterToggle.classList.remove('active');
+            }
+        });
+    }
+});
+
 // Add animation keyframes
 const style = document.createElement('style');
 style.textContent = `

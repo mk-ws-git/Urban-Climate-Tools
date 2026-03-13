@@ -45,7 +45,7 @@ title: Urban Climate Tools
     </div>
 </section>
 
-<section class="categories">
+<section class="categories" id="tools">
     <div class="categories__container">
         <div class="categories__header">
             <h2 class="categories__title">Explore by Category</h2>
@@ -123,6 +123,30 @@ title: Urban Climate Tools
                 <h3 class="category-card__title">Planning & Policy</h3>
                 <p class="category-card__description">Urban planning tools and policy frameworks</p>
             </a>
+        </div>
+    </div>
+</section>
+
+<section class="case-studies">
+    <div class="case-studies__container">
+        <div class="case-studies__header">
+            <h2 class="case-studies__title">Featured Case Studies</h2>
+            <p class="case-studies__subtitle">Real-world applications of urban climate tools</p>
+        </div>
+        <div class="case-studies__grid">
+            {% for case_study in site.case_studies limit:3 %}
+            <div class="case-study-card">
+                <div class="case-study-card__content">
+                    <h3><a href="{{ case_study.url | relative_url }}">{{ case_study.title }}</a></h3>
+                    <p class="case-study-card__location">{{ case_study.city }}, {{ case_study.country }}</p>
+                    <p class="case-study-card__description">{{ case_study.description | truncatewords: 20 }}</p>
+                    <a href="{{ case_study.url | relative_url }}" class="btn btn--secondary">Read Case Study →</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="case-studies__footer">
+            <a href="{{ '/case-studies/' | relative_url }}" class="btn btn--primary">View All Case Studies</a>
         </div>
     </div>
 </section>

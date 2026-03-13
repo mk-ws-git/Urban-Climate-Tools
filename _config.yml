@@ -7,7 +7,7 @@ url: "https://mk-ws-git.github.io/Urban-Climate-Tools"
 baseurl: "/Urban-Climate-Tools"
 
 # Theme
-theme: jekyll-theme-minimal
+# theme: jekyll-theme-minimal
 remote_theme: pages-themes/minimal@v0.2.0
 
 # Plugins
