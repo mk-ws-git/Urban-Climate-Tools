@@ -1399,7 +1399,7 @@ img, svg { display: block; max-width: 100%; }
 
 .search__input {
   width: 100%;
-  padding: var(--space-3) var(--space-3) var(--space-3) var(--space-10);
+  padding: var(--space-3) var(--space-8) var(--space-3) var(--space-10);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   font-size: var(--text-sm);
@@ -1412,6 +1412,25 @@ img, svg { display: block; max-width: 100%; }
   outline: none;
   border-color: var(--color-teal-400);
   box-shadow: 0 0 0 3px var(--color-teal-100);
+}
+
+.search__clear {
+  position: absolute;
+  right: var(--space-3);
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-text-tertiary);
+  font-size: 18px;
+  line-height: 1;
+  padding: 0 4px;
+  transition: color var(--transition-fast);
+}
+
+.search__clear:hover {
+  color: var(--color-text-primary);
 }
 
 .filter-toggle {

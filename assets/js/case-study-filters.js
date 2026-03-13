@@ -21,6 +21,7 @@ class CaseStudyFilter {
         this.loadCaseStudies();
         this.attachEventListeners();
         this.render();
+        this.updateResultsCount();
     }
     
     loadCaseStudies() {
@@ -58,6 +59,20 @@ class CaseStudyFilter {
         // Search input
         if (this.searchInput) {
             this.searchInput.addEventListener('input', (e) => this.handleSearch(e));
+        }
+
+        // Clear search button
+        const clearBtn = document.querySelector('.search__clear');
+        if (clearBtn && this.searchInput) {
+            this.searchInput.addEventListener('input', () => {
+                clearBtn.style.display = this.searchInput.value ? '' : 'none';
+            });
+            clearBtn.addEventListener('click', () => {
+                this.searchInput.value = '';
+                clearBtn.style.display = 'none';
+                this.searchInput.dispatchEvent(new Event('input'));
+                this.searchInput.focus();
+            });
         }
         
         // Reset button
@@ -134,7 +149,14 @@ class CaseStudyFilter {
     updateResultsCount() {
         const countElement = document.querySelector('[data-results-count]');
         if (countElement) {
-            countElement.textContent = `${this.filteredStudies.length} case study${this.filteredStudies.length !== 1 ? 's' : ''}`;
+            const n = this.filteredStudies.length;
+            countElement.textContent = n;
+            const label = countElement.closest('.tools__results');
+            if (label) {
+                // update the text node after the <strong>
+                const textNode = Array.from(label.childNodes).find(n => n.nodeType === 3 && n.textContent.trim());
+                if (textNode) textNode.textContent = ` case ${n === 1 ? 'study' : 'studies'}`;
+            }
         }
     }
     

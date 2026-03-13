@@ -18,6 +18,7 @@ title: Case Studies
                         <line x1="12.5" y1="12.5" x2="17.5" y2="17.5" stroke="currentColor" stroke-width="1.5"/>
                     </svg>
                     <input type="text" class="search__input case-study-search" placeholder="Search by city, country, or challenge..." autofocus>
+                    <button type="button" class="search__clear" aria-label="Clear search" style="display:none">&times;</button>
                 </div>
             </div>
             <div class="sort">
@@ -38,7 +39,7 @@ title: Case Studies
                 Filters
             </button>
             <div class="tools__results">
-                Results: <strong data-results-count>{{ site.data.case_studies | size }}</strong>
+                <strong data-results-count>{{ site.data.case_studies | size }}</strong> case studies
             </div>
         </div>
         

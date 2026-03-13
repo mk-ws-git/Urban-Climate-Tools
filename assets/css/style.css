@@ -3,13 +3,13 @@
 /* Import design tokens first */
 @import url('tokens.css');
 
-/* Import component styles */
-@import url('components.css');
-
-/* Import legacy styles (to be migrated) */
+/* Import legacy base (must come before components so components win) */
+@import url('typography.css');
 @import url('nav.css');
 @import url('cards.css');
-@import url('typography.css');
+
+/* Import component styles (these override legacy base styles) */
+@import url('components.css');
 
 /* Base styles */
 * {

@@ -10,13 +10,13 @@ title: Resources
             <h1 class="section__title">Resources</h1>
         </div>
 
-        <p class="resources-coming-soon__lead">Something meaningful is on its way.</p>
+        <p class="about-lead" style="font-size: var(--text-xl); margin-bottom: var(--space-8);">Something meaningful is on its way.</p>
 
-        <p class="resources-coming-soon__body">
+        <p class="about-section__body">
             This page will become a living library of guides, research, datasets, and organisations dedicated to the urgent work of building a climate-resilient world. Whether you are a city planner navigating adaptation decisions, a researcher tracking urban heat, or a community advocate pushing for greener infrastructure — these resources will be curated with you in mind.
         </p>
 
-        <p class="resources-coming-soon__body">
+        <p class="about-section__body">
             We are building this together. If you know of a public resource — a dataset, a guide, a report, or a tool — that belongs here, we would love to hear from you.
         </p>
 
