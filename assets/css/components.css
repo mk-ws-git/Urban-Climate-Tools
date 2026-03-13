@@ -106,7 +106,7 @@ img, svg { display: block; max-width: 100%; }
 }
 
 .nav__link {
-  font-size: var(--text-sm);
+  font-size: var(--text-base);
   color: var(--color-text-secondary);
   transition: color var(--transition-fast);
   padding: var(--space-2) 0;
@@ -1014,7 +1014,7 @@ img, svg { display: block; max-width: 100%; }
 }
 
 .case-study-card__link:hover {
-  color: var(--color-teal-100);
+  color: #fff;
   text-decoration: none;
 }
 
