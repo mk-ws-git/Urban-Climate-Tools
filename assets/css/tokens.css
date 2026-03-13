@@ -17,7 +17,7 @@
   --color-teal-400:  #1D9E75;   /* Teal ★      — PRIMARY brand colour, CTAs, links */
   --color-teal-600:  #0F6E56;   /* Forest      — hover states, borders on teal    */
   --color-teal-800:  #085041;   /* Deep forest — dark mode mark bg, nav dark      */
-  --color-teal-900:  #04342C;   /* Deep moss   — darkest bg, footer dark           */
+  --color-teal-900:  #05352d;   /* Deep moss   — darkest bg, footer dark           */
 
   /* Category accents */
   --color-heat-bg:      #FAEEDA;   /* Amber 50  */
@@ -61,7 +61,7 @@
   --color-surface-2:    #F7F9F7;   /* very slight green tint on page bg */
   --color-surface-3:    #EEF3EE;   /* card hover / subtle tint          */
   --color-text-primary: #111111;
-  --color-text-secondary:#555555;
+  --color-text-secondary:#222222;
   --color-text-tertiary: #999999;
   --color-border:       rgba(0,0,0,0.09);
   --color-border-medium:rgba(0,0,0,0.16);
