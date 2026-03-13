@@ -17,39 +17,39 @@ plugins:
   - jekyll-sitemap
 
 # Collections
-# collections:
-#   tools:
-#     output: true
-#     permalink: /tools/:title/
-#     label: Tools
-#   case_studies:
-#     output: true
-#     permalink: /case-studies/:title/
-#     label: Case Studies
+collections:
+  tools:
+    output: true
+    permalink: /tool/:title/
+    label: Tools
+  case_studies:
+    output: true
+    permalink: /case-study/:title/
+    label: Case Studies
 
 # Default frontmatter
-# defaults:
-#   - scope:
-#       path: "_tools"
-#     values:
-#       layout: tool
-#   - scope:
-#       path: "_case_studies"
-#     values:
-#       layout: case-study
+defaults:
+  - scope:
+      path: "_tools"
+    values:
+      layout: tool
+  - scope:
+      path: "_case_studies"
+    values:
+      layout: case-study
 
 # Defaults
-# defaults:
-#   - scope:
-#       path: "_tools"
-#       type: tools
-#     values:
-#       layout: tool
-#   - scope:
-#       path: "_case_studies"
-#       type: case_studies
-#     values:
-#       layout: case-study
+defaults:
+  - scope:
+      path: "_tools"
+      type: tools
+    values:
+      layout: tool
+  - scope:
+      path: "_case_studies"
+      type: case_studies
+    values:
+      layout: case-study
 
 # Site configuration
 highlighter: rouge
