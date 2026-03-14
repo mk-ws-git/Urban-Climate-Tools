@@ -23,18 +23,24 @@
             </div>
 
             <ul class="nav__links">
-                <li class="nav__item"><a href="{{ '/about/' | relative_url }}" class="nav__link">About</a></li>
-                <li class="nav__item"><a href="{{ '/tools/' | relative_url }}" class="nav__link">Tools</a></li>
-                <li class="nav__item"><a href="{{ '/case-studies/' | relative_url }}" class="nav__link">Case Studies</a></li>
                 <li class="nav__item nav__item--has-dropdown">
-                    <button class="nav__link nav__explore-btn" aria-haspopup="true" aria-expanded="false">Explore ▾</button>
+                    <button class="nav__link nav__explore-btn" aria-haspopup="true" aria-expanded="false">About ▾</button>
                     <ul class="nav__dropdown" role="menu">
-                        <li><a href="{{ '/quiz/' | relative_url }}" class="nav__dropdown-item">Tool Finder Quiz</a></li>
-                        <li><a href="{{ '/map/' | relative_url }}" class="nav__dropdown-item">Case Study Map</a></li>
-                        <li><a href="{{ '/compare/' | relative_url }}" class="nav__dropdown-item">Compare Tools</a></li>
+                        <li><a href="{{ '/about/' | relative_url }}" class="nav__dropdown-item">About the Project</a></li>
+                        <li><a href="{{ '/about/#how-to-use' | relative_url }}" class="nav__dropdown-item">How to Use</a></li>
                     </ul>
                 </li>
-                <li class="nav__item"><a href="{{ '/resources/' | relative_url }}" class="nav__link">Resources</a></li>
+                <li class="nav__item"><a href="{{ '/tools/' | relative_url }}" class="nav__link">Tools</a></li>
+                <li class="nav__item"><a href="{{ '/case-studies/' | relative_url }}" class="nav__link">Case Studies</a></li>
+                <li class="nav__item"><a href="{{ '/data/' | relative_url }}" class="nav__link">Data</a></li>
+                <li class="nav__item nav__item--has-dropdown">
+                    <button class="nav__link nav__explore-btn" aria-haspopup="true" aria-expanded="false">Contact ▾</button>
+                    <ul class="nav__dropdown" role="menu">
+                        <li><a href="{{ '/contact/#get-in-touch' | relative_url }}" class="nav__dropdown-item">Get in Touch</a></li>
+                        <li><a href="{{ '/contact/#partner' | relative_url }}" class="nav__dropdown-item">Partner With Us</a></li>
+                        <li><a href="{{ '/contact/#submit' | relative_url }}" class="nav__dropdown-item">Submit a Resource</a></li>
+                    </ul>
+                </li>
             </ul>
 
             <div class="nav__actions">
@@ -42,13 +48,6 @@
                 <button class="nav__btn theme-toggle" aria-label="Toggle theme">
                     <svg class="theme-toggle__moon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
                     <svg class="theme-toggle__sun" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-                </button>
-
-                <!-- Saves / bookmarks -->
-                <button class="nav__btn saves-btn" aria-label="Saved items">
-                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
-                    <span>Saved</span>
-                    <span class="saves-badge" aria-live="polite">0</span>
                 </button>
 
                 <!-- Sign in (hidden when user logged in) -->

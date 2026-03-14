@@ -170,5 +170,15 @@ window.UCT_TOOLS = {{ site.data.tools | jsonify }};
 
   selectLeft.addEventListener('change', onChange);
   selectRight.addEventListener('change', onChange);
+
+  // Pre-select from URL: ?a=tool-id or ?a=tool-id&b=other-tool-id
+  (function () {
+    var params = new URLSearchParams(window.location.search);
+    var aId = params.get('a');
+    var bId = params.get('b');
+    if (aId) selectLeft.value = aId;
+    if (bId) selectRight.value = bId;
+    if (aId || bId) onChange();
+  })();
 })();
 </script>

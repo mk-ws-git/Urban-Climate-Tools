@@ -90,6 +90,21 @@ layout: default
             {% endif %}
             
             {{ content }}
+
+            <!-- Quick links: Quiz + Compare -->
+            <div class="tool-explore-bar">
+                <div class="tool-explore-bar__label">Explore further</div>
+                <div class="tool-explore-bar__actions">
+                    <a href="{{ '/compare/' | relative_url }}?a={{ page.id }}" class="tool-explore-bar__btn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16" height="16"><rect x="3" y="6" width="8" height="12" rx="1"/><rect x="13" y="6" width="8" height="12" rx="1"/><line x1="11" y1="12" x2="13" y2="12"/></svg>
+                        Compare with another tool
+                    </a>
+                    <a href="{{ '/quiz/' | relative_url }}" class="tool-explore-bar__btn tool-explore-bar__btn--secondary">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16" height="16"><circle cx="12" cy="12" r="9"/><path d="M12 7 Q12 10 12 11 T12 14" stroke-linecap="round"/><circle cx="12" cy="17" r="0.8" fill="currentColor" stroke="none"/></svg>
+                        Find similar tools via quiz
+                    </a>
+                </div>
+            </div>
         </div>
         
         <aside class="tool-sidebar">

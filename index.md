@@ -120,6 +120,76 @@ title: Urban Climate Tools
     </div>
 </section>
 
+<section class="explore-features">
+    <div class="container">
+        <div class="section__header">
+            <h2 class="section__title">Explore the Platform</h2>
+            <p class="section__description">Purpose-built tools for climate researchers, city planners, and community advocates.</p>
+        </div>
+        <div class="explore-features__grid">
+
+            <a href="{{ '/quiz/' | relative_url }}" class="explore-feature-card">
+                <div class="explore-feature-card__icon">
+                    <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" width="32" height="32">
+                        <circle cx="20" cy="20" r="15"/>
+                        <path d="M15 16c0-2.76 2.24-5 5-5s5 2.24 5 5c0 2-1.5 3.5-3.5 4.5V24" stroke-linecap="round"/>
+                        <circle cx="20" cy="28" r="1.2" fill="currentColor" stroke="none"/>
+                    </svg>
+                </div>
+                <div class="explore-feature-card__body">
+                    <h3 class="explore-feature-card__title">Tool Finder Quiz</h3>
+                    <p class="explore-feature-card__desc">Answer 4 questions and get matched with the tools best suited to your city's climate challenge.</p>
+                </div>
+                <span class="explore-feature-card__cta">Take the quiz →</span>
+            </a>
+
+            <a href="{{ '/compare/' | relative_url }}" class="explore-feature-card">
+                <div class="explore-feature-card__icon">
+                    <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" width="32" height="32">
+                        <rect x="5" y="10" width="13" height="20" rx="2"/>
+                        <rect x="22" y="10" width="13" height="20" rx="2"/>
+                        <line x1="18" y1="20" x2="22" y2="20"/>
+                    </svg>
+                </div>
+                <div class="explore-feature-card__body">
+                    <h3 class="explore-feature-card__title">Compare Tools</h3>
+                    <p class="explore-feature-card__desc">Select two tools and compare their features, cost, skill requirements, and use cases side by side.</p>
+                </div>
+                <span class="explore-feature-card__cta">Start comparing →</span>
+            </a>
+
+            <a href="{{ '/map/' | relative_url }}" class="explore-feature-card">
+                <div class="explore-feature-card__icon">
+                    <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" width="32" height="32">
+                        <circle cx="20" cy="17" r="6"/>
+                        <path d="M20 34C20 34 8 24 8 17a12 12 0 0124 0c0 7-12 17-12 17z"/>
+                    </svg>
+                </div>
+                <div class="explore-feature-card__body">
+                    <h3 class="explore-feature-card__title">Case Study Map</h3>
+                    <p class="explore-feature-card__desc">Explore an interactive global map of cities implementing climate resilience strategies.</p>
+                </div>
+                <span class="explore-feature-card__cta">Open map →</span>
+            </a>
+
+            <a href="{{ '/data/' | relative_url }}" class="explore-feature-card">
+                <div class="explore-feature-card__icon">
+                    <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" width="32" height="32">
+                        <path d="M6 30 L13 20 L19 25 L27 12 L34 18" stroke-linecap="round" stroke-linejoin="round"/>
+                        <rect x="4" y="6" width="32" height="28" rx="2"/>
+                    </svg>
+                </div>
+                <div class="explore-feature-card__body">
+                    <h3 class="explore-feature-card__title">Climate Data Explorer</h3>
+                    <p class="explore-feature-card__desc">Search any city and visualise real-time temperature trends, precipitation, and climate indicators — powered by open APIs.</p>
+                </div>
+                <span class="explore-feature-card__cta">Explore data →</span>
+            </a>
+
+        </div>
+    </div>
+</section>
+
 <section class="case-studies">
     <div class="case-studies__container">
         <div class="case-studies__header">
