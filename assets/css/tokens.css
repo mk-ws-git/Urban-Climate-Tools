@@ -142,9 +142,6 @@
     --color-surface:       #0d1f18;
     --color-surface-2:     #122318;
     --color-surface-3:     #1a3028;
-    --color-text-primary:  #E1F5EE;
-    --color-text-secondary:#9FE1CB;
-    --color-text-tertiary: #5DCAA5;
     --color-border:        rgba(255,255,255,0.09);
     --color-border-medium: rgba(255,255,255,0.16);
   }
