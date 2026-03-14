@@ -1026,15 +1026,16 @@ img, svg { display: block; max-width: 100%; }
 }
 
 .categories__header {
-  text-align: center;
-  margin-bottom: var(--space-8);
+  margin-bottom: var(--space-10);
 }
 
 .categories__title {
   font-size: var(--text-3xl);
-  font-weight: var(--weight-medium);
-  color: var(--color-teal-800);
-  margin-bottom: var(--space-4);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  letter-spacing: var(--tracking-tight);
+  line-height: var(--leading-tight);
+  margin: 0;
 }
 
 .categories__grid {
@@ -2410,7 +2411,15 @@ img, svg { display: block; max-width: 100%; }
 /* ── ABOUT — USER TYPE CARDS ── */
 
 .about-grid {
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 900px) {
+  .about-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+  .about-grid { grid-template-columns: 1fr; }
 }
 
 .user-type-grid {
