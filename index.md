@@ -41,10 +41,10 @@ title: Urban Climate Tools
 <section class="categories" id="tools">
     <div class="categories__container">
         <div class="categories__header">
-            <h2 class="categories__title">Explore by Category</h2>
+            <h2 class="categories__title">Explore Climate Tools by Category</h2>
         </div>
         <div class="categories__grid">
-            <a href="{{ '/categories/heat/' | relative_url }}" class="category-card">
+            <a href="{{ '/tools/' | relative_url }}?category=heat" class="category-card">
                 <div class="category-card__icon">
                     <svg viewBox="0 0 100 100">
                         <rect x="30" y="20" width="40" height="60" fill="none" stroke="var(--color-teal-400)" stroke-width="2"/>
@@ -57,7 +57,7 @@ title: Urban Climate Tools
                 <p class="category-card__description">Urban heat island mitigation and heat wave planning</p>
             </a>
 
-            <a href="{{ '/categories/flood/' | relative_url }}" class="category-card">
+            <a href="{{ '/tools/' | relative_url }}?category=flood" class="category-card">
                 <div class="category-card__icon">
                     <svg viewBox="0 0 100 100">
                         <path d="M 20 70 Q 30 50 40 60 T 60 55 T 80 70" fill="var(--color-teal-400)" opacity="0.4"/>
@@ -68,7 +68,7 @@ title: Urban Climate Tools
                 <p class="category-card__description">Stormwater management and flooding solutions</p>
             </a>
 
-            <a href="{{ '/categories/coastal/' | relative_url }}" class="category-card">
+            <a href="{{ '/tools/' | relative_url }}?category=coastal" class="category-card">
                 <div class="category-card__icon">
                     <svg viewBox="0 0 100 100">
                         <path d="M 10 60 Q 30 40 50 55 T 90 50" stroke="var(--color-teal-400)" stroke-width="2" fill="none"/>
@@ -79,7 +79,7 @@ title: Urban Climate Tools
                 <p class="category-card__description">Sea level rise and coastal hazard adaptation</p>
             </a>
 
-            <a href="{{ '/categories/green/' | relative_url }}" class="category-card">
+            <a href="{{ '/tools/' | relative_url }}?category=green" class="category-card">
                 <div class="category-card__icon">
                     <svg viewBox="0 0 100 100">
                         <path d="M 50 80 L 50 40" stroke="var(--color-teal-400)" stroke-width="2"/>
@@ -92,7 +92,7 @@ title: Urban Climate Tools
                 <p class="category-card__description">Nature-based solutions for urban resilience</p>
             </a>
 
-            <a href="{{ '/categories/data/' | relative_url }}" class="category-card">
+            <a href="{{ '/tools/' | relative_url }}?category=data" class="category-card">
                 <div class="category-card__icon">
                     <svg viewBox="0 0 100 100">
                         <rect x="20" y="25" width="60" height="50" fill="none" stroke="var(--color-teal-400)" stroke-width="2"/>
@@ -106,7 +106,7 @@ title: Urban Climate Tools
                 <p class="category-card__description">Climate data visualization and analysis tools</p>
             </a>
 
-            <a href="{{ '/categories/planning/' | relative_url }}" class="category-card">
+            <a href="{{ '/tools/' | relative_url }}?category=planning" class="category-card">
                 <div class="category-card__icon">
                     <svg viewBox="0 0 100 100">
                         <polygon points="50,15 35,35 35,65 65,65 65,35" fill="none" stroke="var(--color-teal-400)" stroke-width="2"/>

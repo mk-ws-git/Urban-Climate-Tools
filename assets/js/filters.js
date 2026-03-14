@@ -21,7 +21,26 @@ class ToolFilter {
     init() {
         this.loadTools();
         this.attachEventListeners();
+        this.applyFromUrl();
         this.render();
+    }
+
+    applyFromUrl() {
+        var params = new URLSearchParams(window.location.search);
+        var category = params.get('category');
+        if (!category) return;
+        var checkbox = document.querySelector('[data-filter="category"][value="' + category + '"]');
+        if (!checkbox) return;
+        checkbox.checked = true;
+        if (!this.activeFilters.category.includes(category)) {
+            this.activeFilters.category.push(category);
+        }
+        // Open the filter panel so the active checkbox is visible
+        var panel = document.querySelector('.filter-panel');
+        if (panel) panel.classList.add('active');
+        var toggle = document.querySelector('[data-toggle="filters"]');
+        if (toggle) toggle.classList.add('active');
+        this.applyFilters();
     }
     
     loadTools() {
@@ -209,11 +228,14 @@ class ToolFilter {
 
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', () => {
-    if (document.querySelector('.tool-grid')) {
+    var grid = document.querySelector('.tools-grid') || document.querySelector('.tool-grid');
+    if (grid) {
+        var containerClass = grid.classList.contains('tools-grid') ? '.tools-grid' : '.tool-grid';
+        var searchClass = document.querySelector('.search__input') ? '.search__input' : '.tool-search';
         window.toolFilter = new ToolFilter({
-            container: '.tool-grid',
+            container: containerClass,
             filterForm: '.filter-form',
-            searchInput: '.tool-search'
+            searchInput: searchClass
         });
     }
 });
