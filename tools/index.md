@@ -132,6 +132,65 @@ title: All Tools
                             </label>
                         </div>
                     </div>
+
+                    <div class="filter-group">
+                        <h4 class="filter-group__title">User Type</h4>
+                        <div class="filter-options">
+                            <label class="filter-option">
+                                <input type="checkbox" data-filter="userCategory" value="city-officials">
+                                <span class="filter-option__label">City Officials</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" data-filter="userCategory" value="researchers">
+                                <span class="filter-option__label">Researchers</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" data-filter="userCategory" value="community">
+                                <span class="filter-option__label">Community</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="filter-group">
+                        <h4 class="filter-group__title">Continent of Origin</h4>
+                        <div class="filter-options">
+                            <label class="filter-option">
+                                <input type="checkbox" data-filter="continent" value="North America">
+                                <span class="filter-option__label">North America</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" data-filter="continent" value="Europe">
+                                <span class="filter-option__label">Europe</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" data-filter="continent" value="Asia">
+                                <span class="filter-option__label">Asia</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" data-filter="continent" value="South America">
+                                <span class="filter-option__label">South America</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" data-filter="continent" value="Africa">
+                                <span class="filter-option__label">Africa</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" data-filter="continent" value="Oceania">
+                                <span class="filter-option__label">Oceania</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="filter-group">
+                        <h4 class="filter-group__title">Country</h4>
+                        <select class="filter-select filter-select--country" data-filter="country">
+                            <option value="">All countries</option>
+                            {% assign tool_countries = site.data.tools | map: 'country' | compact | uniq | sort %}
+                            {% for c in tool_countries %}
+                            <option value="{{ c }}">{{ c }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
                 </form>
             </aside>
 
@@ -150,6 +209,9 @@ title: All Tools
                      data-cost="{{ tool.cost }}"
                      data-skill-level="{{ tool.skillLevel }}"
                      data-coverage="{{ tool.coverage | join: ',' }}"
+                     data-user-category="{{ tool.user_categories | join: ',' }}"
+                     data-country="{{ tool.country }}"
+                     data-continent="{{ tool.continent }}"
                      data-tags="{{ tool.tags | join: ',' }}">
                     {% include tool-card.html tool=tool %}
                 </div>

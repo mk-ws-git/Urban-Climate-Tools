@@ -55,6 +55,9 @@ class ToolFilter {
             cost: el.dataset.cost || '',
             skillLevel: el.dataset.skillLevel || '',
             coverage: el.dataset.coverage ? el.dataset.coverage.split(',') : [],
+            userCategory: el.dataset.userCategory ? el.dataset.userCategory.split(',').map(s => s.trim()) : [],
+            country: el.dataset.country || '',
+            continent: el.dataset.continent || '',
             url: el.dataset.url || '',
             tags: el.dataset.tags ? el.dataset.tags.split(',') : [],
             element: el
@@ -83,6 +86,25 @@ class ToolFilter {
         document.querySelectorAll('[data-filter="coverage"]').forEach(checkbox => {
             checkbox.addEventListener('change', (e) => this.handleFilterChange(e));
         });
+
+        // User category filters
+        document.querySelectorAll('[data-filter="userCategory"]').forEach(checkbox => {
+            checkbox.addEventListener('change', (e) => this.handleFilterChange(e));
+        });
+
+        // Continent filters
+        document.querySelectorAll('[data-filter="continent"]').forEach(checkbox => {
+            checkbox.addEventListener('change', (e) => this.handleFilterChange(e));
+        });
+
+        // Country dropdown
+        const countrySelect = document.querySelector('select[data-filter="country"]');
+        if (countrySelect) {
+            countrySelect.addEventListener('change', (e) => {
+                this.activeFilters.country = e.target.value;
+                this.applyFilters();
+            });
+        }
         
         // Search input
         if (this.searchInput) {
@@ -161,6 +183,25 @@ class ToolFilter {
                 tool.coverage.some(cov => this.activeFilters.coverage.includes(cov))
             );
         }
+
+        // Apply user category filter
+        if (this.activeFilters.userCategory.length > 0) {
+            filtered = filtered.filter(tool =>
+                tool.userCategory.some(uc => this.activeFilters.userCategory.includes(uc))
+            );
+        }
+
+        // Apply continent filter
+        if (this.activeFilters.continent.length > 0) {
+            filtered = filtered.filter(tool =>
+                this.activeFilters.continent.includes(tool.continent)
+            );
+        }
+
+        // Apply country filter
+        if (this.activeFilters.country) {
+            filtered = filtered.filter(tool => tool.country === this.activeFilters.country);
+        }
         
         this.filteredTools = filtered;
         this.render();
@@ -205,6 +246,8 @@ class ToolFilter {
         document.querySelectorAll('[data-filter]').forEach(checkbox => {
             checkbox.checked = false;
         });
+        // Reset country dropdown
+        document.querySelectorAll('select[data-filter="country"]').forEach(s => { s.value = ''; });
         
         // Clear search
         if (this.searchInput) {
@@ -216,7 +259,10 @@ class ToolFilter {
             category: [],
             cost: [],
             skillLevel: [],
-            coverage: []
+            coverage: [],
+            userCategory: [],
+            continent: [],
+            country: ''
         };
         
         // Reset filtered tools

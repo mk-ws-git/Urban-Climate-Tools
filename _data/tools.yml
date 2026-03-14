@@ -14,6 +14,11 @@
     - city
     - national
     - global
+  country: United States
+  continent: North America
+  user_categories:
+    - city-officials
+    - researchers
   url: https://www.climatecentral.org
   github: https://github.com/climatecentral
   tags:
@@ -36,6 +41,11 @@
     - local
     - city
     - national
+  country: United States
+  continent: North America
+  user_categories:
+    - city-officials
+    - researchers
   url: https://www.itreetools.org
   github: https://github.com/USDA-Forest-Service
   tags:
@@ -57,6 +67,12 @@
   coverage:
     - national
     - global
+  country: United States
+  continent: North America
+  user_categories:
+    - city-officials
+    - researchers
+    - community
   url: https://www.vdata.noaa.gov/slr
   github: https://github.com/NOAA-ORR-ERD
   tags:
@@ -78,6 +94,11 @@
   coverage:
     - local
     - city
+  country: United States
+  continent: North America
+  user_categories:
+    - city-officials
+    - community
   url: https://www.greeninfrastructurecoalition.org
   tags:
     - green infrastructure
@@ -98,6 +119,10 @@
   coverage:
     - city
     - national
+  country: United States
+  continent: North America
+  user_categories:
+    - city-officials
   url: https://www.nrdc.org/citiesprogram
   tags:
     - energy tracking
@@ -118,6 +143,11 @@
   coverage:
     - local
     - city
+  country: United States
+  continent: North America
+  user_categories:
+    - city-officials
+    - researchers
   url: https://www.esri.com/en-us/arcgis/products/arcgis-urban
   tags:
     - urban planning
@@ -139,6 +169,11 @@
     - local
     - city
     - national
+  country: United States
+  continent: North America
+  user_categories:
+    - city-officials
+    - community
   url: https://coolroofs.lbl.gov
   tags:
     - urban heat
@@ -158,6 +193,10 @@
   skillLevel: Advanced
   coverage:
     - global
+  country: United States
+  continent: North America
+  user_categories:
+    - city-officials
   url: https://new.usgbc.org/leed
   tags:
     - green building
@@ -179,6 +218,11 @@
     - local
     - national
     - global
+  country: United States
+  continent: North America
+  user_categories:
+    - researchers
+    - community
   url: https://www.nature.org
   tags:
     - forest carbon
@@ -198,6 +242,11 @@
   coverage:
     - city
     - national
+  country: United States
+  continent: North America
+  user_categories:
+    - city-officials
+    - community
   url: https://climateresiliencetoolkit.org
   tags:
     - resilience planning
@@ -218,6 +267,11 @@
   coverage:
     - local
     - regional
+  country: United States
+  continent: North America
+  user_categories:
+    - researchers
+    - city-officials
   url: https://example.com/lust
   tags:
     - land use modeling
@@ -238,6 +292,12 @@
     - local
     - city
     - national
+  country: United States
+  continent: North America
+  user_categories:
+    - city-officials
+    - researchers
+    - community
   url: https://www.epa.gov/water-research/stormwater-calculator
   tags:
     - stormwater management

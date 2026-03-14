@@ -34,6 +34,8 @@ class CaseStudyFilter {
             sector: el.dataset.sector || '',
             challenges: el.dataset.challenges ? el.dataset.challenges.split(',').map(c => c.trim()) : [],
             region: el.dataset.region || '',
+            continent: el.dataset.continent || '',
+            userCategory: el.dataset.userCategory ? el.dataset.userCategory.split(',').map(s => s.trim()) : [],
             element: el
         }));
         
@@ -55,6 +57,25 @@ class CaseStudyFilter {
         document.querySelectorAll('[data-filter="region"]').forEach(checkbox => {
             checkbox.addEventListener('change', (e) => this.handleFilterChange(e));
         });
+
+        // User category filters
+        document.querySelectorAll('[data-filter="userCategory"]').forEach(checkbox => {
+            checkbox.addEventListener('change', (e) => this.handleFilterChange(e));
+        });
+
+        // Continent filters
+        document.querySelectorAll('[data-filter="continent"]').forEach(checkbox => {
+            checkbox.addEventListener('change', (e) => this.handleFilterChange(e));
+        });
+
+        // Country dropdown
+        const countrySelect = document.querySelector('select[data-filter="country"]');
+        if (countrySelect) {
+            countrySelect.addEventListener('change', (e) => {
+                this.activeFilters.country = e.target.value;
+                this.applyFilters();
+            });
+        }
         
         // Search input
         if (this.searchInput) {
@@ -140,6 +161,25 @@ class CaseStudyFilter {
                 this.activeFilters.region.includes(study.region)
             );
         }
+
+        // Apply user category filter
+        if (this.activeFilters.userCategory.length > 0) {
+            filtered = filtered.filter(study =>
+                study.userCategory.some(uc => this.activeFilters.userCategory.includes(uc))
+            );
+        }
+
+        // Apply continent filter
+        if (this.activeFilters.continent.length > 0) {
+            filtered = filtered.filter(study =>
+                this.activeFilters.continent.includes(study.continent)
+            );
+        }
+
+        // Apply country filter
+        if (this.activeFilters.country) {
+            filtered = filtered.filter(study => study.country === this.activeFilters.country);
+        }
         
         this.filteredStudies = filtered;
         this.render();
@@ -191,6 +231,8 @@ class CaseStudyFilter {
         document.querySelectorAll('[data-filter]').forEach(checkbox => {
             checkbox.checked = false;
         });
+        // Reset country dropdown
+        document.querySelectorAll('select[data-filter="country"]').forEach(s => { s.value = ''; });
         
         // Clear search
         if (this.searchInput) {
@@ -201,7 +243,10 @@ class CaseStudyFilter {
         this.activeFilters = {
             challenge: [],
             sector: [],
-            region: []
+            region: [],
+            userCategory: [],
+            continent: [],
+            country: ''
         };
         
         // Reset filtered studies

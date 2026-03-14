@@ -104,29 +104,62 @@ title: Case Studies
                     </div>
 
                     <div class="filter-group">
-                        <h4 class="filter-group__title">Region</h4>
+                        <h4 class="filter-group__title">User Type</h4>
                         <div class="filter-options">
                             <label class="filter-option">
-                                <input type="checkbox" data-filter="region" value="North America">
+                                <input type="checkbox" data-filter="userCategory" value="city-officials">
+                                <span class="filter-option__label">City Officials</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" data-filter="userCategory" value="researchers">
+                                <span class="filter-option__label">Researchers</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" data-filter="userCategory" value="community">
+                                <span class="filter-option__label">Community</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="filter-group">
+                        <h4 class="filter-group__title">Continent</h4>
+                        <div class="filter-options">
+                            <label class="filter-option">
+                                <input type="checkbox" data-filter="continent" value="North America">
                                 <span class="filter-option__label">North America</span>
                             </label>
                             <label class="filter-option">
-                                <input type="checkbox" data-filter="region" value="South America">
+                                <input type="checkbox" data-filter="continent" value="South America">
                                 <span class="filter-option__label">South America</span>
                             </label>
                             <label class="filter-option">
-                                <input type="checkbox" data-filter="region" value="Europe">
+                                <input type="checkbox" data-filter="continent" value="Europe">
                                 <span class="filter-option__label">Europe</span>
                             </label>
                             <label class="filter-option">
-                                <input type="checkbox" data-filter="region" value="Asia">
+                                <input type="checkbox" data-filter="continent" value="Asia">
                                 <span class="filter-option__label">Asia</span>
                             </label>
                             <label class="filter-option">
-                                <input type="checkbox" data-filter="region" value="Africa">
+                                <input type="checkbox" data-filter="continent" value="Africa">
                                 <span class="filter-option__label">Africa</span>
                             </label>
+                            <label class="filter-option">
+                                <input type="checkbox" data-filter="continent" value="Oceania">
+                                <span class="filter-option__label">Oceania</span>
+                            </label>
                         </div>
+                    </div>
+
+                    <div class="filter-group">
+                        <h4 class="filter-group__title">Country</h4>
+                        <select class="filter-select filter-select--country" data-filter="country">
+                            <option value="">All countries</option>
+                            {% assign cs_countries = site.data.case_studies | map: 'country' | compact | uniq | sort %}
+                            {% for c in cs_countries %}
+                            <option value="{{ c }}">{{ c }}</option>
+                            {% endfor %}
+                        </select>
                     </div>
                 </form>
             </aside>
@@ -144,7 +177,9 @@ title: Case Studies
                      data-year="{{ study.year }}"
                      data-sector="{{ study.sector }}"
                      data-challenges="{{ study.climate_challenges | join: ',' }}"
-                     data-region="{% if study.country == 'United States' %}North America{% elsif study.country == 'Canada' %}North America{% elsif study.country == 'Colombia' %}South America{% elsif study.country == 'Netherlands' or study.country == 'France' or study.country == 'Denmark' %}Europe{% elsif study.country == 'Singapore' %}Asia{% else %}Global{% endif %}">
+                     data-continent="{{ study.continent }}"
+                     data-user-category="{{ study.user_categories | join: ',' }}"
+                     data-region="{{ study.continent }}">
                     
                     {% if study.image_url %}
                     <img class="case-study-card__image" src="{{ study.image_url }}" alt="{{ study.title }}">

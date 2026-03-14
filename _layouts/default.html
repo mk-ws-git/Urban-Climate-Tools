@@ -16,7 +16,8 @@
         <div class="nav__container">
             <div class="nav__brand">
                 <a href="{{ '/' | relative_url }}" class="nav__brand-link">
-                    <img src="{{ '/assets/images/mark-light.svg' | relative_url }}" alt="Urban Climate Tools" class="nav__logo">
+                    <img src="{{ '/assets/images/UCT Logo Dark.png' | relative_url }}" alt="Urban Climate Tools" class="nav__logo nav__logo--light">
+                    <img src="{{ '/assets/images/UCT Logo Light.png' | relative_url }}" alt="Urban Climate Tools" class="nav__logo nav__logo--dark">
                     <span class="nav__title">Urban Climate Tools</span>
                 </a>
             </div>
@@ -25,6 +26,14 @@
                 <li class="nav__item"><a href="{{ '/about/' | relative_url }}" class="nav__link">About</a></li>
                 <li class="nav__item"><a href="{{ '/tools/' | relative_url }}" class="nav__link">Tools</a></li>
                 <li class="nav__item"><a href="{{ '/case-studies/' | relative_url }}" class="nav__link">Case Studies</a></li>
+                <li class="nav__item nav__item--has-dropdown">
+                    <button class="nav__link nav__explore-btn" aria-haspopup="true" aria-expanded="false">Explore ▾</button>
+                    <ul class="nav__dropdown" role="menu">
+                        <li><a href="{{ '/quiz/' | relative_url }}" class="nav__dropdown-item">Tool Finder Quiz</a></li>
+                        <li><a href="{{ '/map/' | relative_url }}" class="nav__dropdown-item">Case Study Map</a></li>
+                        <li><a href="{{ '/compare/' | relative_url }}" class="nav__dropdown-item">Compare Tools</a></li>
+                    </ul>
+                </li>
                 <li class="nav__item"><a href="{{ '/resources/' | relative_url }}" class="nav__link">Resources</a></li>
             </ul>
 
@@ -71,7 +80,7 @@
         <div class="footer__container">
             <div class="footer__section">
                 <div class="footer__brand">
-                    <img src="{{ '/assets/images/mark-light.svg' | relative_url }}" alt="Urban Climate Tools" class="footer__logo">
+                    <img src="{{ '/assets/images/UCT Logo Light.png' | relative_url }}" alt="Urban Climate Tools" class="footer__logo">
                     <h4 class="footer__title">Urban Climate Tools</h4>
                 </div>
                 <p class="footer__description">A curated, open-source repository of climate adaptation tools for cities.</p>
