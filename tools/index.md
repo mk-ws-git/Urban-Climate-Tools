@@ -139,6 +139,10 @@ title: All Tools
                 {% for tool in site.data.tools %}
                 <div class="tool-card" data-tool
                      data-tool-id="{{ tool.id }}"
+                     data-save-id="{{ tool.id }}"
+                     data-save-title="{{ tool.name }}"
+                     data-save-url="{{ site.baseurl }}/tool/{{ tool.id }}/"
+                     data-save-type="Tool"
                      data-name="{{ tool.name }}"
                      data-developer="{{ tool.developer }}"
                      data-description="{{ tool.description }}"

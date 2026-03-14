@@ -134,6 +134,10 @@ title: Case Studies
             <main class="tools-grid case-studies-grid">
                 {% for study in site.data.case_studies %}
                 <div class="case-study-card" data-case-study
+                     data-save-id="{{ study.id }}"
+                     data-save-title="{{ study.title }}"
+                     data-save-url="{{ site.baseurl }}/case-studies/{{ study.id }}/"
+                     data-save-type="Case Study"
                      data-title="{{ study.title }}"
                      data-city="{{ study.city }}"
                      data-country="{{ study.country }}"
@@ -144,9 +148,9 @@ title: Case Studies
                     
                     {% if study.image_url %}
                     <img class="case-study-card__image" src="{{ study.image_url }}" alt="{{ study.title }}">
-                    {% if study.featured %}<span class="case-study-card__badge">Featured</span>{% endif %}
                     {% endif %}
                     <div class="case-study-card__content">
+                        {% if study.featured %}<span class="case-study-card__badge">Featured</span>{% endif %}
                         <h3><a href="{{ site.baseurl }}/case-studies/{{ study.id }}/">{{ study.title }}</a></h3>
                         <p class="case-study-card__location">{{ study.city }}{% if study.state %}, {{ study.state }}{% endif %}, {{ study.country }} &middot; {{ study.year }}</p>
                         <p class="case-study-card__description">{{ study.description }}</p>
@@ -163,6 +167,9 @@ title: Case Studies
                         {% endif %}
                         <a href="{{ site.baseurl }}/case-studies/{{ study.id }}/" class="case-study-card__link">Read Case Study →</a>
                     </div>
+                    <button class="save-btn" data-save-btn aria-label="Save">
+                        <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+                    </button>
                 </div>
                 {% endfor %}
             </main>
