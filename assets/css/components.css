@@ -264,7 +264,7 @@ img, svg { display: block; max-width: 100%; }
 
 .nav__title em {
   font-style: normal;
-  color: var(--color-teal-900);
+  color: var(--color-teal-400);
 }
 
 .nav__links {
