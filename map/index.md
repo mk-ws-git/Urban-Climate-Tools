@@ -106,8 +106,7 @@ window.UCT_CASE_STUDIES = {{ site.data.case_studies | jsonify }};
     return 'other';
   }
 
-  function buildPopup(study) {
-    var url = BASE + '/case-study/' + study.id + '/';
+    var url = BASE + '/case-studies/' + study.id + '/';
     var cats = (study.categories || []).map(function (c) {
       return '<span class="case-study-card__tag">' + c + '</span>';
     }).join('');
@@ -165,7 +164,7 @@ window.UCT_CASE_STUDIES = {{ site.data.case_studies | jsonify }};
       return filter === 'all' || cats.indexOf(filter) > -1;
     });
     grid.innerHTML = shown.map(function (study) {
-      var url = BASE + '/case-study/' + study.id + '/';
+      var url = BASE + '/case-studies/' + study.id + '/';
       var coords = COORDS[study.id];
       var cat = primaryCategory(study);
       var bgColor = CATEGORY_COLORS[cat] || '#666';
