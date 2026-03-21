@@ -2,6 +2,7 @@
 layout: category
 title: Heat Management Tools
 category: heat
+permalink: /categories/heat/
 description: Tools and resources for managing urban heat islands, heat waves, and extreme temperature events in cities.
 ---
 

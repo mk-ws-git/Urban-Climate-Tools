@@ -2,6 +2,7 @@
 layout: category
 title: Flood Risk Tools
 category: flood
+permalink: /categories/flood/
 description: Tools for assessing and managing flood risks, stormwater management, and urban drainage systems.
 ---
 

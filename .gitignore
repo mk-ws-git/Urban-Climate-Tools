@@ -8,7 +8,7 @@ _site/
 .bundle/
 vendor/
 .ruby-version
-gemfiles.lock
+Gemfile.lock
 
 # Environment variables
 .env

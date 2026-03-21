@@ -2,6 +2,7 @@
 layout: category
 title: Energy Efficiency Tools
 category: energy
+permalink: /categories/energy/
 description: Tools for energy modeling, building performance, and energy efficiency planning in cities.
 ---
 
