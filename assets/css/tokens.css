@@ -1,0 +1,175 @@
+/* ============================================================
+   URBAN CLIMATE TOOLS — TERRAIN BRAND SYSTEM
+   tokens.css
+   
+   Import this file first in your main stylesheet:
+   @import 'tokens.css';
+   ============================================================ */
+
+
+/* ── COLOUR TOKENS ── */
+:root {
+
+  /* Primary — Teal ramp */
+  --color-teal-50:   #E1F5EE;   /* Dew         — lightest fill, hero bg tints    */
+  --color-teal-100:  #9FE1CB;   /* Sage light  — baseline lines, dividers         */
+  --color-teal-200:  #5DCAA5;   /* Sage        — secondary elements, dark mode fg */
+  --color-teal-400:  #1D9E75;   /* Teal ★      — PRIMARY brand colour, CTAs, links */
+  --color-teal-600:  #0F6E56;   /* Forest      — hover states, borders on teal    */
+  --color-teal-800:  #085041;   /* Deep forest — dark mode mark bg, nav dark      */
+  --color-teal-900:  #05352d;   /* Deep moss   — darkest bg, footer dark           */
+
+  /* Category accents */
+  --color-heat-bg:      #FAEEDA;   /* Amber 50  */
+  --color-heat-border:  #EF9F27;   /* Amber 200 */
+  --color-heat-text:    #633806;   /* Amber 800 */
+
+  --color-flood-bg:     #E6F1FB;   /* Blue 50   */
+  --color-flood-border: #85B7EB;   /* Blue 200  */
+  --color-flood-text:   #0C447C;   /* Blue 800  */
+
+  --color-nbs-bg:       #E1F5EE;   /* Teal 50   */
+  --color-nbs-border:   #5DCAA5;   /* Teal 200  */
+  --color-nbs-text:     #085041;   /* Teal 800  */
+
+  --color-coastal-bg:   #EEEDFE;   /* Purple 50 */
+  --color-coastal-border:#AFA9EC;  /* Purple 200*/
+  --color-coastal-text: #3C3489;   /* Purple 800*/
+
+  --color-planning-bg:  #EEEDFE;   /* Purple 50 */
+  --color-planning-border:#AFA9EC; /* Purple 200*/
+  --color-planning-text:#3C3489;   /* Purple 800*/
+
+  --color-data-bg:      #F1EFE8;   /* Gray 50   */
+  --color-data-border:  #B4B2A9;   /* Gray 200  */
+  --color-data-text:    #444441;   /* Gray 800  */
+
+  --color-energy-bg:    #FAECE7;   /* Coral 50  */
+  --color-energy-border:#F0997B;   /* Coral 200 */
+  --color-energy-text:  #712B13;   /* Coral 800 */
+
+  --color-free-bg:      #EAF3DE;   /* Green 50  */
+  --color-free-border:  #97C459;   /* Green 200 */
+  --color-free-text:    #27500A;   /* Green 800 */
+
+  --color-paid-bg:      #FCEBEB;   /* Red 50    */
+  --color-paid-border:  #F09595;   /* Red 200   */
+  --color-paid-text:    #791F1F;   /* Red 800   */
+
+  /* Neutral surface / text (light mode) */
+  --color-surface:      #FFFFFF;
+  --color-surface-2:    #F7F9F7;   /* very slight green tint on page bg */
+  --color-surface-3:    #EEF3EE;   /* card hover / subtle tint          */
+  --color-text-primary: #111111;
+  --color-text-secondary:#222222;
+  --color-text-tertiary: #999999;
+  --color-border:       rgba(0,0,0,0.09);
+  --color-border-medium:rgba(0,0,0,0.16);
+
+
+  /* ── TYPOGRAPHY ── */
+  --font-sans:    'Inter', 'Helvetica Neue', Arial, sans-serif;
+  --font-mono:    'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+
+  --text-xs:      11px;
+  --text-sm:      13px;
+  --text-base:    15px;
+  --text-lg:      18px;
+  --text-xl:      22px;
+  --text-2xl:     28px;
+  --text-3xl:     36px;
+
+  --weight-regular: 400;
+  --weight-medium:  500;
+
+  --leading-tight:  1.2;
+  --leading-snug:   1.4;
+  --leading-normal: 1.6;
+  --leading-loose:  1.8;
+
+  --tracking-tight:  -0.01em;
+  --tracking-normal:  0;
+  --tracking-wide:    0.06em;
+  --tracking-widest:  0.10em;
+
+
+  /* ── SPACING ── */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  20px;
+  --space-6:  24px;
+  --space-8:  32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+
+
+  /* ── RADIUS ── */
+  --radius-sm:   6px;
+  --radius-md:   8px;
+  --radius-lg:   12px;
+  --radius-xl:   16px;
+  --radius-pill: 999px;
+
+
+  /* ── SHADOWS ── */
+  --shadow-none: none;
+  --shadow-sm:   0 1px 3px rgba(0,0,0,0.07);
+  --shadow-md:   0 2px 8px rgba(0,0,0,0.08);
+
+
+  /* ── TRANSITIONS ── */
+  --transition-fast:   150ms ease;
+  --transition-normal: 220ms ease;
+  --transition-slow:   350ms ease;
+
+
+  /* ── LAYOUT ── */
+  --container-sm:   640px;
+  --container-md:   768px;
+  --container-lg:  1024px;
+  --container-xl:  1280px;
+  --nav-height:     60px;
+}
+
+
+/* ── DARK MODE ── */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-surface:       #0d1f18;
+    --color-surface-2:     #122318;
+    --color-surface-3:     #1a3028;
+    --color-text-primary:  #E1F5EE;
+    --color-text-secondary:#9FE1CB;
+    --color-text-tertiary: #5DCAA5;
+    --color-border:        rgba(255,255,255,0.09);
+    --color-border-medium: rgba(255,255,255,0.16);
+  }
+}
+
+/* ── JS-CONTROLLED THEME OVERRIDE ── */
+/* Set via data-theme on <html>; always wins over @media preference */
+:root[data-theme="light"] {
+  --color-surface:        #FFFFFF;
+  --color-surface-2:      #F7F9F7;
+  --color-surface-3:      #EEF3EE;
+  --color-text-primary:   #111111;
+  --color-text-secondary: #222222;
+  --color-text-tertiary:  #999999;
+  --color-border:         rgba(0,0,0,0.09);
+  --color-border-medium:  rgba(0,0,0,0.16);
+}
+
+:root[data-theme="dark"] {
+  --color-surface:        #0d1f18;
+  --color-surface-2:      #122318;
+  --color-surface-3:      #1a3028;
+  --color-text-primary:   #E1F5EE;
+  --color-text-secondary: #9FE1CB;
+  --color-text-tertiary:  #5DCAA5;
+  --color-border:         rgba(255,255,255,0.09);
+  --color-border-medium:  rgba(255,255,255,0.16);
+}

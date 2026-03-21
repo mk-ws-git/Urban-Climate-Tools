@@ -21,6 +21,7 @@ class CaseStudyFilter {
         this.loadCaseStudies();
         this.attachEventListeners();
         this.render();
+        this.updateResultsCount();
     }
     
     loadCaseStudies() {
@@ -33,6 +34,8 @@ class CaseStudyFilter {
             sector: el.dataset.sector || '',
             challenges: el.dataset.challenges ? el.dataset.challenges.split(',').map(c => c.trim()) : [],
             region: el.dataset.region || '',
+            continent: el.dataset.continent || '',
+            userCategory: el.dataset.userCategory ? el.dataset.userCategory.split(',').map(s => s.trim()) : [],
             element: el
         }));
         
@@ -54,10 +57,43 @@ class CaseStudyFilter {
         document.querySelectorAll('[data-filter="region"]').forEach(checkbox => {
             checkbox.addEventListener('change', (e) => this.handleFilterChange(e));
         });
+
+        // User category filters
+        document.querySelectorAll('[data-filter="userCategory"]').forEach(checkbox => {
+            checkbox.addEventListener('change', (e) => this.handleFilterChange(e));
+        });
+
+        // Continent filters
+        document.querySelectorAll('[data-filter="continent"]').forEach(checkbox => {
+            checkbox.addEventListener('change', (e) => this.handleFilterChange(e));
+        });
+
+        // Country dropdown
+        const countrySelect = document.querySelector('select[data-filter="country"]');
+        if (countrySelect) {
+            countrySelect.addEventListener('change', (e) => {
+                this.activeFilters.country = e.target.value;
+                this.applyFilters();
+            });
+        }
         
         // Search input
         if (this.searchInput) {
             this.searchInput.addEventListener('input', (e) => this.handleSearch(e));
+        }
+
+        // Clear search button
+        const clearBtn = document.querySelector('.search__clear');
+        if (clearBtn && this.searchInput) {
+            this.searchInput.addEventListener('input', () => {
+                clearBtn.style.display = this.searchInput.value ? '' : 'none';
+            });
+            clearBtn.addEventListener('click', () => {
+                this.searchInput.value = '';
+                clearBtn.style.display = 'none';
+                this.searchInput.dispatchEvent(new Event('input'));
+                this.searchInput.focus();
+            });
         }
         
         // Reset button
@@ -125,6 +161,25 @@ class CaseStudyFilter {
                 this.activeFilters.region.includes(study.region)
             );
         }
+
+        // Apply user category filter
+        if (this.activeFilters.userCategory.length > 0) {
+            filtered = filtered.filter(study =>
+                study.userCategory.some(uc => this.activeFilters.userCategory.includes(uc))
+            );
+        }
+
+        // Apply continent filter
+        if (this.activeFilters.continent.length > 0) {
+            filtered = filtered.filter(study =>
+                this.activeFilters.continent.includes(study.continent)
+            );
+        }
+
+        // Apply country filter
+        if (this.activeFilters.country) {
+            filtered = filtered.filter(study => study.country === this.activeFilters.country);
+        }
         
         this.filteredStudies = filtered;
         this.render();
@@ -134,7 +189,14 @@ class CaseStudyFilter {
     updateResultsCount() {
         const countElement = document.querySelector('[data-results-count]');
         if (countElement) {
-            countElement.textContent = `${this.filteredStudies.length} case study${this.filteredStudies.length !== 1 ? 's' : ''}`;
+            const n = this.filteredStudies.length;
+            countElement.textContent = n;
+            const label = countElement.closest('.tools__results');
+            if (label) {
+                // update the text node after the <strong>
+                const textNode = Array.from(label.childNodes).find(n => n.nodeType === 3 && n.textContent.trim());
+                if (textNode) textNode.textContent = ` case ${n === 1 ? 'study' : 'studies'}`;
+            }
         }
     }
     
@@ -169,6 +231,8 @@ class CaseStudyFilter {
         document.querySelectorAll('[data-filter]').forEach(checkbox => {
             checkbox.checked = false;
         });
+        // Reset country dropdown
+        document.querySelectorAll('select[data-filter="country"]').forEach(s => { s.value = ''; });
         
         // Clear search
         if (this.searchInput) {
@@ -179,7 +243,10 @@ class CaseStudyFilter {
         this.activeFilters = {
             challenge: [],
             sector: [],
-            region: []
+            region: [],
+            userCategory: [],
+            continent: [],
+            country: ''
         };
         
         // Reset filtered studies
@@ -196,6 +263,26 @@ document.addEventListener('DOMContentLoaded', () => {
             container: '.case-studies-grid',
             filterForm: '.filter-form',
             searchInput: '.case-study-search'
+        });
+    }
+});
+
+// Mobile filter toggle (match tools page behavior)
+document.addEventListener('DOMContentLoaded', () => {
+    const filterToggle = document.querySelector('[data-toggle="filters"]');
+    const filterPanel = document.querySelector('.filter-panel');
+
+    if (filterToggle && filterPanel) {
+        filterToggle.addEventListener('click', () => {
+            filterPanel.classList.toggle('active');
+            filterToggle.classList.toggle('active');
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.filter-panel') && !e.target.closest('[data-toggle="filters"]')) {
+                filterPanel.classList.remove('active');
+                filterToggle.classList.remove('active');
+            }
         });
     }
 });

@@ -34,13 +34,17 @@
     color: var(--dark-gray);
 }
 
+.logo a:hover {
+    color: var(--color-teal-600);
+}
+
 .logo-img {
     width: 32px;
     height: 32px;
 }
 
 .logo-text {
-    color: var(--primary-blue);
+    color: var(--color-teal-400);
 }
 
 .nav-links {
@@ -58,7 +62,7 @@
 }
 
 .nav-links a:hover {
-    color: var(--primary-blue);
+    color: var(--color-teal-600);
     text-decoration: none;
 }
 
@@ -89,7 +93,7 @@
     font-size: 14px;
     text-transform: uppercase;
     letter-spacing: 1px;
-    color: var(--primary-blue);
+    color: var(--color-teal-400);
 }
 
 .footer-section p {

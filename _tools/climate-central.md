@@ -17,6 +17,17 @@ tags:
   - visualization
   - sea level rise
   - extreme weather
+icon: climate-central
+website: https://www.climatecentral.org
+github: https://github.com/climatecentral
+access_model: Open Source
+geographic_coverage: Global
+last_updated: 2024
+features:
+  - Climate risk mapping
+  - Sea level rise projections
+  - Extreme weather analysis
+  - Data visualization tools
 ---
 
 ## Overview

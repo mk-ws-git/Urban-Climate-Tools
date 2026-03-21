@@ -12,12 +12,15 @@ layout: default
             <h1>{{ page.title }}</h1>
             <p class="developer">{{ page.developer }}</p>
             
-            <div class="badges">
+            <div class="tool__tags">
                 {% for category in page.categories %}
-                    <span class="badge badge-{{ category | downcase }}">{{ category }}</span>
+                    <span class="tag tag--category">{{ category }}</span>
                 {% endfor %}
-                <span class="badge badge-{{ page.access_model | downcase }}">{{ page.access_model }}</span>
-                <span class="badge badge-skill">{{ page.skill_level }}</span>
+                <span class="tag tag--access">{{ page.access_model }}</span>
+                <span class="tag tag--skill">{{ page.skill_level }}</span>
+                {% for tag in page.tags %}
+                    <span class="tag tag--feature">{{ tag }}</span>
+                {% endfor %}
             </div>
         </div>
     </div>
@@ -87,6 +90,21 @@ layout: default
             {% endif %}
             
             {{ content }}
+
+            <!-- Quick links: Quiz + Compare -->
+            <div class="tool-explore-bar">
+                <div class="tool-explore-bar__label">Explore further</div>
+                <div class="tool-explore-bar__actions">
+                    <a href="{{ '/compare/' | relative_url }}?a={{ page.id }}" class="tool-explore-bar__btn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16" height="16"><rect x="3" y="6" width="8" height="12" rx="1"/><rect x="13" y="6" width="8" height="12" rx="1"/><line x1="11" y1="12" x2="13" y2="12"/></svg>
+                        Compare with another tool
+                    </a>
+                    <a href="{{ '/quiz/' | relative_url }}" class="tool-explore-bar__btn tool-explore-bar__btn--secondary">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16" height="16"><circle cx="12" cy="12" r="9"/><path d="M12 7 Q12 10 12 11 T12 14" stroke-linecap="round"/><circle cx="12" cy="17" r="0.8" fill="currentColor" stroke="none"/></svg>
+                        Find similar tools via quiz
+                    </a>
+                </div>
+            </div>
         </div>
         
         <aside class="tool-sidebar">
@@ -99,7 +117,13 @@ layout: default
         <h3>Related Tools</h3>
         <div class="tool-grid-horizontal">
             {% for tool in site.tools %}
-                {% if tool.categories | intersect: page.categories %}
+                {% assign common = false %}
+                {% for cat in tool.categories %}
+                    {% if page.categories contains cat %}
+                        {% assign common = true %}
+                    {% endif %}
+                {% endfor %}
+                {% if common %}
                     {% if tool.title != page.title %}
                         {% include tool-card.html tool=tool %}
                     {% endif %}

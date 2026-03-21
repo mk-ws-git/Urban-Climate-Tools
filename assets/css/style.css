@@ -1,31 +1,17 @@
 /* Urban Climate Tools - Main Stylesheet */
 
-:root {
-    --primary-blue: #0051BA;
-    --secondary-blue: #F0F4FF;
-    --cyan-accent: #00D4FF;
-    --dark-gray: #1A1A1A;
-    --light-gray: #F5F5F5;
-    --border-gray: #E0E0E0;
-    --green-success: #00B341;
-    --orange-warning: #FF6B35;
-    
-    --radius-sm: 4px;
-    --radius-md: 8px;
-    --radius-lg: 12px;
-    
-    --shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
-    --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
-    --shadow-lg: 0 8px 24px rgba(0,0,0,0.12);
-    
-    --spacing-xs: 4px;
-    --spacing-sm: 8px;
-    --spacing-md: 16px;
-    --spacing-lg: 24px;
-    --spacing-xl: 32px;
-    --spacing-2xl: 48px;
-}
+/* Import design tokens first */
+@import url('tokens.css');
 
+/* Import legacy base (must come before components so components win) */
+@import url('typography.css');
+@import url('nav.css');
+@import url('cards.css');
+
+/* Import component styles (these override legacy base styles) */
+@import url('components.css');
+
+/* Base styles */
 * {
     margin: 0;
     padding: 0;
@@ -38,13 +24,18 @@ html {
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
-    color: var(--dark-gray);
-    background: white;
-    line-height: 1.6;
+    font-family: var(--font-sans);
+    color: var(--color-text-primary);
+    background: var(--color-surface);
+    line-height: var(--line-height-body);
 }
 
 /* Layout */
+main.main {
+    min-height: calc(100vh - var(--nav-height) - var(--footer-height));
+}
+
+/* Legacy layout support - remove after migration */
 main.content {
     max-width: 1200px;
     margin: 0 auto;
@@ -158,12 +149,13 @@ main.content {
 
 /* Links */
 a {
-    color: var(--primary-blue);
+    color: var(--color-teal-400);
     text-decoration: none;
 }
 
 a:hover {
-    text-decoration: underline;
+    color: var(--color-teal-600);
+    text-decoration: none;
 }
 
 /* Responsive */

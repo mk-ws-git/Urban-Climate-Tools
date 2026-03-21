@@ -9,6 +9,9 @@ baseurl: "/Urban-Climate-Tools"
 # Theme - commented out since we use custom layouts
 # theme: jekyll-theme-minimal
 # remote_theme: pages-themes/minimal@v0.2.0
+# Theme
+# theme: jekyll-theme-minimal
+remote_theme: pages-themes/minimal@v0.2.0
 
 # Plugins
 plugins:
@@ -20,11 +23,11 @@ plugins:
 collections:
   tools:
     output: true
-    permalink: /tools/:title/
+    permalink: /tool/:title/
     label: Tools
   case_studies:
     output: true
-    permalink: /case-studies/:title/
+    permalink: /case-study/:title/
     label: Case Studies
 
 # Default frontmatter
@@ -54,12 +57,18 @@ defaults:
 # Site configuration
 highlighter: rouge
 markdown: kramdown
+sass:
+  style: compressed
 exclude:
   - Gemfile
   - Gemfile.lock
   - README.md
   - node_modules
   - vendor
+
+# Build settings
+incremental: true
+safe: true
 
 # SEO
 twitter_username: "@climatetools"

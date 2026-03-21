@@ -1,37 +1,40 @@
-<div class="tool-card" data-cost="{{ tool.access_model }}" data-skill="{{ tool.skill_level }}" data-coverage="{{ tool.geographic_coverage }}">
+<div class="tool-card" style="position:relative" data-cost="{{ tool.cost }}" data-skill="{{ tool.skillLevel }}" data-coverage="{{ tool.coverage | join: ',' }}">
     <div class="card-header">
         <div class="card-icon">
-            <img src="{{ tool.icon | relative_url }}" alt="{{ tool.title }}" class="icon-md">
+            <img src="{{ tool.icon | relative_url }}" alt="{{ tool.name }}" class="icon-md">
         </div>
-        <div class="card-badges">
+        <div class="tool-card__tags">
             {% for category in tool.categories %}
-                <span class="badge badge-{{ category | downcase }}">{{ category }}</span>
+                <span class="tag tag--category">{{ category }}</span>
             {% endfor %}
         </div>
     </div>
-    
+
     <div class="card-body">
-        <h3><a href="{{ tool.url | relative_url }}">{{ tool.title }}</a></h3>
+        <h3><a href="{{ tool.url }}">{{ tool.name }}</a></h3>
         <p class="developer">{{ tool.developer }}</p>
         <p class="description">{{ tool.description | truncatewords: 20 }}</p>
-        
+
         <div class="card-meta">
             <span class="meta-item">
                 <span class="label">Cost:</span>
-                <span class="value">{{ tool.access_model }}</span>
+                <span class="value">{{ tool.cost }}</span>
             </span>
             <span class="meta-item">
                 <span class="label">Coverage:</span>
-                <span class="value">{{ tool.geographic_coverage }}</span>
+                <span class="value">{{ tool.coverage | join: ', ' }}</span>
             </span>
             <span class="meta-item">
                 <span class="label">Skill:</span>
-                <span class="value">{{ tool.skill_level }}</span>
+                <span class="value">{{ tool.skillLevel }}</span>
             </span>
         </div>
     </div>
     
     <div class="card-footer">
-        <a href="{{ tool.url | relative_url }}" class="btn btn-sm btn-primary">View Details →</a>
+        <a href="{{ tool.url }}" class="btn btn-sm btn-primary">View Details →</a>
     </div>
+    <button class="save-btn" data-save-btn aria-label="Save">
+        <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+    </button>
 </div>

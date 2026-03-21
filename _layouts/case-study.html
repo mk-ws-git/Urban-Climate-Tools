@@ -1,53 +1,46 @@
 ---
+layout: default
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    {% include head.html %}
-</head>
-<body>
-    {% include nav.html %}
-    
-    <main class="case-study-detail">
-        <div class="container">
-            <div class="breadcrumb">
-                <a href="{{ site.baseurl }}/">Home</a>
-                <span>/</span>
-                <a href="{{ site.baseurl }}/case-studies/">Case Studies</a>
-                <span>/</span>
-                <span>{{ page.title }}</span>
+<section class="section">
+    <div class="container">
+        <nav class="breadcrumb">
+            <a href="{{ '/' | relative_url }}" class="breadcrumb__link">Home</a>
+            <span class="breadcrumb__separator">/</span>
+            <a href="{{ '/case-studies/' | relative_url }}" class="breadcrumb__link">Case Studies</a>
+            <span class="breadcrumb__separator">/</span>
+            <span class="breadcrumb__current">{{ page.title }}</span>
+        </nav>
+
+        <div class="case-study__header">
+            {% if page.image_url %}
+            <div class="case-study__hero">
+                <img src="{{ page.image_url }}" alt="{{ page.title }}" class="case-study__image"/>
             </div>
-            
-            <div class="case-study-header">
-                {% if page.image_url %}
-                <div class="hero-image">
-                    <img src="{{ page.image_url }}" alt="{{ page.title }}" />
-                </div>
-                {% endif %}
-                
-                <div class="header-content">
-                    <h1>{{ page.title }}</h1>
-                    <p class="case-study-meta">
-                        <strong>{{ page.city }}{% if page.state %}, {{ page.state }}{% endif %}</strong> • {{ page.year }}
-                    </p>
-                    <p class="lead">{{ page.description }}</p>
-                </div>
+            {% endif %}
+
+            <div class="case-study__content">
+                <h1 class="case-study__title">{{ page.title }}</h1>
+                <p class="case-study__meta">
+                    <strong>{{ page.city }}{% if page.state %}, {{ page.state }}{% endif %}</strong> • {{ page.year }}
+                </p>
+                <p class="case-study__description">{{ page.description }}</p>
             </div>
-            
-            <div class="case-study-body">
-                <aside class="case-study-sidebar">
-                    <div class="sidebar-section">
-                        <h4>Quick Facts</h4>
-                        <dl>
-                            <dt>City</dt>
-                            <dd>{{ page.city }}{% if page.state %}, {{ page.state }}{% endif %}, {{ page.country }}</dd>
-                            
-                            <dt>Population</dt>
-                            <dd>{{ page.population | default: "N/A" }}</dd>
-                            
-                            <dt>Sector</dt>
-                            <dd>{{ page.sector }}</dd>
+        </div>
+
+        <div class="case-study__body">
+            <aside class="case-study__sidebar">
+                <div class="sidebar-section">
+                    <h4 class="sidebar-section__title">Quick Facts</h4>
+                    <dl class="sidebar-section__list">
+                        <dt>City</dt>
+                        <dd>{{ page.city }}{% if page.state %}, {{ page.state }}{% endif %}, {{ page.country }}</dd>
+
+                        <dt>Population</dt>
+                        <dd>{{ page.population | default: "N/A" }}</dd>
+
+                        <dt>Sector</dt>
+                        <dd>{{ page.sector }}</dd>
                             
                             <dt>Year</dt>
                             <dd>{{ page.year }}</dd>

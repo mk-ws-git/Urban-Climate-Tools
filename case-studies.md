@@ -3,20 +3,34 @@ layout: default
 title: Case Studies
 ---
 
-<div class="case-studies-page">
+<section class="tools-page case-studies-page">
     <div class="container">
-        <h1>Urban Climate Case Studies</h1>
-        <p class="lead">Learn from cities around the world implementing climate adaptation and resilience solutions.</p>
-        
-        <div class="case-studies-header">
-            <div class="search-container">
-                <svg class="search-icon" viewBox="0 0 20 20" width="20" height="20">
-                    <circle cx="8" cy="8" r="6" fill="none" stroke="currentColor" stroke-width="1.5"/>
-                    <line x1="12.5" y1="12.5" x2="17.5" y2="17.5" stroke="currentColor" stroke-width="1.5"/>
-                </svg>
-                <input type="text" class="case-study-search" placeholder="Search by city, country, or challenge..." autofocus>
+        <div class="section__header">
+            <h1 class="section__title">Urban Climate Case Studies</h1>
+            <p class="section__description">Learn from cities around the world implementing climate adaptation and resilience solutions.</p>
+        </div>
+
+        <div class="tools__header">
+            <div class="search">
+                <div class="search__container">
+                    <svg class="search__icon" viewBox="0 0 20 20" width="20" height="20">
+                        <circle cx="8" cy="8" r="6" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                        <line x1="12.5" y1="12.5" x2="17.5" y2="17.5" stroke="currentColor" stroke-width="1.5"/>
+                    </svg>
+                    <input type="text" class="search__input case-study-search" placeholder="Search by city, country, or challenge..." autofocus>
+                    <button type="button" class="search__clear" aria-label="Clear search" style="display:none">&times;</button>
+                </div>
             </div>
-            <button class="filter-toggle" data-toggle="filters">
+            <div class="sort">
+                <select class="sort-select" aria-label="Sort case studies">
+                    <option value="relevance">Recommended</option>
+                    <option value="year-desc">Newest</option>
+                    <option value="year-asc">Oldest</option>
+                    <option value="title-asc">Title (A–Z)</option>
+                    <option value="title-desc">Title (Z–A)</option>
+                </select>
+            </div>
+            <button class="btn btn--secondary filter-toggle" data-toggle="filters">
                 <svg viewBox="0 0 20 20" width="16" height="16">
                     <line x1="2" y1="4" x2="18" y2="4" stroke="currentColor" stroke-width="1.5"/>
                     <line x1="4" y1="10" x2="16" y2="10" stroke="currentColor" stroke-width="1.5"/>
@@ -24,439 +38,183 @@ title: Case Studies
                 </svg>
                 Filters
             </button>
-            <div class="results-info">
-                Results: <strong data-results-count>{{ site.data.case_studies | size }}</strong>
+            <div class="tools__results">
+                <strong data-results-count>{{ site.data.case_studies | size }}</strong> case studies
             </div>
         </div>
         
-        <div class="case-studies-container">
-            <aside class="filter-panel">
-                <div class="filter-header">
-                    <h3>Filters</h3>
-                    <button data-action="reset-filters" class="btn-reset">Reset</button>
+        <div class="tools__container">
+            <aside class="filter-panel case-study-filter">
+                <div class="filter-panel__header">
+                    <h3 class="filter-panel__title">Filters</h3>
+                    <button data-action="reset-filters" class="btn btn--ghost">Reset</button>
                 </div>
-                
+
                 <form class="filter-form">
                     <div class="filter-group">
-                        <h4>Climate Challenge</h4>
+                        <h4 class="filter-group__title">Climate Challenge</h4>
                         <div class="filter-options">
-                            <label>
+                            <label class="filter-option">
                                 <input type="checkbox" data-filter="challenge" value="urban heat">
-                                <span>Urban Heat</span>
+                                <span class="filter-option__label">Urban Heat</span>
                             </label>
-                            <label>
+                            <label class="filter-option">
                                 <input type="checkbox" data-filter="challenge" value="flooding">
-                                <span>Flooding</span>
+                                <span class="filter-option__label">Flooding</span>
                             </label>
-                            <label>
+                            <label class="filter-option">
                                 <input type="checkbox" data-filter="challenge" value="sea level rise">
-                                <span>Sea Level Rise</span>
+                                <span class="filter-option__label">Sea Level Rise</span>
                             </label>
-                            <label>
+                            <label class="filter-option">
                                 <input type="checkbox" data-filter="challenge" value="water scarcity">
-                                <span>Water Scarcity</span>
+                                <span class="filter-option__label">Water Scarcity</span>
                             </label>
-                            <label>
+                            <label class="filter-option">
                                 <input type="checkbox" data-filter="challenge" value="air pollution">
-                                <span>Air Pollution</span>
+                                <span class="filter-option__label">Air Pollution</span>
                             </label>
                         </div>
                     </div>
-                    
+
                     <div class="filter-group">
-                        <h4>Sector</h4>
+                        <h4 class="filter-group__title">Sector</h4>
                         <div class="filter-options">
-                            <label>
+                            <label class="filter-option">
                                 <input type="checkbox" data-filter="sector" value="Green Infrastructure">
-                                <span>Green Infrastructure</span>
+                                <span class="filter-option__label">Green Infrastructure</span>
                             </label>
-                            <label>
+                            <label class="filter-option">
                                 <input type="checkbox" data-filter="sector" value="Urban Planning">
-                                <span>Urban Planning</span>
+                                <span class="filter-option__label">Urban Planning</span>
                             </label>
-                            <label>
+                            <label class="filter-option">
                                 <input type="checkbox" data-filter="sector" value="Transportation">
-                                <span>Transportation</span>
+                                <span class="filter-option__label">Transportation</span>
                             </label>
-                            <label>
+                            <label class="filter-option">
                                 <input type="checkbox" data-filter="sector" value="Water Management">
-                                <span>Water Management</span>
+                                <span class="filter-option__label">Water Management</span>
                             </label>
-                            <label>
+                            <label class="filter-option">
                                 <input type="checkbox" data-filter="sector" value="Energy">
-                                <span>Energy</span>
+                                <span class="filter-option__label">Energy</span>
                             </label>
                         </div>
                     </div>
-                    
+
                     <div class="filter-group">
-                        <h4>Region</h4>
+                        <h4 class="filter-group__title">User Type</h4>
                         <div class="filter-options">
-                            <label>
-                                <input type="checkbox" data-filter="region" value="North America">
-                                <span>North America</span>
+                            <label class="filter-option">
+                                <input type="checkbox" data-filter="userCategory" value="city-officials">
+                                <span class="filter-option__label">City Officials</span>
                             </label>
-                            <label>
-                                <input type="checkbox" data-filter="region" value="South America">
-                                <span>South America</span>
+                            <label class="filter-option">
+                                <input type="checkbox" data-filter="userCategory" value="researchers">
+                                <span class="filter-option__label">Researchers</span>
                             </label>
-                            <label>
-                                <input type="checkbox" data-filter="region" value="Europe">
-                                <span>Europe</span>
-                            </label>
-                            <label>
-                                <input type="checkbox" data-filter="region" value="Asia">
-                                <span>Asia</span>
-                            </label>
-                            <label>
-                                <input type="checkbox" data-filter="region" value="Africa">
-                                <span>Africa</span>
+                            <label class="filter-option">
+                                <input type="checkbox" data-filter="userCategory" value="community">
+                                <span class="filter-option__label">Community</span>
                             </label>
                         </div>
+                    </div>
+
+                    <div class="filter-group">
+                        <h4 class="filter-group__title">Continent</h4>
+                        <div class="filter-options">
+                            <label class="filter-option">
+                                <input type="checkbox" data-filter="continent" value="North America">
+                                <span class="filter-option__label">North America</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" data-filter="continent" value="South America">
+                                <span class="filter-option__label">South America</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" data-filter="continent" value="Europe">
+                                <span class="filter-option__label">Europe</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" data-filter="continent" value="Asia">
+                                <span class="filter-option__label">Asia</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" data-filter="continent" value="Africa">
+                                <span class="filter-option__label">Africa</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" data-filter="continent" value="Oceania">
+                                <span class="filter-option__label">Oceania</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="filter-group">
+                        <h4 class="filter-group__title">Country</h4>
+                        <select class="filter-select filter-select--country" data-filter="country">
+                            <option value="">All countries</option>
+                            {% assign cs_countries = site.data.case_studies | map: 'country' | compact | uniq | sort %}
+                            {% for c in cs_countries %}
+                            <option value="{{ c }}">{{ c }}</option>
+                            {% endfor %}
+                        </select>
                     </div>
                 </form>
             </aside>
             
-            <main class="case-studies-grid">
+            <main class="tools-grid case-studies-grid">
                 {% for study in site.data.case_studies %}
                 <div class="case-study-card" data-case-study
+                     data-save-id="{{ study.id }}"
+                     data-save-title="{{ study.title }}"
+                     data-save-url="{{ site.baseurl }}/case-studies/{{ study.id }}/"
+                     data-save-type="Case Study"
                      data-title="{{ study.title }}"
                      data-city="{{ study.city }}"
                      data-country="{{ study.country }}"
+                     data-year="{{ study.year }}"
                      data-sector="{{ study.sector }}"
                      data-challenges="{{ study.climate_challenges | join: ',' }}"
-                     data-region="{% if study.country == 'United States' %}North America{% elsif study.country == 'Canada' %}North America{% elsif study.country == 'Colombia' %}South America{% elsif study.country == 'Netherlands' or study.country == 'France' or study.country == 'Denmark' %}Europe{% elsif study.country == 'Singapore' %}Asia{% else %}Global{% endif %}">
+                     data-continent="{{ study.continent }}"
+                     data-user-category="{{ study.user_categories | join: ',' }}"
+                     data-region="{{ study.continent }}">
                     
                     {% if study.image_url %}
-                    <div class="study-image">
-                        <img src="{{ study.image_url }}" alt="{{ study.title }}" />
-                        {% if study.featured %}
-                        <span class="badge-featured">Featured</span>
-                        {% endif %}
-                    </div>
+                    <img class="case-study-card__image" src="{{ study.image_url }}" alt="{{ study.title }}">
                     {% endif %}
-                    
-                    <div class="study-content">
+                    <div class="case-study-card__content">
+                        {% if study.featured %}<span class="case-study-card__badge">Featured</span>{% endif %}
                         <h3><a href="{{ site.baseurl }}/case-studies/{{ study.id }}/">{{ study.title }}</a></h3>
-                        <p class="location">{{ study.city }}{% if study.state %}, {{ study.state }}{% endif %}, {{ study.country }} • {{ study.year }}</p>
-                        <p class="description">{{ study.description }}</p>
-                        
-                        <div class="study-meta">
-                            <div class="meta-item">
-                                <span class="label">Sector:</span>
-                                <span class="value">{{ study.sector }}</span>
-                            </div>
-                            <div class="meta-item">
-                                <span class="label">Population:</span>
-                                <span class="value">{{ study.population | default: "N/A" }}</span>
-                            </div>
+                        <p class="case-study-card__location">{{ study.city }}{% if study.state %}, {{ study.state }}{% endif %}, {{ study.country }} &middot; {{ study.year }}</p>
+                        <p class="case-study-card__description">{{ study.description }}</p>
+                        <div class="case-study-card__meta">
+                            <span class="case-study-card__meta-label">Sector</span> {{ study.sector }}
+                            {% if study.population %}&ensp;&middot;&ensp;<span class="case-study-card__meta-label">Pop.</span> {{ study.population }}{% endif %}
                         </div>
-                        
                         {% if study.climate_challenges %}
-                        <div class="challenges">
+                        <div class="case-study-card__tags">
                             {% for challenge in study.climate_challenges %}
-                            <span class="challenge-badge">{{ challenge }}</span>
+                            <span class="case-study-card__tag">{{ challenge }}</span>
                             {% endfor %}
                         </div>
                         {% endif %}
-                        
-                        <a href="{{ site.baseurl }}/case-studies/{{ study.id }}/" class="btn btn-primary btn-small">Read Case Study</a>
+                        <a href="{{ site.baseurl }}/case-studies/{{ study.id }}/" class="case-study-card__link">Read Case Study →</a>
                     </div>
+                    <button class="save-btn" data-save-btn aria-label="Save">
+                        <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+                    </button>
                 </div>
                 {% endfor %}
             </main>
+
+            <div class="pagination">
+                <button class="btn btn--secondary load-more">Load more</button>
+                <span class="pagination-info"></span>
+            </div>
         </div>
     </div>
-</div>
-
-<style>
-    .case-studies-page {
-        padding: var(--spacing-2xl) 0;
-    }
-    
-    .case-studies-page h1 {
-        margin-bottom: var(--spacing-md);
-    }
-    
-    .case-studies-header {
-        display: flex;
-        gap: var(--spacing-lg);
-        margin: var(--spacing-2xl) 0;
-        align-items: center;
-    }
-    
-    .search-container {
-        flex: 1;
-        position: relative;
-    }
-    
-    .search-icon {
-        position: absolute;
-        left: var(--spacing-md);
-        top: 50%;
-        transform: translateY(-50%);
-        color: #999;
-    }
-    
-    .case-study-search {
-        width: 100%;
-        padding: var(--spacing-md) var(--spacing-md) var(--spacing-md) 40px;
-        font-size: 14px;
-        border: 1px solid var(--border-gray);
-        border-radius: var(--radius-md);
-        outline: none;
-    }
-    
-    .case-study-search:focus {
-        border-color: var(--primary-blue);
-    }
-    
-    .filter-toggle {
-        background: var(--light-gray);
-        border: 1px solid var(--border-gray);
-        padding: var(--spacing-md) var(--spacing-lg);
-        border-radius: var(--radius-md);
-        cursor: pointer;
-        display: none;
-        align-items: center;
-        gap: var(--spacing-sm);
-        font-weight: 500;
-        color: var(--primary-blue);
-    }
-    
-    .results-info {
-        font-size: 14px;
-        color: #666;
-        white-space: nowrap;
-    }
-    
-    .case-studies-container {
-        display: grid;
-        grid-template-columns: 250px 1fr;
-        gap: var(--spacing-2xl);
-    }
-    
-    .filter-panel {
-        background: var(--light-gray);
-        padding: var(--spacing-lg);
-        border-radius: var(--radius-md);
-        height: fit-content;
-        position: sticky;
-        top: 80px;
-    }
-    
-    .filter-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: var(--spacing-lg);
-    }
-    
-    .filter-header h3 {
-        margin: 0;
-        font-size: 16px;
-    }
-    
-    .btn-reset {
-        background: none;
-        border: none;
-        color: var(--primary-blue);
-        font-size: 12px;
-        cursor: pointer;
-        text-decoration: underline;
-    }
-    
-    .filter-group {
-        margin-bottom: var(--spacing-lg);
-        padding-bottom: var(--spacing-lg);
-        border-bottom: 1px solid var(--border-gray);
-    }
-    
-    .filter-group:last-child {
-        border-bottom: none;
-        margin-bottom: 0;
-        padding-bottom: 0;
-    }
-    
-    .filter-group h4 {
-        font-size: 12px;
-        text-transform: uppercase;
-        color: var(--primary-blue);
-        margin-bottom: var(--spacing-md);
-        font-weight: 600;
-    }
-    
-    .filter-options {
-        display: flex;
-        flex-direction: column;
-        gap: var(--spacing-sm);
-    }
-    
-    .filter-options label {
-        display: flex;
-        align-items: center;
-        gap: var(--spacing-sm);
-        cursor: pointer;
-        font-size: 13px;
-    }
-    
-    .filter-options input {
-        width: 16px;
-        height: 16px;
-        cursor: pointer;
-    }
-    
-    .case-studies-grid {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: var(--spacing-lg);
-    }
-    
-    .case-study-card {
-        display: grid;
-        grid-template-columns: 280px 1fr;
-        gap: var(--spacing-lg);
-        background: white;
-        border: 1px solid var(--border-gray);
-        border-radius: var(--radius-md);
-        overflow: hidden;
-        transition: all 0.3s ease;
-    }
-    
-    .case-study-card:hover {
-        border-color: var(--primary-blue);
-        box-shadow: var(--shadow-lg);
-    }
-    
-    .study-image {
-        height: 200px;
-        background: var(--light-gray);
-        position: relative;
-        overflow: hidden;
-    }
-    
-    .study-image img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-    
-    .badge-featured {
-        position: absolute;
-        top: var(--spacing-md);
-        right: var(--spacing-md);
-        background: var(--primary-blue);
-        color: white;
-        padding: 4px 12px;
-        border-radius: 12px;
-        font-size: 12px;
-        font-weight: 600;
-    }
-    
-    .study-content {
-        padding: var(--spacing-lg);
-        display: flex;
-        flex-direction: column;
-    }
-    
-    .study-content h3 {
-        margin-top: 0;
-        margin-bottom: var(--spacing-sm);
-    }
-    
-    .study-content h3 a {
-        color: var(--primary-blue);
-    }
-    
-    .study-content h3 a:hover {
-        text-decoration: underline;
-    }
-    
-    .location {
-        font-size: 13px;
-        color: #666;
-        margin-bottom: var(--spacing-md);
-    }
-    
-    .description {
-        margin-bottom: var(--spacing-md);
-    }
-    
-    .study-meta {
-        display: flex;
-        gap: var(--spacing-lg);
-        margin-bottom: var(--spacing-md);
-    }
-    
-    .meta-item {
-        font-size: 13px;
-    }
-    
-    .meta-item .label {
-        font-weight: 600;
-        color: var(--primary-blue);
-    }
-    
-    .challenges {
-        display: flex;
-        flex-wrap: wrap;
-        gap: var(--spacing-sm);
-        margin-bottom: var(--spacing-md);
-    }
-    
-    .challenge-badge {
-        display: inline-block;
-        background: var(--secondary-blue);
-        color: var(--primary-blue);
-        padding: 4px 10px;
-        border-radius: 4px;
-        font-size: 12px;
-        font-weight: 500;
-    }
-    
-    @media (max-width: 1024px) {
-        .case-studies-container {
-            grid-template-columns: 1fr;
-        }
-        
-        .filter-panel {
-            position: relative;
-            top: 0;
-        }
-    }
-    
-    @media (max-width: 768px) {
-        .case-studies-header {
-            flex-wrap: wrap;
-        }
-        
-        .filter-toggle {
-            display: flex;
-        }
-        
-        .filter-panel {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            right: 0;
-            background: white;
-            z-index: 1000;
-            border: 1px solid var(--border-gray);
-        }
-        
-        .filter-panel.active {
-            display: block;
-        }
-        
-        .case-study-card {
-            grid-template-columns: 1fr;
-        }
-        
-        .study-image {
-            height: 200px;
-        }
-    }
-</style>
+</section>
 
 <script src="{{ site.baseurl }}/assets/js/case-study-filters.js"></script>
