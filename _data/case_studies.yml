@@ -10,6 +10,9 @@
   sector: Urban Planning & Coastal Protection
   description: How Norfolk is adapting to sea level rise through comprehensive resilience planning and nature-based solutions
   population: 235000
+  categories:
+    - coastal
+    - flood
   climate_challenges:
     - sea level rise
     - flooding
@@ -38,6 +41,10 @@
   sector: Green Infrastructure & Environmental Justice
   description: Integrating green infrastructure with community equity in underserved neighborhoods
   population: 425000
+  categories:
+    - green
+    - flood
+    - heat
   climate_challenges:
     - urban heat
     - stormwater flooding
@@ -66,6 +73,8 @@
   sector: Heat Resilience & Energy Efficiency
   description: Largest US city tackling extreme heat through cool roofs, urban forestry, and public health measures
   population: 1600000
+  categories:
+    - heat
   climate_challenges:
     - extreme heat
     - energy demand
@@ -95,6 +104,9 @@
   sector: Water Management & Urban Design
   description: Europe's leader in climate adaptation through innovative water management and circular economy approaches
   population: 640000
+  categories:
+    - flood
+    - planning
   climate_challenges:
     - flooding
     - water scarcity
@@ -122,6 +134,9 @@
   sector: Urban Forestry & Biodiversity
   description: Planting 170,000 trees to combat urban heat, improve air quality, and enhance biodiversity
   population: 2161000
+  categories:
+    - green
+    - heat
   climate_challenges:
     - urban heat
     - air pollution
@@ -148,6 +163,10 @@
   sector: Sustainability & Urban Design
   description: Island nation building comprehensive climate adaptation through green buildings and water management
   population: 5850000
+  categories:
+    - coastal
+    - planning
+    - heat
   climate_challenges:
     - sea level rise
     - heat
@@ -175,6 +194,9 @@
   sector: Urban Planning & Climate Justice
   description: Latin American city integrating climate adaptation with poverty reduction and social equity
   population: 7181000
+  categories:
+    - planning
+    - green
   climate_challenges:
     - water scarcity
     - air pollution
@@ -201,6 +223,8 @@
   sector: Transportation & Carbon Neutrality
   description: World leader in sustainable transport and carbon neutrality through cycling infrastructure and renewable energy
   population: 1356000
+  categories:
+    - planning
   climate_challenges:
     - carbon emissions
     - transportation
@@ -228,6 +252,9 @@
   sector: Urban Forestry & Heat Resilience
   description: How Melbourne's 20-year urban forest strategy doubled tree canopy cover to tackle extreme heat and improve liveability
   population: 5078000
+  categories:
+    - green
+    - heat
   climate_challenges:
     - urban heat
     - biodiversity loss
@@ -254,6 +281,10 @@
   sector: Green Infrastructure & Heat Reduction
   description: Medellín transformed 30 street corridors into lush green lanes, reducing peak temperatures by up to 3°C and sparking a global rethink of street design
   population: 2570000
+  categories:
+    - green
+    - heat
+    - flood
   climate_challenges:
     - urban heat
     - air pollution
@@ -280,6 +311,9 @@
   sector: Heat Resilience & Public Health
   description: London's cross-agency response to worsening summer heat, combining cool spaces, green roofs, and data-driven heat health alerts
   population: 9648000
+  categories:
+    - heat
+    - planning
   climate_challenges:
     - extreme heat
     - public health
@@ -308,6 +342,9 @@
   sector: Water Management & Coastal Protection
   description: Jakarta combines massive sea wall construction with community-led nature-based solutions to address catastrophic flooding and subsidence
   population: 10770000
+  categories:
+    - flood
+    - coastal
   climate_challenges:
     - flooding
     - sea level rise
@@ -336,6 +373,9 @@
   sector: Water Management & Climate Adaptation
   description: After narrowly avoiding "Day Zero" in 2018, Cape Town built a multi-layered water resilience strategy combining demand reduction, alternative sources and climate modelling
   population: 4618000
+  categories:
+    - planning
+    - flood
   climate_challenges:
     - water scarcity
     - drought
