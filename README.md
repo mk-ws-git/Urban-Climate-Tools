@@ -11,7 +11,7 @@
 ## 🎯 Key Features
 
 ### 📊 Tool Catalog
-- 12+ curated climate adaptation tools
+- 19+ curated climate adaptation tools from around the world
 - Real-time search across name, category, developer
 - Multi-dimensional filtering:
   - **Category**: Heat management, flood risk, coastal resilience, green infrastructure, planning, data, energy
@@ -20,12 +20,12 @@
   - **Geographic Coverage**: Local, City, National, Global
 
 ### 📚 Case Studies
-- 8 real-world implementation examples from cities worldwide
+- 13 real-world implementation examples from cities worldwide
 - Search by city, country, climate challenge
 - Filter by:
   - **Climate Challenge**: Urban heat, flooding, sea level rise, water scarcity, air pollution
   - **Sector**: Urban planning, green infrastructure, transportation, water management, energy
-  - **Region**: North America, South America, Europe, Asia
+  - **Region**: North America, South America, Europe, Asia, Africa, Oceania
 
 ### 🎨 Design
 - **Swiss Minimalist Design**: Clean, grid-based layout with generous white space
@@ -61,16 +61,16 @@ Visit: **https://mk-ws-git.github.io/Urban-Climate-Tools/**
 
 ```
 ├── index.md                      # Homepage with featured content
-├── tools.md                      # Tool catalog with search/filter
-├── case-studies.md              # Case study browser with filters
-├── about.md                      # About page with FAQs
+├── tools/index.html              # Tool catalog with search/filter
+├── case-studies/index.md         # Case study browser with filters
+├── about/                        # About page with FAQs
 │
 ├── _data/
-│   ├── tools.yml                # 12 tools with metadata
-│   ├── case_studies.yml         # 8 case studies with outcomes
+│   ├── tools.yml                # 19 tools with metadata
+│   ├── case_studies.yml         # 13 case studies with outcomes
 │   └── meta.yml                 # Site metadata, categories, stats
 │
-├── _tools/                      # Individual tool pages
+├── _tools/                      # Individual tool pages (Jekyll collection)
 │   ├── climate-central.md
 │   ├── i-tree.md
 │   └── ... (collection items)
@@ -126,18 +126,17 @@ Visit: **https://mk-ws-git.github.io/Urban-Climate-Tools/**
 Each tool includes:
 - Name, developer, description
 - Categories, cost model, skill level
-- Geographic coverage
-- Direct links, GitHub repo, API docs
-- Real-world use cases
+- Geographic coverage and continent of origin
+- Direct links to official website and (where available) GitHub repo
+- Real-world use cases and features
 
 ### Case Studies
 Each case study features:
-- City, location, year of implementation
+- City, country, year of implementation
 - Climate challenges addressed
 - Solutions and tools used
 - Key outcomes and statistics
 - Lessons learned
-- Replication potential
 
 ---
 
@@ -151,6 +150,8 @@ Filters:
   • Cost tier (3 options)
   • Skill level (3 options)
   • Coverage area (4 options)
+  • Continent / Country
+  • User type
 ```
 
 ### Case Studies Page
@@ -159,7 +160,8 @@ Search: By city, country, challenge
 Filters:
   • Climate challenge (5 options)
   • Implementation sector (5+ options)
-  • Global region (5 options)
+  • Continent / Country
+  • User type
 ```
 
 ---
@@ -234,15 +236,15 @@ Light Gray:       #F5F5F5
 We welcome contributions! To help:
 
 ### Add a New Tool
-1. Edit `_data/tools.yml` (add entry)
-2. Create `_tools/tool-id.md` with details
+1. Edit `_data/tools.yml` (add entry following the existing schema)
+2. Create `_tools/tool-id.md` with details and content
 3. Test locally: `bundle exec jekyll serve`
 4. Submit pull request
 
 ### Add a Case Study
 1. Edit `_data/case_studies.yml` (add entry)
 2. Create `_case_studies/study-id.md` with content
-3. Add image to `assets/images/`
+3. Add image to `assets/images/` (optional)
 4. Submit pull request
 
 ### Report Issues
@@ -261,16 +263,15 @@ We welcome contributions! To help:
 
 ### Tools
 - Keep descriptions concise (2-3 sentences)
-- Link to official website and GitHub
+- Link to official website and GitHub where available
 - Be honest about cost and skill requirements
-- Include real use cases
+- Include real use cases and key features
 
 ### Case Studies
 - Tell a compelling story
 - Include specific outcomes and statistics
 - Explain lessons learned
 - Link tools used in the project
-- Provide sources and references
 
 ---
 
@@ -286,32 +287,26 @@ git subtree push --prefix _site origin gh-pages
 ```
 
 ### Automatic Deployment
-GitHub Actions can auto-build when you push to main:
-- Create `.github/workflows/build.yml`
-- See `DEPLOYMENT_CHECKLIST.md` for full setup
+GitHub Actions auto-builds when you push to `main`. The built site is deployed to GitHub Pages automatically.
 
 ---
 
 ## 📊 Site Statistics
 
-- **Total Tools**: 12
-- **Total Case Studies**: 8
-- **Featured Tools**: 6
-- **Featured Case Studies**: 3
+- **Total Tools**: 19
+- **Total Case Studies**: 13
+- **Featured Case Studies**: 4
 - **Categories**: 8
-- **Lines of Code**: 5000+
-- **Data Entries**: 20+
+- **Continents Covered**: 6
 - **Stylesheets**: 4
-- **JavaScript Files**: 2
+- **JavaScript Files**: 3
 
 ---
 
 ## 📞 Support & Contact
 
-- **Email**: info@urbanclimate.tools
 - **GitHub Issues**: [Report bugs](https://github.com/mk-ws-git/Urban-Climate-Tools/issues)
 - **Discussions**: [Ask questions](https://github.com/mk-ws-git/Urban-Climate-Tools/discussions)
-- **Documentation**: See `IMPLEMENTATION_SUMMARY.md` and `SITE_README.md`
 
 ---
 
@@ -323,14 +318,11 @@ MIT License - All content openly available for reuse with attribution.
 
 ## 🎯 Future Roadmap
 
-- [ ] Add 10+ more tools
-- [ ] Create 5+ additional case studies
-- [ ] Develop tool comparison matrix
-- [ ] Add video demonstrations
-- [ ] Create interactive climate scenario tool
-- [ ] Build partner organization directory
-- [ ] Launch community forums
-- [ ] Create mobile app
+- [ ] Add more international tools (Global South focus)
+- [ ] Add video demonstrations for complex tools
+- [ ] Create interactive climate scenario explorer
+- [ ] Build partner organisation directory
+- [ ] Community-submitted tool reviews
 
 ---
 
@@ -344,5 +336,4 @@ MIT License - All content openly available for reuse with attribution.
 ---
 
 **Built with ❤️ for climate resilience**  
-*Last Updated: January 17, 2026*  
 *Status: 🟢 Live & Maintained*
