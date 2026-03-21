@@ -20,7 +20,7 @@ outcomes:
   - "150+ green infrastructure projects completed"
   - "Urban heat reduced by 2-3°C in pilot areas"
   - "$45M in green jobs created"
-image_url: /assets/images/minneapolis.jpg
+image_url: /assets/images/minneapolis.svg
 ---
 
 ## Challenge

@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1BA3C9"/>
+      <stop offset="100%" stop-color="#5DCAA5"/>
+    </linearGradient>
+    <linearGradient id="water" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2e7de0"/>
+      <stop offset="100%" stop-color="#1ba3c9"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#sky)"/>
+  <!-- Water -->
+  <rect y="300" width="800" height="150" fill="url(#water)" opacity="0.85"/>
+  <!-- Waterfront buildings -->
+  <rect x="80"  y="180" width="60"  height="120" fill="#0F6E56" opacity="0.9"/>
+  <rect x="160" y="140" width="80"  height="160" fill="#085041" opacity="0.9"/>
+  <rect x="260" y="160" width="55"  height="140" fill="#0F6E56" opacity="0.9"/>
+  <rect x="335" y="200" width="45"  height="100" fill="#085041" opacity="0.9"/>
+  <rect x="400" y="150" width="70"  height="150" fill="#0F6E56" opacity="0.9"/>
+  <rect x="490" y="170" width="55"  height="130" fill="#085041" opacity="0.9"/>
+  <rect x="565" y="130" width="85"  height="170" fill="#0F6E56" opacity="0.9"/>
+  <rect x="670" y="190" width="60"  height="110" fill="#085041" opacity="0.9"/>
+  <!-- Reflections in water -->
+  <rect x="80"  y="300" width="60"  height="40"  fill="#085041" opacity="0.3"/>
+  <rect x="160" y="300" width="80"  height="50"  fill="#0F6E56" opacity="0.3"/>
+  <rect x="400" y="300" width="70"  height="45"  fill="#085041" opacity="0.3"/>
+  <!-- Wave lines -->
+  <path d="M0 320 Q100 310 200 320 Q300 330 400 320 Q500 310 600 320 Q700 330 800 320" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="2"/>
+  <path d="M0 340 Q100 330 200 340 Q300 350 400 340 Q500 330 600 340 Q700 350 800 340" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+  <!-- City label -->
+  <text x="400" y="420" text-anchor="middle" font-family="sans-serif" font-size="20" font-weight="bold" fill="rgba(255,255,255,0.9)">Norfolk, Virginia</text>
+  <text x="400" y="442" text-anchor="middle" font-family="sans-serif" font-size="13" fill="rgba(255,255,255,0.7)">Coastal Resilience</text>
+</svg>

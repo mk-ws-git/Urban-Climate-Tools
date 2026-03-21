@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3aad5c"/>
+      <stop offset="100%" stop-color="#1D9E75"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <!-- Trees -->
+  <ellipse cx="80" cy="260" rx="50" ry="60" fill="#085041" opacity="0.9"/>
+  <ellipse cx="180" cy="240" rx="60" ry="70" fill="#0F6E56" opacity="0.9"/>
+  <ellipse cx="300" cy="250" rx="55" ry="65" fill="#085041" opacity="0.9"/>
+  <ellipse cx="500" cy="240" rx="65" ry="70" fill="#0F6E56" opacity="0.9"/>
+  <ellipse cx="640" cy="255" rx="55" ry="65" fill="#085041" opacity="0.9"/>
+  <ellipse cx="740" cy="245" rx="50" ry="60" fill="#0F6E56" opacity="0.9"/>
+  <!-- Buildings -->
+  <rect x="140" y="200" width="50" height="100" fill="#27500A" opacity="0.8"/>
+  <rect x="360" y="180" width="60" height="120" fill="#27500A" opacity="0.8"/>
+  <rect x="440" y="195" width="45" height="105" fill="#1D9E75" opacity="0.7"/>
+  <!-- Ground -->
+  <rect y="310" width="800" height="140" fill="#1a6e35" opacity="0.8"/>
+  <!-- Green path -->
+  <path d="M0 340 Q200 320 400 335 Q600 350 800 330" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="3"/>
+  <text x="400" y="415" text-anchor="middle" font-family="sans-serif" font-size="20" font-weight="bold" fill="rgba(255,255,255,0.9)">Minneapolis, Minnesota</text>
+  <text x="400" y="438" text-anchor="middle" font-family="sans-serif" font-size="13" fill="rgba(255,255,255,0.7)">Green Infrastructure &amp; Equity</text>
+</svg>

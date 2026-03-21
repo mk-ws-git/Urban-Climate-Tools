@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#EF9F27"/>
+      <stop offset="100%" stop-color="#633806"/>
+    </linearGradient>
+    <linearGradient id="ocean" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1ba3c9"/>
+      <stop offset="100%" stop-color="#0C447C"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <!-- Table Mountain -->
+  <polygon points="150,300 300,100 500,100 650,300" fill="#633806" opacity="0.9"/>
+  <rect x="150" y="100" width="500" height="10" fill="#8B5E3C" opacity="0.8"/>
+  <!-- City buildings in front of mountain -->
+  <rect x="80"  y="250" width="45"  height="100" fill="#444" opacity="0.85"/>
+  <rect x="140" y="235" width="55"  height="115" fill="#555" opacity="0.85"/>
+  <rect x="210" y="245" width="50"  height="105" fill="#444" opacity="0.85"/>
+  <rect x="580" y="240" width="55"  height="110" fill="#444" opacity="0.85"/>
+  <rect x="650" y="230" width="60"  height="120" fill="#555" opacity="0.85"/>
+  <rect x="725" y="245" width="50"  height="105" fill="#444" opacity="0.85"/>
+  <!-- Ocean -->
+  <rect y="350" width="800" height="100" fill="url(#ocean)" opacity="0.9"/>
+  <path d="M0 370 Q200 360 400 370 Q600 380 800 365" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="2"/>
+  <!-- Water drop icon to represent scarcity -->
+  <ellipse cx="400" cy="180" rx="20" ry="28" fill="rgba(255,255,255,0.7)"/>
+  <polygon points="380,175 400,145 420,175" fill="rgba(255,255,255,0.7)"/>
+  <text x="400" y="415" text-anchor="middle" font-family="sans-serif" font-size="20" font-weight="bold" fill="rgba(255,255,255,0.9)">Cape Town, South Africa</text>
+  <text x="400" y="438" text-anchor="middle" font-family="sans-serif" font-size="13" fill="rgba(255,255,255,0.75)">Water Scarcity &amp; Climate Resilience</text>
+</svg>

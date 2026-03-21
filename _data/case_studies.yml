@@ -10,6 +10,9 @@
   sector: Urban Planning & Coastal Protection
   description: How Norfolk is adapting to sea level rise through comprehensive resilience planning and nature-based solutions
   population: 235000
+  categories:
+    - coastal
+    - flood
   climate_challenges:
     - sea level rise
     - flooding
@@ -25,7 +28,7 @@
     - "20% reduction in flood-vulnerable infrastructure"
     - "$2.1B resilience investment plan approved"
     - "Community engagement: 10,000+ residents involved"
-  image_url: /assets/images/norfolk.jpg
+  image_url: /assets/images/norfolk.svg
   featured: true
 
 - id: minneapolis-green-equity
@@ -38,6 +41,9 @@
   sector: Green Infrastructure & Environmental Justice
   description: Integrating green infrastructure with community equity in underserved neighborhoods
   population: 425000
+  categories:
+    - green
+    - heat
   climate_challenges:
     - urban heat
     - stormwater flooding
@@ -53,7 +59,7 @@
     - "150+ green infrastructure projects completed"
     - "Urban heat reduced by 2-3°C in pilot areas"
     - "$45M in green jobs created"
-  image_url: /assets/images/minneapolis.jpg
+  image_url: /assets/images/minneapolis.svg
   featured: true
 
 - id: phoenix-urban-heat
@@ -66,6 +72,8 @@
   sector: Heat Resilience & Energy Efficiency
   description: Largest US city tackling extreme heat through cool roofs, urban forestry, and public health measures
   population: 1600000
+  categories:
+    - heat
   climate_challenges:
     - extreme heat
     - energy demand
@@ -82,7 +90,7 @@
     - "2,000+ buildings retrofitted with cool roofs"
     - "4M new trees planted"
     - "Peak electricity demand reduced by 8%"
-  image_url: /assets/images/phoenix.jpg
+  image_url: /assets/images/phoenix.svg
   featured: true
 
 - id: rotterdam-water-resilience
@@ -95,6 +103,9 @@
   sector: Water Management & Urban Design
   description: Europe's leader in climate adaptation through innovative water management and circular economy approaches
   population: 640000
+  categories:
+    - flood
+    - planning
   climate_challenges:
     - flooding
     - water scarcity
@@ -109,7 +120,7 @@
     - "Water-adaptive public spaces created"
     - "Building resilience across 89 districts"
     - "International climate adaptation model"
-  image_url: /assets/images/rotterdam.jpg
+  image_url: /assets/images/rotterdam.svg
   featured: false
 
 - id: paris-urban-forestry
@@ -122,6 +133,9 @@
   sector: Urban Forestry & Biodiversity
   description: Planting 170,000 trees to combat urban heat, improve air quality, and enhance biodiversity
   population: 2161000
+  categories:
+    - green
+    - heat
   climate_challenges:
     - urban heat
     - air pollution
@@ -136,7 +150,7 @@
     - "170,000 trees planted across city"
     - "Urban forest canopy increased to 14%"
     - "Carbon sequestration: 1.2M tons CO2/year"
-  image_url: /assets/images/paris.jpg
+  image_url: /assets/images/paris.svg
   featured: false
 
 - id: singapore-sustainability
@@ -148,6 +162,9 @@
   sector: Sustainability & Urban Design
   description: Island nation building comprehensive climate adaptation through green buildings and water management
   population: 5850000
+  categories:
+    - coastal
+    - planning
   climate_challenges:
     - sea level rise
     - heat
@@ -163,7 +180,7 @@
     - "80% buildings BCA Green Mark rated"
     - "11% of land area dedicated to green"
     - "Vertical greening in 3,400+ buildings"
-  image_url: /assets/images/singapore.jpg
+  image_url: /assets/images/singapore.svg
   featured: false
 
 - id: bogota-climate-action
@@ -175,6 +192,9 @@
   sector: Urban Planning & Climate Justice
   description: Latin American city integrating climate adaptation with poverty reduction and social equity
   population: 7181000
+  categories:
+    - planning
+    - green
   climate_challenges:
     - water scarcity
     - air pollution
@@ -189,7 +209,7 @@
     - "50km of green corridors created"
     - "Public transit expansion: 150 new routes"
     - "Community capacity: 20,000 trained"
-  image_url: /assets/images/bogota.jpg
+  image_url: /assets/images/bogota.svg
   featured: false
 
 - id: copenhagen-cycling-climate
@@ -201,6 +221,8 @@
   sector: Transportation & Carbon Neutrality
   description: World leader in sustainable transport and carbon neutrality through cycling infrastructure and renewable energy
   population: 1356000
+  categories:
+    - planning
   climate_challenges:
     - carbon emissions
     - transportation
@@ -216,7 +238,7 @@
     - "45% trips by bike"
     - "Carbon neutral by 2025"
     - "District heating from waste heat"
-  image_url: /assets/images/copenhagen.jpg
+  image_url: /assets/images/copenhagen.svg
   featured: false
 
 - id: melbourne-urban-forest
@@ -228,6 +250,9 @@
   sector: Urban Forestry & Heat Resilience
   description: How Melbourne's 20-year urban forest strategy doubled tree canopy cover to tackle extreme heat and improve liveability
   population: 5078000
+  categories:
+    - heat
+    - green
   climate_challenges:
     - urban heat
     - biodiversity loss
@@ -242,7 +267,7 @@
     - "Tree canopy cover increased from 22% to 40%"
     - "Average urban temperature reduced by 1.5°C"
     - "3,000+ unique tree species planted"
-  image_url: /assets/images/melbourne.jpg
+  image_url: /assets/images/melbourne.svg
   featured: false
 
 - id: medellín-green-corridors
@@ -254,6 +279,9 @@
   sector: Green Infrastructure & Heat Reduction
   description: Medellín transformed 30 street corridors into lush green lanes, reducing peak temperatures by up to 3°C and sparking a global rethink of street design
   population: 2570000
+  categories:
+    - heat
+    - green
   climate_challenges:
     - urban heat
     - air pollution
@@ -268,7 +296,7 @@
     - "Temperature drop of 2–3°C along corridors"
     - "30 green corridors covering 36 km"
     - "Cited as global model by UN-Habitat"
-  image_url: /assets/images/medellin.jpg
+  image_url: /assets/images/medellin.svg
   featured: true
 
 - id: london-urban-heat-strategy
@@ -280,6 +308,8 @@
   sector: Heat Resilience & Public Health
   description: London's cross-agency response to worsening summer heat, combining cool spaces, green roofs, and data-driven heat health alerts
   population: 9648000
+  categories:
+    - heat
   climate_challenges:
     - extreme heat
     - public health
@@ -296,7 +326,7 @@
     - "300+ Cool Spaces registered across boroughs"
     - "Heat Health Alert system serving 9M residents"
     - "4M sq m of green roofs by 2030 (target)"
-  image_url: /assets/images/london.jpg
+  image_url: /assets/images/london.svg
   featured: false
 
 - id: jakarta-flood-resilience
@@ -308,6 +338,9 @@
   sector: Water Management & Coastal Protection
   description: Jakarta combines massive sea wall construction with community-led nature-based solutions to address catastrophic flooding and subsidence
   population: 10770000
+  categories:
+    - flood
+    - coastal
   climate_challenges:
     - flooding
     - sea level rise
@@ -324,7 +357,7 @@
     - "National Sea Barrier (NCICD) Phase A completed"
     - "Mangrove restoration across 300 ha"
     - "Automated flood early warning covering 12 rivers"
-  image_url: /assets/images/jakarta.jpg
+  image_url: /assets/images/jakarta.svg
   featured: false
 
 - id: cape-town-water-resilience
@@ -336,6 +369,8 @@
   sector: Water Management & Climate Adaptation
   description: After narrowly avoiding "Day Zero" in 2018, Cape Town built a multi-layered water resilience strategy combining demand reduction, alternative sources and climate modelling
   population: 4618000
+  categories:
+    - planning
   climate_challenges:
     - water scarcity
     - drought
@@ -352,5 +387,5 @@
     - "Per-capita water use cut by 50% since 2015"
     - "Groundwater, desalination and reuse sources online"
     - "Water Resilience Plan adopted to 2040"
-  image_url: /assets/images/cape-town.jpg
+  image_url: /assets/images/cape-town.svg
   featured: false

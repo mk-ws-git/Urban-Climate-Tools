@@ -12,10 +12,10 @@ layout: default
             <span class="breadcrumb__current">{{ page.title }}</span>
         </nav>
 
-        <div class="case-study__header">
+        <div class="case-study__header{% unless page.image_url %} case-study__header--no-image{% endunless %}">
             {% if page.image_url %}
             <div class="case-study__hero">
-                <img src="{{ page.image_url }}" alt="{{ page.title }}" class="case-study__image"/>
+                <img src="{{ page.image_url | relative_url }}" alt="{{ page.title }}" class="case-study__image"/>
             </div>
             {% endif %}
 

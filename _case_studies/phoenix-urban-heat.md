@@ -20,7 +20,7 @@ outcomes:
   - "2,000+ buildings retrofitted with cool roofs"
   - "4M new trees planted"
   - "Peak electricity demand reduced by 8%"
-image_url: /assets/images/phoenix.jpg
+image_url: /assets/images/phoenix.svg
 ---
 
 ## Challenge

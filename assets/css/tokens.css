@@ -173,3 +173,23 @@
   --color-border:         rgba(255,255,255,0.09);
   --color-border-medium:  rgba(255,255,255,0.16);
 }
+
+
+/* ── LEGACY VARIABLE ALIASES ── */
+/* Maps old-style variables to the current design token system so that
+   legacy CSS in cards.css / nav.css / style.css still renders correctly. */
+:root {
+  --primary-blue:   var(--color-teal-400);
+  --secondary-blue: var(--color-teal-50);
+  --border-gray:    var(--color-border-medium);
+  --light-gray:     var(--color-surface-2);
+  --shadow-lg:      0 4px 16px rgba(0,0,0,0.12);
+  --green-success:  var(--color-free-text);
+
+  --spacing-xs:   var(--space-1);
+  --spacing-sm:   var(--space-2);
+  --spacing-md:   var(--space-4);
+  --spacing-lg:   var(--space-6);
+  --spacing-xl:   var(--space-8);
+  --spacing-2xl:  var(--space-12);
+}

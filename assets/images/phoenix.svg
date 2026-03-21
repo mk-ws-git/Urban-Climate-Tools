@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e05c2e"/>
+      <stop offset="100%" stop-color="#EF9F27"/>
+    </linearGradient>
+    <linearGradient id="ground" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#c4823a"/>
+      <stop offset="100%" stop-color="#8B5E3C"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <!-- Sun -->
+  <circle cx="650" cy="90" r="60" fill="#FAEEDA" opacity="0.9"/>
+  <circle cx="650" cy="90" r="45" fill="#FFF0CC" opacity="0.95"/>
+  <!-- Desert skyline buildings -->
+  <rect x="50"  y="200" width="70"  height="150" fill="#633806" opacity="0.85"/>
+  <rect x="140" y="170" width="90"  height="180" fill="#633806" opacity="0.9"/>
+  <rect x="250" y="190" width="60"  height="160" fill="#8B5E3C" opacity="0.85"/>
+  <rect x="330" y="150" width="100" height="200" fill="#633806" opacity="0.9"/>
+  <rect x="450" y="180" width="75"  height="170" fill="#8B5E3C" opacity="0.85"/>
+  <rect x="545" y="195" width="80"  height="155" fill="#633806" opacity="0.9"/>
+  <rect x="645" y="175" width="65"  height="175" fill="#8B5E3C" opacity="0.85"/>
+  <rect x="730" y="200" width="55"  height="150" fill="#633806" opacity="0.85"/>
+  <!-- Desert ground -->
+  <rect y="350" width="800" height="100" fill="url(#ground)"/>
+  <text x="400" y="418" text-anchor="middle" font-family="sans-serif" font-size="20" font-weight="bold" fill="rgba(255,255,255,0.9)">Phoenix, Arizona</text>
+  <text x="400" y="440" text-anchor="middle" font-family="sans-serif" font-size="13" fill="rgba(255,255,255,0.75)">Urban Heat Island Mitigation</text>
+</svg>

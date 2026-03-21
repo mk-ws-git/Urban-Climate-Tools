@@ -48,14 +48,19 @@ window.UCT_CASE_STUDIES = {{ site.data.case_studies | jsonify }};
 (function () {
   // Coordinates for each case study keyed by id
   var COORDS = {
-    'norfolk-coastal-resilience': [36.85, -76.29],
-    'minneapolis-green-equity':   [44.98, -93.27],
-    'phoenix-urban-heat':         [33.45, -112.07],
-    'rotterdam-water-resilience': [51.92, 4.48],
-    'paris-urban-forestry':       [48.86, 2.35],
-    'singapore-sustainability':   [1.35,  103.82],
-    'bogota-climate-action':      [4.71,  -74.07],
-    'copenhagen-cycling-climate': [55.68, 12.57]
+    'norfolk-coastal-resilience':  [36.85,  -76.29],
+    'minneapolis-green-equity':    [44.98,  -93.27],
+    'phoenix-urban-heat':          [33.45, -112.07],
+    'rotterdam-water-resilience':  [51.92,    4.48],
+    'paris-urban-forestry':        [48.86,    2.35],
+    'singapore-sustainability':    [ 1.35,  103.82],
+    'bogota-climate-action':       [ 4.71,  -74.07],
+    'copenhagen-cycling-climate':  [55.68,   12.57],
+    'london-urban-heat-strategy':  [51.51,   -0.12],
+    'cape-town-water-resilience':  [-33.92,  18.42],
+    'jakarta-flood-resilience':    [-6.21,  106.85],
+    'medellín-green-corridors':    [ 6.25,  -75.56],
+    'melbourne-urban-forest':      [-37.81, 144.96]
   };
 
   var BASE = '{{ site.baseurl }}';

@@ -18,7 +18,7 @@ outcomes:
   - "45% trips by bike"
   - "Carbon neutral by 2025"
   - "District heating from waste heat"
-image_url: /assets/images/copenhagen.jpg
+image_url: /assets/images/copenhagen.svg
 ---
 
 ## Challenge

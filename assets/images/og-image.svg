@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1f18"/>
+      <stop offset="100%" stop-color="#0F6E56"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <!-- Decorative circles -->
+  <circle cx="1100" cy="80" r="200" fill="#1D9E75" opacity="0.15"/>
+  <circle cx="100" cy="550" r="150" fill="#1D9E75" opacity="0.1"/>
+  <!-- Logo area -->
+  <rect x="80" y="80" width="4" height="80" fill="#1D9E75" rx="2"/>
+  <!-- Title -->
+  <text x="100" y="260" font-family="sans-serif" font-size="72" font-weight="bold" fill="#E1F5EE">Urban Climate Tools</text>
+  <!-- Subtitle -->
+  <text x="100" y="330" font-family="sans-serif" font-size="32" fill="#9FE1CB">Free, open-source tools for building climate-resilient cities</text>
+  <!-- Stats row -->
+  <text x="100" y="430" font-family="sans-serif" font-size="48" font-weight="bold" fill="#1D9E75">19+</text>
+  <text x="100" y="468" font-family="sans-serif" font-size="18" fill="#5DCAA5">Tools</text>
+  <text x="280" y="430" font-family="sans-serif" font-size="48" font-weight="bold" fill="#1D9E75">13+</text>
+  <text x="280" y="468" font-family="sans-serif" font-size="18" fill="#5DCAA5">Case Studies</text>
+  <text x="500" y="430" font-family="sans-serif" font-size="48" font-weight="bold" fill="#1D9E75">100+</text>
+  <text x="500" y="468" font-family="sans-serif" font-size="18" fill="#5DCAA5">Cities</text>
+  <!-- URL -->
+  <text x="100" y="580" font-family="sans-serif" font-size="22" fill="#5DCAA5">mk-ws-git.github.io/Urban-Climate-Tools</text>
+</svg>

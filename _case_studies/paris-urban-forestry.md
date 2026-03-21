@@ -19,7 +19,7 @@ outcomes:
   - "170,000 trees planted across city"
   - "Urban forest canopy increased to 14%"
   - "Carbon sequestration: 1.2M tons CO2/year"
-image_url: /assets/images/paris.jpg
+image_url: /assets/images/paris.svg
 ---
 
 ## Challenge

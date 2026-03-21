@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4a90d9"/>
+      <stop offset="100%" stop-color="#85B7EB"/>
+    </linearGradient>
+    <linearGradient id="canal" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2e7de0"/>
+      <stop offset="100%" stop-color="#1ba3c9"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#sky)"/>
+  <!-- Canal water -->
+  <rect y="310" width="800" height="90" fill="url(#canal)" opacity="0.9"/>
+  <!-- Buildings (Dutch architecture style) -->
+  <rect x="30"  y="140" width="55"  height="170" fill="#0C447C" opacity="0.9"/>
+  <polygon points="30,140 57.5,100 85,140" fill="#0C447C" opacity="0.85"/>
+  <rect x="100" y="130" width="65"  height="180" fill="#1D9E75" opacity="0.85"/>
+  <polygon points="100,130 132.5,90 165,130" fill="#1D9E75" opacity="0.8"/>
+  <rect x="180" y="150" width="55"  height="160" fill="#0C447C" opacity="0.9"/>
+  <polygon points="180,150 207.5,115 235,150" fill="#0C447C" opacity="0.85"/>
+  <rect x="250" y="120" width="70"  height="190" fill="#1D9E75" opacity="0.85"/>
+  <polygon points="250,120 285,80 320,120" fill="#1D9E75" opacity="0.8"/>
+  <rect x="340" y="135" width="60"  height="175" fill="#0C447C" opacity="0.9"/>
+  <rect x="420" y="145" width="65"  height="165" fill="#1D9E75" opacity="0.85"/>
+  <rect x="505" y="130" width="55"  height="180" fill="#0C447C" opacity="0.9"/>
+  <rect x="575" y="155" width="70"  height="155" fill="#1D9E75" opacity="0.85"/>
+  <rect x="660" y="140" width="60"  height="170" fill="#0C447C" opacity="0.9"/>
+  <rect x="735" y="150" width="55"  height="160" fill="#1D9E75" opacity="0.85"/>
+  <!-- Canal reflections -->
+  <rect x="30"  y="310" width="55"  height="40" fill="#0C447C" opacity="0.3"/>
+  <rect x="100" y="310" width="65"  height="45" fill="#1D9E75" opacity="0.3"/>
+  <!-- Wave lines -->
+  <path d="M0 330 Q200 320 400 330 Q600 340 800 325" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="2"/>
+  <text x="400" y="420" text-anchor="middle" font-family="sans-serif" font-size="20" font-weight="bold" fill="rgba(255,255,255,0.9)">Rotterdam, Netherlands</text>
+  <text x="400" y="442" text-anchor="middle" font-family="sans-serif" font-size="13" fill="rgba(255,255,255,0.75)">Water Resilience &amp; Climate Adaptation</text>
+</svg>

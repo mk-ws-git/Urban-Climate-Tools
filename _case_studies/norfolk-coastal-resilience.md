@@ -20,7 +20,7 @@ outcomes:
   - "20% reduction in flood-vulnerable infrastructure"
   - "$2.1B resilience investment plan approved"
   - "Community engagement: 10,000+ residents involved"
-image_url: /assets/images/norfolk-placeholder.jpg
+image_url: /assets/images/norfolk.svg
 ---
 
 ## Challenge

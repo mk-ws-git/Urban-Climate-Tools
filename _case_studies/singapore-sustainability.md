@@ -19,7 +19,7 @@ outcomes:
   - "80% buildings BCA Green Mark rated"
   - "11% of land area dedicated to green"
   - "Vertical greening in 3,400+ buildings"
-image_url: /assets/images/singapore.jpg
+image_url: /assets/images/singapore.svg
 ---
 
 ## Challenge

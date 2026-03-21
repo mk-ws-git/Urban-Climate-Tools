@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3aad5c"/>
+      <stop offset="100%" stop-color="#1D9E75"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <!-- City skyline -->
+  <rect x="50"  y="200" width="55"  height="150" fill="#085041" opacity="0.9"/>
+  <rect x="120" y="170" width="70"  height="180" fill="#0F6E56" opacity="0.9"/>
+  <rect x="210" y="185" width="60"  height="165" fill="#085041" opacity="0.9"/>
+  <rect x="285" y="150" width="80"  height="200" fill="#0F6E56" opacity="0.9"/>
+  <rect x="380" y="165" width="65"  height="185" fill="#085041" opacity="0.9"/>
+  <rect x="460" y="180" width="70"  height="170" fill="#0F6E56" opacity="0.9"/>
+  <rect x="545" y="155" width="75"  height="195" fill="#085041" opacity="0.9"/>
+  <rect x="635" y="175" width="60"  height="175" fill="#0F6E56" opacity="0.9"/>
+  <rect x="715" y="195" width="55"  height="155" fill="#085041" opacity="0.9"/>
+  <!-- Canopy over buildings -->
+  <ellipse cx="120" cy="170" rx="55" ry="45" fill="#3aad5c" opacity="0.8"/>
+  <ellipse cx="285" cy="148" rx="65" ry="50" fill="#1D9E75" opacity="0.8"/>
+  <ellipse cx="460" cy="178" rx="60" ry="50" fill="#3aad5c" opacity="0.8"/>
+  <ellipse cx="635" cy="172" rx="60" ry="48" fill="#1D9E75" opacity="0.8"/>
+  <!-- Ground -->
+  <rect y="350" width="800" height="100" fill="#085041" opacity="0.85"/>
+  <!-- Tree row -->
+  <ellipse cx="50"  cy="350" rx="35" ry="42" fill="#1D9E75" opacity="0.9"/>
+  <ellipse cx="200" cy="348" rx="38" ry="44" fill="#3aad5c" opacity="0.9"/>
+  <ellipse cx="400" cy="347" rx="40" ry="45" fill="#1D9E75" opacity="0.9"/>
+  <ellipse cx="600" cy="349" rx="38" ry="44" fill="#3aad5c" opacity="0.9"/>
+  <ellipse cx="760" cy="350" rx="35" ry="42" fill="#1D9E75" opacity="0.9"/>
+  <text x="400" y="415" text-anchor="middle" font-family="sans-serif" font-size="20" font-weight="bold" fill="rgba(255,255,255,0.9)">Melbourne, Australia</text>
+  <text x="400" y="438" text-anchor="middle" font-family="sans-serif" font-size="13" fill="rgba(255,255,255,0.75)">Urban Forest Strategy</text>
+</svg>

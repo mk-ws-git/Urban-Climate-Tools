@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1D9E75"/>
+      <stop offset="100%" stop-color="#085041"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <!-- Mountains -->
+  <polygon points="0,260 120,100 240,260" fill="#085041" opacity="0.6"/>
+  <polygon points="150,260 300,80 450,260" fill="#0F6E56" opacity="0.5"/>
+  <polygon points="400,260 580,90 760,260" fill="#085041" opacity="0.6"/>
+  <polygon points="600,260 750,120 800,260" fill="#0F6E56" opacity="0.5"/>
+  <!-- City buildings -->
+  <rect x="80"  y="230" width="45"  height="120" fill="#085041" opacity="0.9"/>
+  <rect x="140" y="210" width="55"  height="140" fill="#0F6E56" opacity="0.9"/>
+  <rect x="215" y="220" width="50"  height="130" fill="#085041" opacity="0.9"/>
+  <rect x="285" y="200" width="55"  height="150" fill="#0F6E56" opacity="0.9"/>
+  <rect x="510" y="205" width="55"  height="145" fill="#085041" opacity="0.9"/>
+  <rect x="580" y="215" width="50"  height="135" fill="#0F6E56" opacity="0.9"/>
+  <rect x="645" y="195" width="55"  height="155" fill="#085041" opacity="0.9"/>
+  <rect x="715" y="210" width="50"  height="140" fill="#0F6E56" opacity="0.9"/>
+  <!-- Green corridor through centre -->
+  <rect x="350" y="200" width="140" height="150" fill="#3aad5c" opacity="0.85"/>
+  <ellipse cx="380" cy="230" rx="20" ry="25" fill="#085041" opacity="0.9"/>
+  <ellipse cx="420" cy="225" rx="22" ry="27" fill="#0F6E56" opacity="0.9"/>
+  <ellipse cx="460" cy="230" rx="20" ry="25" fill="#085041" opacity="0.9"/>
+  <!-- Ground -->
+  <rect y="350" width="800" height="100" fill="#085041" opacity="0.9"/>
+  <rect x="350" y="350" width="140" height="100" fill="#3aad5c" opacity="0.7"/>
+  <text x="400" y="415" text-anchor="middle" font-family="sans-serif" font-size="20" font-weight="bold" fill="rgba(255,255,255,0.9)">Medellín, Colombia</text>
+  <text x="400" y="438" text-anchor="middle" font-family="sans-serif" font-size="13" fill="rgba(255,255,255,0.75)">Urban Green Corridors</text>
+</svg>

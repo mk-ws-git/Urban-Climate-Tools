@@ -19,7 +19,7 @@ outcomes:
   - "Water-adaptive public spaces created"
   - "Building resilience across 89 districts"
   - "International climate adaptation model"
-image_url: /assets/images/rotterdam.jpg
+image_url: /assets/images/rotterdam.svg
 ---
 
 ## Challenge

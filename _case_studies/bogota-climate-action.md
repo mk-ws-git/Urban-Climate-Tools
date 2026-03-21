@@ -18,7 +18,7 @@ outcomes:
   - "50km of green corridors created"
   - "Public transit expansion: 150 new routes"
   - "$45M in green jobs created"
-image_url: /assets/images/bogota.jpg
+image_url: /assets/images/bogota.svg
 ---
 
 ## Challenge
