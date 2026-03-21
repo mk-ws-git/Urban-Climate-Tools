@@ -305,3 +305,184 @@
     - flood risk
     - water quality
   icon: flood
+
+- id: urban-heat-island-effect-tool
+  name: Urban Heat Island Effect Tool
+  developer: European Environment Agency
+  description: Map and analyse urban heat islands at city and neighbourhood scale using satellite thermal data
+  categories:
+    - heat
+    - data
+  cost: Free
+  skillLevel: Intermediate
+  coverage:
+    - city
+    - national
+    - global
+  country: Belgium
+  continent: Europe
+  user_categories:
+    - city-officials
+    - researchers
+  url: https://www.eea.europa.eu/themes/sustainability-transitions/urban-environment/urban-adaptation-to-climate-change
+  tags:
+    - urban heat island
+    - thermal mapping
+    - satellite data
+    - heat stress
+  icon: heat
+
+- id: copernicus-climate-change-service
+  name: Copernicus Climate Change Service (C3S)
+  developer: European Centre for Medium-Range Weather Forecasts (ECMWF)
+  description: Free access to authoritative information about past, present and future climate across Europe and globally
+  categories:
+    - data
+    - planning
+  cost: Free
+  skillLevel: Intermediate
+  coverage:
+    - national
+    - global
+  country: European Union
+  continent: Europe
+  user_categories:
+    - city-officials
+    - researchers
+  url: https://climate.copernicus.eu
+  github: https://github.com/ecmwf
+  tags:
+    - climate data
+    - climate projections
+    - ERA5
+    - reanalysis
+  icon: climate-central
+
+- id: unep-urban-resilience
+  name: UNEP Urban Resilience Hub
+  developer: United Nations Environment Programme
+  description: Global knowledge platform for urban climate resilience, offering tools, case studies and financing guidance
+  categories:
+    - planning
+  cost: Free
+  skillLevel: Beginner
+  coverage:
+    - city
+    - global
+  country: Kenya
+  continent: Africa
+  user_categories:
+    - city-officials
+    - community
+  url: https://www.unep.org/explore-topics/resource-efficiency/what-we-do/cities/urban-resilience
+  tags:
+    - urban resilience
+    - global
+    - climate policy
+    - capacity building
+  icon: resilience
+
+- id: open-climate-fix
+  name: Open Climate Fix – Solar PV Nowcasting
+  developer: Open Climate Fix
+  description: Open-source machine learning tool to nowcast solar photovoltaic energy output and reduce grid carbon intensity
+  categories:
+    - energy
+    - data
+  cost: Free
+  skillLevel: Advanced
+  coverage:
+    - city
+    - national
+  country: United Kingdom
+  continent: Europe
+  user_categories:
+    - researchers
+    - city-officials
+  url: https://openclimatefix.org
+  github: https://github.com/openclimatefix
+  tags:
+    - solar energy
+    - machine learning
+    - grid decarbonisation
+    - open source
+  icon: energy
+
+- id: floodmap-net
+  name: FloodMap.net
+  developer: FloodMap.net
+  description: Visualise global flood risk areas using elevation data and sea level scenarios for any location worldwide
+  categories:
+    - flood
+    - coastal
+    - data
+  cost: Free
+  skillLevel: Beginner
+  coverage:
+    - city
+    - national
+    - global
+  country: United States
+  continent: North America
+  user_categories:
+    - city-officials
+    - community
+    - researchers
+  url: https://www.floodmap.net
+  tags:
+    - flood mapping
+    - sea level rise
+    - elevation
+    - risk visualisation
+  icon: flood
+
+- id: citygreen
+  name: CityGreen
+  developer: Singapore Centre for Urban Greenery and Ecology
+  description: GIS-based tool to quantify ecosystem services from urban trees and green spaces including cooling and stormwater benefits
+  categories:
+    - green
+    - data
+  cost: Free
+  skillLevel: Intermediate
+  coverage:
+    - local
+    - city
+  country: Singapore
+  continent: Asia
+  user_categories:
+    - city-officials
+    - researchers
+  url: https://www.nparks.gov.sg/cuge/research/citygreen
+  tags:
+    - urban trees
+    - ecosystem services
+    - GIS
+    - cooling
+  icon: nature
+
+- id: climate-just
+  name: Climate Just
+  developer: Sustainability Research Institute, University of Leeds
+  description: Maps social vulnerability to climate change at neighbourhood scale to support equitable adaptation planning
+  categories:
+    - planning
+    - data
+  cost: Free
+  skillLevel: Beginner
+  coverage:
+    - city
+    - national
+  country: United Kingdom
+  continent: Europe
+  user_categories:
+    - city-officials
+    - researchers
+    - community
+  url: https://www.climatejust.org.uk
+  tags:
+    - climate justice
+    - social vulnerability
+    - neighbourhood mapping
+    - equitable adaptation
+  icon: planning

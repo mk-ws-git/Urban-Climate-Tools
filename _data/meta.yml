@@ -4,8 +4,8 @@ site_description: Open-source solutions for building climate-resilient cities
 site_url: https://mk-ws-git.github.io/Urban-Climate-Tools
 
 # Statistics
-tool_count: 12
-case_study_count: 8
+tool_count: 19
+case_study_count: 13
 cities_reached: 100
 global_coverage: Global
 

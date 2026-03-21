@@ -65,7 +65,7 @@ layout: default
                             {% for tool_id in page.tools_used %}
                                 {% assign tool = site.data.tools | where: "id", tool_id | first %}
                                 {% if tool %}
-                                <li><a href="{{ site.baseurl }}/tools/{{ tool.id }}/">{{ tool.name }}</a></li>
+                                <li><a href="{{ site.baseurl }}/tool/{{ tool.id }}/">{{ tool.name }}</a></li>
                                 {% endif %}
                             {% endfor %}
                         </ul>
@@ -95,10 +95,10 @@ layout: default
                                 {% assign tool = site.data.tools | where: "id", tool_id | first %}
                                 {% if tool %}
                                 <div class="tool-card-compact">
-                                    <h4><a href="{{ site.baseurl }}/tools/{{ tool.id }}/">{{ tool.name }}</a></h4>
+                                    <h4><a href="{{ site.baseurl }}/tool/{{ tool.id }}/">{{ tool.name }}</a></h4>
                                     <p class="developer">{{ tool.developer }}</p>
                                     <p class="description">{{ tool.description | truncatewords: 12 }}</p>
-                                    <a href="{{ site.baseurl }}/tools/{{ tool.id }}/" class="btn btn-small">Learn More</a>
+                                    <a href="{{ site.baseurl }}/tool/{{ tool.id }}/" class="btn btn-small">Learn More</a>
                                 </div>
                                 {% endif %}
                             {% endfor %}
@@ -108,123 +108,4 @@ layout: default
                 </article>
             </div>
         </div>
-    </main>
-    
-    {% include footer.html %}
-    
-    <style>
-        .case-study-detail {
-            padding: var(--spacing-2xl) 0;
-        }
-        
-        .breadcrumb {
-            display: flex;
-            gap: var(--spacing-sm);
-            margin-bottom: var(--spacing-2xl);
-            font-size: 14px;
-        }
-        
-        .breadcrumb a {
-            color: var(--primary-blue);
-        }
-        
-        .case-study-header {
-            margin-bottom: var(--spacing-2xl);
-        }
-        
-        .hero-image {
-            width: 100%;
-            height: 400px;
-            margin-bottom: var(--spacing-xl);
-            border-radius: var(--radius-md);
-            overflow: hidden;
-            background: var(--light-gray);
-        }
-        
-        .hero-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .header-content h1 {
-            margin-bottom: var(--spacing-md);
-        }
-        
-        .case-study-meta {
-            color: #666;
-            font-size: 16px;
-            margin-bottom: var(--spacing-lg);
-        }
-        
-        .case-study-body {
-            display: grid;
-            grid-template-columns: 280px 1fr;
-            gap: var(--spacing-2xl);
-        }
-        
-        .case-study-sidebar {
-            display: flex;
-            flex-direction: column;
-            gap: var(--spacing-lg);
-        }
-        
-        .case-study-content {
-            grid-column: 2;
-        }
-        
-        .case-study-content h2 {
-            margin-top: var(--spacing-2xl);
-        }
-        
-        .case-study-content h2:first-child {
-            margin-top: 0;
-        }
-        
-        .case-study-content p {
-            line-height: 1.8;
-        }
-        
-        .tool-grid-horizontal {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-            gap: var(--spacing-lg);
-        }
-        
-        .tool-card-compact {
-            padding: var(--spacing-lg);
-            background: var(--light-gray);
-            border-radius: var(--radius-md);
-            border: 1px solid var(--border-gray);
-        }
-        
-        .tool-card-compact h4 {
-            margin-top: 0;
-        }
-        
-        .tool-card-compact a.btn {
-            width: 100%;
-        }
-        
-        @media (max-width: 1024px) {
-            .case-study-body {
-                grid-template-columns: 1fr;
-            }
-            
-            .case-study-content {
-                grid-column: 1;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .hero-image {
-                height: 250px;
-            }
-            
-            .tool-grid-horizontal {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
-</body>
-</html>
+    </section>
