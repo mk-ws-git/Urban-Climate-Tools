@@ -2,6 +2,7 @@
 layout: category
 title: Urban Planning Tools
 category: planning
+permalink: /categories/planning/
 description: Tools for integrating climate resilience into comprehensive planning, zoning, and policy development.
 ---
 

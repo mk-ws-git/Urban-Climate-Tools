@@ -2,6 +2,7 @@
 layout: category
 title: Coastal Resilience Tools
 category: coastal
+permalink: /categories/coastal/
 description: Tools for sea level rise adaptation, coastal hazard planning, and shoreline management.
 ---
 

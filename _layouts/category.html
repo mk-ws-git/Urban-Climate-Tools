@@ -62,7 +62,7 @@ layout: default
             </div>
 
             <div class="tool-grid">
-                {% for tool in site.tools %}
+                {% for tool in site.data.tools %}
                     {% if tool.categories contains page.category %}
                         {% include tool-card.html tool=tool %}
                     {% endif %}

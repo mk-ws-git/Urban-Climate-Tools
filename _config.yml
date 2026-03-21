@@ -31,17 +31,6 @@ collections:
 defaults:
   - scope:
       path: "_tools"
-    values:
-      layout: tool
-  - scope:
-      path: "_case_studies"
-    values:
-      layout: case-study
-
-# Defaults
-defaults:
-  - scope:
-      path: "_tools"
       type: tools
     values:
       layout: tool
