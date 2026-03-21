@@ -2,134 +2,300 @@
 layout: default
 ---
 
-<div class="tool-detail">
-    <div class="tool-header">
-        <div class="tool-icon">
-            <img src="{{ page.icon | relative_url }}" alt="{{ page.title }}" class="icon-lg">
-        </div>
-        
-        <div class="tool-header-info">
-            <h1>{{ page.title }}</h1>
-            <p class="developer">{{ page.developer }}</p>
-            
-            <div class="tool__tags">
-                {% for category in page.categories %}
-                    <span class="tag tag--category">{{ category }}</span>
-                {% endfor %}
-                <span class="tag tag--access">{{ page.access_model }}</span>
-                <span class="tag tag--skill">{{ page.skill_level }}</span>
-                {% for tag in page.tags %}
-                    <span class="tag tag--feature">{{ tag }}</span>
-                {% endfor %}
-            </div>
-        </div>
-    </div>
-    
-    <div class="tool-body">
-        <div class="tool-main">
-            <section class="tool-section">
-                <h2>About</h2>
-                <p>{{ page.description }}</p>
-            </section>
-            
-            {% if page.website %}
-            <section class="tool-section">
-                <h3>Website & Access</h3>
-                <p><a href="{{ page.website }}" target="_blank" class="btn btn-primary">Visit {{ page.title }} →</a></p>
-                <p><strong>Access Model:</strong> {{ page.access_model }}</p>
-                {% if page.cost %}
-                    <p><strong>Cost:</strong> {{ page.cost }}</p>
-                {% endif %}
-                <p><strong>Geographic Coverage:</strong> {{ page.geographic_coverage }}</p>
-                <p><strong>Last Updated:</strong> {{ page.last_updated }}</p>
-            </section>
-            {% endif %}
-            
-            {% if page.features %}
-            <section class="tool-section">
-                <h3>Key Features</h3>
-                <ul class="features-list">
-                    {% for feature in page.features %}
-                        <li>{{ feature }}</li>
-                    {% endfor %}
-                </ul>
-            </section>
-            {% endif %}
-            
-            {% if page.data_requirements %}
-            <section class="tool-section">
-                <h3>Data & Requirements</h3>
-                <ul>
-                    {% for req in page.data_requirements %}
-                        <li>{{ req }}</li>
-                    {% endfor %}
-                </ul>
-            </section>
-            {% endif %}
-            
-            {% if page.outputs %}
-            <section class="tool-section">
-                <h3>Outputs & Deliverables</h3>
-                <ul>
-                    {% for output in page.outputs %}
-                        <li>{{ output }}</li>
-                    {% endfor %}
-                </ul>
-            </section>
-            {% endif %}
-            
-            {% if page.use_cases %}
-            <section class="tool-section">
-                <h3>Recommended Use Cases</h3>
-                <ul>
-                    {% for use_case in page.use_cases %}
-                        <li>{{ use_case }}</li>
-                    {% endfor %}
-                </ul>
-            </section>
-            {% endif %}
-            
-            {{ content }}
+{% assign primary_cat = page.categories | first %}
 
-            <!-- Quick links: Quiz + Compare -->
-            <div class="tool-explore-bar">
-                <div class="tool-explore-bar__label">Explore further</div>
-                <div class="tool-explore-bar__actions">
-                    <a href="{{ '/compare/' | relative_url }}?a={{ page.id }}" class="tool-explore-bar__btn">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16" height="16"><rect x="3" y="6" width="8" height="12" rx="1"/><rect x="13" y="6" width="8" height="12" rx="1"/><line x1="11" y1="12" x2="13" y2="12"/></svg>
-                        Compare with another tool
-                    </a>
-                    <a href="{{ '/quiz/' | relative_url }}" class="tool-explore-bar__btn tool-explore-bar__btn--secondary">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16" height="16"><circle cx="12" cy="12" r="9"/><path d="M12 7 Q12 10 12 11 T12 14" stroke-linecap="round"/><circle cx="12" cy="17" r="0.8" fill="currentColor" stroke="none"/></svg>
-                        Find similar tools via quiz
-                    </a>
-                </div>
-            </div>
-        </div>
-        
-        <aside class="tool-sidebar">
-            {% include tool-sidebar.html %}
-        </aside>
+<div class="tool-page">
+
+  <!-- Breadcrumb -->
+  <div class="tool-page__breadcrumb-wrap">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="{{ '/' | relative_url }}" class="breadcrumb__link">Home</a>
+        <span class="breadcrumb__sep" aria-hidden="true">/</span>
+        <a href="{{ '/tools/' | relative_url }}" class="breadcrumb__link">Tools</a>
+        <span class="breadcrumb__sep" aria-hidden="true">/</span>
+        <span class="breadcrumb__current" aria-current="page">{{ page.title }}</span>
+      </nav>
     </div>
-    
-    {% if site.collections.tools.docs.size > 1 %}
-    <section class="related-tools">
-        <h3>Related Tools</h3>
-        <div class="tool-grid-horizontal">
-            {% for tool in site.tools %}
-                {% assign common = false %}
-                {% for cat in tool.categories %}
-                    {% if page.categories contains cat %}
-                        {% assign common = true %}
-                    {% endif %}
-                {% endfor %}
-                {% if common %}
-                    {% if tool.title != page.title %}
-                        {% include tool-card.html tool=tool %}
-                    {% endif %}
-                {% endif %}
+  </div>
+
+  <!-- Hero header -->
+  <header class="tool-hero tool-hero--{{ primary_cat }}">
+    <div class="container">
+      <div class="tool-hero__inner">
+
+        <div class="tool-hero__text">
+          <div class="tool-hero__badges">
+            {% for category in page.categories %}
+              <span class="tag tag--category tag--{{ category }}">{{ category }}</span>
             {% endfor %}
+            {% if page.cost %}
+              <span class="tag tag--cost">{{ page.cost }}</span>
+            {% endif %}
+            {% if page.skillLevel %}
+              <span class="tag tag--skill">{{ page.skillLevel }}</span>
+            {% elsif page.skill_level %}
+              <span class="tag tag--skill">{{ page.skill_level }}</span>
+            {% endif %}
+          </div>
+
+          <h1 class="tool-hero__title">{{ page.title }}</h1>
+          <p class="tool-hero__developer">by {{ page.developer }}</p>
+          <p class="tool-hero__desc">{{ page.description }}</p>
+
+          <div class="tool-hero__actions">
+            {% if page.website %}
+            <a href="{{ page.website }}" target="_blank" rel="noopener noreferrer" class="tool-hero__cta tool-hero__cta--primary">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="16" height="16" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10A15.3 15.3 0 0 1 8 12a15.3 15.3 0 0 1 4-10z"/></svg>
+              Visit Website
+            </a>
+            {% endif %}
+            {% if page.github_repo %}
+            <a href="{{ page.github_repo }}" target="_blank" rel="noopener noreferrer" class="tool-hero__cta tool-hero__cta--secondary">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.54 2.87 8.39 6.84 9.76.5.09.68-.22.68-.49 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.5-1.11-1.5-.91-.64.07-.63.07-.63 1 .07 1.53 1.06 1.53 1.06.89 1.57 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05A9.38 9.38 0 0 1 12 6.84c.85 0 1.7.12 2.5.34 1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.59.69.49C19.13 20.65 22 16.8 22 12.26 22 6.58 17.52 2 12 2z"/></svg>
+              GitHub
+            </a>
+            {% endif %}
+          </div>
         </div>
-    </section>
-    {% endif %}
-</div>
+
+        <div class="tool-hero__meta-card">
+          <dl class="tool-hero__meta">
+            <div class="tool-hero__meta-row">
+              <dt>Coverage</dt>
+              <dd>{{ page.geographic_coverage }}</dd>
+            </div>
+            <div class="tool-hero__meta-row">
+              <dt>Access</dt>
+              <dd>{{ page.access_model }}</dd>
+            </div>
+            {% if page.cost %}
+            <div class="tool-hero__meta-row">
+              <dt>Cost</dt>
+              <dd>{{ page.cost }}</dd>
+            </div>
+            {% endif %}
+            <div class="tool-hero__meta-row">
+              <dt>Skill Level</dt>
+              <dd>{% if page.skillLevel %}{{ page.skillLevel }}{% elsif page.skill_level %}{{ page.skill_level }}{% endif %}</dd>
+            </div>
+            {% if page.platform %}
+            <div class="tool-hero__meta-row">
+              <dt>Platform</dt>
+              <dd>{{ page.platform }}</dd>
+            </div>
+            {% endif %}
+            <div class="tool-hero__meta-row">
+              <dt>Updated</dt>
+              <dd>{{ page.last_updated }}</dd>
+            </div>
+          </dl>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- Body: main content + sidebar -->
+  <div class="container">
+    <div class="tool-layout">
+
+      <main class="tool-content">
+
+        {% if page.features %}
+        <section class="tool-section">
+          <h2 class="tool-section__heading">Key Features</h2>
+          <ul class="tool-features-grid">
+            {% for feature in page.features %}
+              <li class="tool-features-grid__item">
+                <svg class="tool-features-grid__icon" viewBox="0 0 16 16" fill="currentColor" width="14" height="14" aria-hidden="true"><path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.78 5.78-4.5 4.5a.75.75 0 0 1-1.06 0l-2-2a.75.75 0 1 1 1.06-1.06l1.47 1.47 3.97-3.97a.75.75 0 0 1 1.06 1.06z"/></svg>
+                {{ feature }}
+              </li>
+            {% endfor %}
+          </ul>
+        </section>
+        {% endif %}
+
+        {% if page.data_requirements %}
+        <section class="tool-section">
+          <h2 class="tool-section__heading">Data &amp; Requirements</h2>
+          <ul class="tool-list">
+            {% for req in page.data_requirements %}
+              <li>{{ req }}</li>
+            {% endfor %}
+          </ul>
+        </section>
+        {% endif %}
+
+        {% if page.outputs %}
+        <section class="tool-section">
+          <h2 class="tool-section__heading">Outputs &amp; Deliverables</h2>
+          <ul class="tool-list">
+            {% for output in page.outputs %}
+              <li>{{ output }}</li>
+            {% endfor %}
+          </ul>
+        </section>
+        {% endif %}
+
+        {% if page.use_cases %}
+        <section class="tool-section">
+          <h2 class="tool-section__heading">Recommended Use Cases</h2>
+          <ul class="tool-list">
+            {% for use_case in page.use_cases %}
+              <li>{{ use_case }}</li>
+            {% endfor %}
+          </ul>
+        </section>
+        {% endif %}
+
+        <div class="tool-prose">
+          {{ content }}
+        </div>
+
+        <!-- Explore bar -->
+        <div class="tool-explore-bar">
+          <div class="tool-explore-bar__label">Explore further</div>
+          <div class="tool-explore-bar__actions">
+            <a href="{{ '/compare/' | relative_url }}?a={{ page.id }}" class="tool-explore-bar__btn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16" height="16" aria-hidden="true"><rect x="3" y="6" width="8" height="12" rx="1"/><rect x="13" y="6" width="8" height="12" rx="1"/><line x1="11" y1="12" x2="13" y2="12"/></svg>
+              Compare with another tool
+            </a>
+            <a href="{{ '/quiz/' | relative_url }}" class="tool-explore-bar__btn tool-explore-bar__btn--secondary">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16" height="16" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5" stroke-linecap="round"/><circle cx="12" cy="17" r="0.8" fill="currentColor" stroke="none"/></svg>
+              Find similar tools via quiz
+            </a>
+          </div>
+        </div>
+
+      </main>
+
+      <!-- Sidebar -->
+      <aside class="tool-sidebar-panel">
+
+        <div class="sidebar-block">
+          <h3 class="sidebar-block__heading">Quick Info</h3>
+          <dl class="sidebar-block__dl">
+            <dt>Developer</dt>
+            <dd>{{ page.developer }}</dd>
+            {% if page.website %}
+            <dt>Website</dt>
+            <dd><a href="{{ page.website }}" target="_blank" rel="noopener noreferrer">Visit ↗</a></dd>
+            {% endif %}
+            <dt>Access</dt>
+            <dd>{{ page.access_model }}</dd>
+            {% if page.cost %}
+            <dt>Cost</dt>
+            <dd>{{ page.cost }}</dd>
+            {% endif %}
+            <dt>Coverage</dt>
+            <dd>{{ page.geographic_coverage }}</dd>
+            <dt>Skill Level</dt>
+            <dd>{% if page.skillLevel %}{{ page.skillLevel }}{% elsif page.skill_level %}{{ page.skill_level }}{% endif %}</dd>
+            {% if page.platform %}
+            <dt>Platform</dt>
+            <dd>{{ page.platform }}</dd>
+            {% endif %}
+            <dt>Last Updated</dt>
+            <dd>{{ page.last_updated }}</dd>
+          </dl>
+        </div>
+
+        <div class="sidebar-block">
+          <h3 class="sidebar-block__heading">Categories</h3>
+          <div class="sidebar-block__tags">
+            {% for category in page.categories %}
+              <a href="{{ '/tools/' | relative_url }}?category={{ category }}" class="tag tag--category tag--{{ category }}">{{ category }}</a>
+            {% endfor %}
+          </div>
+        </div>
+
+        {% if page.tags %}
+        <div class="sidebar-block">
+          <h3 class="sidebar-block__heading">Topics</h3>
+          <div class="sidebar-block__tags">
+            {% for tag in page.tags %}
+              <span class="tag tag--feature">{{ tag }}</span>
+            {% endfor %}
+          </div>
+        </div>
+        {% endif %}
+
+        {% if page.documentation or page.tutorials or page.api_docs %}
+        <div class="sidebar-block">
+          <h3 class="sidebar-block__heading">Documentation</h3>
+          <ul class="sidebar-block__links">
+            {% if page.documentation %}
+              <li><a href="{{ page.documentation }}" target="_blank" rel="noopener noreferrer">User Guide ↗</a></li>
+            {% endif %}
+            {% if page.tutorials %}
+              <li><a href="{{ page.tutorials }}" target="_blank" rel="noopener noreferrer">Tutorials ↗</a></li>
+            {% endif %}
+            {% if page.api_docs %}
+              <li><a href="{{ page.api_docs }}" target="_blank" rel="noopener noreferrer">API Docs ↗</a></li>
+            {% endif %}
+          </ul>
+        </div>
+        {% endif %}
+
+        {% if page.support_email or page.community_forum or page.github_repo %}
+        <div class="sidebar-block">
+          <h3 class="sidebar-block__heading">Support &amp; Community</h3>
+          <ul class="sidebar-block__links">
+            {% if page.support_email %}
+              <li><a href="mailto:{{ page.support_email }}">Email Support</a></li>
+            {% endif %}
+            {% if page.community_forum %}
+              <li><a href="{{ page.community_forum }}" target="_blank" rel="noopener noreferrer">Community Forum ↗</a></li>
+            {% endif %}
+            {% if page.github_repo %}
+              <li><a href="{{ page.github_repo }}" target="_blank" rel="noopener noreferrer">GitHub ↗</a></li>
+            {% endif %}
+          </ul>
+        </div>
+        {% endif %}
+
+        {% if page.integrations %}
+        <div class="sidebar-block">
+          <h3 class="sidebar-block__heading">Works With</h3>
+          <ul class="sidebar-block__links">
+            {% for integration in page.integrations %}
+              <li>{{ integration }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+        {% endif %}
+
+      </aside>
+
+    </div><!-- /.tool-layout -->
+  </div><!-- /.container -->
+
+  <!-- Related Tools -->
+  <div class="tool-related-wrap">
+    <div class="container">
+      <h2 class="tool-related__heading">Related Tools</h2>
+      <div class="tool-related__grid">
+        {% assign shown = 0 %}
+        {% for tool in site.tools %}
+          {% if shown < 3 and tool.title != page.title %}
+            {% assign common = false %}
+            {% for cat in tool.categories %}
+              {% if page.categories contains cat %}
+                {% assign common = true %}
+              {% endif %}
+            {% endfor %}
+            {% if common %}
+              {% include tool-card.html tool=tool %}
+              {% assign shown = shown | plus: 1 %}
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+      </div>
+      <div class="tool-related__footer">
+        <a href="{{ '/tools/' | relative_url }}" class="tool-related__all-link">Browse all tools →</a>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /.tool-page -->
