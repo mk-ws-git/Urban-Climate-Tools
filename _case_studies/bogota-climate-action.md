@@ -19,6 +19,9 @@ outcomes:
   - "Public transit expansion: 150 new routes"
   - "$45M in green jobs created"
 image_url: /assets/images/bogota.jpg
+categories:
+  - planning
+  - green
 ---
 
 ## Challenge

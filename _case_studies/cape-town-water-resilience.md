@@ -20,6 +20,9 @@ outcomes:
   - "Groundwater, desalination and reuse sources online"
   - "Water Resilience Plan adopted to 2040"
 image_url: /assets/images/cape-town-placeholder.jpg
+categories:
+  - flood
+  - planning
 ---
 
 ## Challenge

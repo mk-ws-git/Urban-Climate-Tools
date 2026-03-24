@@ -21,6 +21,10 @@ outcomes:
   - "$2.1B resilience investment plan approved"
   - "Community engagement: 10,000+ residents involved"
 image_url: /assets/images/norfolk-placeholder.jpg
+categories:
+  - coastal
+  - flood
+  - planning
 ---
 
 ## Challenge

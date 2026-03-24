@@ -19,6 +19,9 @@ outcomes:
   - "Carbon neutral by 2025"
   - "District heating from waste heat"
 image_url: /assets/images/copenhagen.jpg
+categories:
+  - planning
+  - green
 ---
 
 ## Challenge

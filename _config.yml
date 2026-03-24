@@ -24,7 +24,7 @@ collections:
     label: Tools
   case_studies:
     output: true
-    permalink: /case-study/:title/
+    permalink: /case-study/:name/
     label: Case Studies
 
 # Default frontmatter

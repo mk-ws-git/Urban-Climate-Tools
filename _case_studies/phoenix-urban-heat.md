@@ -21,6 +21,9 @@ outcomes:
   - "4M new trees planted"
   - "Peak electricity demand reduced by 8%"
 image_url: /assets/images/phoenix.jpg
+categories:
+  - heat
+  - green
 ---
 
 ## Challenge

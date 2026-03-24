@@ -20,6 +20,9 @@ outcomes:
   - "Building resilience across 89 districts"
   - "International climate adaptation model"
 image_url: /assets/images/rotterdam.jpg
+categories:
+  - flood
+  - planning
 ---
 
 ## Challenge

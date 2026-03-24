@@ -20,6 +20,9 @@ outcomes:
   - "Urban forest canopy increased to 14%"
   - "Carbon sequestration: 1.2M tons CO2/year"
 image_url: /assets/images/paris.jpg
+categories:
+  - green
+  - heat
 ---
 
 ## Challenge

@@ -19,6 +19,10 @@ outcomes:
   - "30 green corridors covering 36 km"
   - "Cited as global model by UN-Habitat"
 image_url: /assets/images/medellin-placeholder.jpg
+categories:
+  - green
+  - heat
+  - flood
 ---
 
 ## Challenge

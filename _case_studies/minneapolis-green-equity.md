@@ -21,6 +21,9 @@ outcomes:
   - "Urban heat reduced by 2-3°C in pilot areas"
   - "$45M in green jobs created"
 image_url: /assets/images/minneapolis.jpg
+categories:
+  - green
+  - planning
 ---
 
 ## Challenge
