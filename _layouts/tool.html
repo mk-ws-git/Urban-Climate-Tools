@@ -2,10 +2,12 @@
 layout: default
 ---
 
+<section class="section">
 <div class="tool-detail">
     <div class="tool-header">
         <div class="tool-icon">
-            <img src="{{ page.icon | relative_url }}" alt="{{ page.title }}" class="icon-lg">
+            {% assign icon_path = site.baseurl | append: '/assets/images/' | append: page.icon | append: '.svg' %}
+            <img src="{{ icon_path }}" alt="{{ page.title }}" class="icon-lg" onerror="this.style.display='none'">
         </div>
         
         <div class="tool-header-info">
@@ -107,9 +109,7 @@ layout: default
             </div>
         </div>
         
-        <aside class="tool-sidebar">
-            {% include tool-sidebar.html %}
-        </aside>
+        {% include tool-sidebar.html %}
     </div>
     
     {% if site.collections.tools.docs.size > 1 %}
@@ -133,3 +133,4 @@ layout: default
     </section>
     {% endif %}
 </div>
+</section>

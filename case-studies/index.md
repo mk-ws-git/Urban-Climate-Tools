@@ -151,7 +151,7 @@ title: Case Studies
                     {% endif %}
                     
                     <div class="study-content">
-                        <h3><a href="{{ site.baseurl }}/case-studies/{{ study.id }}/">{{ study.title }}</a></h3>
+                        <h3><a href="{{ site.baseurl }}/case-study/{{ study.id }}/">{{ study.title }}</a></h3>
                         <p class="location">{{ study.city }}{% if study.state %}, {{ study.state }}{% endif %}, {{ study.country }} • {{ study.year }}</p>
                         <p class="description">{{ study.description }}</p>
                         
@@ -174,7 +174,7 @@ title: Case Studies
                         </div>
                         {% endif %}
                         
-                        <a href="{{ site.baseurl }}/case-studies/{{ study.id }}/" class="btn btn-primary btn-small">Read Case Study</a>
+                        <a href="{{ site.baseurl }}/case-study/{{ study.id }}/" class="btn btn-primary btn-small">Read Case Study</a>
                     </div>
                 </div>
                 {% endfor %}
