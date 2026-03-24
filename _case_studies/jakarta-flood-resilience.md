@@ -20,6 +20,9 @@ outcomes:
   - "Mangrove restoration across 300 ha"
   - "Automated flood early warning covering 12 rivers"
 image_url: /assets/images/jakarta-placeholder.jpg
+categories:
+  - flood
+  - coastal
 ---
 
 ## Challenge

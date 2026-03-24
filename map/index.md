@@ -55,7 +55,12 @@ window.UCT_CASE_STUDIES = {{ site.data.case_studies | jsonify }};
     'paris-urban-forestry':       [48.86, 2.35],
     'singapore-sustainability':   [1.35,  103.82],
     'bogota-climate-action':      [4.71,  -74.07],
-    'copenhagen-cycling-climate': [55.68, 12.57]
+    'copenhagen-cycling-climate': [55.68, 12.57],
+    'melbourne-urban-forest':     [-37.81, 144.96],
+    'medellín-green-corridors':   [6.25,  -75.56],
+    'london-urban-heat-strategy': [51.51, -0.13],
+    'jakarta-flood-resilience':   [-6.21,  106.85],
+    'cape-town-water-resilience': [-33.93,  18.42]
   };
 
   var BASE = '{{ site.baseurl }}';

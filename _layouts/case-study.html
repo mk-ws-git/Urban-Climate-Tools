@@ -2,110 +2,161 @@
 layout: default
 ---
 
-<section class="section">
-    <div class="container">
+<!-- Case Study Hero Banner -->
+<section class="cs-hero">
+    {% if page.image_url %}
+    <div class="cs-hero__image-wrap">
+        <img src="{{ page.image_url | relative_url }}" alt="{{ page.title }}" class="cs-hero__image">
+        <div class="cs-hero__overlay"></div>
+    </div>
+    {% endif %}
+    <div class="container cs-hero__content{% unless page.image_url %} cs-hero__content--no-image{% endunless %}">
         <nav class="breadcrumb">
             <a href="{{ '/' | relative_url }}" class="breadcrumb__link">Home</a>
             <span class="breadcrumb__separator">/</span>
             <a href="{{ '/case-studies/' | relative_url }}" class="breadcrumb__link">Case Studies</a>
             <span class="breadcrumb__separator">/</span>
-            <span class="breadcrumb__current">{{ page.title }}</span>
+            <span class="breadcrumb__current">{{ page.city }}</span>
         </nav>
 
-        <div class="case-study__header">
-            {% if page.image_url %}
-            <div class="case-study__hero">
-                <img src="{{ page.image_url }}" alt="{{ page.title }}" class="case-study__image"/>
-            </div>
-            {% endif %}
-
-            <div class="case-study__content">
-                <h1 class="case-study__title">{{ page.title }}</h1>
-                <p class="case-study__meta">
-                    <strong>{{ page.city }}{% if page.state %}, {{ page.state }}{% endif %}</strong> • {{ page.year }}
-                </p>
-                <p class="case-study__description">{{ page.description }}</p>
-            </div>
+        {% if page.categories %}
+        <div class="cs-hero__tags">
+            {% for cat in page.categories %}
+            <span class="cs-tag cs-tag--{{ cat }}">{{ cat | capitalize }}</span>
+            {% endfor %}
         </div>
+        {% endif %}
 
-        <div class="case-study__body">
-            <aside class="case-study__sidebar">
-                <div class="sidebar-section">
-                    <h4 class="sidebar-section__title">Quick Facts</h4>
-                    <dl class="sidebar-section__list">
+        <h1 class="cs-hero__title">{{ page.title }}</h1>
+        <p class="cs-hero__meta">
+            <svg viewBox="0 0 20 20" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:-2px"><path d="M10 2a6 6 0 0 1 6 6c0 4-6 10-6 10S4 12 4 8a6 6 0 0 1 6-6z"/><circle cx="10" cy="8" r="2"/></svg>
+            {{ page.city }}{% if page.state %}, {{ page.state }}{% endif %}, {{ page.country }}
+            &nbsp;·&nbsp; {{ page.year }}
+            {% if page.population %}&nbsp;·&nbsp; Pop. {{ page.population | number_with_delimiter }}{% endif %}
+        </p>
+        <p class="cs-hero__description">{{ page.description }}</p>
+
+        <div class="cs-hero__actions">
+            <a href="{{ '/map/' | relative_url }}" class="btn btn--secondary btn--sm">
+                <svg viewBox="0 0 20 20" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" style="display:inline;vertical-align:-2px;margin-right:4px"><path d="M1 5l6-2 6 2 6-2v12l-6 2-6-2-6 2V5z"/><line x1="7" y1="3" x2="7" y2="15"/><line x1="13" y1="5" x2="13" y2="17"/></svg>
+                View on Map
+            </a>
+            <a href="{{ '/case-studies/' | relative_url }}" class="btn btn--ghost btn--sm">← All Case Studies</a>
+        </div>
+    </div>
+</section>
+
+<!-- Main Content -->
+<div class="cs-layout">
+    <div class="container">
+        <div class="cs-body">
+
+            <!-- Sidebar -->
+            <aside class="cs-sidebar">
+
+                <div class="cs-sidebar__card">
+                    <h4 class="cs-sidebar__heading">Quick Facts</h4>
+                    <dl class="cs-facts">
                         <dt>City</dt>
                         <dd>{{ page.city }}{% if page.state %}, {{ page.state }}{% endif %}, {{ page.country }}</dd>
-
+                        {% if page.population %}
                         <dt>Population</dt>
-                        <dd>{{ page.population | default: "N/A" }}</dd>
-
+                        <dd>{{ page.population | number_with_delimiter }}</dd>
+                        {% endif %}
                         <dt>Sector</dt>
                         <dd>{{ page.sector }}</dd>
-                            
-                            <dt>Year</dt>
-                            <dd>{{ page.year }}</dd>
-                        </dl>
-                    </div>
-                    
-                    {% if page.climate_challenges %}
-                    <div class="sidebar-section">
-                        <h4>Climate Challenges</h4>
-                        <ul>
-                            {% for challenge in page.climate_challenges %}
-                            <li>{{ challenge }}</li>
-                            {% endfor %}
-                        </ul>
-                    </div>
-                    {% endif %}
-                    
-                    {% if page.tools_used %}
-                    <div class="sidebar-section">
-                        <h4>Tools Used</h4>
-                        <ul>
-                            {% for tool_id in page.tools_used %}
-                                {% assign tool = site.data.tools | where: "id", tool_id | first %}
-                                {% if tool %}
-                                <li><a href="{{ site.baseurl }}/tool/{{ tool.id }}/">{{ tool.name }}</a></li>
-                                {% endif %}
-                            {% endfor %}
-                        </ul>
-                    </div>
-                    {% endif %}
-                    
-                    {% if page.outcomes %}
-                    <div class="sidebar-section">
-                        <h4>Key Outcomes</h4>
-                        <ul>
-                            {% for outcome in page.outcomes %}
-                            <li>{{ outcome }}</li>
-                            {% endfor %}
-                        </ul>
-                    </div>
-                    {% endif %}
-                </aside>
-                
-                <article class="case-study-content">
+                        <dt>Year</dt>
+                        <dd>{{ page.year }}</dd>
+                    </dl>
+                </div>
+
+                {% if page.climate_challenges %}
+                <div class="cs-sidebar__card">
+                    <h4 class="cs-sidebar__heading">Climate Challenges</h4>
+                    <ul class="cs-list">
+                        {% for challenge in page.climate_challenges %}
+                        <li>{{ challenge | capitalize }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endif %}
+
+                {% if page.outcomes %}
+                <div class="cs-sidebar__card cs-sidebar__card--accent">
+                    <h4 class="cs-sidebar__heading">Key Outcomes</h4>
+                    <ul class="cs-list cs-list--outcomes">
+                        {% for outcome in page.outcomes %}
+                        <li>{{ outcome }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endif %}
+
+                {% if page.tools_used %}
+                <div class="cs-sidebar__card">
+                    <h4 class="cs-sidebar__heading">Tools Used</h4>
+                    <ul class="cs-list cs-list--tools">
+                        {% for tool_id in page.tools_used %}
+                            {% assign tool = site.data.tools | where: "id", tool_id | first %}
+                            {% if tool %}
+                            <li><a href="{{ site.baseurl }}/tool/{{ tool.id }}/">{{ tool.name }}</a></li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endif %}
+
+                <!-- Back to map CTA -->
+                <div class="cs-sidebar__map-cta">
+                    <p>Explore how this and other cities are responding to climate change.</p>
+                    <a href="{{ '/map/' | relative_url }}" class="btn btn--primary btn--sm" style="width:100%;text-align:center;display:block;">
+                        🗺 Open Case Study Map
+                    </a>
+                </div>
+
+            </aside>
+
+            <!-- Article -->
+            <article class="cs-article">
+                <div class="cs-article__body prose">
                     {{ content }}
-                    
-                    {% if page.tools_used %}
-                    <section class="related-tools">
-                        <h3>Tools Used in This Project</h3>
-                        <div class="tool-grid-horizontal">
-                            {% for tool_id in page.tools_used %}
-                                {% assign tool = site.data.tools | where: "id", tool_id | first %}
-                                {% if tool %}
-                                <div class="tool-card-compact">
-                                    <h4><a href="{{ site.baseurl }}/tool/{{ tool.id }}/">{{ tool.name }}</a></h4>
-                                    <p class="developer">{{ tool.developer }}</p>
-                                    <p class="description">{{ tool.description | truncatewords: 12 }}</p>
-                                    <a href="{{ site.baseurl }}/tool/{{ tool.id }}/" class="btn btn-small">Learn More</a>
-                                </div>
+                </div>
+
+                {% if page.tools_used %}
+                <section class="cs-related-tools">
+                    <h2 class="cs-related-tools__title">Tools Used in This Case Study</h2>
+                    <div class="cs-tool-grid">
+                        {% for tool_id in page.tools_used %}
+                            {% assign tool = site.data.tools | where: "id", tool_id | first %}
+                            {% if tool %}
+                            <div class="cs-tool-card">
+                                {% if tool.icon %}
+                                <img src="{{ site.baseurl }}/assets/images/{{ tool.icon }}.svg" alt="{{ tool.name }}" class="cs-tool-card__icon">
                                 {% endif %}
-                            {% endfor %}
-                        </div>
-                    </section>
-                    {% endif %}
-                </article>
-            </div>
+                                <div class="cs-tool-card__body">
+                                    <h4 class="cs-tool-card__name"><a href="{{ site.baseurl }}/tool/{{ tool.id }}/">{{ tool.name }}</a></h4>
+                                    <p class="cs-tool-card__dev">{{ tool.developer }}</p>
+                                    <p class="cs-tool-card__desc">{{ tool.description | truncatewords: 16 }}</p>
+                                    <a href="{{ site.baseurl }}/tool/{{ tool.id }}/" class="btn btn--secondary btn--sm">Learn More →</a>
+                                </div>
+                            </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </section>
+                {% endif %}
+
+                <!-- Bottom navigation -->
+                <div class="cs-bottom-nav">
+                    <a href="{{ '/case-studies/' | relative_url }}" class="btn btn--secondary">← Back to Case Studies</a>
+                    <a href="{{ '/map/' | relative_url }}" class="btn btn--primary">
+                        <svg viewBox="0 0 20 20" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" style="display:inline;vertical-align:-2px;margin-right:4px"><path d="M1 5l6-2 6 2 6-2v12l-6 2-6-2-6 2V5z"/><line x1="7" y1="3" x2="7" y2="15"/><line x1="13" y1="5" x2="13" y2="17"/></svg>
+                        Explore All Cities on Map
+                    </a>
+                </div>
+            </article>
+
         </div>
-    </section>
+    </div>
+</div>
+

@@ -20,6 +20,10 @@ outcomes:
   - "Heat Health Alert system serving 9M residents"
   - "4M sq m of green roofs by 2030 (target)"
 image_url: /assets/images/london-placeholder.jpg
+categories:
+  - heat
+  - planning
+  - green
 ---
 
 ## Challenge

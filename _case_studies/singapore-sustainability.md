@@ -20,6 +20,10 @@ outcomes:
   - "11% of land area dedicated to green"
   - "Vertical greening in 3,400+ buildings"
 image_url: /assets/images/singapore.jpg
+categories:
+  - coastal
+  - green
+  - planning
 ---
 
 ## Challenge

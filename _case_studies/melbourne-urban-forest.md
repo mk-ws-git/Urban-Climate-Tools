@@ -19,6 +19,9 @@ outcomes:
   - "Average urban temperature reduced by 1.5°C"
   - "3,000+ unique tree species planted"
 image_url: /assets/images/melbourne-placeholder.jpg
+categories:
+  - green
+  - heat
 ---
 
 ## Challenge

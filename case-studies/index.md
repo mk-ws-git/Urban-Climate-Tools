@@ -8,6 +8,12 @@ title: Case Studies
         <div class="section__header">
             <h1 class="section__title">Urban Climate Case Studies</h1>
             <p class="section__description">Learn from cities around the world implementing climate adaptation and resilience solutions.</p>
+            <div style="margin-top: var(--space-4);">
+                <a href="{{ site.baseurl }}/map/" class="btn btn--primary">
+                    <svg viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" style="display:inline;vertical-align:-3px;margin-right:6px"><path d="M1 5l6-2 6 2 6-2v12l-6 2-6-2-6 2V5z"/><line x1="7" y1="3" x2="7" y2="15"/><line x1="13" y1="5" x2="13" y2="17"/></svg>
+                    View on Map
+                </a>
+            </div>
         </div>
 
         <div class="tools__header">
