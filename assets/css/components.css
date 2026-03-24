@@ -401,9 +401,9 @@ img, svg { display: block; max-width: 100%; }
   flex-direction: column;
   align-items: center;
   gap: var(--space-5);
-  min-width: 360px;
+  min-width: min(360px, 90vw);
   max-width: 780px;
-  width: clamp(360px, 60%, 780px);
+  width: clamp(min(360px, 90vw), 60%, 780px);
 }
 
 .hero__glass-title {
@@ -989,6 +989,15 @@ img, svg { display: block; max-width: 100%; }
   text-align: center;
   opacity: 0;
   animation: statsFadeIn 0.8s ease forwards;
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border-medium);
+  border-radius: var(--radius-lg);
+  padding: var(--space-8) var(--space-6);
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .stats__item:nth-child(1) { animation-delay: 1.2s; }
@@ -1244,6 +1253,17 @@ img, svg { display: block; max-width: 100%; }
     justify-content: center;
   }
 
+  .hero__glass {
+    padding: var(--space-8) var(--space-6);
+    gap: var(--space-4);
+    width: 90vw;
+    min-width: unset;
+  }
+
+  .hero__glass-subtitle {
+    font-size: var(--text-base);
+  }
+
   .stats__container {
     grid-template-columns: repeat(2, 1fr);
     gap: var(--space-6);
@@ -1279,6 +1299,30 @@ img, svg { display: block; max-width: 100%; }
   }
   .hero--video { padding: 0 !important; }
 
+  .hero__glass {
+    padding: var(--space-6) var(--space-4);
+    gap: var(--space-3);
+    width: 92vw;
+    border-radius: var(--radius-lg);
+  }
+
+  .hero__glass-subtitle {
+    font-size: var(--text-sm);
+    max-width: none;
+  }
+
+  .hero__glass-actions {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-2);
+    width: 100%;
+  }
+
+  .btn--glass {
+    width: 100%;
+    text-align: center;
+  }
+
   .stats {
     padding: var(--space-8) 0;
   }
@@ -1299,14 +1343,12 @@ img, svg { display: block; max-width: 100%; }
   }
 
   .stats__container {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-4);
   }
 
   .stats__item {
-    text-align: left;
-    display: flex;
-    align-items: center;
-    gap: var(--space-4);
+    text-align: center;
   }
 
   .stats__number {
