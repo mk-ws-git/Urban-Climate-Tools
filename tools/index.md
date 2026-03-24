@@ -196,25 +196,7 @@ title: All Tools
 
             <main class="tools-grid">
                 {% for tool in site.data.tools %}
-                <div class="tool-card" data-tool
-                     data-tool-id="{{ tool.id }}"
-                     data-save-id="{{ tool.id }}"
-                     data-save-title="{{ tool.name }}"
-                     data-save-url="{{ site.baseurl }}/tool/{{ tool.id }}/"
-                     data-save-type="Tool"
-                     data-name="{{ tool.name }}"
-                     data-developer="{{ tool.developer }}"
-                     data-description="{{ tool.description }}"
-                     data-category="{{ tool.categories | join: ',' }}"
-                     data-cost="{{ tool.cost }}"
-                     data-skill-level="{{ tool.skillLevel }}"
-                     data-coverage="{{ tool.coverage | join: ',' }}"
-                     data-user-category="{{ tool.user_categories | join: ',' }}"
-                     data-country="{{ tool.country }}"
-                     data-continent="{{ tool.continent }}"
-                     data-tags="{{ tool.tags | join: ',' }}">
-                    {% include tool-card.html tool=tool %}
-                </div>
+                {% include tool-card.html tool=tool filterable=true %}
                 {% endfor %}
             </main>
         </div>

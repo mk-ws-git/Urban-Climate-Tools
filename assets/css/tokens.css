@@ -133,6 +133,31 @@
   --container-lg:  1024px;
   --container-xl:  1280px;
   --nav-height:     60px;
+  --footer-height:  240px;
+}
+
+
+/* ── LEGACY VARIABLE ALIASES ── */
+/* Maps old variable names used in cards.css / typography.css to design tokens */
+:root {
+  --primary-blue:    var(--color-teal-400);
+  --secondary-blue:  var(--color-teal-50);
+  --light-gray:      var(--color-surface-2);
+  --border-gray:     var(--color-border-medium);
+  --text-dark:       var(--color-text-primary);
+
+  --spacing-xs:  var(--space-1);
+  --spacing-sm:  var(--space-2);
+  --spacing-md:  var(--space-4);
+  --spacing-lg:  var(--space-6);
+  --spacing-xl:  var(--space-8);
+  --spacing-2xl: var(--space-12);
+  --spacing-3xl: var(--space-20);
+
+  --shadow-lg:   0 4px 20px rgba(0,0,0,0.13);
+  --green-success: var(--color-free-text);
+
+  --line-height-body: var(--leading-normal);
 }
 
 

@@ -20,7 +20,7 @@ plugins:
 collections:
   tools:
     output: true
-    permalink: /tool/:title/
+    permalink: /tool/:name/
     label: Tools
   case_studies:
     output: true
