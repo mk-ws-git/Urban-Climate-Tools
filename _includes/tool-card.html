@@ -1,6 +1,6 @@
 {% assign tool_icon_path = site.baseurl | append: '/assets/images/' | append: tool.icon | append: '.svg' %}
 {% assign tool_slug = tool.slug | default: tool.id %}
-{% if tool.slug %}{% assign external_url = tool.website %}{% else %}{% assign external_url = tool.url %}{% endif %}
+{% if tool.website %}{% assign external_url = tool.website %}{% elsif tool.url contains 'http' %}{% assign external_url = tool.url %}{% endif %}
 <div class="tool-card"
      data-save-id="{{ tool_slug }}"
      data-save-title="{{ tool.name | escape }}"
