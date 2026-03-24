@@ -56,15 +56,22 @@
   --color-paid-border:  #F09595;   /* Red 200   */
   --color-paid-text:    #791F1F;   /* Red 800   */
 
+  /* Beige accent (warm, earthy complement to teal) */
+  --color-beige-50:   #FDF8F0;   /* Warmest — card backgrounds, stats bg      */
+  --color-beige-100:  #F5ECD7;   /* Warm parchment — category card fill       */
+  --color-beige-200:  #E8D5B0;   /* Sand — card borders, accent lines         */
+  --color-beige-400:  #C9A96E;   /* Amber sand — accent text, icons           */
+  --color-beige-600:  #9B7540;   /* Deep amber — hover states                 */
+
   /* Neutral surface / text (light mode) */
   --color-surface:      #FFFFFF;
   --color-surface-2:    #F7F9F7;   /* very slight green tint on page bg */
   --color-surface-3:    #EEF3EE;   /* card hover / subtle tint          */
   --color-text-primary: #111111;
-  --color-text-secondary:#222222;
-  --color-text-tertiary: #999999;
-  --color-border:       rgba(0,0,0,0.09);
-  --color-border-medium:rgba(0,0,0,0.16);
+  --color-text-secondary:#444444;
+  --color-text-tertiary: #777777;
+  --color-border:       rgba(0,0,0,0.10);
+  --color-border-medium:rgba(0,0,0,0.20);
 
 
   /* ── TYPOGRAPHY ── */
@@ -141,12 +148,17 @@
   :root {
     --color-surface:       #0d1f18;
     --color-surface-2:     #122318;
-    --color-surface-3:     #1a3028;
-    --color-text-primary:  #E1F5EE;
-    --color-text-secondary:#9FE1CB;
-    --color-text-tertiary: #5DCAA5;
-    --color-border:        rgba(255,255,255,0.09);
-    --color-border-medium: rgba(255,255,255,0.16);
+    --color-surface-3:     #1e3526;
+    --color-text-primary:  #F0FAF5;
+    --color-text-secondary:#B8E8D4;
+    --color-text-tertiary: #6DD4A8;
+    --color-border:        rgba(255,255,255,0.14);
+    --color-border-medium: rgba(255,255,255,0.24);
+    --color-beige-50:      #2A2015;
+    --color-beige-100:     #3A2C18;
+    --color-beige-200:     #5C4527;
+    --color-beige-400:     #D4A96E;
+    --color-beige-600:     #E8C080;
   }
 }
 
@@ -157,19 +169,29 @@
   --color-surface-2:      #F7F9F7;
   --color-surface-3:      #EEF3EE;
   --color-text-primary:   #111111;
-  --color-text-secondary: #222222;
-  --color-text-tertiary:  #999999;
-  --color-border:         rgba(0,0,0,0.09);
-  --color-border-medium:  rgba(0,0,0,0.16);
+  --color-text-secondary: #444444;
+  --color-text-tertiary:  #777777;
+  --color-border:         rgba(0,0,0,0.10);
+  --color-border-medium:  rgba(0,0,0,0.20);
+  --color-beige-50:       #FDF8F0;
+  --color-beige-100:      #F5ECD7;
+  --color-beige-200:      #E8D5B0;
+  --color-beige-400:      #C9A96E;
+  --color-beige-600:      #9B7540;
 }
 
 :root[data-theme="dark"] {
   --color-surface:        #0d1f18;
   --color-surface-2:      #122318;
-  --color-surface-3:      #1a3028;
-  --color-text-primary:   #E1F5EE;
-  --color-text-secondary: #9FE1CB;
-  --color-text-tertiary:  #5DCAA5;
-  --color-border:         rgba(255,255,255,0.09);
-  --color-border-medium:  rgba(255,255,255,0.16);
+  --color-surface-3:      #1e3526;
+  --color-text-primary:   #F0FAF5;
+  --color-text-secondary: #B8E8D4;
+  --color-text-tertiary:  #6DD4A8;
+  --color-border:         rgba(255,255,255,0.14);
+  --color-border-medium:  rgba(255,255,255,0.24);
+  --color-beige-50:       #2A2015;
+  --color-beige-100:      #3A2C18;
+  --color-beige-200:      #5C4527;
+  --color-beige-400:      #D4A96E;
+  --color-beige-600:      #E8C080;
 }
