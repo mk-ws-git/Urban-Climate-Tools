@@ -169,7 +169,7 @@ title: Case Studies
                 <div class="case-study-card" data-case-study
                      data-save-id="{{ study.id }}"
                      data-save-title="{{ study.title }}"
-                     data-save-url="{{ site.baseurl }}/case-studies/{{ study.id }}/"
+                     data-save-url="{{ site.baseurl }}/case-study/{{ study.id }}/"
                      data-save-type="Case Study"
                      data-title="{{ study.title }}"
                      data-city="{{ study.city }}"
@@ -186,7 +186,7 @@ title: Case Studies
                     {% endif %}
                     <div class="case-study-card__content">
                         {% if study.featured %}<span class="case-study-card__badge">Featured</span>{% endif %}
-                        <h3><a href="{{ site.baseurl }}/case-studies/{{ study.id }}/">{{ study.title }}</a></h3>
+                        <h3><a href="{{ site.baseurl }}/case-study/{{ study.id }}/">{{ study.title }}</a></h3>
                         <p class="case-study-card__location">{{ study.city }}{% if study.state %}, {{ study.state }}{% endif %}, {{ study.country }} &middot; {{ study.year }}</p>
                         <p class="case-study-card__description">{{ study.description }}</p>
                         <div class="case-study-card__meta">
@@ -200,7 +200,7 @@ title: Case Studies
                             {% endfor %}
                         </div>
                         {% endif %}
-                        <a href="{{ site.baseurl }}/case-studies/{{ study.id }}/" class="case-study-card__link">Read Case Study →</a>
+                        <a href="{{ site.baseurl }}/case-study/{{ study.id }}/" class="case-study-card__link">Read Case Study →</a>
                     </div>
                     <button class="save-btn" data-save-btn aria-label="Save">
                         <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
