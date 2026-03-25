@@ -146,7 +146,7 @@ title: Urban Climate Tools
     </div>
 </section>
 
-<section class="featured-tools">
+<section class="featured-tools" id="tools">
     <div class="container">
         <h2>Featured Tools</h2>
         <div class="tool-grid">

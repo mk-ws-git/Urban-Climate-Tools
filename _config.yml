@@ -20,25 +20,14 @@ plugins:
 collections:
   tools:
     output: true
-    permalink: /tools/:title/
+    permalink: /tools/:name/
     label: Tools
   case_studies:
     output: true
-    permalink: /case-studies/:title/
+    permalink: /case-studies/:name/
     label: Case Studies
 
 # Default frontmatter
-defaults:
-  - scope:
-      path: "_tools"
-    values:
-      layout: tool
-  - scope:
-      path: "_case_studies"
-    values:
-      layout: case-study
-
-# Defaults
 defaults:
   - scope:
       path: "_tools"

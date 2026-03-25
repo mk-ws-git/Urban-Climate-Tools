@@ -128,7 +128,7 @@ title: About Urban Climate Tools
             </ul>
         </section>
         
-        <section class="about-section faq">
+        <section class="about-section faq" id="faq">
             <h2>Frequently Asked Questions</h2>
             
             <div class="faq-item">
