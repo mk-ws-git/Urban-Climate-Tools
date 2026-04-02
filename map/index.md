@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Case Study Map
+permalink: /map/
 ---
 
 <section class="section">
@@ -45,10 +46,15 @@ window.UCT_CASE_STUDIES = {{ site.data.case_studies | jsonify }};
 
 <script>
 (function () {
+  var loadingEl = document.getElementById('map-loading');
+  var hasLeaflet = typeof L !== 'undefined';
+
+  function setLoadingMessage(message) {
+    if (loadingEl) loadingEl.textContent = message;
+  }
+
   if (typeof L === 'undefined') {
-    var el = document.getElementById('map-loading');
-    if (el) el.textContent = 'Map could not load. Please check your internet connection and refresh.';
-    return;
+    setLoadingMessage('Map could not load. The case study list is still available below.');
   }
 
   // Coordinates for each case study keyed by id
@@ -73,22 +79,23 @@ window.UCT_CASE_STUDIES = {{ site.data.case_studies | jsonify }};
   var studies = window.UCT_CASE_STUDIES || [];
   var markers = [];
   var activeFilter = 'all';
+  var map = null;
 
-  // Hide loading indicator
-  var loadingEl = document.getElementById('map-loading');
-  if (loadingEl) loadingEl.style.display = 'none';
+  if (hasLeaflet) {
+    // Hide loading indicator once the map library is ready.
+    if (loadingEl) loadingEl.style.display = 'none';
 
-  // Initialise map
-  var map = L.map('case-study-map', {
-    center: [30, 10],
-    zoom: 2,
-    scrollWheelZoom: false
-  });
+    map = L.map('case-study-map', {
+      center: [30, 10],
+      zoom: 2,
+      scrollWheelZoom: false
+    });
 
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 18,
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-  }).addTo(map);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 18,
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+  }
 
   // Custom marker icon
   function makeIcon(color) {
@@ -136,6 +143,7 @@ window.UCT_CASE_STUDIES = {{ site.data.case_studies | jsonify }};
 
   // Build markers
   studies.forEach(function (study) {
+    if (!hasLeaflet) return;
     var coords = COORDS[study.id];
     if (!coords) return;
     var cat = primaryCategory(study);
@@ -149,6 +157,15 @@ window.UCT_CASE_STUDIES = {{ site.data.case_studies | jsonify }};
   function applyFilter(filter) {
     activeFilter = filter;
     var visible = 0;
+    if (!hasLeaflet || !map) {
+      visible = studies.filter(function (study) {
+        var cats = study.categories || [];
+        return filter === 'all' || cats.indexOf(filter) > -1;
+      }).length;
+      document.getElementById('map-count').textContent = visible + ' ' + (visible === 1 ? 'study' : 'studies');
+      renderCards(filter);
+      return;
+    }
     markers.forEach(function (m) {
       var cats = m.study.categories || [];
       var show = filter === 'all' || cats.indexOf(filter) > -1;
@@ -201,6 +218,7 @@ window.UCT_CASE_STUDIES = {{ site.data.case_studies | jsonify }};
     grid.querySelectorAll('.map-mini-card').forEach(function (card) {
       card.addEventListener('click', function (e) {
         if (e.target.tagName === 'A') return;
+        if (!hasLeaflet || !map) return;
         var id = card.getAttribute('data-study-id');
         var found = markers.find(function (m) { return m.study.id === id; });
         if (!found) return;

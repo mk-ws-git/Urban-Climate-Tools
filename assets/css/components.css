@@ -286,7 +286,7 @@ img, svg { display: block; max-width: 100%; }
 
 .nav__link {
   font-size: var(--text-base);
-  font-weight: 600;
+  font-weight: var(--weight-regular);
   color: var(--color-text-secondary);
   transition: color var(--transition-fast);
   padding: var(--space-2) 0;
@@ -295,7 +295,7 @@ img, svg { display: block; max-width: 100%; }
 .nav__link:hover,
 .nav__link--active {
   color: var(--color-teal-400);
-  font-weight: 600;
+  font-weight: var(--weight-regular);
 }
 
 
@@ -1892,7 +1892,7 @@ img, svg { display: block; max-width: 100%; }
   cursor: pointer;
   font-family: var(--font-sans);
   font-size: var(--text-base);
-  font-weight: 600;
+  font-weight: var(--weight-regular);
   color: var(--color-text-secondary);
   transition: color var(--transition-fast);
   padding: var(--space-2) 0;
