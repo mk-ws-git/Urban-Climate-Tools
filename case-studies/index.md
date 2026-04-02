@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Case Studies
+published: false
 ---
 
 <section class="tools-page case-studies-page">

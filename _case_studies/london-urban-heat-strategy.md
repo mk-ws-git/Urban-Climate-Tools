@@ -19,7 +19,7 @@ outcomes:
   - "300+ Cool Spaces registered across boroughs"
   - "Heat Health Alert system serving 9M residents"
   - "4M sq m of green roofs by 2030 (target)"
-image_url: /assets/images/london-placeholder.jpg
+image_url: /assets/images/paris.jpg
 categories:
   - heat
   - planning

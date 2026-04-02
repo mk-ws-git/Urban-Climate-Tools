@@ -29,7 +29,7 @@
     - "20% reduction in flood-vulnerable infrastructure"
     - "$2.1B resilience investment plan approved"
     - "Community engagement: 10,000+ residents involved"
-  image_url: /assets/images/norfolk.jpg
+  image_url: /assets/images/norfolk-placeholder.jpg
   featured: true
 
 - id: minneapolis-green-equity
@@ -271,7 +271,7 @@
     - "Tree canopy cover increased from 22% to 40%"
     - "Average urban temperature reduced by 1.5°C"
     - "3,000+ unique tree species planted"
-  image_url: /assets/images/melbourne.jpg
+  image_url: /assets/images/singapore.jpg
   featured: false
 
 - id: medellín-green-corridors
@@ -333,7 +333,7 @@
     - "300+ Cool Spaces registered across boroughs"
     - "Heat Health Alert system serving 9M residents"
     - "4M sq m of green roofs by 2030 (target)"
-  image_url: /assets/images/london.jpg
+  image_url: /assets/images/paris.jpg
   featured: false
 
 - id: jakarta-flood-resilience
@@ -364,7 +364,7 @@
     - "National Sea Barrier (NCICD) Phase A completed"
     - "Mangrove restoration across 300 ha"
     - "Automated flood early warning covering 12 rivers"
-  image_url: /assets/images/jakarta.jpg
+  image_url: /assets/images/rotterdam.jpg
   featured: false
 
 - id: cape-town-water-resilience
@@ -395,5 +395,5 @@
     - "Per-capita water use cut by 50% since 2015"
     - "Groundwater, desalination and reuse sources online"
     - "Water Resilience Plan adopted to 2040"
-  image_url: /assets/images/cape-town.jpg
+  image_url: /assets/images/bogota.jpg
   featured: false

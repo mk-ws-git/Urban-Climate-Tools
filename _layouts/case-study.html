@@ -2,161 +2,613 @@
 layout: default
 ---
 
-<!-- Case Study Hero Banner -->
-<section class="cs-hero">
-    {% if page.image_url %}
-    <div class="cs-hero__image-wrap">
-        <img src="{{ page.image_url | relative_url }}" alt="{{ page.title }}" class="cs-hero__image">
-        <div class="cs-hero__overlay"></div>
+<!-- ═══════════════════════════════════════════════════════════
+     CASE STUDY PAGE — Redesigned immersive layout
+     ═══════════════════════════════════════════════════════════ -->
+
+<style>
+/* ── Hero ── */
+.cs2-hero {
+  position: relative;
+  min-height: 420px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+}
+.cs2-hero__bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--color-teal-900) 0%, #020f0c 100%);
+  z-index: 0;
+}
+.cs2-hero__image {
+  position: absolute;
+  inset: 0;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  opacity: 0.28;
+  z-index: 1;
+}
+.cs2-hero__gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(2,15,12,0.97) 0%, rgba(5,35,29,0.6) 50%, rgba(5,35,29,0.2) 100%);
+  z-index: 2;
+}
+.cs2-hero__content {
+  position: relative;
+  z-index: 3;
+  max-width: var(--container-xl);
+  width: 100%;
+  margin: 0 auto;
+  padding: var(--space-16) var(--space-8) var(--space-10);
+}
+
+.cs2-hero__breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--color-teal-200);
+  margin-bottom: var(--space-6);
+}
+.cs2-hero__breadcrumb a { color: var(--color-teal-200); text-decoration: none; }
+.cs2-hero__breadcrumb a:hover { color: #fff; }
+.cs2-hero__breadcrumb span { opacity: 0.4; }
+
+.cs2-hero__tags { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-bottom: var(--space-5); }
+.cs2-tag {
+  display: inline-flex; align-items: center;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  font-size: var(--text-xs); font-weight: 700;
+  letter-spacing: var(--tracking-wide); text-transform: uppercase;
+  border: 1px solid;
+}
+.cs2-tag--heat    { background: rgba(224,92,46,0.20);  border-color: rgba(224,92,46,0.5);  color: #ffb08a; }
+.cs2-tag--flood   { background: rgba(46,125,224,0.20); border-color: rgba(46,125,224,0.5); color: #90c8ff; }
+.cs2-tag--coastal { background: rgba(27,163,201,0.20); border-color: rgba(27,163,201,0.5); color: #7fe5ff; }
+.cs2-tag--green   { background: rgba(58,173,92,0.20);  border-color: rgba(58,173,92,0.5);  color: #7ef0a2; }
+.cs2-tag--planning{ background: rgba(155,89,182,0.20); border-color: rgba(155,89,182,0.5); color: #d7a8ff; }
+.cs2-tag--other   { background: rgba(255,255,255,0.10);border-color: rgba(255,255,255,0.2);color: rgba(255,255,255,0.7); }
+
+.cs2-hero__title {
+  font-size: clamp(28px, 4vw, 48px);
+  font-weight: 800;
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  color: #ffffff;
+  margin-bottom: var(--space-4);
+  max-width: 800px;
+}
+
+.cs2-hero__meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  font-size: var(--text-sm);
+  color: rgba(255,255,255,0.65);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-5);
+}
+.cs2-hero__meta-dot { opacity: 0.3; }
+
+.cs2-hero__description {
+  font-size: var(--text-lg);
+  line-height: var(--leading-snug);
+  color: rgba(255,255,255,0.80);
+  max-width: 640px;
+  margin-bottom: var(--space-8);
+}
+
+.cs2-hero__actions { display: flex; gap: var(--space-3); flex-wrap: wrap; }
+.cs2-hero__btn-map {
+  display: inline-flex; align-items: center; gap: var(--space-2);
+  padding: 10px 20px; background: var(--color-teal-400); color: #fff;
+  border-radius: var(--radius-md); font-size: var(--text-sm); font-weight: 700;
+  text-decoration: none; transition: background var(--transition-fast);
+}
+.cs2-hero__btn-map:hover { background: var(--color-teal-600); color: #fff; }
+.cs2-hero__btn-back {
+  display: inline-flex; align-items: center; gap: var(--space-2);
+  padding: 10px 20px; background: transparent; color: rgba(255,255,255,0.75);
+  border: 1px solid rgba(255,255,255,0.25); border-radius: var(--radius-md);
+  font-size: var(--text-sm); font-weight: 600; text-decoration: none;
+  transition: background var(--transition-fast);
+}
+.cs2-hero__btn-back:hover { background: rgba(255,255,255,0.1); color: #fff; }
+
+/* ── Outcomes strip ── */
+.cs2-outcomes-strip {
+  background: var(--color-teal-800);
+  border-bottom: 1px solid var(--color-teal-600);
+}
+.cs2-outcomes-strip__inner {
+  max-width: var(--container-xl);
+  margin: 0 auto;
+  padding: var(--space-6) var(--space-8);
+  display: flex;
+  gap: 0;
+  overflow-x: auto;
+}
+.cs2-outcome-item {
+  flex: 1;
+  min-width: 180px;
+  padding: var(--space-4) var(--space-6);
+  border-right: 1px solid rgba(255,255,255,0.10);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+.cs2-outcome-item:first-child { padding-left: 0; }
+.cs2-outcome-item:last-child { border-right: none; }
+.cs2-outcome-item__number {
+  font-size: var(--text-xl);
+  font-weight: 800;
+  color: var(--color-teal-200);
+  line-height: 1.1;
+}
+.cs2-outcome-item__label {
+  font-size: var(--text-xs);
+  color: rgba(255,255,255,0.55);
+  line-height: var(--leading-snug);
+}
+
+/* ── Body layout ── */
+.cs2-body {
+  max-width: var(--container-xl);
+  margin: 0 auto;
+  padding: var(--space-12) var(--space-8);
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: var(--space-12);
+  align-items: start;
+}
+
+/* ── Article ── */
+.cs2-article { min-width: 0; }
+
+.cs2-content-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
+  margin-bottom: var(--space-6);
+}
+
+.cs2-content-card .prose h2 {
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin: var(--space-8) 0 var(--space-4);
+  padding-top: var(--space-8);
+  border-top: 1px solid var(--color-border);
+}
+.cs2-content-card .prose h2:first-child { margin-top: 0; padding-top: 0; border-top: none; }
+.cs2-content-card .prose h3 {
+  font-size: var(--text-base);
+  font-weight: 700;
+  color: var(--color-teal-600);
+  margin: var(--space-6) 0 var(--space-3);
+}
+.cs2-content-card .prose p {
+  font-size: var(--text-base);
+  line-height: var(--leading-loose);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-4);
+}
+.cs2-content-card .prose ul,
+.cs2-content-card .prose ol {
+  margin: var(--space-4) 0 var(--space-4) var(--space-6);
+}
+.cs2-content-card .prose li {
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-2);
+}
+.cs2-content-card .prose strong { color: var(--color-text-primary); }
+
+/* ── Related tools in article ── */
+.cs2-tool-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: var(--space-4);
+  margin-top: var(--space-6);
+}
+.cs2-tool-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-4);
+  padding: var(--space-5);
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+.cs2-tool-item:hover { border-color: var(--color-teal-400); box-shadow: var(--shadow-md); }
+.cs2-tool-item__icon {
+  flex-shrink: 0;
+  width: 40px; height: 40px;
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+}
+.cs2-tool-item__icon img { width: 28px; height: 28px; object-fit: contain; }
+.cs2-tool-item__body { flex: 1; min-width: 0; }
+.cs2-tool-item__name { font-size: var(--text-sm); font-weight: 700; color: var(--color-text-primary); margin-bottom: 2px; }
+.cs2-tool-item__name a { color: inherit; text-decoration: none; }
+.cs2-tool-item__name a:hover { color: var(--color-teal-400); }
+.cs2-tool-item__dev { font-size: var(--text-xs); color: var(--color-text-tertiary); margin-bottom: var(--space-2); }
+.cs2-tool-item__desc { font-size: var(--text-xs); color: var(--color-text-secondary); line-height: var(--leading-normal); }
+
+/* ── Bottom nav ── */
+.cs2-bottom-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-4);
+  padding-top: var(--space-8);
+  border-top: 1px solid var(--color-border);
+  flex-wrap: wrap;
+}
+.cs2-btn-primary {
+  display: inline-flex; align-items: center; gap: var(--space-2);
+  padding: 11px 22px; background: var(--color-teal-400); color: #fff;
+  border-radius: var(--radius-md); font-size: var(--text-sm); font-weight: 700;
+  text-decoration: none; transition: background var(--transition-fast);
+}
+.cs2-btn-primary:hover { background: var(--color-teal-600); color: #fff; }
+.cs2-btn-secondary {
+  display: inline-flex; align-items: center; gap: var(--space-2);
+  padding: 11px 22px; background: var(--color-surface-2); color: var(--color-text-primary);
+  border: 1px solid var(--color-border-medium); border-radius: var(--radius-md);
+  font-size: var(--text-sm); font-weight: 600; text-decoration: none;
+  transition: background var(--transition-fast), border-color var(--transition-fast);
+}
+.cs2-btn-secondary:hover { background: var(--color-surface-3); border-color: var(--color-teal-400); }
+
+/* ── Sidebar ── */
+.cs2-sidebar { display: flex; flex-direction: column; gap: var(--space-5); }
+
+.cs2-sidebar-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+}
+.cs2-sidebar-card--accent {
+  background: linear-gradient(135deg, var(--color-teal-50) 0%, var(--color-surface) 100%);
+  border-color: var(--color-teal-100);
+}
+.cs2-sidebar-card__head {
+  padding: var(--space-4) var(--space-5);
+  background: var(--color-surface-2);
+  border-bottom: 1px solid var(--color-border);
+}
+.cs2-sidebar-card--accent .cs2-sidebar-card__head {
+  background: rgba(29,158,117,0.07);
+  border-bottom-color: var(--color-teal-100);
+}
+.cs2-sidebar-card__title {
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--color-teal-400);
+}
+.cs2-sidebar-card__body { padding: var(--space-5); }
+
+.cs2-facts-dl { display: flex; flex-direction: column; gap: 0; }
+.cs2-facts-row {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-3) 0;
+  border-bottom: 1px solid var(--color-border);
+  font-size: var(--text-sm);
+}
+.cs2-facts-row:last-child { border-bottom: none; }
+.cs2-facts-key { color: var(--color-text-tertiary); font-weight: 600; flex-shrink: 0; }
+.cs2-facts-val { color: var(--color-text-primary); text-align: right; }
+
+.cs2-challenge-list { list-style: none; padding: 0; margin: 0; }
+.cs2-challenge-list li {
+  display: flex; align-items: flex-start; gap: var(--space-3);
+  padding: var(--space-2) 0; font-size: var(--text-sm); color: var(--color-text-secondary);
+  border-bottom: 1px solid var(--color-border);
+}
+.cs2-challenge-list li:last-child { border-bottom: none; }
+.cs2-challenge-list li::before { content: '⚡'; flex-shrink: 0; }
+
+.cs2-outcome-list { list-style: none; padding: 0; margin: 0; }
+.cs2-outcome-list li {
+  display: flex; align-items: flex-start; gap: var(--space-3);
+  padding: var(--space-3) 0; font-size: var(--text-sm); color: var(--color-teal-600);
+  font-weight: 500; border-bottom: 1px solid rgba(29,158,117,0.15);
+  line-height: var(--leading-snug);
+}
+.cs2-outcome-list li:last-child { border-bottom: none; }
+.cs2-outcome-list li::before { content: '✓'; font-weight: 800; color: var(--color-teal-400); flex-shrink: 0; }
+
+.cs2-tool-links { list-style: none; padding: 0; margin: 0; }
+.cs2-tool-links li {
+  padding: var(--space-2) 0;
+  border-bottom: 1px solid var(--color-border);
+  font-size: var(--text-sm);
+}
+.cs2-tool-links li:last-child { border-bottom: none; }
+.cs2-tool-links a { color: var(--color-teal-400); text-decoration: none; font-weight: 600; }
+.cs2-tool-links a:hover { color: var(--color-teal-600); }
+
+/* ── Map CTA card ── */
+.cs2-map-cta {
+  background: linear-gradient(135deg, var(--color-teal-800) 0%, var(--color-teal-900) 100%);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  text-align: center;
+  color: #fff;
+}
+.cs2-map-cta p {
+  font-size: var(--text-sm);
+  color: rgba(255,255,255,0.7);
+  margin-bottom: var(--space-4);
+  line-height: var(--leading-snug);
+}
+.cs2-map-cta__btn {
+  display: block;
+  padding: 10px 20px;
+  background: var(--color-teal-400);
+  color: #fff;
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  text-decoration: none;
+  text-align: center;
+  transition: background var(--transition-fast);
+}
+.cs2-map-cta__btn:hover { background: var(--color-teal-200); color: var(--color-teal-800); }
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .cs2-body { grid-template-columns: 1fr; }
+  .cs2-outcomes-strip__inner { gap: 0; }
+  .cs2-outcome-item { min-width: 140px; }
+}
+@media (max-width: 600px) {
+  .cs2-hero__content,
+  .cs2-body,
+  .cs2-outcomes-strip__inner { padding-left: var(--space-4); padding-right: var(--space-4); }
+  .cs2-content-card { padding: var(--space-5); }
+  .cs2-outcome-item { min-width: 120px; padding: var(--space-3) var(--space-4); }
+  .cs2-outcome-item__number { font-size: var(--text-lg); }
+}
+</style>
+
+<!-- ══ HERO ══════════════════════════════════════════════════ -->
+<div class="cs2-hero">
+  <div class="cs2-hero__bg"></div>
+  {% if page.image_url %}
+  <img src="{{ page.image_url | relative_url }}" alt="{{ page.title }}" class="cs2-hero__image" loading="eager">
+  {% endif %}
+  <div class="cs2-hero__gradient"></div>
+
+  <div class="cs2-hero__content">
+
+    <nav class="cs2-hero__breadcrumb">
+      <a href="{{ '/' | relative_url }}">Home</a>
+      <span>/</span>
+      <a href="{{ '/case-studies/' | relative_url }}">Case Studies</a>
+      <span>/</span>
+      <span style="color:rgba(255,255,255,0.6)">{{ page.city }}</span>
+    </nav>
+
+    {% if page.categories %}
+    <div class="cs2-hero__tags">
+      {% for cat in page.categories %}
+      <span class="cs2-tag cs2-tag--{{ cat }}">{{ cat | capitalize }}</span>
+      {% endfor %}
+      {% if page.featured %}<span class="cs2-tag" style="background:rgba(255,215,0,0.2);border-color:rgba(255,215,0,0.5);color:#ffd700;">⭐ Featured</span>{% endif %}
     </div>
     {% endif %}
-    <div class="container cs-hero__content{% unless page.image_url %} cs-hero__content--no-image{% endunless %}">
-        <nav class="breadcrumb">
-            <a href="{{ '/' | relative_url }}" class="breadcrumb__link">Home</a>
-            <span class="breadcrumb__separator">/</span>
-            <a href="{{ '/case-studies/' | relative_url }}" class="breadcrumb__link">Case Studies</a>
-            <span class="breadcrumb__separator">/</span>
-            <span class="breadcrumb__current">{{ page.city }}</span>
-        </nav>
 
-        {% if page.categories %}
-        <div class="cs-hero__tags">
-            {% for cat in page.categories %}
-            <span class="cs-tag cs-tag--{{ cat }}">{{ cat | capitalize }}</span>
-            {% endfor %}
-        </div>
-        {% endif %}
+    <h1 class="cs2-hero__title">{{ page.title }}</h1>
 
-        <h1 class="cs-hero__title">{{ page.title }}</h1>
-        <p class="cs-hero__meta">
-            <svg viewBox="0 0 20 20" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:-2px"><path d="M10 2a6 6 0 0 1 6 6c0 4-6 10-6 10S4 12 4 8a6 6 0 0 1 6-6z"/><circle cx="10" cy="8" r="2"/></svg>
-            {{ page.city }}{% if page.state %}, {{ page.state }}{% endif %}, {{ page.country }}
-            &nbsp;·&nbsp; {{ page.year }}
-            {% if page.population %}&nbsp;·&nbsp; Pop. {{ page.population | number_with_delimiter }}{% endif %}
-        </p>
-        <p class="cs-hero__description">{{ page.description }}</p>
-
-        <div class="cs-hero__actions">
-            <a href="{{ '/map/' | relative_url }}" class="btn btn--secondary btn--sm">
-                <svg viewBox="0 0 20 20" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" style="display:inline;vertical-align:-2px;margin-right:4px"><path d="M1 5l6-2 6 2 6-2v12l-6 2-6-2-6 2V5z"/><line x1="7" y1="3" x2="7" y2="15"/><line x1="13" y1="5" x2="13" y2="17"/></svg>
-                View on Map
-            </a>
-            <a href="{{ '/case-studies/' | relative_url }}" class="btn btn--ghost btn--sm">← All Case Studies</a>
-        </div>
+    <div class="cs2-hero__meta">
+      <span>📍 {{ page.city }}{% if page.state %}, {{ page.state }}{% endif %}, {{ page.country }}</span>
+      <span class="cs2-hero__meta-dot">·</span>
+      <span>{{ page.year }}</span>
+      {% if page.population %}
+      <span class="cs2-hero__meta-dot">·</span>
+      <span>Pop. {{ page.population | number_with_delimiter }}</span>
+      {% endif %}
+      {% if page.sector %}
+      <span class="cs2-hero__meta-dot">·</span>
+      <span>{{ page.sector }}</span>
+      {% endif %}
     </div>
-</section>
 
-<!-- Main Content -->
-<div class="cs-layout">
-    <div class="container">
-        <div class="cs-body">
+    <p class="cs2-hero__description">{{ page.description }}</p>
 
-            <!-- Sidebar -->
-            <aside class="cs-sidebar">
-
-                <div class="cs-sidebar__card">
-                    <h4 class="cs-sidebar__heading">Quick Facts</h4>
-                    <dl class="cs-facts">
-                        <dt>City</dt>
-                        <dd>{{ page.city }}{% if page.state %}, {{ page.state }}{% endif %}, {{ page.country }}</dd>
-                        {% if page.population %}
-                        <dt>Population</dt>
-                        <dd>{{ page.population | number_with_delimiter }}</dd>
-                        {% endif %}
-                        <dt>Sector</dt>
-                        <dd>{{ page.sector }}</dd>
-                        <dt>Year</dt>
-                        <dd>{{ page.year }}</dd>
-                    </dl>
-                </div>
-
-                {% if page.climate_challenges %}
-                <div class="cs-sidebar__card">
-                    <h4 class="cs-sidebar__heading">Climate Challenges</h4>
-                    <ul class="cs-list">
-                        {% for challenge in page.climate_challenges %}
-                        <li>{{ challenge | capitalize }}</li>
-                        {% endfor %}
-                    </ul>
-                </div>
-                {% endif %}
-
-                {% if page.outcomes %}
-                <div class="cs-sidebar__card cs-sidebar__card--accent">
-                    <h4 class="cs-sidebar__heading">Key Outcomes</h4>
-                    <ul class="cs-list cs-list--outcomes">
-                        {% for outcome in page.outcomes %}
-                        <li>{{ outcome }}</li>
-                        {% endfor %}
-                    </ul>
-                </div>
-                {% endif %}
-
-                {% if page.tools_used %}
-                <div class="cs-sidebar__card">
-                    <h4 class="cs-sidebar__heading">Tools Used</h4>
-                    <ul class="cs-list cs-list--tools">
-                        {% for tool_id in page.tools_used %}
-                            {% assign tool = site.data.tools | where: "id", tool_id | first %}
-                            {% if tool %}
-                            <li><a href="{{ site.baseurl }}/tool/{{ tool.id }}/">{{ tool.name }}</a></li>
-                            {% endif %}
-                        {% endfor %}
-                    </ul>
-                </div>
-                {% endif %}
-
-                <!-- Back to map CTA -->
-                <div class="cs-sidebar__map-cta">
-                    <p>Explore how this and other cities are responding to climate change.</p>
-                    <a href="{{ '/map/' | relative_url }}" class="btn btn--primary btn--sm" style="width:100%;text-align:center;display:block;">
-                        🗺 Open Case Study Map
-                    </a>
-                </div>
-
-            </aside>
-
-            <!-- Article -->
-            <article class="cs-article">
-                <div class="cs-article__body prose">
-                    {{ content }}
-                </div>
-
-                {% if page.tools_used %}
-                <section class="cs-related-tools">
-                    <h2 class="cs-related-tools__title">Tools Used in This Case Study</h2>
-                    <div class="cs-tool-grid">
-                        {% for tool_id in page.tools_used %}
-                            {% assign tool = site.data.tools | where: "id", tool_id | first %}
-                            {% if tool %}
-                            <div class="cs-tool-card">
-                                {% if tool.icon %}
-                                <img src="{{ site.baseurl }}/assets/images/{{ tool.icon }}.svg" alt="{{ tool.name }}" class="cs-tool-card__icon">
-                                {% endif %}
-                                <div class="cs-tool-card__body">
-                                    <h4 class="cs-tool-card__name"><a href="{{ site.baseurl }}/tool/{{ tool.id }}/">{{ tool.name }}</a></h4>
-                                    <p class="cs-tool-card__dev">{{ tool.developer }}</p>
-                                    <p class="cs-tool-card__desc">{{ tool.description | truncatewords: 16 }}</p>
-                                    <a href="{{ site.baseurl }}/tool/{{ tool.id }}/" class="btn btn--secondary btn--sm">Learn More →</a>
-                                </div>
-                            </div>
-                            {% endif %}
-                        {% endfor %}
-                    </div>
-                </section>
-                {% endif %}
-
-                <!-- Bottom navigation -->
-                <div class="cs-bottom-nav">
-                    <a href="{{ '/case-studies/' | relative_url }}" class="btn btn--secondary">← Back to Case Studies</a>
-                    <a href="{{ '/map/' | relative_url }}" class="btn btn--primary">
-                        <svg viewBox="0 0 20 20" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" style="display:inline;vertical-align:-2px;margin-right:4px"><path d="M1 5l6-2 6 2 6-2v12l-6 2-6-2-6 2V5z"/><line x1="7" y1="3" x2="7" y2="15"/><line x1="13" y1="5" x2="13" y2="17"/></svg>
-                        Explore All Cities on Map
-                    </a>
-                </div>
-            </article>
-
-        </div>
+    <div class="cs2-hero__actions">
+      <a href="{{ '/map/' | relative_url }}" class="cs2-hero__btn-map">
+        <svg viewBox="0 0 20 20" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M1 5l6-2 6 2 6-2v12l-6 2-6-2-6 2V5z"/><line x1="7" y1="3" x2="7" y2="15"/><line x1="13" y1="5" x2="13" y2="17"/></svg>
+        View on Map
+      </a>
+      <a href="{{ '/case-studies/' | relative_url }}" class="cs2-hero__btn-back">← All Case Studies</a>
     </div>
+
+  </div>
 </div>
+<!-- ── end hero ── -->
 
+
+<!-- ══ OUTCOMES STRIP ═════════════════════════════════════════ -->
+{% if page.outcomes %}
+<div class="cs2-outcomes-strip">
+  <div class="cs2-outcomes-strip__inner">
+    {% for outcome in page.outcomes %}
+    <div class="cs2-outcome-item">
+      {% assign parts = outcome | split: ' ' %}
+      <span class="cs2-outcome-item__number">{{ parts | first }}</span>
+      <span class="cs2-outcome-item__label">{{ outcome | remove_first: parts[0] | strip }}</span>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endif %}
+
+
+<!-- ══ BODY ══════════════════════════════════════════════════ -->
+<div class="cs2-body">
+
+  <!-- Article -->
+  <article class="cs2-article">
+
+    <div class="cs2-content-card">
+      <div class="prose">
+        {{ content }}
+      </div>
+    </div>
+
+    {% if page.tools_used %}
+    <div class="cs2-content-card">
+      <p style="font-size:var(--text-xs);font-weight:700;letter-spacing:var(--tracking-widest);text-transform:uppercase;color:var(--color-teal-400);margin-bottom:var(--space-4);">Tools Used in This Case Study</p>
+      <h2 style="font-size:var(--text-xl);font-weight:700;color:var(--color-text-primary);margin-bottom:var(--space-6);">Climate Tools Applied</h2>
+      <div class="cs2-tool-grid">
+        {% for tool_id in page.tools_used %}
+          {% assign tool = site.data.tools | where: "id", tool_id | first %}
+          {% if tool %}
+          <div class="cs2-tool-item">
+            {% if tool.icon %}
+            <div class="cs2-tool-item__icon">
+              <img src="{{ site.baseurl }}/assets/images/{{ tool.icon }}.svg" alt="{{ tool.name }}" onerror="this.parentElement.style.display='none'">
+            </div>
+            {% endif %}
+            <div class="cs2-tool-item__body">
+              <div class="cs2-tool-item__name"><a href="{{ site.baseurl }}/tool/{{ tool.id }}/">{{ tool.name }}</a></div>
+              <div class="cs2-tool-item__dev">{{ tool.developer }}</div>
+              <div class="cs2-tool-item__desc">{{ tool.description | truncatewords: 14 }}</div>
+            </div>
+          </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+    {% endif %}
+
+    <div class="cs2-bottom-nav">
+      <a href="{{ '/case-studies/' | relative_url }}" class="cs2-btn-secondary">← Back to Case Studies</a>
+      <a href="{{ '/map/' | relative_url }}" class="cs2-btn-primary">
+        <svg viewBox="0 0 20 20" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M1 5l6-2 6 2 6-2v12l-6 2-6-2-6 2V5z"/><line x1="7" y1="3" x2="7" y2="15"/><line x1="13" y1="5" x2="13" y2="17"/></svg>
+        Explore All Cities on Map
+      </a>
+    </div>
+
+  </article>
+
+  <!-- Sidebar -->
+  <aside class="cs2-sidebar">
+
+    <!-- Quick Facts -->
+    <div class="cs2-sidebar-card">
+      <div class="cs2-sidebar-card__head"><h4 class="cs2-sidebar-card__title">Quick Facts</h4></div>
+      <div class="cs2-sidebar-card__body">
+        <div class="cs2-facts-dl">
+          <div class="cs2-facts-row">
+            <span class="cs2-facts-key">City</span>
+            <span class="cs2-facts-val">{{ page.city }}{% if page.state %}, {{ page.state }}{% endif %}</span>
+          </div>
+          <div class="cs2-facts-row">
+            <span class="cs2-facts-key">Country</span>
+            <span class="cs2-facts-val">{{ page.country }}</span>
+          </div>
+          {% if page.population %}
+          <div class="cs2-facts-row">
+            <span class="cs2-facts-key">Population</span>
+            <span class="cs2-facts-val">{{ page.population | number_with_delimiter }}</span>
+          </div>
+          {% endif %}
+          <div class="cs2-facts-row">
+            <span class="cs2-facts-key">Year</span>
+            <span class="cs2-facts-val">{{ page.year }}</span>
+          </div>
+          {% if page.sector %}
+          <div class="cs2-facts-row">
+            <span class="cs2-facts-key">Sector</span>
+            <span class="cs2-facts-val" style="text-align:right;font-size:var(--text-xs);">{{ page.sector }}</span>
+          </div>
+          {% endif %}
+          {% if page.continent %}
+          <div class="cs2-facts-row">
+            <span class="cs2-facts-key">Continent</span>
+            <span class="cs2-facts-val">{{ page.continent }}</span>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+
+    <!-- Climate Challenges -->
+    {% if page.climate_challenges %}
+    <div class="cs2-sidebar-card">
+      <div class="cs2-sidebar-card__head"><h4 class="cs2-sidebar-card__title">Climate Challenges</h4></div>
+      <div class="cs2-sidebar-card__body">
+        <ul class="cs2-challenge-list">
+          {% for challenge in page.climate_challenges %}
+          <li>{{ challenge | capitalize }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+    {% endif %}
+
+    <!-- Key Outcomes -->
+    {% if page.outcomes %}
+    <div class="cs2-sidebar-card cs2-sidebar-card--accent">
+      <div class="cs2-sidebar-card__head"><h4 class="cs2-sidebar-card__title">Key Outcomes</h4></div>
+      <div class="cs2-sidebar-card__body">
+        <ul class="cs2-outcome-list">
+          {% for outcome in page.outcomes %}
+          <li>{{ outcome }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+    {% endif %}
+
+    <!-- Tools Used -->
+    {% if page.tools_used %}
+    <div class="cs2-sidebar-card">
+      <div class="cs2-sidebar-card__head"><h4 class="cs2-sidebar-card__title">Tools Used</h4></div>
+      <div class="cs2-sidebar-card__body">
+        <ul class="cs2-tool-links">
+          {% for tool_id in page.tools_used %}
+            {% assign tool = site.data.tools | where: "id", tool_id | first %}
+            {% if tool %}
+            <li><a href="{{ site.baseurl }}/tool/{{ tool.id }}/">{{ tool.name }}</a></li>
+            {% else %}
+            <li style="color:var(--color-text-tertiary);font-size:var(--text-xs);">{{ tool_id }}</li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+    {% endif %}
+
+    <!-- Map CTA -->
+    <div class="cs2-map-cta">
+      <p>See how this city compares with others around the world on the interactive map.</p>
+      <a href="{{ '/map/' | relative_url }}" class="cs2-map-cta__btn">🗺 Open Case Study Map</a>
+    </div>
+
+  </aside>
+
+</div>
+<!-- ── end body ── -->

@@ -19,7 +19,7 @@ outcomes:
   - "National Sea Barrier (NCICD) Phase A completed"
   - "Mangrove restoration across 300 ha"
   - "Automated flood early warning covering 12 rivers"
-image_url: /assets/images/jakarta-placeholder.jpg
+image_url: /assets/images/rotterdam.jpg
 categories:
   - flood
   - coastal

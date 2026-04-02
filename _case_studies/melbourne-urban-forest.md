@@ -18,7 +18,7 @@ outcomes:
   - "Tree canopy cover increased from 22% to 40%"
   - "Average urban temperature reduced by 1.5°C"
   - "3,000+ unique tree species planted"
-image_url: /assets/images/melbourne-placeholder.jpg
+image_url: /assets/images/singapore.jpg
 categories:
   - green
   - heat

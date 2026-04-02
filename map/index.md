@@ -12,10 +12,9 @@ title: Case Study Map
 </div>
 </section>
 
-<!-- Leaflet CSS -->
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
-
-<div id="case-study-map" style="height:520px;width:100%;border-radius:var(--radius-lg);overflow:hidden;"></div>
+<div id="case-study-map" style="height:520px;width:100%;border-radius:var(--radius-lg);overflow:hidden;position:relative;">
+  <div id="map-loading" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:var(--color-surface-2);z-index:999;font-size:14px;color:var(--color-text-tertiary);">Loading map…</div>
+</div>
 
 <!-- Filter bar below map -->
 <div class="container" style="margin-top:var(--space-6)">
@@ -46,6 +45,12 @@ window.UCT_CASE_STUDIES = {{ site.data.case_studies | jsonify }};
 
 <script>
 (function () {
+  if (typeof L === 'undefined') {
+    var el = document.getElementById('map-loading');
+    if (el) el.textContent = 'Map could not load. Please check your internet connection and refresh.';
+    return;
+  }
+
   // Coordinates for each case study keyed by id
   var COORDS = {
     'norfolk-coastal-resilience': [36.85, -76.29],
@@ -68,6 +73,10 @@ window.UCT_CASE_STUDIES = {{ site.data.case_studies | jsonify }};
   var studies = window.UCT_CASE_STUDIES || [];
   var markers = [];
   var activeFilter = 'all';
+
+  // Hide loading indicator
+  var loadingEl = document.getElementById('map-loading');
+  if (loadingEl) loadingEl.style.display = 'none';
 
   // Initialise map
   var map = L.map('case-study-map', {

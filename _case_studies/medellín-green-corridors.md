@@ -18,7 +18,7 @@ outcomes:
   - "Temperature drop of 2–3°C along corridors"
   - "30 green corridors covering 36 km"
   - "Cited as global model by UN-Habitat"
-image_url: /assets/images/medellin-placeholder.jpg
+image_url: /assets/images/bogota.jpg
 categories:
   - green
   - heat

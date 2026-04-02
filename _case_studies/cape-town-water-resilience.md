@@ -19,7 +19,7 @@ outcomes:
   - "Per-capita water use cut by 50% since 2015"
   - "Groundwater, desalination and reuse sources online"
   - "Water Resilience Plan adopted to 2040"
-image_url: /assets/images/cape-town-placeholder.jpg
+image_url: /assets/images/rotterdam.jpg
 categories:
   - flood
   - planning
