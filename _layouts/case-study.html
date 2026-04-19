@@ -421,7 +421,7 @@ layout: default
     <h1 class="cs2-hero__title">{{ page.title }}</h1>
 
     <div class="cs2-hero__meta">
-      <span>📍 {{ page.city }}{% if page.state %}, {{ page.state }}{% endif %}, {{ page.country }}</span>
+      <span><svg width="11" height="14" viewBox="0 0 11 14" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:inline;vertical-align:-2px;margin-right:4px;opacity:0.75"><path d="M5.5 0C3.015 0 1 2.015 1 4.5c0 3.375 4.5 9.5 4.5 9.5S10 7.875 10 4.5C10 2.015 7.985 0 5.5 0zm0 6.25a1.75 1.75 0 1 1 0-3.5 1.75 1.75 0 0 1 0 3.5z" fill="currentColor"/></svg>{{ page.city }}{% if page.state %}, {{ page.state }}{% endif %}, {{ page.country }}</span>
       <span class="cs2-hero__meta-dot">·</span>
       <span>{{ page.year }}</span>
       {% if page.population %}
@@ -605,7 +605,7 @@ layout: default
     <!-- Map CTA -->
     <div class="cs2-map-cta">
       <p>See how this city compares with others around the world on the interactive map.</p>
-      <a href="{{ '/map/' | relative_url }}" class="cs2-map-cta__btn">🗺 Open Case Study Map</a>
+      <a href="{{ '/map/' | relative_url }}" class="cs2-map-cta__btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:inline;vertical-align:-3px;margin-right:6px"><path d="M9 4L3 7v13l6-3 6 3 6-3V4l-6 3-6-3z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" fill="none"/><path d="M9 4v13M15 7v13" stroke="currentColor" stroke-width="1.8"/></svg>Open Case Study Map</a>
     </div>
 
   </aside>

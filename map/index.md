@@ -91,9 +91,16 @@ window.UCT_CASE_STUDIES = {{ site.data.case_studies | jsonify }};
       scrollWheelZoom: false
     });
 
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      maxZoom: 18,
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png', {
+      maxZoom: 19,
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
+    }).addTo(map);
+
+    // Add label layer on top so city names are still readable
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_only_labels/{z}/{x}/{y}{r}.png', {
+      maxZoom: 19,
+      pane: 'shadowPane',
+      attribution: ''
     }).addTo(map);
   }
 
@@ -110,12 +117,12 @@ window.UCT_CASE_STUDIES = {{ site.data.case_studies | jsonify }};
   }
 
   var CATEGORY_COLORS = {
-    heat: '#e05c2e',
-    flood: '#2e7de0',
-    coastal: '#1ba3c9',
-    green: '#3aad5c',
-    planning: '#9b59b6',
-    other: '#7f8c8d'
+    heat:     '#EF9F27',
+    flood:    '#85B7EB',
+    coastal:  '#AFA9EC',
+    green:    '#5DCAA5',
+    planning: '#7B74D6',
+    other:    '#B4B2A9'
   };
 
   function primaryCategory(study) {
@@ -134,7 +141,7 @@ window.UCT_CASE_STUDIES = {{ site.data.case_studies | jsonify }};
     }).join('');
     return '<div class="map-popup">' +
       '<h3 class="map-popup__title">' + study.title + '</h3>' +
-      '<p class="map-popup__location">📍 ' + study.city + ', ' + study.country + '</p>' +
+      '<p class="map-popup__location"><svg width="11" height="14" viewBox="0 0 11 14" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:inline;vertical-align:-2px;margin-right:3px"><path d="M5.5 0C3.015 0 1 2.015 1 4.5c0 3.375 4.5 9.5 4.5 9.5S10 7.875 10 4.5C10 2.015 7.985 0 5.5 0zm0 6.25a1.75 1.75 0 1 1 0-3.5 1.75 1.75 0 0 1 0 3.5z" fill="#5DCAA5"/></svg>' + study.city + ', ' + study.country + '</p>' +
       '<div class="case-study-card__tags" style="margin:4px 0 8px">' + cats + '</div>' +
       '<p class="map-popup__desc">' + (study.summary || study.description || '') + '</p>' +
       '<a href="' + url + '" class="about-cta" style="font-size:13px">Read Case Study →</a>' +
@@ -207,7 +214,7 @@ window.UCT_CASE_STUDIES = {{ site.data.case_studies | jsonify }};
         '<div class="map-mini-card__bar" style="background:' + bgColor + '"></div>' +
         '<div class="map-mini-card__body">' +
           '<h4 class="map-mini-card__title">' + study.title + '</h4>' +
-          '<p class="map-mini-card__loc">📍 ' + study.city + ', ' + study.country + '</p>' +
+          '<p class="map-mini-card__loc"><svg width="10" height="13" viewBox="0 0 11 14" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:inline;vertical-align:-2px;margin-right:3px"><path d="M5.5 0C3.015 0 1 2.015 1 4.5c0 3.375 4.5 9.5 4.5 9.5S10 7.875 10 4.5C10 2.015 7.985 0 5.5 0zm0 6.25a1.75 1.75 0 1 1 0-3.5 1.75 1.75 0 0 1 0 3.5z" fill="currentColor"/></svg>' + study.city + ', ' + study.country + '</p>' +
           '<div class="case-study-card__tags" style="margin:var(--space-2) 0">' + cats + '</div>' +
           '<a href="' + url + '" class="about-cta" style="font-size:var(--text-xs)">Read →</a>' +
         '</div>' +

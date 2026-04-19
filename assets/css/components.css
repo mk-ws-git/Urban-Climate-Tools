@@ -2108,6 +2108,11 @@ img, svg { display: block; max-width: 100%; }
   box-shadow: var(--shadow-md);
 }
 
+/* Teal-tinted monochrome tile layer */
+#case-study-map .leaflet-tile-pane {
+  filter: grayscale(100%) brightness(0.55) sepia(40%) hue-rotate(110deg) saturate(180%);
+}
+
 .map-filter-bar {
   display: flex;
   align-items: center;
@@ -2199,23 +2204,40 @@ img, svg { display: block; max-width: 100%; }
   margin-bottom: var(--space-2);
 }
 
-/* Leaflet popup custom styles */
-.map-popup { min-width: 200px; }
+/* Leaflet popup custom styles — force dark surface regardless of OS theme */
+.leaflet-popup-content-wrapper {
+  background: #0d1f18;
+  border: 1px solid rgba(93, 202, 165, 0.25);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.55);
+  border-radius: 10px;
+  color: #E1F5EE;
+}
+.leaflet-popup-tip-container .leaflet-popup-tip {
+  background: #0d1f18;
+}
+.leaflet-popup-close-button {
+  color: #5DCAA5 !important;
+}
+.leaflet-popup-close-button:hover {
+  color: #9FE1CB !important;
+}
+.map-popup { min-width: 220px; }
 .map-popup__title {
   font-size: 14px;
   font-weight: 600;
   margin-bottom: 4px;
-  color: var(--color-text-primary);
+  color: #E1F5EE;
 }
 .map-popup__location {
   font-size: 11px;
-  color: var(--color-text-tertiary);
+  color: #5DCAA5;
   margin-bottom: 4px;
 }
 .map-popup__desc {
   font-size: 12px;
-  color: var(--color-text-secondary);
+  color: #9FE1CB;
   margin-bottom: 8px;
+  line-height: 1.5;
 }
 
 /* Map pin div icon */
