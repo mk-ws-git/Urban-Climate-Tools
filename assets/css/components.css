@@ -2106,11 +2106,8 @@ img, svg { display: block; max-width: 100%; }
 
 #case-study-map {
   box-shadow: var(--shadow-md);
-}
-
-/* Teal-tinted monochrome tile layer */
-#case-study-map .leaflet-tile-pane {
-  filter: grayscale(100%) brightness(0.55) sepia(40%) hue-rotate(110deg) saturate(180%);
+  /* Ocean/water colour — land polygons are rendered darker on top */
+  background: #0d1f18;
 }
 
 .map-filter-bar {

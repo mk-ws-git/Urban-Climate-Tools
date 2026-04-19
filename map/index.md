@@ -43,6 +43,8 @@ window.UCT_CASE_STUDIES = {{ site.data.case_studies | jsonify }};
 
 <!-- Leaflet JS -->
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+<!-- TopoJSON client (converts world-atlas topology to GeoJSON for Leaflet) -->
+<script src="https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js"></script>
 
 <script>
 (function () {
@@ -88,20 +90,36 @@ window.UCT_CASE_STUDIES = {{ site.data.case_studies | jsonify }};
     map = L.map('case-study-map', {
       center: [30, 10],
       zoom: 2,
-      scrollWheelZoom: false
+      scrollWheelZoom: false,
+      // No tile layer — background color acts as ocean/water
+      preferCanvas: true
     });
 
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png', {
-      maxZoom: 19,
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
-    }).addTo(map);
+    // Render world countries as vector polygons with exact site palette colors.
+    // Water = map container background (#0d1f18), Land = slightly darker surface.
+    fetch('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json')
+      .then(function (r) { return r.json(); })
+      .then(function (world) {
+        var countries = topojson.feature(world, world.objects.countries);
+        L.geoJSON(countries, {
+          style: {
+            fillColor:   '#091510',   // land — just darker than the water background
+            fillOpacity: 1,
+            color:       '#1a3028',   // subtle border edge (--color-surface-3)
+            weight:      0.6,
+            opacity:     0.8
+          }
+        }).addTo(map);
 
-    // Add label layer on top so city names are still readable
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_only_labels/{z}/{x}/{y}{r}.png', {
-      maxZoom: 19,
-      pane: 'shadowPane',
-      attribution: ''
-    }).addTo(map);
+        // Draw shared border mesh on top for subtle edge definition
+        var borders = topojson.mesh(world, world.objects.countries, function (a, b) { return a !== b; });
+        L.geoJSON(borders, {
+          style: { color: '#1a3028', weight: 0.5, fill: false, opacity: 0.7 }
+        }).addTo(map);
+      })
+      .catch(function () {
+        // Fallback: basemap failed but markers and cards still work via applyFilter below
+      });
   }
 
   // Custom marker icon
