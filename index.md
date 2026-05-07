@@ -44,7 +44,8 @@ title: Urban Climate Tools
             <h2 class="categories__title">Explore Climate Tools by Category</h2>
         </div>
         <div class="categories__grid">
-            <a href="{{ '/tools/' | relative_url }}?category=heat" class="category-card">
+            {% assign heat_count = site.tools | where_exp: "item", "item.categories contains 'heat'" | size %}
+            <a href="{{ '/tools/' | relative_url }}?category=heat" class="category-card category-card--heat">
                 <div class="category-card__icon">
                     <svg viewBox="0 0 100 100">
                         <rect x="30" y="20" width="40" height="60" fill="none" stroke="var(--color-teal-400)" stroke-width="2"/>
@@ -55,9 +56,14 @@ title: Urban Climate Tools
                 </div>
                 <h3 class="category-card__title">Heat Management</h3>
                 <p class="category-card__description">Urban heat island mitigation and heat wave planning</p>
+                <div class="category-card__footer">
+                    <span class="category-card__stat">{{ heat_count }} tool{% if heat_count != 1 %}s{% endif %}</span>
+                    <span class="category-card__arrow">→</span>
+                </div>
             </a>
 
-            <a href="{{ '/tools/' | relative_url }}?category=flood" class="category-card">
+            {% assign flood_count = site.tools | where_exp: "item", "item.categories contains 'flood'" | size %}
+            <a href="{{ '/tools/' | relative_url }}?category=flood" class="category-card category-card--flood">
                 <div class="category-card__icon">
                     <svg viewBox="0 0 100 100">
                         <path d="M 20 70 Q 30 50 40 60 T 60 55 T 80 70" fill="var(--color-teal-400)" opacity="0.4"/>
@@ -66,9 +72,14 @@ title: Urban Climate Tools
                 </div>
                 <h3 class="category-card__title">Flood Risk</h3>
                 <p class="category-card__description">Stormwater management and flooding solutions</p>
+                <div class="category-card__footer">
+                    <span class="category-card__stat">{{ flood_count }} tool{% if flood_count != 1 %}s{% endif %}</span>
+                    <span class="category-card__arrow">→</span>
+                </div>
             </a>
 
-            <a href="{{ '/tools/' | relative_url }}?category=coastal" class="category-card">
+            {% assign coastal_count = site.tools | where_exp: "item", "item.categories contains 'coastal'" | size %}
+            <a href="{{ '/tools/' | relative_url }}?category=coastal" class="category-card category-card--coastal">
                 <div class="category-card__icon">
                     <svg viewBox="0 0 100 100">
                         <path d="M 10 60 Q 30 40 50 55 T 90 50" stroke="var(--color-teal-400)" stroke-width="2" fill="none"/>
@@ -77,9 +88,14 @@ title: Urban Climate Tools
                 </div>
                 <h3 class="category-card__title">Coastal Resilience</h3>
                 <p class="category-card__description">Sea level rise and coastal hazard adaptation</p>
+                <div class="category-card__footer">
+                    <span class="category-card__stat">{{ coastal_count }} tool{% if coastal_count != 1 %}s{% endif %}</span>
+                    <span class="category-card__arrow">→</span>
+                </div>
             </a>
 
-            <a href="{{ '/tools/' | relative_url }}?category=green" class="category-card">
+            {% assign green_count = site.tools | where_exp: "item", "item.categories contains 'green'" | size %}
+            <a href="{{ '/tools/' | relative_url }}?category=green" class="category-card category-card--green">
                 <div class="category-card__icon">
                     <svg viewBox="0 0 100 100">
                         <path d="M 50 80 L 50 40" stroke="var(--color-teal-400)" stroke-width="2"/>
@@ -90,9 +106,14 @@ title: Urban Climate Tools
                 </div>
                 <h3 class="category-card__title">Green Infrastructure</h3>
                 <p class="category-card__description">Nature-based solutions for urban resilience</p>
+                <div class="category-card__footer">
+                    <span class="category-card__stat">{{ green_count }} tool{% if green_count != 1 %}s{% endif %}</span>
+                    <span class="category-card__arrow">→</span>
+                </div>
             </a>
 
-            <a href="{{ '/tools/' | relative_url }}?category=data" class="category-card">
+            {% assign data_count = site.tools | where_exp: "item", "item.categories contains 'data'" | size %}
+            <a href="{{ '/tools/' | relative_url }}?category=data" class="category-card category-card--data">
                 <div class="category-card__icon">
                     <svg viewBox="0 0 100 100">
                         <rect x="20" y="25" width="60" height="50" fill="none" stroke="var(--color-teal-400)" stroke-width="2"/>
@@ -104,9 +125,14 @@ title: Urban Climate Tools
                 </div>
                 <h3 class="category-card__title">Data & Analytics</h3>
                 <p class="category-card__description">Climate data visualization and analysis tools</p>
+                <div class="category-card__footer">
+                    <span class="category-card__stat">{{ data_count }} tool{% if data_count != 1 %}s{% endif %}</span>
+                    <span class="category-card__arrow">→</span>
+                </div>
             </a>
 
-            <a href="{{ '/tools/' | relative_url }}?category=planning" class="category-card">
+            {% assign planning_count = site.tools | where_exp: "item", "item.categories contains 'planning'" | size %}
+            <a href="{{ '/tools/' | relative_url }}?category=planning" class="category-card category-card--planning">
                 <div class="category-card__icon">
                     <svg viewBox="0 0 100 100">
                         <polygon points="50,15 35,35 35,65 65,65 65,35" fill="none" stroke="var(--color-teal-400)" stroke-width="2"/>
@@ -115,6 +141,10 @@ title: Urban Climate Tools
                 </div>
                 <h3 class="category-card__title">Planning & Policy</h3>
                 <p class="category-card__description">Urban planning tools and policy frameworks</p>
+                <div class="category-card__footer">
+                    <span class="category-card__stat">{{ planning_count }} tool{% if planning_count != 1 %}s{% endif %}</span>
+                    <span class="category-card__arrow">→</span>
+                </div>
             </a>
         </div>
     </div>
